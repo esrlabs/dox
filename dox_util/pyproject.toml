@@ -8,7 +8,7 @@ dynamic = ["version"]
 authors = [
   { name="Accenture" },
 ]
-description = "Collection of small convenience-features for Sphinx documentations."
+description = "Collection of small convenience features for Sphinx documentations."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -21,6 +21,7 @@ license = {text = "Apache-2.0"}
 [project.urls]
 Homepage = "https://github.com/esrlabs/dox"
 Issues = "https://github.com/esrlabs/dox/issues"
+Documentation = "https://esrlabs.github.io/dox/dox_util"
 
 [tool.setuptools]
 license-files = ["LICENSE"]

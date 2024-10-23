@@ -1,6 +1,6 @@
 # Overview
 
-This project provides four tools for creating documentation and writing requirements.
+This project provides four tools for creating documentations and writing requirements.
 They can be used individually, but are designed to be used together.
 
 ## Sphinx Documentation

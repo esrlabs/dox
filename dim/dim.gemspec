@@ -23,4 +23,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.7'
   s.add_development_dependency 'rspec', '3.10.0'
   s.add_development_dependency 'simplecov', '0.22.0'
+
+  s.metadata["homepage_uri"] = s.homepage
+  s.metadata["documentation_uri"] = 'https://esrlabs.github.io/dox/dim'
 end

@@ -8,7 +8,7 @@ dynamic = ["version"]
 authors = [
   { name="Accenture" },
 ]
-description = "Default configuration for documentations regarding style and common options. Includes also several style checks."
+description = "Standard configuration, theme enhancements and style checks for Sphinx documentations."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -21,6 +21,7 @@ license = {text = "Apache-2.0"}
 [project.urls]
 Homepage = "https://github.com/esrlabs/dox"
 Issues = "https://github.com/esrlabs/dox/issues"
+Documentation = "https://esrlabs.github.io/dox/dox_style"
 
 [tool.setuptools]
 license-files = ["LICENSE"]

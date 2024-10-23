@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.1.1
+-----
+
+October 23, 2024
+
+- Corrected metadata in the gemspec file.
+
+
 2.1.0
 -----
 
