@@ -31,7 +31,8 @@ repository, a new version of the *Dim* extension can be released.
 - Push the changes to the ``master`` branch of https://github.com/esrlabs/dox.
 - Build and upload the documentation to the ``gh-pages`` branch.
 - Create a new gem and push it to https://rubygems.org/gems/dim-toolkit.
-- Announce the new version.
+
+See also *Release Steps* on https://esrlabs.github.io/dox.
 
 Requirements
 ------------

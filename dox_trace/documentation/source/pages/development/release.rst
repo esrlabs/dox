@@ -9,4 +9,5 @@ repository, a new version of the *dox_trace* extension can be released.
 - Push the changes to the ``master`` branch of https://github.com/esrlabs/dox.
 - Build and upload the documentation to the ``gh-pages`` branch.
 - Create a new package and push it to https://pypi.org/project/dox-trace.
-- Announce the new version.
+
+See also *Release Steps* on https://esrlabs.github.io/dox.

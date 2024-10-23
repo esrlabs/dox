@@ -112,3 +112,5 @@ Release Steps
       .. code-block:: none
 
           python -m twine upload dist/*
+
+- Add a new release tag and copy/paste the changelog entries to https://github.com/esrlabs/dox/tags.

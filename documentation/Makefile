@@ -18,5 +18,6 @@ dist: Makefile
 	@for tool in dox_style dox_util dox_trace dim ; do \
 		ruby ../$$tool/documentation/footer.rb ; \
 		$(MAKE) -C ../$$tool/documentation html ; \
-		cp -r ../$$tool/documentation/build/html build/html/$$tool ; \
+		mkdir -p build/html/$$tool ; \
+		cp -rf ../$$tool/documentation/build/html/* build/html/$$tool ; \
 	done
