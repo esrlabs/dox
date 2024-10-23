@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Line Interface &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ruby Interface" href="api.html" />
+    <link rel="prev" title="Backward Compatibility" href="syntax/backward.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-arguments">General Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subcommands">Subcommands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check">check</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-filename-input-filename">-i FILENAME, --input FILENAME</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-filename-attributes-filename">-a FILENAME, --attributes FILENAME</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#allow-missing">--allow-missing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#no-check-enclosed">--no-check-enclosed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#silent">--silent</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#format">format</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#output-format-format">--output-format FORMAT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#export">export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#o-folder-output-folder">-o FOLDER --output FOLDER</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#f-format-format-format">-f FORMAT --format FORMAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filter-filter">--filter FILTER</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stats">stats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Command Line Interface</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-line-interface">
+<span id="id1"></span><h1>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Link to this heading"></a></h1>
+<section id="general-arguments">
+<h2>General Arguments<a class="headerlink" href="#general-arguments" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code> prints the usage with all available arguments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--version</span></code> prints the version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--license</span></code> prints the license</p></li>
+</ul>
+</section>
+<section id="subcommands">
+<h2>Subcommands<a class="headerlink" href="#subcommands" title="Link to this heading"></a></h2>
+<p>Dim supports different subcommands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dim &lt;subcommand&gt; &lt;parameters&gt;
+</pre></div>
+</div>
+<p>All available subcommands with the additional parameters are described below.</p>
+<section id="check">
+<h3>check<a class="headerlink" href="#check" title="Link to this heading"></a></h3>
+<p>This checks all input files if they are valid, e.g. if the <strong>refs</strong> can be resolved.</p>
+<section id="i-filename-input-filename">
+<h4>-i FILENAME, --input FILENAME<a class="headerlink" href="#i-filename-input-filename" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">-i</span></code> specifies a <a class="reference internal" href="syntax/requirement.html#requirements-files"><span class="std std-ref">requirements file</span></a> or
+<a class="reference internal" href="syntax/config.html#config-files"><span class="std std-ref">config file</span></a>.</p>
+<p>Usually requirements are loaded via a config file which specifies the category and the originator
+for the requirements. If a requirements file is loaded directly, the category is set to
+<em>unspecified</em> and the originator to an empty string.</p>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dim check -i project/reqs/config.dim
+</pre></div>
+</div>
+</section>
+<section id="a-filename-attributes-filename">
+<h4>-a FILENAME, --attributes FILENAME<a class="headerlink" href="#a-filename-attributes-filename" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> specifies a <a class="reference internal" href="syntax/attributes.html#attributes-file"><span class="std std-ref">custom attributes file</span></a>.</p>
+<p>An attributes files is usually specified in the <a class="reference internal" href="syntax/config.html#config-files"><span class="std std-ref">config file</span></a>. Loading a
+requirements file with custom attributes directly would lead to an error. To avoid that, the
+attributes file can also be specified on the command line.</p>
+<p>If the config file has a reference to custom attributes AND an attributes file is specified using
+this command line parameter, then attributes from both references are taken into consideration.
+If the same attribute is present in both files, the attributes loaded from config file will be
+prioritized.</p>
+<p>If a single requirements file without this parameter is loaded, then Dim searches for a file named
+<em>attributes.dim</em> recursively, starting from location of the requirements file till the root directory
+is reached. If such a file is found, then the custom attributes are loaded from that file.</p>
+</section>
+<section id="allow-missing">
+<h4>--allow-missing<a class="headerlink" href="#allow-missing" title="Link to this heading"></a></h4>
+<p>When loading only a part of the requirements files, references may not be resolvable, which would
+lead to an error. To suppress them, use <code class="docutils literal notranslate"><span class="pre">--allow-missing</span></code>. This is only for developing
+purposes. An official export must be done without this parameter.</p>
+<p>While <a class="reference internal" href="#subcommand-format"><span class="std std-ref">formatting</span></a>, this parameter is automatically set.</p>
+</section>
+<section id="no-check-enclosed">
+<h4>--no-check-enclosed<a class="headerlink" href="#no-check-enclosed" title="Link to this heading"></a></h4>
+<p>When Dim contains enclosed files, it checks for the presence of those files. A missing file leads
+to an error. To skip the enclosed files check, use <code class="docutils literal notranslate"><span class="pre">--no-check-enclosed</span></code>.</p>
+</section>
+<section id="silent">
+<h4>--silent<a class="headerlink" href="#silent" title="Link to this heading"></a></h4>
+<p>When this option is set, Dim will not print any info logs on the screen. Errors and warnings will
+still be printed to inform the user what went wrong during the operations.</p>
+</section>
+</section>
+<section id="format">
+<span id="subcommand-format"></span><h3>format<a class="headerlink" href="#format" title="Link to this heading"></a></h3>
+<p>This subcommand <a class="reference internal" href="format.html#format"><span class="std std-ref">formats</span></a> requirements files. Dim sets the <cite>allow-missing</cite> parameter
+automatically when formatting the documents, which means Dim will not warn about missing references.</p>
+<p><code class="docutils literal notranslate"><span class="pre">format</span></code> implicitly executes the consistency <code class="docutils literal notranslate"><span class="pre">check</span></code>. All <code class="docutils literal notranslate"><span class="pre">check</span></code> parameters can also be used
+for <code class="docutils literal notranslate"><span class="pre">format</span></code>.</p>
+<p>All existing YAML comments are removed during formatting.</p>
+<section id="output-format-format">
+<h4>--output-format FORMAT<a class="headerlink" href="#output-format-format" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in-place</span></code>: By default, requirements files are changed in-place.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra</span></code>: To create extra files next to the original files (with the ending <em>.formatted</em>) use
+this output format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check-only</span></code>: Checks the files without changing them. If the formatting is not correct,
+Dim exists with an exit code != 0.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code>: This is to support the inline formatting in IDEs. Any IDE which works with STDIN and
+STDOUT can use this flag to support code formatting within the IDE.</p></li>
+</ul>
+<p>More details about <cite>stdout</cite>:</p>
+<p>It is assumed that the requirements file is valid. As binary input is read from STDIN, this output format
+skips the check for enclosed files and refs. The formatted output will be sent to STDOUT, from
+where the IDE is supposed to read.</p>
+<p>When output format is set to <cite>stdout</cite>, Dim automatically sets the following parameters:</p>
+<ul class="simple">
+<li><p><cite>allow-missing</cite></p></li>
+<li><p><cite>no-check-enclosed</cite></p></li>
+<li><p><cite>silent</cite></p></li>
+</ul>
+<p>Config files are not supported.</p>
+<p>The following example shows how to use this feature with <code class="docutils literal notranslate"><span class="pre">Vim</span></code>, assuming that the <cite>vim-autoformat</cite>
+plugin is already installed:</p>
+<ul>
+<li><p>First, add this to the <cite>.vimrc</cite> file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>let g:formatdef_dimtool = &#39;&quot;dim format --output-format stdout&quot;&#39;
+let g:formatters_dim = [&#39;dimtool&#39;]
+</pre></div>
+</div>
+</li>
+<li><p>After the file has been loaded into Vim, format the file like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:Autoformat dim
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="export">
+<h3>export<a class="headerlink" href="#export" title="Link to this heading"></a></h3>
+<p>Requirements can be exported to different formats. The output can be made available to
+other tools or third-parties.</p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span></code> implicitly executes the consistency <code class="docutils literal notranslate"><span class="pre">check</span></code>. All <code class="docutils literal notranslate"><span class="pre">check</span></code> parameters can also be used
+for <code class="docutils literal notranslate"><span class="pre">export</span></code>.</p>
+<section id="o-folder-output-folder">
+<h4>-o FOLDER --output FOLDER<a class="headerlink" href="#o-folder-output-folder" title="Link to this heading"></a></h4>
+<p>Specifies the output folder. Every document with its enclosed files will be exported to a subfolder.
+If the folders do not exist, they will be created. Existing files will be overwritten.</p>
+</section>
+<section id="f-format-format-format">
+<h4>-f FORMAT --format FORMAT<a class="headerlink" href="#f-format-format-format" title="Link to this heading"></a></h4>
+<p>FORMAT can be <em>rst</em>, <em>csv</em> and <em>json</em>.</p>
+<div class="line-block">
+<div class="line"><em>csv</em> can be used for e.g. exporting to other requirements tools.</div>
+<div class="line"><em>rst</em> output is input for a Sphinx documentation build which can create HTML pages.</div>
+</div>
+</section>
+<section id="filter-filter">
+<h4>--filter FILTER<a class="headerlink" href="#filter-filter" title="Link to this heading"></a></h4>
+<p>The output can be filtered with quite natural conditions, e.g.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># filter entries which are requirements and have CAN in the text.
+--filter &quot;type == requirement &amp;&amp; text =~ /CAN/&quot;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="stats">
+<h3>stats<a class="headerlink" href="#stats" title="Link to this heading"></a></h3>
+<p>This prints some nice stats about requirements, per owner/originator, per document, etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">stats</span></code> implicitly executes the consistency <code class="docutils literal notranslate"><span class="pre">check</span></code>. All <code class="docutils literal notranslate"><span class="pre">check</span></code> parameters can also be used
+for <code class="docutils literal notranslate"><span class="pre">stats</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/cli.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

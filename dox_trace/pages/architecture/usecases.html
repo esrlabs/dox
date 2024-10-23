@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use Cases &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Classes and Functions" href="static.html" />
+    <link rel="prev" title="Input / Output" href="inout.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inout.html">Input / Output</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generating-html">Generating HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculating-metrics">Calculating Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-specifications">Changing Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publishing-changes">Publishing Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Use Cases</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="use-cases">
+<span id="id1"></span><h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h1>
+<p>This page shows how dox_trace is used from a black box perspective.</p>
+<section id="generating-html">
+<h2>Generating HTML<a class="headerlink" href="#generating-html" title="Link to this heading"></a></h2>
+<p>Existing RST files including <em>specifications</em> are converted to HTML by executing Sphinx. The
+resulting HTML files can then be viewed in a browser.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/usecase_view.drawio.png"><img alt="../../_images/usecase_view.drawio.png" src="../../_images/usecase_view.drawio.png" style="width: 626.0px; height: 511.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Generating HTML</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="calculating-metrics">
+<h2>Calculating Metrics<a class="headerlink" href="#calculating-metrics" title="Link to this heading"></a></h2>
+<p><em>Specifications</em> in existing RST files are exported to Dim format by executing Sphinx. With Dim
+files various metrics can be calculated using the Dim Ruby API.</p>
+<p>It’s explicitly allowed to process the Dim files for any other purpose, not only for calculating
+metrics.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/usecase_export.drawio.png"><img alt="../../_images/usecase_export.drawio.png" src="../../_images/usecase_export.drawio.png" style="width: 626.0px; height: 511.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Calculating metrics</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="changing-specifications">
+<span id="id2"></span><h2>Changing Specifications<a class="headerlink" href="#changing-specifications" title="Link to this heading"></a></h2>
+<p>RST files are text files, which can be changed by any editor. This requires to verify the changes:</p>
+<ul class="simple">
+<li><p>Most of the errors like using an unknown attribute or cyclic references can be found by executing
+Sphinx and checking the exit code and if necessary the console output.</p></li>
+<li><p>The values of the attributes can be <em>syntactically</em> verified by exporting to Dim format and
+running the Dim checks.</p></li>
+<li><p>The generated HTML can be used to double check that the content is <em>semantically</em> correct.</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/usecase_change.drawio.png"><img alt="../../_images/usecase_change.drawio.png" src="../../_images/usecase_change.drawio.png" style="width: 1831.0px; height: 609.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Change specifications</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="publishing-changes">
+<h2>Publishing Changes<a class="headerlink" href="#publishing-changes" title="Link to this heading"></a></h2>
+<p>This is similar to the <a class="reference internal" href="#changing-specifications"><span class="std std-ref">Changing Specifications</span></a> use case. Instead of a local verification and
+a self-review, the changes are pushed to a code review tool to trigger an official verifier and let
+others review the changes. If both is successfully completed, the changes are merged into the
+corresponding Git branches.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/usecase_review.drawio.png"><img alt="../../_images/usecase_review.drawio.png" src="../../_images/usecase_review.drawio.png" style="width: 2490.0px; height: 628.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Publishing changes</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/architecture/usecases.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

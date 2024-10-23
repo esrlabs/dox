@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Behaviour &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="FMEA" href="fmea.html" />
+    <link rel="prev" title="Classes and Functions" href="static.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static.html">Classes and Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dynamic Behaviour</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-workflow">Main Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-dox-trace">Setup dox_trace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parse-rst-files">Parse RST Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-consistency">Check Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-html-output">Generate HTML Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export-to-dim">Export to Dim</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Dynamic Behaviour</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dynamic-behaviour">
+<h1>Dynamic Behaviour<a class="headerlink" href="#dynamic-behaviour" title="Link to this heading"></a></h1>
+<section id="main-workflow">
+<span id="workflow"></span><h2>Main Workflow<a class="headerlink" href="#main-workflow" title="Link to this heading"></a></h2>
+<p>The main workflow is a sequence of five major steps which are explained in more detail in the
+sections below.</p>
+<figure class="align-center" id="id2">
+<span id="workflow-main-fig"></span><a class="reference internal image-reference" href="../../_images/workflow.drawio.png"><img alt="../../_images/workflow.drawio.png" src="../../_images/workflow.drawio.png" style="width: 2001.0px; height: 751.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Main workflow</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>All input and output is directly accessed by the user of this tool except the <strong>cache</strong>.
+The cache is created by Sphinx to increase the speed of incremental builds. Files which have not
+changed since the last build usually don’t have to be read again. <em>dox_trace</em> enriches the cache
+with <em>specification</em> data to resolve references, perform consistency checks and export data to
+<em>Dim</em>.</p>
+<p>In general, <strong>exceptions</strong> are not caught. If an exceptions occurs, Sphinx terminates and sets the
+exit code to a value != 0 depending on the exception type.</p>
+</section>
+<section id="setup-dox-trace">
+<span id="id1"></span><h2>Setup dox_trace<a class="headerlink" href="#setup-dox-trace" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/dh_setup.drawio.png"><img alt="../../_images/dh_setup.drawio.png" src="../../_images/dh_setup.drawio.png" style="width: 1321.0px; height: 371.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Setup dox_trace</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Setting up <em>dox_trace</em> is straightforward:</p>
+<ul class="simple">
+<li><p>First, the source files are loaded by the Python interpreter.</p></li>
+<li><p>Afterwards Sphinx calls the <em>setup</em> function which is mandatory for every extension. This function
+registers callbacks to certain Sphinx events, directives and roles.</p></li>
+<li><p>The first event is <em>config-inited</em> which allows to add additional stuff to the Sphinx
+configuration. <em>dox_trace</em> registers a CSS and a Javascript file for the HTML output.</p></li>
+<li><p>If the <em>dox_trace</em> extension itself has changed, it is not ensured that the data in the cache is
+still compatible, so <em>dox_trace</em> enforces a reload of all RST files.</p></li>
+<li><p>The cache, internally also called <em>environment</em>, is getting prepared by creating some data
+structures which are used later by dox_trace.</p></li>
+<li><p>Data from RST files which are going to be read again is deleted from the cache.</p></li>
+</ul>
+</section>
+<section id="parse-rst-files">
+<h2>Parse RST Files<a class="headerlink" href="#parse-rst-files" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/dh_parse.drawio.png"><img alt="../../_images/dh_parse.drawio.png" src="../../_images/dh_parse.drawio.png" style="width: 2601.0px; height: 601.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Parse RST files</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After the <em>environment</em> is prepared in <a class="reference internal" href="#setup-dox-trace"><span class="std std-ref">Setup dox_trace</span></a>, the new and changed RST files can be
+read:</p>
+<ul>
+<li><p>Sphinx calls the registered classes and functions for the following elements found in RST files:</p>
+<blockquote>
+<div><ul>
+<li><p>most importantly the <em>specification</em> directives:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">requirement::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">information::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">srs::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">spec::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">mod::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">interface::</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">unit::</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">dox_trace_config::</span></code> directive which generates a page to configure the appearance of
+the <em>specifications</em></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">traceability_report::</span></code> directive which generates a traceability report</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">unresolved_refs::</span></code> directive which generates a list of specifications with
+unresolved references</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">prop::</span></code> directive and <code class="docutils literal notranslate"><span class="pre">:prop:</span></code> role which display a property</p></li>
+<li><p>internally used roles to create nice literals in HTML output with type and ID of
+<em>specifications</em> which can be linked by regular Sphinx references.</p></li>
+</ul>
+</div></blockquote>
+<p>These functions convert the data to “Docutils” nodes, the underlying document structure used by
+Sphinx.</p>
+</li>
+<li><p>The Sphinx syntax for directives is very close to the comment syntax, which means a
+<em>specification</em> may be commented out unintentionally. To avoid that, a check is implemented to
+find comments which look similar to a <em>specification</em> directive.</p></li>
+<li><p>After all files are parsed, upstream and downstream references can be calculated. They are
+injected into the already created “Docutils” node structure.</p></li>
+<li><p>Finally the data is stored in the cache.</p></li>
+<li><p>In parallel (multi-threaded) builds a separate cache section is created by Sphinx for every parsed
+RST files to avoid critical sections. After reading all files, these sections must be merged.</p></li>
+<li><p>If an error occurs, a meaningful error message is printed out and the build is aborted.</p></li>
+</ul>
+</section>
+<section id="check-consistency">
+<h2>Check Consistency<a class="headerlink" href="#check-consistency" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/dh_check.drawio.png"><img alt="../../_images/dh_check.drawio.png" src="../../_images/dh_check.drawio.png" style="width: 981.0px; height: 481.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Check consistency</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After all data is loaded, the following checks are performed:</p>
+<ul class="simple">
+<li><p>References in Sphinx are internally converted to lower case, which means the references are
+case insensitive. But when exporting to <em>Dim</em>, the case matters, so <em>dox_trace</em> ensures that the
+case is always correct.</p></li>
+<li><p><em>Specifications</em> can link to other <em>specifications</em> using their <code class="docutils literal notranslate"><span class="pre">refs</span></code> attribute. dox_trace
+ensures that the targets are really <em>specifications</em> and not regular Sphinx anchors.</p></li>
+<li><p>Cyclic references are disallowed to avoid problems in further processing of the data like
+generating metrics.</p></li>
+</ul>
+<p>If a check fails, a meaningful error message is printed out and the build is aborted.</p>
+</section>
+<section id="generate-html-output">
+<h2>Generate HTML Output<a class="headerlink" href="#generate-html-output" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/dh_create.drawio.png"><img alt="../../_images/dh_create.drawio.png" src="../../_images/dh_create.drawio.png" style="width: 841.0px; height: 461.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Generate HTML output</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This step is completely done by Sphinx, the <em>dox_trace</em> extension is not involved directly. In case
+of an error, Sphinx prints an error message and aborts the build.</p>
+</section>
+<section id="export-to-dim">
+<h2>Export to Dim<a class="headerlink" href="#export-to-dim" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/dh_export.drawio.png"><img alt="../../_images/dh_export.drawio.png" src="../../_images/dh_export.drawio.png" style="width: 1291.0px; height: 510.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Export to Dim</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the Sphinx configuration includes a variable <code class="docutils literal notranslate"><span class="pre">dox_trace_dim_root</span></code> pointing to a valid
+directory, <em>dox_trace</em> exports the <em>specification</em> data of srs, spec, mod, interface and unit to
+<em>Dim</em> files. If an error occurs, a meaningful error message is printed out and the build is aborted.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:31, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/architecture/dynamic.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

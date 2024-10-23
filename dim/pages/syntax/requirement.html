@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requirements Files &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Config Files" href="config.html" />
+    <link rel="prev" title="Syntax" href="../syntax.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../syntax.html">Syntax</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Requirements Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#document">document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata">metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enclosed">enclosed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id">&lt;id&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text">text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verification-criteria">verification_criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feature">feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#change-request">change_request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#status">status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tags">tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#developer">developer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tester">tester</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verification-methods">verification_methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asil">asil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cal">cal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#review-status">review_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comment">comment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#miscellaneous">miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sources">sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refs">refs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-languages">Other Languages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#short-forms">Short Forms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">Properties File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html">Attributes File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html">HTML Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues.html">Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../syntax.html">Syntax</a> &raquo;</li>
+        
+        <li>Requirements Files</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="requirements-files">
+<span id="id1"></span><h1>Requirements Files<a class="headerlink" href="#requirements-files" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The Dim requirements files are written in YAML format, so they can be processed by every YAML parser.
+Dim prints warning message and skips loading of requirements file, if the requirements file is
+empty.</p>
+<p>Dim expects the following syntax:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">document</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;name&gt;</span><span class="w">                    </span><span class="c1"># required, string describing the group or domain of requirements</span>
+
+<span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;data&gt;</span><span class="w">                    </span><span class="c1"># optional string to describe origin, date, version, history, etc.</span>
+
+<span class="nt">enclosed</span><span class="p">:</span><span class="w">                          </span><span class="c1"># optional, all those files will be copied when exporting</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;file1&gt;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;file2&gt;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;...&gt;</span>
+
+<span class="nt">&lt;id&gt;</span><span class="p">:</span><span class="w">                               </span><span class="c1"># must be unique</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">verification_criteria</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">feature</span><span class="p">:</span><span class="w">               </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">change_request</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># one of: requirement (default), information, heading_0, ... heading_100</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">status</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># one of: draft, valid, invalid</span>
+<span class="w">                                    </span><span class="c1"># default: see below</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, comma separated, default: &quot;&quot;,</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">developer</span><span class="p">:</span><span class="w">             </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tester</span><span class="p">:</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">verification_methods</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># one or more of : none, off_target, on_target, manual</span>
+<span class="w">                                    </span><span class="c1"># default: see below</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">asil</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># one of: not_set (default), QM, QM(A), QM(B), QM(C), QM(D),</span>
+<span class="w">                                    </span><span class="c1">#                 ASIL_A, ASIL_A(A), ASIL_A(B), ASIL_A(C), ASIL_A(D),</span>
+<span class="w">                                    </span><span class="c1">#                 ASIL_B, ASIL_B(B), ASIL_B(C), ASIL_B(D),</span>
+<span class="w">                                    </span><span class="c1">#                 ASIL_C, ASIL_C(C), ASIL_C(D),</span>
+<span class="w">                                    </span><span class="c1">#                 ASIL_D, ASIL_D(D)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cal</span><span class="p">:</span><span class="w">                            </span><span class="c1"># one of: not_set (default), QM, CAL_1, CAL_2, CAL_3, CAL_4</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">review_status</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># one of: accepted, unclear, rejected, not_reviewed, not_relevant</span>
+<span class="w">                                    </span><span class="c1"># default: see below</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">comment</span><span class="p">:</span><span class="w">               </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">miscellaneous</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sources</span><span class="p">:</span><span class="w">               </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">refs</span><span class="p">:</span><span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span><span class="w">  </span><span class="c1"># any string, default: &quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<section id="document">
+<span id="id2"></span><h3>document<a class="headerlink" href="#document" title="Link to this heading"></a></h3>
+<p>The <strong>document</strong> name is mandatory and the first hierarchy level for the requirements.</p>
+<p>It is valid to specify the same <strong>document</strong> name in different files.
+The requirements will be merged into one chapter.</p>
+</section>
+<section id="metadata">
+<h3>metadata<a class="headerlink" href="#metadata" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">An optional string to describe the origin of the document, date, version, history, etc.</div>
+<div class="line">If input requirements are converted from a customer format to Dim, the metadata can be added here.</div>
+</div>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>metadata: |
+          Lastenheft ABC 1.2
+          Exported from xy/db/projectX/ABC on Jan 1, 2000
+</pre></div>
+</div>
+</section>
+<section id="enclosed">
+<h3>enclosed<a class="headerlink" href="#enclosed" title="Link to this heading"></a></h3>
+<p>An optional array to specify all files, which shall be copied when the requirements are exported.
+Usually the files are referred in the text section of the requirement with HTML tags:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">&lt;html&gt;&lt;img src=&quot;images/overview.png&quot; width=&quot;50%&quot;/&gt;&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>The files must be specified with relative paths. They must not include <code class="docutils literal notranslate"><span class="pre">..</span></code>.
+Use forward slashes <code class="docutils literal notranslate"><span class="pre">/</span></code>, not backslashes <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">enclosed</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/overview.png</span><span class="w"> </span><span class="c1"># ok</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../somewhere/else/main.png</span><span class="w"> </span><span class="c1"># not ok, Dim will report an error</span>
+</pre></div>
+</div>
+</section>
+<section id="id">
+<span id="id3"></span><h3>&lt;id&gt;<a class="headerlink" href="#id" title="Link to this heading"></a></h3>
+<p>Every requirement must have a unique ID.</p>
+</section>
+<section id="type">
+<h3>type<a class="headerlink" href="#type" title="Link to this heading"></a></h3>
+<p>Allowed values are <code class="docutils literal notranslate"><span class="pre">requirement</span></code> (default), <code class="docutils literal notranslate"><span class="pre">information</span></code>, <code class="docutils literal notranslate"><span class="pre">heading</span></code>, <code class="docutils literal notranslate"><span class="pre">heading_0</span></code>, …,
+<code class="docutils literal notranslate"><span class="pre">heading_100</span></code>.</p>
+</section>
+<section id="text">
+<h3>text<a class="headerlink" href="#text" title="Link to this heading"></a></h3>
+<p>This is the requirements <strong>text</strong>. Use regular YAML syntax, e.g. for preserving line breaks:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SRS_Feature_Aspect1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">This is a multiline requirement</span>
+<span class="w">        </span><span class="no">with preserved line breaks.</span>
+</pre></div>
+</div>
+<p>HTML tags are allowed, but they must be surrounded with &lt;html&gt;…&lt;/html&gt;:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SRS_Feature_Aspect2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">Now a HTML table follows:</span>
+<span class="w">        </span><span class="no">&lt;html&gt;</span>
+<span class="w">          </span><span class="no">&lt;table&gt;</span>
+<span class="w">            </span><span class="no">&lt;tr&gt;</span>
+<span class="w">              </span><span class="no">&lt;th&gt;Firstname&lt;/th&gt;</span>
+<span class="w">              </span><span class="no">&lt;th&gt;Lastname&lt;/th&gt;</span>
+<span class="w">              </span><span class="no">&lt;th&gt;Age&lt;/th&gt;</span>
+<span class="w">            </span><span class="no">&lt;/tr&gt;</span>
+<span class="w">            </span><span class="no">&lt;tr&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;John&lt;/td&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;Smith&lt;/td&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;40&lt;/td&gt;</span>
+<span class="w">            </span><span class="no">&lt;/tr&gt;</span>
+<span class="w">            </span><span class="no">&lt;tr&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;Jane&lt;/td&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;Doe&lt;/td&gt;</span>
+<span class="w">              </span><span class="no">&lt;td&gt;30&lt;/td&gt;</span>
+<span class="w">            </span><span class="no">&lt;/tr&gt;</span>
+<span class="w">          </span><span class="no">&lt;/table&gt;</span>
+<span class="w">        </span><span class="no">&lt;/html&gt;</span>
+<span class="w">        </span><span class="no">Now a picture:</span>
+<span class="w">        </span><span class="no">&lt;html&gt;&lt;img src=&quot;overview.png&quot; width=&quot;50%&quot;/&gt;&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="verification-criteria">
+<h3>verification_criteria<a class="headerlink" href="#verification-criteria" title="Link to this heading"></a></h3>
+<p>Can be empty. Describes what is needed to pass a test.</p>
+<p>If you have multiple <a class="reference internal" href="#verification-methods"><span class="std std-ref">verification_methods</span></a> defined, list what you expect from which method:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SRS_Abc_Def</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">verification_criteria</span><span class="p">:</span><span class="w">        </span><span class="p p-Indicator">|</span>
+<span class="w">                                </span><span class="no">off_target: ...</span>
+<span class="w">                                </span><span class="no">on_target: ...</span>
+<span class="w">  </span><span class="nt">verification_methods</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">off_target, on_target</span>
+</pre></div>
+</div>
+</section>
+<section id="feature">
+<h3>feature<a class="headerlink" href="#feature" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Can be empty. Describes to what feature the requirement belongs.</div>
+<div class="line">It can be a feature name, ticket ID or any other project specific string.</div>
+</div>
+</section>
+<section id="change-request">
+<h3>change_request<a class="headerlink" href="#change-request" title="Link to this heading"></a></h3>
+<p>Can be empty. Describes which change requests are associated with this requirement.</p>
+</section>
+<section id="status">
+<h3>status<a class="headerlink" href="#status" title="Link to this heading"></a></h3>
+<p>Allowed values are <code class="docutils literal notranslate"><span class="pre">draft</span></code>, <code class="docutils literal notranslate"><span class="pre">valid</span></code>, <code class="docutils literal notranslate"><span class="pre">invalid</span></code>.</p>
+<p>Default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">draft</span></code> if <strong>type</strong> is <em>requirement</em> or <em>information</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">valid</span></code> if <strong>type</strong> is a heading</p></li>
+</ul>
+</section>
+<section id="tags">
+<h3>tags<a class="headerlink" href="#tags" title="Link to this heading"></a></h3>
+<p>Tags are used to specify attributes of the <em>current</em> requirement, similar to hashtags on
+<a class="reference external" href="https://help.x.com/en/using-x/how-to-use-hashtags">X</a>.</p>
+<p>Some suggested tags:</p>
+<ul class="simple">
+<li><p><strong>covered</strong>: the requirement is fully derived, the references are complete</p></li>
+<li><p><strong>tested</strong>: the requirement is fully tested, no aspect is missing</p></li>
+<li><p><strong>cybersecurity_control</strong>: countermeasure to detect, prevent, reduce, or counteract security risks</p></li>
+<li><p><strong>functional_safety_mechanism</strong>: detect and correct the malfunctions according ISO-26262</p></li>
+<li><p><strong>confidentiality</strong>, <strong>integrity</strong>, <strong>availability</strong>, <strong>authenticity</strong>, <strong>authority</strong>: a specific
+aspects of security</p></li>
+<li><p><strong>legal</strong>: the requirement covers legal interests (compliance)</p></li>
+<li><p><strong>performance</strong>, <strong>memory</strong>: resource restrictions, response and cycle times,
+these requirements are good candidates for stress testing</p></li>
+<li><p><strong>structural</strong>: the requirement specifies how to set up the files, modules and workspace</p></li>
+<li><p><strong>configuration</strong>, <strong>calibration</strong>: requirements which focus on setting up the software</p></li>
+<li><p><strong>established</strong>: proven-in-use feature (may lower the priority for e.g. testing)</p></li>
+<li><p><strong>sys</strong>: used as input for system requirements, this means the input requirement defines system
+behavior and shall link directly to the derived system requirements (only for input requirements)</p></li>
+<li><p><strong>srs</strong>: used as input for software requirements, this means the input requirement is on a black
+box level and shall link to derived software requirements (only for input requirements)</p></li>
+<li><p><strong>swa</strong>: used as input for software architectural specifications, this means the input requirement
+defines specific aspects of the software architecture and shall link directly to the derived
+software architecture specifications (only for input requirements)</p></li>
+<li><p><strong>smd</strong>: used as input for software module designs, this means the input requirement already
+defines specific characteristics of a software module design and shall link directly to the
+derived software module designs (only for input requirements)</p></li>
+<li><p><strong>process</strong>, <strong>test</strong>: used as input for (test) processes, this means the input requirement
+defines a development/project process rather than system/software behavior and shall link directly
+to a (test) process document (only for input requirements)</p></li>
+<li><p><strong>obd</strong>: this means the input requirement has an impact on the onboard diagnosis of the car</p></li>
+<li><p><strong>emission_doc</strong>: the requirement impacts the emission strategy of the car</p></li>
+<li><p><strong>emission_tailpipe</strong>: the requirement has an impact on either the range, consumption, or the
+emission of the car</p></li>
+<li><p><strong>emission_performance</strong>: the requirement has an impact on the cars performance values which are
+specified in the homologation of the car</p></li>
+<li><p><strong>unit</strong>, <strong>interface</strong>: unit specification or architectural interface</p></li>
+<li><p><strong>tool</strong>: the requirement does not specify target software but a tool</p></li>
+<li><p><strong>non_functional</strong>: marks a non-functional requirement</p></li>
+</ul>
+</section>
+<section id="developer">
+<h3>developer<a class="headerlink" href="#developer" title="Link to this heading"></a></h3>
+<p>Used to assign the development responsible. It can be any string.</p>
+<p>Default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> if <strong>type</strong> is not <em>requirement</em> OR <strong>category</strong> is <em>input</em> OR a single file is loaded
+without config.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;originator&gt;</span></code> from the config file otherwise.</p></li>
+</ul>
+</section>
+<section id="tester">
+<h3>tester<a class="headerlink" href="#tester" title="Link to this heading"></a></h3>
+<p>Used to assign the testing responsible. It can be any string.</p>
+<p>Default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> if <strong>type</strong> is not <em>requirement</em>  OR <strong>category</strong> is <em>input</em> OR a single file is loaded
+without config OR <em>process</em> is in <strong>tags</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;originator&gt;</span></code> from the config file otherwise.</p></li>
+</ul>
+</section>
+<section id="verification-methods">
+<span id="id4"></span><h3>verification_methods<a class="headerlink" href="#verification-methods" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The verification methods can be: <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">off_target</span></code>, <code class="docutils literal notranslate"><span class="pre">on_target</span></code>, <code class="docutils literal notranslate"><span class="pre">manual</span></code>.</div>
+<div class="line">Multiple values are allowed, comma separated.</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">off_target</span></code> is used if a requirement is tested without target hardware on a PC, written in e.g.
+rspec, gtest, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_target</span></code> is used if a requirement is tested on the target hardware</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">manual</span></code> is used if a requirement is tested with a manual tests e.g. code review etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> is used if a requirement can/shall not be tested directly.</p></li>
+</ul>
+<p>Default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> if <strong>type</strong> is not <em>requirement</em> OR <strong>category</strong> is <em>input</em> OR a single file is loaded
+without config OR <em>process</em> is in <strong>tags</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">off_target</span></code> if <strong>category</strong> is <em>module</em> or <strong>tags</strong> include <em>tool</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_target</span></code> otherwise.</p></li>
+</ul>
+</section>
+<section id="asil">
+<span id="id5"></span><h3>asil<a class="headerlink" href="#asil" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The <strong>asil</strong> level. Possible values see above.</div>
+<div class="line">Default is <code class="docutils literal notranslate"><span class="pre">not_set</span></code>.</div>
+</div>
+</section>
+<section id="cal">
+<span id="id6"></span><h3>cal<a class="headerlink" href="#cal" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Specifies the <em>Cybersecurity Assistance Level</em>, can be <code class="docutils literal notranslate"><span class="pre">QM</span></code>, <code class="docutils literal notranslate"><span class="pre">CAL_1</span></code>, <code class="docutils literal notranslate"><span class="pre">CAL_2</span></code>, <code class="docutils literal notranslate"><span class="pre">CAL_3</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CAL_4</span></code> and <code class="docutils literal notranslate"><span class="pre">not_set</span></code>.</div>
+<div class="line">Default is <code class="docutils literal notranslate"><span class="pre">not_set</span></code>.</div>
+</div>
+</section>
+<section id="review-status">
+<h3>review_status<a class="headerlink" href="#review-status" title="Link to this heading"></a></h3>
+<p>Can be <code class="docutils literal notranslate"><span class="pre">accepted</span></code>, <code class="docutils literal notranslate"><span class="pre">unclear</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">not_reviewed</span></code>, <code class="docutils literal notranslate"><span class="pre">not_relevant</span></code>.</p>
+<p>Default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not_reviewed</span></code> if <strong>category</strong> is <em>input</em> OR a single file is loaded without config.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">accepted</span></code> otherwise. It is assumed that files are reviewed in a source control system.</p></li>
+</ul>
+</section>
+<section id="comment">
+<h3>comment<a class="headerlink" href="#comment" title="Link to this heading"></a></h3>
+<p>Add comments here inclusive name of the commenter and the date.</p>
+</section>
+<section id="miscellaneous">
+<h3>miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading"></a></h3>
+<p>Can be used to store project specific information. Usually left empty.</p>
+</section>
+<section id="sources">
+<h3>sources<a class="headerlink" href="#sources" title="Link to this heading"></a></h3>
+<p>A comma separated list of source code files. No check for existence.</p>
+</section>
+<section id="refs">
+<h3>refs<a class="headerlink" href="#refs" title="Link to this heading"></a></h3>
+<p>A comma separated list of all references to other <em>requirements</em>. All these references must exist!</p>
+<p>A requirement can refer to other requirements from different categories, e.g. a requirement
+in <cite>software</cite> category can refer to requirements from <cite>input</cite> or <cite>module</cite> category.
+When references occur within the same category, they are understood as flowing from the broader
+or more general level (the parent) to the more specific or detailed ones (the derived child).
+This means that within a given category, any references are typically understood in terms of how the
+overarching requirements relate to the more specialized ones within that same category.</p>
+<p>Considering the following requirements from different categories and references shown in the
+sample config:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># category system</span>
+
+<span class="nt">SYS_Requirement_1</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">refs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SRS_Requirement_1</span>
+
+<span class="l l-Scalar l-Scalar-Plain">------------------</span>
+
+<span class="c1"># category software</span>
+
+<span class="nt">SRS_Requirement_1</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">refs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SWA_Architecture_1</span>
+
+<span class="nt">SRS_Requirement_2</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">refs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SRS_Requirement_1</span>
+
+<span class="l l-Scalar l-Scalar-Plain">------------------</span>
+
+<span class="c1"># category architecture</span>
+
+<span class="nt">SWA_Architecture_1</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">refs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_Requirement_1, SRS_Requirement_2</span>
+</pre></div>
+</div>
+<p>It looks like there is a cycle in above example, but</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SRS_Requirement_1 -&gt; SWA_Architecture_1 -&gt; SRS_Requirement_1 -&gt; SRS_Requirement_1
+</pre></div>
+</div>
+<p>is not considered a circular dependency, because</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SWA_Architecture_1 -&gt; SRS_Requirement_2
+</pre></div>
+</div>
+<p>is an upstream reference. Circular dependency can only occur at same category level.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Following <em>refs</em> in a Ruby script might end up in an endless loop, it is recommended
+to follow <em>upstreamRefs</em> or <em>downstreamRefs</em>, see <a class="reference internal" href="../api.html#data-access"><span class="std std-ref">Data Access</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="other-languages">
+<h2>Other Languages<a class="headerlink" href="#other-languages" title="Link to this heading"></a></h2>
+<p>The attributes <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">verification_criteria</span></code> and <code class="docutils literal notranslate"><span class="pre">comment</span></code> can be added in other languages
+with the following syntax:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;attribute name&gt;_&lt;language name&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SRS_Feature_Aspect</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">This is a requirement.</span>
+<span class="w">  </span><span class="nt">text_german</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">Das ist eine Anforderung.</span>
+<span class="w">  </span><span class="nt">comment</span><span class="p">:</span><span class="w">              </span><span class="l l-Scalar l-Scalar-Plain">This is a comment.</span>
+<span class="w">  </span><span class="nt">comment_german</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">Das ist ein Kommentar.</span>
+<span class="w">  </span><span class="nt">comment_french</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">C&#39;est un commentaire.</span>
+</pre></div>
+</div>
+<p>Once used, a language attribute is valid for all requirements. When using the export feature
+or the Ruby API the value will be an empty string if not specified otherwise.</p>
+</section>
+<section id="short-forms">
+<h2>Short Forms<a class="headerlink" href="#short-forms" title="Link to this heading"></a></h2>
+<p>Short forms are possible for <em>headings</em> and <em>information</em>. Instead of defining the <strong>type</strong>
+<em>heading_0</em> to <em>heading_100</em> and <em>information</em>, the strings <em>h0</em> to <em>h100</em> and <em>info</em> can be
+prepended to the <strong>text</strong>.</p>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module_Abc_Xy1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Long form</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heading_1</span>
+
+<span class="nt">Module_Abc_Xy2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h1 Shorter form</span>
+</pre></div>
+</div>
+<p>Usually headings and information have no additional attributes. In this case, they can be written
+even shorter:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module_Abc_Xy3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">h1      Even shorter</span>
+
+<span class="nt">Module_Abc_Xy4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info    Multi-line information</span>
+<span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">is demonstrated here.</span>
+</pre></div>
+</div>
+<p>The whitespaces before and after the type are ignored in both short forms.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:41, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/syntax/requirement.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

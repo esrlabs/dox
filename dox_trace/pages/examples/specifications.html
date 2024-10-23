@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specifications &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Traceability Report" href="report.html" />
+    <link rel="prev" title="Backward Compatibility" href="../user/backward.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#specification-with-image">Specification With Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-with-source-file">Unit With Source File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-specification">Invalid Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#information">Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirement-derivation">Requirement Derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Specifications</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specifications">
+<h1>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h1>
+<section id="specification-with-image">
+<h2>Specification With Image<a class="headerlink" href="#specification-with-image" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_example_abc
+    <span class="nc">:refs:</span> SMD_example_xy
+    <span class="nc">:asil:</span> ASIL_A
+    <span class="nc">:tags:</span> integrity, covered, tested
+    <span class="nc">:verification_criteria:</span> Do carefully abc...
+
+    Example SWA content...
+
+<span class="p">    ..</span> <span class="ow">image</span><span class="p">::</span> ../_static/example.png
+
+    Please look at <span class="na">:ref:</span><span class="nv">`SMD_example_xy`</span>.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="swa_example_abc"><span class="pre">[spec]</span> <a class="reference internal" href="#swa_example_abc"><span class="pre">SWA_example_abc</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> ASIL_A | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <strong>Tags:</strong> integrity, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Example SWA content…</p>
+<img alt="../../_images/example.png" src="../../_images/example.png" />
+<p>Please look at <a class="reference internal" href="#smd_example_xy"><span class="std std-ref">xy</span></a>.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <strong>Verification Criteria:</strong> <span>Do carefully abc…</span><br>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey"><strong>Downstream References:</strong> <a class="reference internal" href="#smd_example_xy">SMD_example_xy</a><br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="unit-with-source-file">
+<h2>Unit With Source File<a class="headerlink" href="#unit-with-source-file" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_example_xy
+    <span class="nc">:sources:</span> ../_static/module1/include/source2.h
+    <span class="nc">:asil:</span> ASIL_A
+    <span class="nc">:tags:</span> integrity, covered, tested
+
+    This unit does xy.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-unit docutils literal notranslate" id="smd_example_xy"><span class="pre">[unit]</span> <a class="reference internal" href="#smd_example_xy"><span class="pre">SMD_example_xy</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> ASIL_A | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey"> | <strong>Upstream Asil:</strong> ASIL_A</span></span><span><span class="dox-trace-grey"> | <strong>Upstream Cal:</strong> not_set</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> off_target<br>
+        <strong>Tags:</strong> integrity, covered, tested<span><span class="dox-trace-grey"> | <strong>Upstream Tags:</strong> covered, integrity, tested</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>This unit does xy.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey"><strong>Upstream References:</strong> <a class="reference internal" href="#swa_example_abc">SWA_example_abc</a><br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
+        <strong>Sources:</strong> ../_static/module1/include/source2.h
+    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="invalid-specification">
+<h2>Invalid Specification<a class="headerlink" href="#invalid-specification" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_example_inv
+    <span class="nc">:status:</span> invalid
+
+    <span class="ge">*invalid*</span> and <span class="ge">*rejected*</span> specifications are struck through.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<div style="position: relative">
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative; opacity: 0.5">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-unit docutils literal notranslate" id="smd_example_inv"><span class="pre">[unit]</span> <a class="reference internal" href="#smd_example_inv"><span class="pre">SMD_example_inv</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> invalid</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-empty"><strong>Developer:</strong> -</span><span class="dox-trace-attribute-empty"> | <strong>Tester:</strong> -</span> | <strong>Verification Methods:</strong> off_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p><em>invalid</em> and <em>rejected</em> specifications are struck through.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
+        <span class="dox-trace-attribute-empty"><strong>Sources:</strong> -</span>
+    </p></td></tr>
+    </tbody>
+</table>
+<div class="dox-trace-initially-hidden dox-trace-strikethrough-table"></div>
+</div>
+</section>
+<section id="information">
+<h2>Information<a class="headerlink" href="#information" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">information</span><span class="p">::</span> Input_example_info
+
+    Some information.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-information docutils literal notranslate" id="input_example_info"><span class="pre">[information]</span> <a class="reference internal" href="#input_example_info"><span class="pre">Input_example_info</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Some information.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Comment:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Miscellaneous:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="requirement-derivation">
+<h2>Requirement Derivation<a class="headerlink" href="#requirement-derivation" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">requirement</span><span class="p">::</span> Customer_DeriveParent_1
+    <span class="nc">:category:</span> input
+    <span class="nc">:asil:</span> ASIL_B
+    <span class="nc">:feature:</span> F1
+    <span class="nc">:refs:</span> SRS_DeriveParent_1
+    <span class="nc">:developer:</span> Abc AG
+    <span class="nc">:status:</span> valid
+    <span class="nc">:review_status:</span> accepted
+
+    Generated by Dim.
+
+<span class="p">..</span> <span class="ow">requirement</span><span class="p">::</span> SRS_DeriveParent_1
+    <span class="nc">:refs:</span> SWA_DeriveParent_1
+    <span class="nc">:asil:</span> ASIL_C
+    <span class="nc">:category:</span> software
+    <span class="nc">:developer:</span> Abc AG
+    <span class="nc">:status:</span> valid
+
+    Generated by Dim.
+
+<span class="p">..</span> <span class="ow">srs</span><span class="p">::</span> SRS_DeriveParent_2
+    <span class="nc">:refs:</span> SWA_DeriveParent_1
+    <span class="nc">:asil:</span> ASIL_D
+
+    Self-written in RST.
+
+<span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_DeriveParent_1
+    <span class="nc">:status:</span> valid
+    <span class="nc">:refs:</span> SMD_DeriveParent_1
+
+    Self-written in RST.
+
+    &quot;Upstream Asil&quot; only from direct parent, &quot;Derived Feature&quot; from complete tree.
+
+<span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_DeriveParent_1
+    <span class="nc">:status:</span> valid
+    <span class="nc">:sources:</span> ../_static/module1/include/source2.h
+
+    The unit description.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-requirement docutils literal notranslate" id="customer_deriveparent_1"><span class="pre">[requirement]</span> <a class="reference internal" href="#customer_deriveparent_1"><span class="pre">Customer_DeriveParent_1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid | <strong>Review Status:</strong> accepted</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> ASIL_B | <strong>Cal:</strong> not_set<br>
+        <strong>Developer:</strong> Abc AG<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span><span class="dox-trace-attribute-empty"> | <strong>Verification Methods:</strong> -</span><br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Generated by Dim.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Comment:</strong> -<br></span>
+        <strong>Feature:</strong> <span>F1</span><br>
+        <span class="dox-trace-attribute-empty"><strong>Change Request:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Miscellaneous:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey"><strong>Downstream References:</strong> <a class="reference internal" href="#srs_deriveparent_1">SRS_DeriveParent_1</a><br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-requirement docutils literal notranslate" id="srs_deriveparent_1"><span class="pre">[requirement]</span> <a class="reference internal" href="#srs_deriveparent_1"><span class="pre">SRS_DeriveParent_1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> ASIL_C | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey"> | <strong>Upstream Asil:</strong> ASIL_B</span></span><span><span class="dox-trace-grey"> | <strong>Upstream Cal:</strong> not_set</span></span><br>
+        <strong>Developer:</strong> Abc AG<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span><span class="dox-trace-attribute-empty"> | <strong>Verification Methods:</strong> -</span><br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Generated by Dim.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-missing"><strong>Verification Criteria:</strong> [missing]<br></span>
+        <span><span class="dox-trace-grey"><strong>Derived Feature:</strong> F1<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey"><strong>Upstream References:</strong> <a class="reference internal" href="#customer_deriveparent_1">Customer_DeriveParent_1</a><br></span></span>
+        <span><span class="dox-trace-grey"><strong>Downstream References:</strong> <a class="reference internal" href="#swa_deriveparent_1">SWA_DeriveParent_1</a><br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-srs docutils literal notranslate" id="srs_deriveparent_2"><span class="pre">[srs]</span> <a class="reference internal" href="#srs_deriveparent_2"><span class="pre">SRS_DeriveParent_2</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> ASIL_D | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Self-written in RST.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-missing"><strong>Verification Criteria:</strong> [missing]<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey"><strong>Downstream References:</strong> <a class="reference internal" href="#swa_deriveparent_1">SWA_DeriveParent_1</a><br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="swa_deriveparent_1"><span class="pre">[spec]</span> <a class="reference internal" href="#swa_deriveparent_1"><span class="pre">SWA_DeriveParent_1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey"> | <strong>Upstream Asil:</strong> ASIL_C, ASIL_D</span></span><span><span class="dox-trace-grey"> | <strong>Upstream Cal:</strong> not_set</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Self-written in RST.</p>
+<p>“Upstream Asil” only from direct parent, “Derived Feature” from complete tree.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey"><strong>Derived Feature:</strong> F1<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey"><strong>Upstream References:</strong> <a class="reference internal" href="#srs_deriveparent_1">SRS_DeriveParent_1</a>, <a class="reference internal" href="#srs_deriveparent_2">SRS_DeriveParent_2</a><br></span></span>
+        <span><span class="dox-trace-grey"><strong>Downstream References:</strong> <a class="reference internal" href="#smd_deriveparent_1">SMD_DeriveParent_1</a><br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-unit docutils literal notranslate" id="smd_deriveparent_1"><span class="pre">[unit]</span> <a class="reference internal" href="#smd_deriveparent_1"><span class="pre">SMD_DeriveParent_1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey"> | <strong>Upstream Asil:</strong> not_set</span></span><span><span class="dox-trace-grey"> | <strong>Upstream Cal:</strong> not_set</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> off_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>The unit description.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey"><strong>Derived Feature:</strong> F1<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey"><strong>Upstream References:</strong> <a class="reference internal" href="#swa_deriveparent_1">SWA_DeriveParent_1</a><br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
+        <strong>Sources:</strong> ../_static/module1/include/source2.h
+    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h2>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">mod</span><span class="p">::</span> SWA_mod_module1
+    <span class="nc">:location:</span> pages/_static/module1
+    <span class="nc">:reuse:</span> yes
+    <span class="nc">:usage:</span> production
+    <span class="nc">:developer:</span> Abc AG
+    <span class="nc">:status:</span> valid
+
+    Best module ever.
+
+<span class="p">..</span> <span class="ow">mod</span><span class="p">::</span> SWA_mod_module2
+    <span class="nc">:location:</span> pages/_static/module2
+    <span class="nc">:reuse:</span> no
+    <span class="nc">:usage:</span> production
+    <span class="nc">:developer:</span> Supplier X
+
+    Does this and that.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-mod docutils literal notranslate" id="swa_mod_module1"><span class="pre">[mod]</span> <a class="reference internal" href="#swa_mod_module1"><span class="pre">SWA_mod_module1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set | <strong>Reuse:</strong> yes | <strong>Usage:</strong> production<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> Abc AG
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Best module ever.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <strong>Location:</strong> <span><a class="reference internal" href="../_static/module1/doc/index.html"><span class="doc">pages/_static/module1</span></a></span>
+    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-mod docutils literal notranslate" id="swa_mod_module2"><span class="pre">[mod]</span> <a class="reference internal" href="#swa_mod_module2"><span class="pre">SWA_mod_module2</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set | <strong>Reuse:</strong> no | <strong>Usage:</strong> production<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> Supplier X
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Does this and that.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <strong>Location:</strong> <span><a class="reference internal" href="../_static/module2/doc/index.html"><span class="doc">pages/_static/module2</span></a></span>
+    </p></td></tr>
+    </tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/examples/specifications.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

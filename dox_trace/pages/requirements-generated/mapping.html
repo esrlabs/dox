@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Case Mapping &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Statistics" href="stats.html" />
+    <link rel="prev" title="dox_trace" href="dox_trace/Requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Test Case Mapping</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="test-case-mapping">
+<h1>Test Case Mapping<a class="headerlink" href="#test-case-mapping" title="Link to this heading"></a></h1>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 28.6%" />
+<col style="width: 23.8%" />
+<col style="width: 47.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirements ID</p></th>
+<th class="head"><p>Test Case Location</p></th>
+<th class="head"><p>Test Case Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_build_single"><span class="std std-ref">DoxTrace_Build_Single</span></a></p></td>
+<td><p>spec/parallel_spec.rb:12</p></td>
+<td><p>dox_trace shall support single-threaded build on all platforms</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_build_multi"><span class="std std-ref">DoxTrace_Build_Multi</span></a></p></td>
+<td><p>spec/parallel_spec.rb:32</p></td>
+<td><p>dox_trace shall support parallel build on all platforms</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_types"><span class="std std-ref">DoxTrace_Syntax_Types</span></a></p></td>
+<td><p>spec/directives_spec.rb:11</p></td>
+<td><p>dox_trace shall provide the directives requirement, information, srs, spec, unit and interface</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_structure"><span class="std std-ref">DoxTrace_Syntax_Structure</span></a></p></td>
+<td><p>spec/directives_spec.rb:24</p></td>
+<td><p>dox_trace shall provide optional attributes and content for the directives</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/directives_spec.rb:31</p></td>
+<td><p>dox_trace shall provide a mandatory ID argument for the directives</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/directives_spec.rb:44</p></td>
+<td><p>dox_trace shall abort the build with an appropriate error message if the ID argument for a directive is missing</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/directives_spec.rb:55</p></td>
+<td><p>dox_trace shall abort the build with appropriate error message if an empty line is missing before the content</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_anchor"><span class="std std-ref">DoxTrace_Syntax_Anchor</span></a></p></td>
+<td><p>spec/general_spec.rb:12</p></td>
+<td><p>dox_trace in general shall create anchors for every specification</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_stripped"><span class="std std-ref">DoxTrace_Syntax_Stripped</span></a></p></td>
+<td><p>spec/general_spec.rb:24</p></td>
+<td><p>dox_trace in general shall strip the attribute values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_empty"><span class="std std-ref">DoxTrace_Syntax_Empty</span></a></p></td>
+<td><p>spec/general_spec.rb:33</p></td>
+<td><p>dox_trace in general shall treat empty values as empty strings</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_multi"><span class="std std-ref">DoxTrace_Syntax_Multi</span></a></p></td>
+<td><p>spec/general_spec.rb:45</p></td>
+<td><p>dox_trace in general shall load multi-enum attributes correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_freetext"><span class="std std-ref">DoxTrace_Syntax_FreeText</span></a></p></td>
+<td><p>spec/general_spec.rb:62</p></td>
+<td><p>dox_trace in general shall load free-text attributes and the content correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_newlines"><span class="std std-ref">DoxTrace_Syntax_Newlines</span></a></p></td>
+<td><p>spec/general_spec.rb:80</p></td>
+<td><p>dox_trace in general shall preserve newlines in attributes expect line ends with backslash</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_status"><span class="std std-ref">DoxTrace_Syntax_Status</span></a></p></td>
+<td><p>spec/status_spec.rb:12</p></td>
+<td><p>The attribute status with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/status_spec.rb:39</p></td>
+<td><p>The attribute status with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_reviewstatus"><span class="std std-ref">DoxTrace_Syntax_ReviewStatus</span></a></p></td>
+<td><p>spec/review_status_spec.rb:11</p></td>
+<td><p>The attribute review_status with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/review_status_spec.rb:32</p></td>
+<td><p>The attribute review_status with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_asil"><span class="std std-ref">DoxTrace_Syntax_Asil</span></a></p></td>
+<td><p>spec/asil_spec.rb:11</p></td>
+<td><p>The attribute asil with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/asil_spec.rb:38</p></td>
+<td><p>The attribute asil with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_cal"><span class="std std-ref">DoxTrace_Syntax_Cal</span></a></p></td>
+<td><p>spec/cal_spec.rb:11</p></td>
+<td><p>The attribute cal with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/cal_spec.rb:49</p></td>
+<td><p>The attribute cal with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_security"><span class="std std-ref">DoxTrace_Syntax_Security</span></a></p></td>
+<td><p>spec/security_spec.rb:11</p></td>
+<td><p>The attribute security with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/security_spec.rb:51</p></td>
+<td><p>The attribute security with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_securitytocal"><span class="std std-ref">DoxTrace_Syntax_SecurityToCal</span></a></p></td>
+<td><p>spec/cal_spec.rb:38</p></td>
+<td><p>The attribute cal with correct syntax shall derive the value from security if cal is not defined</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_caltosecurity"><span class="std std-ref">DoxTrace_Syntax_CalToSecurity</span></a></p></td>
+<td><p>spec/security_spec.rb:38</p></td>
+<td><p>The attribute security with correct syntax shall derive the value from cal if security is not defined</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_reuse"><span class="std std-ref">DoxTrace_Syntax_Reuse</span></a></p></td>
+<td><p>spec/reuse_spec.rb:11</p></td>
+<td><p>The attribute reuse with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/reuse_spec.rb:31</p></td>
+<td><p>The attribute reuse specified in a requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/reuse_spec.rb:44</p></td>
+<td><p>The attribute reuse specified in a information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/reuse_spec.rb:57</p></td>
+<td><p>The attribute reuse specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/reuse_spec.rb:70</p></td>
+<td><p>The attribute reuse specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/reuse_spec.rb:83</p></td>
+<td><p>The attribute reuse specified in a interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/reuse_spec.rb:96</p></td>
+<td><p>The attribute reuse specified in a srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_usage"><span class="std std-ref">DoxTrace_Syntax_Usage</span></a></p></td>
+<td><p>spec/usage_spec.rb:11</p></td>
+<td><p>The attribute usage with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/usage_spec.rb:31</p></td>
+<td><p>The attribute usage specified in a requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/usage_spec.rb:44</p></td>
+<td><p>The attribute usage specified in a information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/usage_spec.rb:57</p></td>
+<td><p>The attribute usage specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/usage_spec.rb:70</p></td>
+<td><p>The attribute usage specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/usage_spec.rb:83</p></td>
+<td><p>The attribute usage specified in a interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/usage_spec.rb:96</p></td>
+<td><p>The attribute usage specified in a srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_developer"><span class="std std-ref">DoxTrace_Syntax_Developer</span></a></p></td>
+<td><p>spec/developer_spec.rb:11</p></td>
+<td><p>The attribute developer with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/developer_spec.rb:36</p></td>
+<td><p>The attribute developer with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/developer_spec.rb:66</p></td>
+<td><p>The attribute developer specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_tester"><span class="std std-ref">DoxTrace_Syntax_Tester</span></a></p></td>
+<td><p>spec/tester_spec.rb:11</p></td>
+<td><p>The attribute tester with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tester_spec.rb:40</p></td>
+<td><p>The attribute tester with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tester_spec.rb:67</p></td>
+<td><p>The attribute tester specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tester_spec.rb:80</p></td>
+<td><p>The attribute tester specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_testsetups"><span class="std std-ref">DoxTrace_Syntax_TestSetups</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:11</p></td>
+<td><p>The attribute test_setups with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/test_setups_spec.rb:45</p></td>
+<td><p>The attribute test_setups with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/test_setups_spec.rb:76</p></td>
+<td><p>The attribute test_setups specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/test_setups_spec.rb:89</p></td>
+<td><p>The attribute test_setups specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_verificationmethods"><span class="std std-ref">DoxTrace_Syntax_VerificationMethods</span></a></p></td>
+<td><p>spec/verification_methods_spec.rb:11</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_methods_spec.rb:45</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_methods_spec.rb:76</p></td>
+<td><p>The attribute verification_methods specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_methods_spec.rb:89</p></td>
+<td><p>The attribute verification_methods specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_methods_spec.rb:102</p></td>
+<td><p>The attribute verification_methods specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_testsetupstoverificationmethods"><span class="std std-ref">DoxTrace_Syntax_TestSetupsToVerificationMethods</span></a></p></td>
+<td><p>spec/verification_methods_spec.rb:35</p></td>
+<td><p>The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_verificationmethodstotestsetups"><span class="std std-ref">DoxTrace_Syntax_VerificationMethodsToTestSetups</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:35</p></td>
+<td><p>The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_tags"><span class="std std-ref">DoxTrace_Syntax_Tags</span></a></p></td>
+<td><p>spec/tags_spec.rb:12</p></td>
+<td><p>The attribute tags with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tags_spec.rb:38</p></td>
+<td><p>The attribute tags with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tags_spec.rb:66</p></td>
+<td><p>The attribute tags specified in a mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_verificationcriteria"><span class="std std-ref">DoxTrace_Syntax_VerificationCriteria</span></a></p></td>
+<td><p>spec/verification_criteria_spec.rb:11</p></td>
+<td><p>The attribute verification_criteria with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_criteria_spec.rb:41</p></td>
+<td><p>The attribute verification_criteria with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_criteria_spec.rb:69</p></td>
+<td><p>The attribute verification_criteria specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_criteria_spec.rb:82</p></td>
+<td><p>The attribute verification_criteria specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_comment"><span class="std std-ref">DoxTrace_Syntax_Comment</span></a></p></td>
+<td><p>spec/comment_spec.rb:11</p></td>
+<td><p>The attribute comment with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/comment_spec.rb:33</p></td>
+<td><p>The attribute comment specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/comment_spec.rb:46</p></td>
+<td><p>The attribute comment specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/comment_spec.rb:59</p></td>
+<td><p>The attribute comment specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/comment_spec.rb:72</p></td>
+<td><p>The attribute comment specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/comment_spec.rb:85</p></td>
+<td><p>The attribute comment specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_miscellaneous"><span class="std std-ref">DoxTrace_Syntax_Miscellaneous</span></a></p></td>
+<td><p>spec/miscellaneous_spec.rb:11</p></td>
+<td><p>The attribute miscellaneous with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/miscellaneous_spec.rb:33</p></td>
+<td><p>The attribute miscellaneous specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/miscellaneous_spec.rb:46</p></td>
+<td><p>The attribute miscellaneous specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/miscellaneous_spec.rb:59</p></td>
+<td><p>The attribute miscellaneous specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/miscellaneous_spec.rb:72</p></td>
+<td><p>The attribute miscellaneous specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/miscellaneous_spec.rb:85</p></td>
+<td><p>The attribute miscellaneous specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_feature"><span class="std std-ref">DoxTrace_Syntax_Feature</span></a></p></td>
+<td><p>spec/feature_spec.rb:11</p></td>
+<td><p>The attribute feature with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/feature_spec.rb:29</p></td>
+<td><p>The attribute feature specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/feature_spec.rb:42</p></td>
+<td><p>The attribute feature specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/feature_spec.rb:55</p></td>
+<td><p>The attribute feature specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/feature_spec.rb:68</p></td>
+<td><p>The attribute feature specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/feature_spec.rb:81</p></td>
+<td><p>The attribute feature specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/feature_spec.rb:94</p></td>
+<td><p>The attribute feature specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_changerequest"><span class="std std-ref">DoxTrace_Syntax_ChangeRequest</span></a></p></td>
+<td><p>spec/change_request_spec.rb:11</p></td>
+<td><p>The attribute change_request with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/change_request_spec.rb:29</p></td>
+<td><p>The attribute change_request specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/change_request_spec.rb:42</p></td>
+<td><p>The attribute change_request specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/change_request_spec.rb:55</p></td>
+<td><p>The attribute change_request specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/change_request_spec.rb:68</p></td>
+<td><p>The attribute change_request specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/change_request_spec.rb:81</p></td>
+<td><p>The attribute change_request specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/change_request_spec.rb:94</p></td>
+<td><p>The attribute change_request specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_sources"><span class="std std-ref">DoxTrace_Syntax_Sources</span></a></p></td>
+<td><p>spec/sources_spec.rb:11</p></td>
+<td><p>The attribute sources with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/sources_spec.rb:43</p></td>
+<td><p>The attribute sources with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/sources_spec.rb:75</p></td>
+<td><p>The attribute sources specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/sources_spec.rb:88</p></td>
+<td><p>The attribute sources specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_refs"><span class="std std-ref">DoxTrace_Syntax_Refs</span></a></p></td>
+<td><p>spec/downstream_references_spec.rb:11</p></td>
+<td><p>The calculated attribute Downstream References with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/downstream_references_spec.rb:42</p></td>
+<td><p>The calculated attribute Downstream References with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/refs_spec.rb:12</p></td>
+<td><p>The attribute refs specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_location"><span class="std std-ref">DoxTrace_Syntax_Location</span></a></p></td>
+<td><p>spec/location_spec.rb:11</p></td>
+<td><p>The attribute location with correct syntax shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/location_spec.rb:47</p></td>
+<td><p>The attribute location specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/location_spec.rb:60</p></td>
+<td><p>The attribute location specified in an requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/location_spec.rb:73</p></td>
+<td><p>The attribute location specified in an spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/location_spec.rb:86</p></td>
+<td><p>The attribute location specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/location_spec.rb:99</p></td>
+<td><p>The attribute location specified in an unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/location_spec.rb:112</p></td>
+<td><p>The attribute location specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_category"><span class="std std-ref">DoxTrace_Syntax_Category</span></a></p></td>
+<td><p>spec/category_spec.rb:11</p></td>
+<td><p>The attribute category with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/category_spec.rb:38</p></td>
+<td><p>The attribute category specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/category_spec.rb:51</p></td>
+<td><p>The attribute category specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/category_spec.rb:64</p></td>
+<td><p>The attribute category specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/category_spec.rb:77</p></td>
+<td><p>The attribute category specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/category_spec.rb:90</p></td>
+<td><p>The attribute category specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_syntax_ignoreinexport"><span class="std std-ref">DoxTrace_Syntax_IgnoreInExport</span></a></p></td>
+<td><p>spec/ignore_in_export_spec.rb:12</p></td>
+<td><p>The attribute ignore_in_export if set shall disable the export of the particular specification</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_cyclic"><span class="std std-ref">DoxTrace_Checks_Cyclic</span></a></p></td>
+<td><p>spec/checks_spec.rb:10</p></td>
+<td><p>dox_trace shall check for self-references and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:21</p></td>
+<td><p>dox_trace shall check for cyclic references through several specifications and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:32</p></td>
+<td><p>dox_trace shall check for cyclic references not through several levels and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_invalidrefs"><span class="std std-ref">DoxTrace_Checks_InvalidRefs</span></a></p></td>
+<td><p>spec/checks_spec.rb:43</p></td>
+<td><p>dox_trace shall check for invalid references and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_case"><span class="std std-ref">DoxTrace_Checks_Case</span></a></p></td>
+<td><p>spec/checks_spec.rb:54</p></td>
+<td><p>dox_trace shall check for references with wrong case and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_sources"><span class="std std-ref">DoxTrace_Checks_Sources</span></a></p></td>
+<td><p>spec/checks_spec.rb:65</p></td>
+<td><p>dox_trace shall check for sources in spec which do not exist and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:76</p></td>
+<td><p>dox_trace shall check for sources in unit which do not exist and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:87</p></td>
+<td><p>dox_trace shall check for sources in interface which do not exist and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:98</p></td>
+<td><p>dox_trace shall check for sources in srs which do not exist and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:109</p></td>
+<td><p>dox_trace shall not check for invalid sources in requirement and not abort the build in these cases</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_comments"><span class="std std-ref">DoxTrace_Checks_Comments</span></a></p></td>
+<td><p>spec/checks_spec.rb:119</p></td>
+<td><p>dox_trace shall check for invalid comment “spec:” and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:130</p></td>
+<td><p>dox_trace shall check for invalid comment “:unit:” and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:141</p></td>
+<td><p>dox_trace shall check for invalid comment “interface” and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:152</p></td>
+<td><p>dox_trace shall check for invalid comment “:mod” and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:163</p></td>
+<td><p>dox_trace shall check for invalid comment “srs..” and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:174</p></td>
+<td><p>dox_trace shall ignore valid comments and not abort the build in these cases</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_unique"><span class="std std-ref">DoxTrace_Checks_Unique</span></a></p></td>
+<td><p>spec/checks_spec.rb:184</p></td>
+<td><p>dox_trace shall check if an ID is used twice and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_newline"><span class="std std-ref">DoxTrace_Checks_Newline</span></a></p></td>
+<td><p>spec/checks_spec.rb:195</p></td>
+<td><p>dox_trace shall check if an ID contains a newline and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_naming"><span class="std std-ref">DoxTrace_Checks_Naming</span></a></p></td>
+<td><p>spec/checks_spec.rb:206</p></td>
+<td><p>dox_trace shall check if an ID has two underscores after the prefix instead of one and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:217</p></td>
+<td><p>dox_trace shall check if an ID has incorrect case and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:228</p></td>
+<td><p>dox_trace shall check if an ID does not have a character after the first underscore and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:250</p></td>
+<td><p>dox_trace shall check if spec ID does not contain three underscores and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:261</p></td>
+<td><p>dox_trace shall check if an interface ID does not start with wrong prefix and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:272</p></td>
+<td><p>dox_trace shall check if a mod ID does not start with wrong prefix and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:283</p></td>
+<td><p>dox_trace shall check if an srs ID does not start with wrong prefix and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:294</p></td>
+<td><p>dox_trace shall check if a unit ID does not start with wrong prefix and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:316</p></td>
+<td><p>dox_trace shall accept valid IDs and not abort the build in these cases</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_namingdeprecated"><span class="std std-ref">DoxTrace_Checks_NamingDeprecated</span></a></p></td>
+<td><p>spec/checks_spec.rb:239</p></td>
+<td><p>dox_trace shall check if a deprecated ID does not have a character after the first underscore and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/checks_spec.rb:305</p></td>
+<td><p>dox_trace shall check if a deprecated ID does not start with wrong prefix and abort the build with appropriate error message if detected</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/checks_spec.rb:326</p></td>
+<td><p>dox_trace shall accept valid deprecated IDs and not abort the build in these cases</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_sphinxversion"><span class="std std-ref">DoxTrace_Checks_SphinxVersion</span></a></p></td>
+<td><p>spec/checks_spec.rb:349</p></td>
+<td><p>dox_trace shall check if Sphinx 6.2 or later is used and abort the build with appropriate error message if Sphinx version is too old</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_checks_pythonversion"><span class="std std-ref">DoxTrace_Checks_PythonVersion</span></a></p></td>
+<td><p>spec/checks_spec.rb:337</p></td>
+<td><p>dox_trace shall check if Python 3.8 or later is used and abort the build with appropriate error message if Python version is too old</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_incremental"><span class="std std-ref">DoxTrace_HTML_Incremental</span></a></p></td>
+<td><p>spec/html_spec.rb:11</p></td>
+<td><p>dox_trace HTML output shall support incremental build and enforce a rebuild if the extension version has changed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_version"><span class="std std-ref">DoxTrace_HTML_Version</span></a></p></td>
+<td><p>spec/html_spec.rb:11</p></td>
+<td><p>dox_trace HTML output shall support incremental build and enforce a rebuild if the extension version has changed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_table"><span class="std std-ref">DoxTrace_HTML_Table</span></a></p></td>
+<td><p>spec/html_spec.rb:61</p></td>
+<td><p>dox_trace HTML output shall contain a table with attributes for every specification in correct design</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_background"><span class="std std-ref">DoxTrace_HTML_Background</span></a></p></td>
+<td><p>spec/html_spec.rb:61</p></td>
+<td><p>dox_trace HTML output shall contain a table with attributes for every specification in correct design</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_attributes"><span class="std std-ref">DoxTrace_HTML_Attributes</span></a></p></td>
+<td><p>spec/html_spec.rb:61</p></td>
+<td><p>dox_trace HTML output shall contain a table with attributes for every specification in correct design</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_strike"><span class="std std-ref">DoxTrace_HTML_Strike</span></a></p></td>
+<td><p>spec/html_spec.rb:61</p></td>
+<td><p>dox_trace HTML output shall contain a table with attributes for every specification in correct design</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_content"><span class="std std-ref">DoxTrace_HTML_Content</span></a></p></td>
+<td><p>spec/content_spec.rb:11</p></td>
+<td><p>The content of specifications shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_typeid"><span class="std std-ref">DoxTrace_HTML_TypeID</span></a></p></td>
+<td><p>spec/html_spec.rb:98</p></td>
+<td><p>dox_trace HTML output shall contain type and ID for every specification in correct design</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_reviewstatus"><span class="std std-ref">DoxTrace_HTML_ReviewStatus</span></a></p></td>
+<td><p>spec/review_status_spec.rb:50</p></td>
+<td><p>The attribute review_status with correct syntax shall only be shown in HTML if not accepted or type is input</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_reuse"><span class="std std-ref">DoxTrace_HTML_Reuse</span></a></p></td>
+<td><p>spec/reuse_spec.rb:11</p></td>
+<td><p>The attribute reuse with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_usage"><span class="std std-ref">DoxTrace_HTML_Usage</span></a></p></td>
+<td><p>spec/usage_spec.rb:11</p></td>
+<td><p>The attribute usage with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_developer"><span class="std std-ref">DoxTrace_HTML_Developer</span></a></p></td>
+<td><p>spec/developer_spec.rb:11</p></td>
+<td><p>The attribute developer with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_tester"><span class="std std-ref">DoxTrace_HTML_Tester</span></a></p></td>
+<td><p>spec/tester_spec.rb:11</p></td>
+<td><p>The attribute tester with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_testsetups"><span class="std std-ref">DoxTrace_HTML_TestSetups</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:11</p></td>
+<td><p>The attribute test_setups with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/test_setups_spec.rb:35</p></td>
+<td><p>The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_methods_spec.rb:35</p></td>
+<td><p>The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_verificationmethods"><span class="std std-ref">DoxTrace_HTML_VerificationMethods</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:35</p></td>
+<td><p>The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_methods_spec.rb:11</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_methods_spec.rb:35</p></td>
+<td><p>The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_cal"><span class="std std-ref">DoxTrace_HTML_Cal</span></a></p></td>
+<td><p>spec/security_spec.rb:38</p></td>
+<td><p>The attribute security with correct syntax shall derive the value from cal if security is not defined</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_security"><span class="std std-ref">DoxTrace_HTML_Security</span></a></p></td>
+<td><p>spec/cal_spec.rb:38</p></td>
+<td><p>The attribute cal with correct syntax shall derive the value from security if cal is not defined</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_tags"><span class="std std-ref">DoxTrace_HTML_Tags</span></a></p></td>
+<td><p>spec/tags_spec.rb:12</p></td>
+<td><p>The attribute tags with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_verificationcriteria"><span class="std std-ref">DoxTrace_HTML_VerificationCriteria</span></a></p></td>
+<td><p>spec/verification_criteria_spec.rb:11</p></td>
+<td><p>The attribute verification_criteria with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_comment"><span class="std std-ref">DoxTrace_HTML_Comment</span></a></p></td>
+<td><p>spec/comment_spec.rb:11</p></td>
+<td><p>The attribute comment with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_miscellaneous"><span class="std std-ref">DoxTrace_HTML_Miscellaneous</span></a></p></td>
+<td><p>spec/miscellaneous_spec.rb:11</p></td>
+<td><p>The attribute miscellaneous with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_feature"><span class="std std-ref">DoxTrace_HTML_Feature</span></a></p></td>
+<td><p>spec/feature_spec.rb:11</p></td>
+<td><p>The attribute feature with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_changerequest"><span class="std std-ref">DoxTrace_HTML_ChangeRequest</span></a></p></td>
+<td><p>spec/change_request_spec.rb:11</p></td>
+<td><p>The attribute change_request with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_sources"><span class="std std-ref">DoxTrace_HTML_Sources</span></a></p></td>
+<td><p>spec/sources_spec.rb:11</p></td>
+<td><p>The attribute sources with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_location"><span class="std std-ref">DoxTrace_HTML_Location</span></a></p></td>
+<td><p>spec/location_spec.rb:11</p></td>
+<td><p>The attribute location with correct syntax shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/location_spec.rb:30</p></td>
+<td><p>The attribute location with correct syntax shall have correct color in HTML</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_upstreamrefs"><span class="std std-ref">DoxTrace_HTML_UpstreamRefs</span></a></p></td>
+<td><p>spec/refs_spec.rb:42</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/upstream_references_spec.rb:11</p></td>
+<td><p>The calculated attribute Upstream References for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_downstreamrefs"><span class="std std-ref">DoxTrace_HTML_DownstreamRefs</span></a></p></td>
+<td><p>spec/downstream_references_spec.rb:11</p></td>
+<td><p>The calculated attribute Downstream References with correct syntax shall be loaded and displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/refs_spec.rb:42</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_refsred"><span class="std std-ref">DoxTrace_HTML_RefsRed</span></a></p></td>
+<td><p>spec/refs_spec.rb:25</p></td>
+<td><p>The attribute refs including an undefined target building with dox_trace_allow_undefined_refs=False shall cause dox_trace to abort with exit code != 0 and print an warning message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/refs_spec.rb:37</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall NOT cause dox_trace to abort with exit code != 0 and NOT print a warning message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/refs_spec.rb:42</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/refs_spec.rb:51</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display undefined targets in red</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_refsexport"><span class="std std-ref">DoxTrace_HTML_RefsExport</span></a></p></td>
+<td><p>spec/refs_spec.rb:75</p></td>
+<td><p>The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall not export unresolved references</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_upstreamasil"><span class="std std-ref">DoxTrace_HTML_UpstreamAsil</span></a></p></td>
+<td><p>spec/parent_asil_spec.rb:11</p></td>
+<td><p>The calculated attribute Upstream Tags for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_upstreamcal"><span class="std std-ref">DoxTrace_HTML_UpstreamCal</span></a></p></td>
+<td><p>spec/parent_cal_spec.rb:11</p></td>
+<td><p>The calculated attribute Upstream Cal for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_upstreamsecurity"><span class="std std-ref">DoxTrace_HTML_UpstreamSecurity</span></a></p></td>
+<td><p>spec/parent_security_spec.rb:11</p></td>
+<td><p>The calculated attribute Upstream Security for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_upstreamtags"><span class="std std-ref">DoxTrace_HTML_UpstreamTags</span></a></p></td>
+<td><p>spec/parent_tags_spec.rb:11</p></td>
+<td><p>The calculated attribute Upstream Tags for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_derivedfeature"><span class="std std-ref">DoxTrace_HTML_DerivedFeature</span></a></p></td>
+<td><p>spec/derived_feature_spec.rb:11</p></td>
+<td><p>The calculated attribute Derived Feature for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_derivedchangerequest"><span class="std std-ref">DoxTrace_HTML_DerivedChangeRequest</span></a></p></td>
+<td><p>spec/derived_change_request_spec.rb:11</p></td>
+<td><p>The calculated attribute Derived Change Request for specifications shall be displayed correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_configdirective"><span class="std std-ref">DoxTrace_HTML_ConfigDirective</span></a></p></td>
+<td><p>spec/config_spec.rb:44</p></td>
+<td><p>The directive dox_trace_config shall expand to a configuration table using jQuery and the local storage of the browser</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_configstorage"><span class="std std-ref">DoxTrace_HTML_ConfigStorage</span></a></p></td>
+<td><p>spec/config_spec.rb:44</p></td>
+<td><p>The directive dox_trace_config shall expand to a configuration table using jQuery and the local storage of the browser</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_configreadingmode"><span class="std std-ref">DoxTrace_HTML_ConfigReadingMode</span></a></p></td>
+<td><p>spec/config_spec.rb:23</p></td>
+<td><p>The directive dox_trace_config shall be used to hide/show complete attribute rows</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/config_spec.rb:62</p></td>
+<td><p>The directive dox_trace_config shall be used to hide/show empty/missing attributes</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/config_spec.rb:123</p></td>
+<td><p>The directive dox_trace_config shall also hide the vertical bar between “Tags” and “Upstream Tags” if at least one of them is hidden</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/config_spec.rb:144</p></td>
+<td><p>The directive dox_trace_config shall hide a row if all attributes in this row are hidden</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/config_spec.rb:151</p></td>
+<td><p>The directive dox_trace_config shall not add an unnecessary line break if “Developer”, “Tester” and “Verification Methods” are hidden</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_encloseddirective"><span class="std std-ref">DoxTrace_HTML_EnclosedDirective</span></a></p></td>
+<td><p>spec/enclosed_spec.rb:12</p></td>
+<td><p>The directive enclosed shall copy files to build folder listed in the content of the directive</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/enclosed_spec.rb:27</p></td>
+<td><p>The directive enclosed shall warn if a file listed in the content of the directive does not exist</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportinput"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportInput</span></a></p></td>
+<td><p>spec/tr_input_spec.rb:13</p></td>
+<td><p>The traceability report for input requirements developer table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:26</p></td>
+<td><p>The traceability report for input requirements developer table developer table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:56</p></td>
+<td><p>The traceability report for input requirements status table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:69</p></td>
+<td><p>The traceability report for input requirements status table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:82</p></td>
+<td><p>The traceability report for input requirements status table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:113</p></td>
+<td><p>The traceability report for input requirements review_status table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:126</p></td>
+<td><p>The traceability report for input requirements review_status table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:139</p></td>
+<td><p>The traceability report for input requirements review_status table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:176</p></td>
+<td><p>The traceability report for input requirements safety table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:189</p></td>
+<td><p>The traceability report for input requirements safety table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:202</p></td>
+<td><p>The traceability report for input requirements safety table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:236</p></td>
+<td><p>The traceability report for input requirements cal table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:249</p></td>
+<td><p>The traceability report for input requirements cal table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:262</p></td>
+<td><p>The traceability report for input requirements cal table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:296</p></td>
+<td><p>The traceability report for input requirements security table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:309</p></td>
+<td><p>The traceability report for input requirements security table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:322</p></td>
+<td><p>The traceability report for input requirements security table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:353</p></td>
+<td><p>The traceability report for input requirements referenced/derived table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:366</p></td>
+<td><p>The traceability report for input requirements referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:379</p></td>
+<td><p>The traceability report for input requirements referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:407</p></td>
+<td><p>The traceability report for input requirements list of requirements with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_input_spec.rb:420</p></td>
+<td><p>The traceability report for input requirements list of requirements with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_input_spec.rb:433</p></td>
+<td><p>The traceability report for input requirements list of requirements with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportsoftware"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportSoftware</span></a></p></td>
+<td><p>spec/tr_software_spec.rb:13</p></td>
+<td><p>The traceability report for software requirements status table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:26</p></td>
+<td><p>The traceability report for software requirements status table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:39</p></td>
+<td><p>The traceability report for software requirements status table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:74</p></td>
+<td><p>The traceability report for software requirements safety table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:87</p></td>
+<td><p>The traceability report for software requirements safety table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:100</p></td>
+<td><p>The traceability report for software requirements safety table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:139</p></td>
+<td><p>The traceability report for software requirements cal table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:152</p></td>
+<td><p>The traceability report for software requirements cal table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:165</p></td>
+<td><p>The traceability report for software requirements cal table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:204</p></td>
+<td><p>The traceability report for software requirements security table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:217</p></td>
+<td><p>The traceability report for software requirements security table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:230</p></td>
+<td><p>The traceability report for software requirements security table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:265</p></td>
+<td><p>The traceability report for software requirements referenced/derived table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:278</p></td>
+<td><p>The traceability report for software requirements referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:291</p></td>
+<td><p>The traceability report for software requirements referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:330</p></td>
+<td><p>The traceability report for software requirements list of requirements with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_software_spec.rb:343</p></td>
+<td><p>The traceability report for software requirements list of requirements with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_software_spec.rb:356</p></td>
+<td><p>The traceability report for software requirements list of requirements with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportarchitecture"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportArchitecture</span></a></p></td>
+<td><p>spec/tr_architecture_spec.rb:13</p></td>
+<td><p>The traceability report for architecture status table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:26</p></td>
+<td><p>The traceability report for architecture status table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:39</p></td>
+<td><p>The traceability report for architecture status table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:70</p></td>
+<td><p>The traceability report for architecture type table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:83</p></td>
+<td><p>The traceability report for architecture type table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:96</p></td>
+<td><p>The traceability report for architecture type table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:127</p></td>
+<td><p>The traceability report for architecture safety table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:140</p></td>
+<td><p>The traceability report for architecture safety table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:153</p></td>
+<td><p>The traceability report for architecture safety table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:187</p></td>
+<td><p>The traceability report for architecture cal table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:200</p></td>
+<td><p>The traceability report for architecture cal table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:213</p></td>
+<td><p>The traceability report for architecture cal table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:247</p></td>
+<td><p>The traceability report for architecture security table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:260</p></td>
+<td><p>The traceability report for architecture security table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:273</p></td>
+<td><p>The traceability report for architecture security table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:304</p></td>
+<td><p>The traceability report for architecture referenced/derived table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:317</p></td>
+<td><p>The traceability report for architecture referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:330</p></td>
+<td><p>The traceability report for architecture referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:380</p></td>
+<td><p>The traceability report for architecture list of specifications with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_architecture_spec.rb:393</p></td>
+<td><p>The traceability report for architecture list of specifications with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_architecture_spec.rb:406</p></td>
+<td><p>The traceability report for architecture list of specifications with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportmodule"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportModule</span></a></p></td>
+<td><p>spec/tr_module_spec.rb:14</p></td>
+<td><p>The traceability report for module status table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:27</p></td>
+<td><p>The traceability report for module status table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:40</p></td>
+<td><p>The traceability report for module status table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:72</p></td>
+<td><p>The traceability report for module type table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:85</p></td>
+<td><p>The traceability report for module type table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:98</p></td>
+<td><p>The traceability report for module type table with valid data without deprecated interface type shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:123</p></td>
+<td><p>The traceability report for module type table with valid data with deprecated interface type shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:154</p></td>
+<td><p>The traceability report for module safety table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:167</p></td>
+<td><p>The traceability report for module safety table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:180</p></td>
+<td><p>The traceability report for module safety table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:214</p></td>
+<td><p>The traceability report for module cal table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:227</p></td>
+<td><p>The traceability report for module cal table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:240</p></td>
+<td><p>The traceability report for module cal table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:274</p></td>
+<td><p>The traceability report for module security table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:287</p></td>
+<td><p>The traceability report for module security table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:300</p></td>
+<td><p>The traceability report for module security table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:332</p></td>
+<td><p>The traceability report for module referenced/derived table with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:345</p></td>
+<td><p>The traceability report for module referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:358</p></td>
+<td><p>The traceability report for module referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:410</p></td>
+<td><p>The traceability report for module list of specifications with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_module_spec.rb:423</p></td>
+<td><p>The traceability report for module list of specifications with all data filtered out shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_module_spec.rb:436</p></td>
+<td><p>The traceability report for module list of specifications with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportsource"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportSource</span></a></p></td>
+<td><p>spec/tr_source_spec.rb:11</p></td>
+<td><p>The traceability report for source with no data shall display an appropriate note instead of an empty table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tr_source_spec.rb:23</p></td>
+<td><p>The traceability report for source with valid data shall contain correct data with module/value pairs including TOTAL and links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportunknowncategory"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportUnknownCategory</span></a></p></td>
+<td><p>spec/tr_general_spec.rb:32</p></td>
+<td><p>The traceability report with invalid traceability report category shall abort and print an appropriate error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportunknownmodule"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportUnknownModule</span></a></p></td>
+<td><p>spec/tr_general_spec.rb:11</p></td>
+<td><p>The traceability report shall determine the module name of the specifications and if not possible, use “Unknown” as fallback</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilityreportignore"><span class="std std-ref">DoxTrace_HTML_TraceabilityReportIgnore</span></a></p></td>
+<td><p>spec/tr_general_spec.rb:68</p></td>
+<td><p>The traceability report shall ignore specifications with attribute ignore_in_export</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper"><span class="std std-ref">DoxTrace_HTML_TraceabilityDeveloper</span></a></p></td>
+<td><p>spec/tr_general_spec.rb:43</p></td>
+<td><p>The traceability report shall have an option to filter for developers and abort the build if not specified</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/tr_general_spec.rb:54</p></td>
+<td><p>The traceability report shall be tolerant with filtering for developer using a generic regex</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_html_undefinedrefslistdirective"><span class="std std-ref">DoxTrace_HTML_UndefinedRefsListDirective</span></a></p></td>
+<td><p>spec/undefined_refs_spec.rb:11</p></td>
+<td><p>The directive undefined_refs for specifications with undefined references shall generate a list of specifications including their undefined references</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/undefined_refs_spec.rb:27</p></td>
+<td><p>The directive undefined_refs for specifications without undefined references shall generate a helper note that no undefined references exist</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_config"><span class="std std-ref">DoxTrace_Export_Config</span></a></p></td>
+<td><p>spec/export_spec.rb:17</p></td>
+<td><p>The export to Dim format with a valid dox_trace_dim_root configuration shall contain srs, spec, unit, interface, mod with their IDs</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/export_spec.rb:134</p></td>
+<td><p>The export to Dim format without a valid dox_trace_dim_root configuration shall be skipped and not error returned</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/export_spec.rb:147</p></td>
+<td><p>The export to Dim format with an invalid dox_trace_dim_root configuration shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_filenames"><span class="std std-ref">DoxTrace_Export_Filenames</span></a></p></td>
+<td><p>spec/export_spec.rb:53</p></td>
+<td><p>The export to Dim format with a valid dox_trace_dim_root configuration shall create the same folder and filename structure as the according RST files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_delete"><span class="std std-ref">DoxTrace_Export_Delete</span></a></p></td>
+<td><p>spec/export_spec.rb:76</p></td>
+<td><p>The export to Dim format with a valid dox_trace_dim_root configuration shall cleanup the output folder before writing the RST files for srs, swa and smd</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/export_spec.rb:116</p></td>
+<td><p>The export to Dim format with only swa and smd shall cleanup the output folder before writing the RST files for swa and smd, but not srs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_modulename"><span class="std std-ref">DoxTrace_Export_ModuleName</span></a></p></td>
+<td><p>spec/export_spec.rb:87</p></td>
+<td><p>The export to Dim format with a valid dox_trace_dim_root configuration shall include the correct module names</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_ids"><span class="std std-ref">DoxTrace_Export_IDs</span></a></p></td>
+<td><p>spec/export_spec.rb:17</p></td>
+<td><p>The export to Dim format with a valid dox_trace_dim_root configuration shall contain srs, spec, unit, interface, mod with their IDs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_attributes"><span class="std std-ref">DoxTrace_Export_Attributes</span></a></p></td>
+<td><p>spec/asil_spec.rb:38</p></td>
+<td><p>The attribute asil with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/cal_spec.rb:49</p></td>
+<td><p>The attribute cal with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/developer_spec.rb:36</p></td>
+<td><p>The attribute developer with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/downstream_references_spec.rb:42</p></td>
+<td><p>The calculated attribute Downstream References with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/review_status_spec.rb:32</p></td>
+<td><p>The attribute review_status with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/security_spec.rb:51</p></td>
+<td><p>The attribute security with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/sources_spec.rb:43</p></td>
+<td><p>The attribute sources with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/status_spec.rb:39</p></td>
+<td><p>The attribute status with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tags_spec.rb:38</p></td>
+<td><p>The attribute tags with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/test_setups_spec.rb:45</p></td>
+<td><p>The attribute test_setups with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/tester_spec.rb:40</p></td>
+<td><p>The attribute tester with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_criteria_spec.rb:41</p></td>
+<td><p>The attribute verification_criteria with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/verification_methods_spec.rb:45</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_category"><span class="std std-ref">DoxTrace_Export_Category</span></a></p></td>
+<td><p>spec/category_spec.rb:26</p></td>
+<td><p>The attribute category with correct syntax shall not be exported</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_cal"><span class="std std-ref">DoxTrace_Export_Cal</span></a></p></td>
+<td><p>spec/security_spec.rb:51</p></td>
+<td><p>The attribute security with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_security"><span class="std std-ref">DoxTrace_Export_Security</span></a></p></td>
+<td><p>spec/cal_spec.rb:49</p></td>
+<td><p>The attribute cal with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_verificationcriteria"><span class="std std-ref">DoxTrace_Export_VerificationCriteria</span></a></p></td>
+<td><p>spec/verification_criteria_spec.rb:41</p></td>
+<td><p>The attribute verification_criteria with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_reuse"><span class="std std-ref">DoxTrace_Export_Reuse</span></a></p></td>
+<td><p>spec/reuse_spec.rb:19</p></td>
+<td><p>The attribute reuse with correct syntax shall not be exported</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_usage"><span class="std std-ref">DoxTrace_Export_Usage</span></a></p></td>
+<td><p>spec/usage_spec.rb:19</p></td>
+<td><p>The attribute usage with correct syntax shall not be exported</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_location"><span class="std std-ref">DoxTrace_Export_Location</span></a></p></td>
+<td><p>spec/location_spec.rb:25</p></td>
+<td><p>The attribute location with correct syntax shall not be exported</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_content"><span class="std std-ref">DoxTrace_Export_Content</span></a></p></td>
+<td><p>spec/content_spec.rb:32</p></td>
+<td><p>The content of specifications shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_tester"><span class="std std-ref">DoxTrace_Export_Tester</span></a></p></td>
+<td><p>spec/tester_spec.rb:40</p></td>
+<td><p>The attribute tester with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_testsetups"><span class="std std-ref">DoxTrace_Export_TestSetups</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:45</p></td>
+<td><p>The attribute test_setups with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_methods_spec.rb:45</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_verificationmethods"><span class="std std-ref">DoxTrace_Export_VerificationMethods</span></a></p></td>
+<td><p>spec/test_setups_spec.rb:45</p></td>
+<td><p>The attribute test_setups with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/verification_methods_spec.rb:45</p></td>
+<td><p>The attribute verification_methods with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_unit"><span class="std std-ref">DoxTrace_Export_Unit</span></a></p></td>
+<td><p>spec/tags_spec.rb:38</p></td>
+<td><p>The attribute tags with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_interface"><span class="std std-ref">DoxTrace_Export_Interface</span></a></p></td>
+<td><p>spec/tags_spec.rb:38</p></td>
+<td><p>The attribute tags with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_mod"><span class="std std-ref">DoxTrace_Export_Mod</span></a></p></td>
+<td><p>spec/tags_spec.rb:38</p></td>
+<td><p>The attribute tags with correct syntax shall be exported correctly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_export_ignoreinexport"><span class="std std-ref">DoxTrace_Export_IgnoreInExport</span></a></p></td>
+<td><p>spec/ignore_in_export_spec.rb:12</p></td>
+<td><p>The attribute ignore_in_export if set shall disable the export of the particular specification</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customgeneral_config"><span class="std std-ref">DoxTrace_CustomGeneral_Config</span></a></p></td>
+<td><p>spec/custom_name_spec.rb:46</p></td>
+<td><p>The custom attribute name config with invalid type shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_name_spec.rb:57</p></td>
+<td><p>The custom attribute name config invalid dictionary shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customname_available"><span class="std std-ref">DoxTrace_CustomName_Available</span></a></p></td>
+<td><p>spec/custom_name_spec.rb:11</p></td>
+<td><p>The custom attribute name with valid configuration shall be available in RST files for directives</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customname_conflict"><span class="std std-ref">DoxTrace_CustomName_Conflict</span></a></p></td>
+<td><p>spec/custom_name_spec.rb:24</p></td>
+<td><p>The custom attribute name config with conflicting name shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_name_spec.rb:35</p></td>
+<td><p>The custom attribute name config with reserved name text shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customdirectives_syntax"><span class="std std-ref">DoxTrace_CustomDirectives_Syntax</span></a></p></td>
+<td><p>spec/custom_directives_spec.rb:11</p></td>
+<td><p>The custom attribute directives with valid configuration shall assign the attribute to a list of directives</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_directives_spec.rb:68</p></td>
+<td><p>The custom attribute directives used for non-specified directives shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customdirectives_check"><span class="std std-ref">DoxTrace_CustomDirectives_Check</span></a></p></td>
+<td><p>spec/custom_directives_spec.rb:46</p></td>
+<td><p>The custom attribute directives config with empty list shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_directives_spec.rb:57</p></td>
+<td><p>The custom attribute directives config missing shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_directives_spec.rb:80</p></td>
+<td><p>The custom attribute directives config wrong type shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_directives_spec.rb:91</p></td>
+<td><p>The custom attribute directives config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customcategories_syntax"><span class="std std-ref">DoxTrace_CustomCategories_Syntax</span></a></p></td>
+<td><p>spec/custom_categories_spec.rb:11</p></td>
+<td><p>The custom attribute categories with valid configuration shall filter the attribute for the directives correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_categories_spec.rb:45</p></td>
+<td><p>The custom attribute categories config missing in a requirement/information directive shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_categories_spec.rb:56</p></td>
+<td><p>The custom attribute categories config with wrong type shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_categories_spec.rb:67</p></td>
+<td><p>The custom attribute categories config with empty list shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customcategories_value"><span class="std std-ref">DoxTrace_CustomCategories_Value</span></a></p></td>
+<td><p>spec/custom_categories_spec.rb:11</p></td>
+<td><p>The custom attribute categories with valid configuration shall filter the attribute for the directives correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_categories_spec.rb:78</p></td>
+<td><p>The custom attribute categories config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customtypes_syntax"><span class="std std-ref">DoxTrace_CustomTypes_Syntax</span></a></p></td>
+<td><p>spec/custom_type_spec.rb:11</p></td>
+<td><p>The custom attribute type with valid configuration shall be available in RST files for directives</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_type_spec.rb:38</p></td>
+<td><p>The custom attribute type config with missing value shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_type_spec.rb:49</p></td>
+<td><p>The custom attribute type config with invalid type shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_type_spec.rb:60</p></td>
+<td><p>The custom attribute type config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customtypes_text"><span class="std std-ref">DoxTrace_CustomTypes_Text</span></a></p></td>
+<td><p>spec/custom_type_spec.rb:11</p></td>
+<td><p>The custom attribute type with valid configuration shall be available in RST files for directives</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customtypes_enum"><span class="std std-ref">DoxTrace_CustomTypes_Enum</span></a></p></td>
+<td><p>spec/custom_type_spec.rb:11</p></td>
+<td><p>The custom attribute type with valid configuration shall be available in RST files for directives</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customtypes_refs"><span class="std std-ref">DoxTrace_CustomTypes_Refs</span></a></p></td>
+<td><p>spec/custom_type_spec.rb:11</p></td>
+<td><p>The custom attribute type with valid configuration shall be available in RST files for directives</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customdefault_syntax"><span class="std std-ref">DoxTrace_CustomDefault_Syntax</span></a></p></td>
+<td><p>spec/custom_default_spec.rb:11</p></td>
+<td><p>The custom attribute default with valid configuration shall set the default value for attributes correctly without any error</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customdefault_type"><span class="std std-ref">DoxTrace_CustomDefault_Type</span></a></p></td>
+<td><p>spec/custom_default_spec.rb:52</p></td>
+<td><p>The custom attribute default config with wrong type for text attributes shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_default_spec.rb:63</p></td>
+<td><p>The custom attribute default config with wrong type for non-text attributes shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customdefault_default"><span class="std std-ref">DoxTrace_CustomDefault_Default</span></a></p></td>
+<td><p>spec/custom_default_spec.rb:11</p></td>
+<td><p>The custom attribute default with valid configuration shall set the default value for attributes correctly without any error</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_customexport_syntax"><span class="std std-ref">DoxTrace_CustomExport_Syntax</span></a></p></td>
+<td><p>spec/custom_export_spec.rb:11</p></td>
+<td><p>The custom attribute export with valid configuration shall export the attribute if set to yes</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_export_spec.rb:21</p></td>
+<td><p>The custom attribute export with valid configuration shall not export the attribute if set to no</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/custom_export_spec.rb:38</p></td>
+<td><p>The custom attribute export config wrong type shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/custom_export_spec.rb:49</p></td>
+<td><p>The custom attribute export config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#dox_trace_properties_file"><span class="std std-ref">dox_trace_properties_file</span></a></p></td>
+<td><p>spec/properties_spec.rb:11</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with full name</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:18</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with module name</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:24</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with category name</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:30</p></td>
+<td><p>Properties file values shall be used for non-set attributes if _default_ is specified</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:38</p></td>
+<td><p>Properties file values shall be used unless attributes are already specified</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:44</p></td>
+<td><p>Properties file values shall be used also for custom attributes</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:71</p></td>
+<td><p>Properties file not exist shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:83</p></td>
+<td><p>Properties file not specified but used shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:95</p></td>
+<td><p>Properties file with invalid syntax shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_properties_use"><span class="std std-ref">DoxTrace_Properties_Use</span></a></p></td>
+<td><p>spec/properties_spec.rb:11</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with full name</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:18</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with module name</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:24</p></td>
+<td><p>Properties file values shall be used for non-set attributes if the ID is specified with category name</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:30</p></td>
+<td><p>Properties file values shall be used for non-set attributes if _default_ is specified</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:38</p></td>
+<td><p>Properties file values shall be used unless attributes are already specified</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:58</p></td>
+<td><p>Properties file values shall be used as string even they are defined as boolean in YAML</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:107</p></td>
+<td><p>Properties file with attribute name not found shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>spec/properties_spec.rb:119</p></td>
+<td><p>Properties file with attribute value not found shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>spec/properties_spec.rb:131</p></td>
+<td><p>Properties file value used without colon shall abort the the build aborted with an appropriate error message</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_properties_custom"><span class="std std-ref">DoxTrace_Properties_Custom</span></a></p></td>
+<td><p>spec/properties_spec.rb:44</p></td>
+<td><p>Properties file values shall be used also for custom attributes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="dox_trace/Requirements.html#doxtrace_properties_standalone"><span class="std std-ref">DoxTrace_Properties_Standalone</span></a></p></td>
+<td><p>spec/properties_spec.rb:50</p></td>
+<td><p>Properties file values shall be used for standalone roles and directives</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/requirements-generated/mapping.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

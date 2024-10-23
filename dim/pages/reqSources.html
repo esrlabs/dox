@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Source Code Mapping &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Statistics" href="requirements-generated/stats.html" />
+    <link rel="prev" title="Test Case Mapping" href="requirements-generated/mapping.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="development.html">Development of Dim</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="development.html#continuous-integration">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#bug-tracking-and-feature-planning">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#release">Release</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="development.html#requirements">Requirements</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html"><span class="raw-html">Dim</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Source Code Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reqConfig.html">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="development.html">Development of Dim</a> &raquo;</li>
+        
+        <li>Source Code Mapping</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="source-code-mapping">
+<h1>Source Code Mapping<a class="headerlink" href="#source-code-mapping" title="Link to this heading"></a></h1>
+<span><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lib/dim/loader.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_enclosedcheck">Dim_loading_enclosedCheck</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/check.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_check_general">Dim_check_General</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/export.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_cleanup">Dim_export_cleanup</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_documents">Dim_export_documents</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_enclosed">Dim_export_enclosed</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_filter">Dim_export_filter</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_general">Dim_export_general</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_verificationmethods">Dim_export_verificationMethods</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_document">Dim_loading_document</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/exporter/csv.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_csvattributes">Dim_export_csvAttributes</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_csvsep">Dim_export_csvSep</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_csvvalues">Dim_export_csvValues</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/exporter/json.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_json">Dim_export_json</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/exporter/rst.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_rst">Dim_export_rst</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_rstchange">Dim_export_rstChange</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_rstindex">Dim_export_rstIndex</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_rststrings">Dim_export_rstStrings</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/format.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_checkonly">Dim_format_checkOnly</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_customattributes">Dim_format_customAttributes</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_default">Dim_format_default</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_duplicated">Dim_format_duplicated</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_extra">Dim_format_extra</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_form">Dim_format_form</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_general">Dim_format_general</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_inplace">Dim_format_inPlace</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_order">Dim_format_order</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_vim">Dim_format_vim</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_whitespaces">Dim_format_whitespaces</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/commands/stats.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_stats_details">Dim_stats_Details</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_stats_general">Dim_stats_General</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/consistency.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkcyclic">Dim_loading_checkCyclic</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkmissing">Dim_loading_checkMissing</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkmissingdisable">Dim_loading_checkMissingDisable</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_propfiles_property">Dim_PropFiles_Property</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_asil">Dim_ReqFiles_asil</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_calstring">Dim_ReqFiles_calString</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_developer">Dim_ReqFiles_developer</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_reviewstatus">Dim_ReqFiles_reviewStatus</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_status">Dim_ReqFiles_status</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_tester">Dim_ReqFiles_tester</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_testsetups">Dim_ReqFiles_testSetups</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/ext/output.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_testing_output">Dim_testing_output</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/ext/psych.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkid">Dim_loading_checkID</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_readbad">Dim_loading_readBad</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_syntax_values">Dim_Syntax_Values</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/ext/string.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringaddenum">Dim_api_stringAddEnum</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringcleanarray">Dim_api_stringCleanArray</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringcleansplit">Dim_api_stringCleanSplit</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringcleanstring">Dim_api_stringCleanString</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringcleanuniqarray">Dim_api_stringCleanUniqArray</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringcleanuniqstring">Dim_api_stringCleanUniqString</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_stringremoveenum">Dim_api_stringRemoveEnum</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/formatter.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_changing">Dim_api_changing</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/helpers/attributes_helper.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_attributeloading_unittests">Dim_AttributeLoading_UnitTests</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/loader.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_changing">Dim_api_changing</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_metadata">Dim_api_metadata</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_reading">Dim_api_reading</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_attrfiles_attribute">Dim_AttrFiles_Attribute</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_attrfiles_cmdparam">Dim_AttrFiles_CmdParam</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_attrfiles_searchattributefile">Dim_AttrFiles_SearchAttributeFile</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_attribute">Dim_ConfigFiles_Attribute</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_category">Dim_ConfigFiles_Category</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_config">Dim_ConfigFiles_Config</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_disablenamecheck">Dim_ConfigFiles_disableNameCheck</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_files">Dim_ConfigFiles_Files</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_originator">Dim_ConfigFiles_Originator</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_property">Dim_ConfigFiles_Property</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_configfiles_srs">Dim_ConfigFiles_SRS</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_customattributes">Dim_format_customAttributes</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkdocument">Dim_loading_checkDocument</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkmetadata">Dim_loading_checkMetadata</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_readbad">Dim_loading_readBad</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_readgood">Dim_loading_readGood</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_propfiles_property">Dim_PropFiles_Property</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_asil">Dim_ReqFiles_asil</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_calstring">Dim_ReqFiles_calString</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_changerequest">Dim_ReqFiles_changeRequest</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_comment">Dim_ReqFiles_comment</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_developer">Dim_ReqFiles_developer</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_document">Dim_ReqFiles_document</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_enclosed">Dim_ReqFiles_enclosed</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_feature">Dim_ReqFiles_feature</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_id">Dim_ReqFiles_id</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_language">Dim_ReqFiles_language</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_metadata">Dim_ReqFiles_metadata</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_miscellaneous">Dim_ReqFiles_miscellaneous</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_missingdocument">Dim_ReqFiles_MissingDocument</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_refs">Dim_ReqFiles_refs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_regularyaml">Dim_ReqFiles_regularYaml</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_reviewstatus">Dim_ReqFiles_reviewStatus</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortheadingform">Dim_ReqFiles_shortHeadingForm</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortinfoform">Dim_ReqFiles_shortInfoForm</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortyaml">Dim_ReqFiles_shortYaml</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_sources">Dim_ReqFiles_sources</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_status">Dim_ReqFiles_status</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_tags">Dim_ReqFiles_tags</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_tester">Dim_ReqFiles_tester</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_testsetups">Dim_ReqFiles_testSetups</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_text">Dim_ReqFiles_text</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_type">Dim_ReqFiles_type</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_verificationcriteria">Dim_ReqFiles_verificationCriteria</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_syntax_invalidchars">Dim_Syntax_InvalidChars</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_syntax_utf8">Dim_Syntax_utf8</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_syntax_yaml">Dim_Syntax_YAML</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/options.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_check_general">Dim_check_General</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_cli_exit">Dim_CLI_exit</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_cli_help">Dim_CLI_help</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_cli_license">Dim_CLI_license</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_cli_version">Dim_CLI_version</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_filter">Dim_export_filter</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_export_general">Dim_export_general</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_checkonly">Dim_format_checkOnly</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_customattributes">Dim_format_customAttributes</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_extra">Dim_format_extra</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_general">Dim_format_general</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_vim">Dim_format_vim</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_loading_checkmissingdisable">Dim_loading_checkMissingDisable</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_stats_general">Dim_stats_General</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/options.rb</span> <span class="pre">lib/dim/commands/format.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_verificationmethods">Dim_format_verificationMethods</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/requirement.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_asil">Dim_ReqFiles_asil</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_calstring">Dim_ReqFiles_calString</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_changerequest">Dim_ReqFiles_changeRequest</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_comment">Dim_ReqFiles_comment</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_developer">Dim_ReqFiles_developer</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_document">Dim_ReqFiles_document</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_enclosed">Dim_ReqFiles_enclosed</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_feature">Dim_ReqFiles_feature</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_id">Dim_ReqFiles_id</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_language">Dim_ReqFiles_language</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_metadata">Dim_ReqFiles_metadata</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_miscellaneous">Dim_ReqFiles_miscellaneous</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_refs">Dim_ReqFiles_refs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_regularyaml">Dim_ReqFiles_regularYaml</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_reviewstatus">Dim_ReqFiles_reviewStatus</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortheadingform">Dim_ReqFiles_shortHeadingForm</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortinfoform">Dim_ReqFiles_shortInfoForm</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_shortyaml">Dim_ReqFiles_shortYaml</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_sources">Dim_ReqFiles_sources</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_status">Dim_ReqFiles_status</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_tags">Dim_ReqFiles_tags</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_tester">Dim_ReqFiles_tester</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_testsetups">Dim_ReqFiles_testSetups</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_text">Dim_ReqFiles_text</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_type">Dim_ReqFiles_type</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_verificationcriteria">Dim_ReqFiles_verificationCriteria</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/requirement.rb</span> <span class="pre">lib/dim/consistency.rb</span> <span class="pre">lib/dim/loader.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_verificationmethods_backward">Dim_ReqFiles_verificationMethods_backward</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/requirement.rb</span> <span class="pre">lib/dim/loader.rb</span> <span class="pre">lib/dim/consistency.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_downstreamrefs">Dim_api_downstreamRefs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_upstreamrefs">Dim_api_upstreamRefs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_reqfiles_verificationmethods">Dim_ReqFiles_verificationMethods</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/requirements.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_backwardrefs">Dim_api_backwardRefs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_category">Dim_api_category</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_changing">Dim_api_changing</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_documentname">Dim_api_documentName</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_existingrefs">Dim_api_existingRefs</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_filename">Dim_api_filename</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_linenumber">Dim_api_lineNumber</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_originator">Dim_api_originator</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_safetyrelevant">Dim_api_safetyRelevant</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_api_securityrelevant">Dim_api_securityRelevant</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_default">Dim_format_default</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_form">Dim_format_form</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_general">Dim_format_general</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_inplace">Dim_format_inPlace</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_order">Dim_format_order</a>, <a class="reference internal" href="requirements/Dim/Requirements.html#dim_format_whitespaces">Dim_format_whitespaces</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/dim/ver.rb</span></code></p>
+<p><a class="reference internal" href="requirements/Dim/Requirements.html#dim_cli_version">Dim_CLI_version</a></p>
+</li>
+</ul>
+</span></section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/reqSources.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

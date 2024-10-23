@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Dim" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonization">Harmonization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Introduction</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>Dim is a requirements tool to manually and automatically read, process and write requirements.
+It was designed to simplify the work with requirements as much as possible.</p>
+<p>Dim is written in Ruby and runs on <a class="reference internal" href="integration.html#compatibility"><span class="std std-ref">multiple platforms</span></a>.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The data is represented by YAML files, a human-readable format which can be easily parsed by all
+common scripting languages.</p></li>
+<li><p>This format allows to read, change and write the files by any editor, whatever the author prefers.
+There is no restriction to any IDE. The files can be edited directly on local machines without
+having a (slow) VPN connection to a centralized server.</p></li>
+<li><p>The changes can be easily reviewed with an existing code review system.</p></li>
+<li><p>YAML files can be edited by several authors at the same time and merged as every regular text
+file when committing.</p></li>
+<li><p>The requirements can be maintained and baselined in the source code repository.</p></li>
+<li><p>Dim requires no license.</p></li>
+<li><p>The requirements can be structured in different files as well as in sections and subsections
+within a single file. Most of the attributes are very natural like the requirements <cite>text</cite>,
+<cite>review_status</cite>, <cite>comment</cite>, <cite>refs</cite> and so on.</p></li>
+</ul>
+<p>Example requirements file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SRS_memory_heading</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">h1 Memory Usage</span>
+
+<span class="nt">SRS_memory_RAM</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w">                     </span><span class="l l-Scalar l-Scalar-Plain">The ECU shall use a maximum of 80% of the available RAM in the first SOP.</span>
+<span class="w">  </span><span class="nt">verification_criteria</span><span class="p">:</span><span class="w">        </span><span class="p p-Indicator">|</span>
+<span class="w">                                </span><span class="no">The map-file includes information about the free RAM.</span>
+<span class="w">                                </span><span class="no">This value must be &gt;= 1 MB.</span>
+<span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">performance</span>
+<span class="w">  </span><span class="nt">refs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SWA_memory_layout</span>
+
+<span class="nt">SRS_memory_ROM</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w">                     </span><span class="l l-Scalar l-Scalar-Plain">The ECU ...</span>
+</pre></div>
+</div>
+<p>Dim is command line tool. The most important <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">subcommands</span></a> are:</p>
+<ul class="simple">
+<li><p><strong>check</strong>: Checks the YAML files for syntactical correctness and consistency, e.g. whether all
+<cite>refs</cite> link to existing requirements.</p></li>
+<li><p><strong>format</strong>: Formats files to have a standardized look and feel of the YAML files. Dim can also
+check whether the formatting is correct.</p></li>
+<li><p><strong>export</strong> Exports the data to other formats, currently CSV, JSON and RST. The latter one is the
+import for a Sphinx build which generates a nice HTML representation of the requirements including
+clickable links etc.</p></li>
+</ul>
+<p>Instead of providing a proprietary scripting language like DXL, Dim provides a
+<a class="reference internal" href="api.html#ruby-interface"><span class="std std-ref">Ruby interface</span></a> to make it very easy to process requirements automatically.
+Typical use cases are:</p>
+<ul class="simple">
+<li><p>Creating project specific statistics, e.g. how many <cite>Input Requirements</cite> are not reviewed yet or
+which <cite>Software Requirements</cite> are security relevant.</p></li>
+<li><p>Changing a large set of requirements by a script, e.g. adding the development responsible for all
+requirements in a specific scope.</p></li>
+<li><p>Updating the requirements files with a new version of the customer requirement specification.</p></li>
+</ul>
+</section>
+<section id="harmonization">
+<h2>Harmonization<a class="headerlink" href="#harmonization" title="Link to this heading"></a></h2>
+<p>The attributes of Dim are predefined to simplify the requirement processes and to ease the reuse of
+tools working with requirements. This does not only apply to self-written requirements, but also to
+requirements provided by customers.</p>
+<p>Customer requirements are often inconsistent in their attribute usage. They might be
+delivered in different formats like ReqIf or PDF. Sometimes only meeting minutes from workshops
+exist which much serve as input. Not everything is provided directly by the customer, often
+third-party requirements like safety manuals from the HW vendor or ISO specifications must be
+handled.</p>
+<p>To avoid that every project member has to deal with these difficulties, the <cite>Requirements Manager</cite>
+converts the <cite>Input Requirements</cite> into the Dim format and vice versa. All subsequent tasks are done
+with the Dim files.</p>
+<a class="reference internal image-reference" href="../_images/conversion.drawio.png"><img alt="../_images/conversion.drawio.png" class="align-center" src="../_images/conversion.drawio.png" style="width: 606.0px; height: 260.0px;" />
+</a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/introduction.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

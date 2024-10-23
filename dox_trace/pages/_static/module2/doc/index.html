@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>module2 &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>module2</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module2">
+<h1>module2<a class="headerlink" href="#module2" title="Link to this heading"></a></h1>
+<p>Documentation of module2.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:31, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../../../_sources/pages/_static/module2/doc/index.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

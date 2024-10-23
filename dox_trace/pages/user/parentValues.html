@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upstream and Derived Values &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Newlines in Attributes" href="newlines.html" />
+    <link rel="prev" title="Calculated Values" href="calcedValues.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upstream and Derived Values</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#upstream-asil">Upstream Asil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upstream-cal">Upstream Cal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upstream-tags">Upstream Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#derived-feature">Derived Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#derived-change-request">Derived Change Request</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Upstream and Derived Values</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="upstream-and-derived-values">
+<h1>Upstream and Derived Values<a class="headerlink" href="#upstream-and-derived-values" title="Link to this heading"></a></h1>
+<p>As additional information, values from direct and indirect upstream references are accumulated
+and shown to ease consistency reviews.</p>
+<p>The attribute <em>names</em> are displayed in grey color and bold font.
+The attribute <em>values</em> are usually also displayed in grey color, but the font style can vary
+depending on the content.</p>
+<p class="rubric">Self-Written Specification Types</p>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 16.0%" />
+<col style="width: 16.0%" />
+<col style="width: 16.0%" />
+<col style="width: 16.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>srs</p></th>
+<th class="head"><p>spec</p></th>
+<th class="head"><p>mod</p></th>
+<th class="head"><p>interface</p></th>
+<th class="head"><p>unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-upstream-asil"><span class="std std-ref">Upstream Asil</span></a></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-upstream-cal"><span class="std std-ref">Upstream Cal</span></a></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-upstream-tags"><span class="std std-ref">Upstream Tags</span></a></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-derived-feature"><span class="std std-ref">Derived Feature</span></a></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-derived-cr"><span class="std std-ref">Derived Change Request</span></a></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Generated Specification Types</p>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>requirement <span class="raw-html"></br></span> (input)</p></th>
+<th class="head"><p>information <span class="raw-html"></br></span> (input)</p></th>
+<th class="head"><p>requirement <span class="raw-html"></br></span> (software, system)</p></th>
+<th class="head"><p>information <span class="raw-html"></br></span> (software, system)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-upstream-asil"><span class="std std-ref">Upstream Asil</span></a></p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-upstream-cal"><span class="std std-ref">Upstream Cal</span></a></p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-upstream-tags"><span class="std std-ref">Upstream Tags</span></a></p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-derived-feature"><span class="std std-ref">Derived Feature</span></a></p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-derived-cr"><span class="std std-ref">Derived Change Request</span></a></p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="upstream-asil">
+<span id="spec-upstream-asil"></span><h2>Upstream Asil<a class="headerlink" href="#upstream-asil" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">A comma separated list of all <a class="reference internal" href="explicitAttributes.html#spec-attr-asil"><span class="std std-ref">asil</span></a> values of <strong>direct</strong> upstream references.</div>
+<div class="line">Duplicated entries will be removed.</div>
+<div class="line">Upstream references to <em>information</em> and struck through specifications are ignored.</div>
+<div class="line">Will not be shown for input requirements.</div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">ASIL_A,</span> <span class="pre">ASIL_B,</span> <span class="pre">not_set</span></code>.</div>
+</div>
+</section>
+<section id="upstream-cal">
+<span id="spec-upstream-cal"></span><h2>Upstream Cal<a class="headerlink" href="#upstream-cal" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">A comma separated list of all <a class="reference internal" href="explicitAttributes.html#spec-attr-cal"><span class="std std-ref">cal</span></a> values of <strong>direct</strong> upstream references.</div>
+<div class="line">Duplicated entries will be removed.</div>
+<div class="line">Upstream references to <em>information</em> and struck through specifications are ignored.</div>
+<div class="line">Will not be shown for input requirements.</div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">CAL_2,</span> <span class="pre">not_set</span></code>.</div>
+</div>
+</section>
+<section id="upstream-tags">
+<span id="spec-upstream-tags"></span><h2>Upstream Tags<a class="headerlink" href="#upstream-tags" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">A comma separated  list of all <a class="reference internal" href="explicitAttributes.html#spec-attr-tags"><span class="std std-ref">tags</span></a> values of <strong>direct</strong> upstream references.</div>
+<div class="line">Duplicated entries will be removed.</div>
+<div class="line">Upstream references to <em>information</em> and struck through specifications are ignored.</div>
+<div class="line">Will not be shown for input requirements.</div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">srs,</span> <span class="pre">swa,</span> <span class="pre">smd,</span> <span class="pre">memory,</span> <span class="pre">obd,</span> <span class="pre">covered</span></code>.</div>
+</div>
+</section>
+<section id="derived-feature">
+<span id="spec-derived-feature"></span><h2>Derived Feature<a class="headerlink" href="#derived-feature" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">A comma separated  list of all <a class="reference internal" href="explicitAttributes.html#spec-attr-feature"><span class="std std-ref">feature</span></a> values of <strong>direct</strong> and <strong>indirect</strong>
+upstream references.</div>
+<div class="line">Duplicated entries will be removed.</div>
+<div class="line">Upstream references to <em>information</em> and struck through specifications are ignored.</div>
+<div class="line">Will not be shown for input requirements.</div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">Feature</span> <span class="pre">1,</span> <span class="pre">Feature</span> <span class="pre">2</span></code>.</div>
+</div>
+</section>
+<section id="derived-change-request">
+<span id="spec-derived-cr"></span><h2>Derived Change Request<a class="headerlink" href="#derived-change-request" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">A comma separated  list of all <a class="reference internal" href="explicitAttributes.html#spec-attr-change-request"><span class="std std-ref">change_request</span></a> values of <strong>direct</strong> and
+<strong>indirect</strong> upstream references.</div>
+<div class="line">Duplicated entries will be removed.</div>
+<div class="line">Upstream references to <em>information</em> and struck through specifications are ignored.</div>
+<div class="line">Will not be shown for input requirements.</div>
+<div class="line">Example: <code class="docutils literal notranslate"><span class="pre">CR</span> <span class="pre">1,</span> <span class="pre">CR</span> <span class="pre">2</span></code>.</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/user/parentValues.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

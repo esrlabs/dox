@@ -1,0 +1,2316 @@
+:raw-html:`Dim`
+===============
+
+:raw-html:`Command Line Interface`
+----------------------------------
+
+:raw-html:`Information`
++++++++++++++++++++++++
+
+.. requirement:: Dim_CLI_help
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall provide a command line switch to print the command line usage.`
+
+.. requirement:: Dim_CLI_license
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall provide a command line switch to print the license.`
+
+.. requirement:: Dim_CLI_version
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/ver.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall provide a command line switch to print the version.`
+
+:raw-html:`Errors`
+++++++++++++++++++
+
+.. requirement:: Dim_CLI_exit
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`On any invalid or missing command line arguments, Dim shall print a meaningful error message and exit with exit code != 0.`
+
+:raw-html:`Syntax`
+------------------
+
+.. information:: Dim_Syntax_overview
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags:
+    :comment:
+    :miscellaneous:
+    :refs:
+
+    :raw-html:`The following chapter describes each attribute of the different file types. For a complete overview with additional information please refer to the user documentation.`
+
+.. requirement:: Dim_Syntax_YAML
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All input files shall be in YAML format.`
+
+.. requirement:: Dim_Syntax_InvalidChars
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Invalid characters (according to YAML standard) and in addition non-breaking spaces in requirements files shall be exchanged on-the-fly during loading by a YAML compatible replacement.`
+
+.. requirement:: Dim_Syntax_Values
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/psych.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All literal values (not arrays or hashes) shall be interpreted as strings even if they would be integers or booleans in standard YAML syntax, e.g. 123 shall be interpreted as &quot;123&quot;.`
+
+.. requirement:: Dim_Syntax_utf8
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All files shall be compatible to UTF-8.`
+
+:raw-html:`Requirements Files`
+++++++++++++++++++++++++++++++
+
+.. requirement:: Dim_ReqFiles_document
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements file shall have a &quot;document&quot; name attribute.<br>Allowed values: any non-unique, non-empty string. The same name shall be usable in different files.`
+
+.. requirement:: Dim_ReqFiles_MissingDocument
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the document name is missing in the requirements file, an error shall be raised.`
+
+.. requirement:: Dim_ReqFiles_enclosed
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements file shall have an optional &quot;enclosed&quot; attribute which specifies files which are needed for the requirements, e.g. images.<br>Allowed values: a string or an array of strings. The strings must point to existing files and specified with relative paths without &quot;..&quot;.<br>Default value: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_metadata
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements file shall have an optional &quot;metadata&quot; attribute which consists of any user specific string, e.g. the origin of the requirements document, history or version.<br>Allowed values: any string<br>Default value: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_id
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements file shall have zero or more requirements objects. These objects shall have strings as ID.<br>Allowed values for IDs: any string without the letter &quot;,&quot;<br>Default value for IDs: n/a, must be specified explicitly`
+
+:raw-html:`Regular Form`
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_ReqFiles_regularYaml
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`In the regular form, the ID shall be a key of a collection of key/values pairs of strings.`
+
+.. requirement:: Dim_ReqFiles_type
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;type&quot; attribute.<br>Allowed values: &quot;requirement&quot;, &quot;information&quot; and &quot;heading_0&quot; to &quot;heading_100&quot;<br>Default: &quot;requirement&quot;`
+
+.. requirement:: Dim_ReqFiles_text
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;text&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_verificationCriteria
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;verification_criteria&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_feature
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;feature&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_changeRequest
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;change_request&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_tags
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;tags&quot; attribute.<br>Allowed values: comma separated list of strings<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_asil
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: Dim_PropFiles_Property
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;asil&quot; attribute.<br>Allowed values: &quot;not_set&quot;, &quot;QM&quot;, &quot;QM(A)&quot;, ... , &quot;ASIL_D(D)&quot;<br>Default: &quot;not_set&quot;`
+
+.. requirement:: Dim_ReqFiles_calString
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: Dim_PropFiles_Property
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;cal&quot; attribute.<br>Allowed values: &quot;QM&quot;, &quot;CAL_1&quot;, &quot;CAL_2&quot;, &quot;CAL_3&quot;, &quot;CAL_4&quot;<br>Default: &quot;not_set&quot;`
+
+.. requirement:: Dim_ReqFiles_developer
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;developer&quot; attribute.<br>Allowed values: any string,<br>Default resolution:<br>- originator from the config file, if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is &quot;requirement&quot; and<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is neither &quot;input&quot; nor &quot;unspecified&quot;<br>- &quot;&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_tester
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;tester&quot; attribute.<br>Allowed values: any string<br>Default resolution: if<br>- originator from the config file if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is &quot;requirement&quot; and<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is not in tags and<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is neither &quot;input&quot; nor &quot;unspecified&quot;<br>- &quot;&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_testSetups
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;test_setups&quot; attribute.<br>Allowed values: one or more of &quot;none&quot;, &quot;off_target&quot;, &quot;on_target&quot;, &quot;manual&quot;<br>If test_setups is missing, it is resolved to:<br>- &quot;none&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is not &quot;requirement&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is in tags or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;off_target&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;module&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- tags include &quot;tool&quot;<br>- &quot;on_target&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_verificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb lib/dim/loader.rb lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement object shall have an optional &apos;verification_methods&apos; attribute.<br>Allowed values: one or more of &quot;none&quot;, &quot;off_target&quot;, &quot;on_target&quot;, &quot;manual&quot;<br>If verification_methods is missing, it is resolved to:<br>- &quot;none&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is not &quot;requirement&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is in tags or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;off_target&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;module&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- tags include &quot;tool&quot;<br>- &quot;on_target&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_verificationMethods_backward
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb lib/dim/consistency.rb lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;verification_methods&quot; replaces &quot;test_setups&quot;.<br>For backward compatibility, the requirements file can include both &quot;test_setups&quot; and &quot;verification_methods&quot;.<br>During loading, Dim shall merge values from both attributes.`
+
+.. requirement:: Dim_ReqFiles_status
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;status&quot; attribute.<br>Allowed values: one of &quot;valid&quot;, &quot;draft&quot;, &quot;invalid&quot;<br>If status is missing, it is resolved to:<br>- &quot;draft&quot; if type is &quot;requirement&quot; or &quot;information&quot;<br>- &quot;valid&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_reviewStatus
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;review_status&quot; attribute.<br>Allowed values: one of &quot;accepted&quot;, &quot;unclear&quot;, &quot;rejected&quot;, &quot;not_reviewed&quot;, &quot;not_relevant&quot;<br>If review_status is missing, it is resolved to:<br>- &quot;not_reviewed&quot; if category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;accepted&quot; otherwise`
+
+.. requirement:: Dim_ReqFiles_comment
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;comment&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_miscellaneous
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;miscellaneous&quot; attribute.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_sources
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;sources&quot; attribute.<br>Allowed values: comma separated string list<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_refs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional &quot;refs&quot; attribute.<br>Allowed values: a string with comma separated IDs, which must exist.<br>A requirement object is also allowed to have reference within<br>different categories and circular dependency can only occur in the<br>same category level.<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ReqFiles_language
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall have an optional language attributes for &quot;text&quot;, &quot;verification_criteria&quot; and &quot;comment&quot;.<br>The naming scheme of these attributes shall be &quot;&lt;key&gt;_&lt;language&gt;&quot;, e.g. &quot;text_german&quot;.<br>Allowed values: any string<br>Default: &quot;&quot;`
+
+:raw-html:`Short Form`
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_ReqFiles_shortYaml
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`In the short form, the ID shall be the key of a key/value pair of strings.`
+
+.. requirement:: Dim_ReqFiles_shortHeadingForm
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If a requirement object has a heading type and only text, it shall be writable in one line for convenience. The value shall include the heading level and the heading text.`
+
+.. requirement:: Dim_ReqFiles_shortInfoForm
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb, lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If a requirement object has type &quot;information&quot; and only text, it shall be writable in one line for convenience. The value shall include the information type and the text.`
+
+:raw-html:`Config Files`
+++++++++++++++++++++++++
+
+.. requirement:: Dim_ConfigFiles_Config
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config file shall have exactly one &quot;Config&quot; attribute which consists of an array of config entries.`
+
+.. requirement:: Dim_ConfigFiles_Files
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config entry shall have exactly one &quot;files&quot; entry.<br>Allowed values: a string or an array of strings of requirements files. The files must be specified with relative paths but without &quot;..&quot;. Ruby glob pattern are allowed, e.g. &quot;**&quot;, &quot;*&quot; and &quot;?&quot;.<br>If a filename is specified more than once, an error shall be thrown.`
+
+.. requirement:: Dim_ConfigFiles_Originator
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config entry shall have exactly one &quot;originator&quot; entry.<br>Allowed values: any non-empty string`
+
+.. requirement:: Dim_ConfigFiles_Category
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config entry shall have exactly one &quot;category&quot; entry.<br>Allowed values: one of &quot;input&quot;, &quot;software&quot;, &quot;architecture&quot;, &quot;module&quot;, &quot;system&quot;`
+
+.. requirement:: Dim_ConfigFiles_Property
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config file shall have an optional &quot;Property&quot; attribute.<br>Allowed values: a string which points to an existing properties file.<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ConfigFiles_Attribute
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config file shall have an optional &quot;Attributes&quot; field.<br>Allowed values: a string which points to an existing attribute file.<br>Default: &quot;&quot;`
+
+.. requirement:: Dim_ConfigFiles_disableNameCheck
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A config file shall have an optional &quot;disable_naming_convention_check&quot; field a config entry.<br>Allowed values: &quot;yes&quot; and &quot;no&quot;<br>Default: &quot;no&quot;`
+
+.. requirement:: Dim_ConfigFiles_SRS
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the category for a config entry is &quot;software&quot; and &quot;disable_naming_convention_check&quot; value is not set to &quot;yes&quot;, Dim shall check for ID naming conventions. An ID must start with &quot;SRS_&quot; and must be named in SRS_&lt;feature&gt;_&lt;aspect&gt; fashion including the two underscores. The document name must start with &quot;SRS_&quot; and must be named in SRS_&lt;feature&gt; fashion including the underscore. &lt;feature&gt; and &lt;aspect&gt; must be non empty strings with only alphanumeric characters along with hyphen allowed. If this naming convention is not met, Dim shall throw a meaningful error message and exit with exit code != 0.`
+
+:raw-html:`Properties File`
++++++++++++++++++++++++++++
+
+.. requirement:: Dim_PropFiles_Property
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A properties file shall define default values for attributes of requirement elements which are not explicitly set.<br>The values shall be structured in the properties file using the document name as a key, and the attributes with their respective default values, like this:<br>&quot;document {&apos;status&apos;: &apos;valid&apos;, &apos;asil&apos;: &apos;ASIL_B&apos;, &apos;text&apos;: &apos;default text&apos;}&quot;`
+
+.. requirement:: Dim_AttrFiles_CmdParam
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall be able to accept the attributes file using a command line argument. If the config file includes the reference to custom attributes and another attributes file is loaded using command line argument, then Dim shall load the attributes from both files for processing requirements. In case these attribute files contains duplicate attributes, then attributes referenced from the config file shall be given priority.`
+
+.. requirement:: Dim_AttributeLoading_UnitTests
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/helpers/attributes_helper.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`When the attributes file is referenced in Config file or passed using the command line argument, Dim shall validate the configuration for custom attributes and load them for processing the requirements.`
+
+.. requirement:: Dim_AttrFiles_Attribute
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`An attributes file shall accept custom attributes for Dim.<br>The values shall be structured in the attributes file using the attribute name as a key, and the values for those attributes, like this:<br>&quot;color: {type: single, default: red, allowed: [red, green]}&quot;<br>type - defines the format type how the attribute is interpreted and exported to RST<br>default - specifies the default value<br>allowed - specifies list of allowed values`
+
+.. requirement:: Dim_AttrFiles_SearchAttributeFile
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If a single requirements file is loaded, then Dim shall automatically search for &quot;attributes.dim&quot; file recursively in parent directory till root directory is reached. This does not apply if a config file is loaded instead of single requirements file.`
+
+:raw-html:`Loading Files`
+-------------------------
+
+:raw-html:`Reading Data`
+++++++++++++++++++++++++
+
+.. requirement:: Dim_loading_readGood
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall read the files specified on command line and in the config file. The data shall be made available to subcommands.`
+
+.. requirement:: Dim_loading_enclosedCheck
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: /lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall skip the enclosed file check when &quot;--no-check-enclosed&quot; flag is passed.`
+
+.. requirement:: Dim_loading_readBad
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb, lib/dim/ext/psych.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If any error occurs during loading the config, property or requirements files, Dim shall print a meaningful error message and exit with exit code != 0. Errors can occur due to file access issues like missing files or the files have invalid syntax.`
+
+:raw-html:`Consistency Checks`
+++++++++++++++++++++++++++++++
+
+.. requirement:: Dim_loading_checkCyclic
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Requirements can reference other requirements which can reference again other requirements in same category level. In case of a cyclic reference, Dim shall print a meaningful error message and exit with exit code != 0.`
+
+.. requirement:: Dim_loading_checkMissing
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If a reference cannot be resolved, which means the ID does not exist, Dim shall print a meaningful error message and exit with exit code != 0.`
+
+.. requirement:: Dim_loading_checkMissingDisable
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The command line interface of Dim shall provide an option to disable this unresolved-references-check, which means Dim shall neither complain about missing references nor exit Dim.`
+
+.. requirement:: Dim_loading_checkDocument
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If several files share the same document name, the originator and the category must be the same for all of these files. If not, Dim shall print a meaningful error message and exit with exit code != 0.`
+
+.. requirement:: Dim_loading_document
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall support &quot;module&quot; as alias for &quot;document&quot;. If &quot;module&quot; is specified, &quot;document&quot; shall be set to the value of &quot;module&quot;. If both are specified, an error shall be raised.`
+
+.. requirement:: Dim_loading_checkMetadata
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If several files share the same document name, &quot;metadata&quot; must not be defined more than once. Otherwise Dim shall print a meaningful error message and exit with exit code != 0.`
+
+.. requirement:: Dim_loading_checkID
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/psych.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Requirement IDs shall be unique over all files. If the same ID is used for more than one requirement, Dim shall print a meaningful error message and exit with exit code != 0.`
+
+:raw-html:`Subcommands`
+-----------------------
+
+:raw-html:`check`
++++++++++++++++++
+
+.. requirement:: Dim_check_General
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/check.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The command line interface of Dim shall provide a &quot;check&quot; subcommand which loads the input files and executes consistency checks.`
+
+:raw-html:`stats`
++++++++++++++++++
+
+.. requirement:: Dim_stats_General
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/stats.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The command line interface of Dim shall provide a &quot;stats&quot; subcommand which prints basic metrics to the console. The metrics shall be printed for every loaded document and a summary over all documents.`
+
+.. requirement:: Dim_stats_Details
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/stats.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The metrics shall include at least:<br>- Number of total elements<br>- Number of requirements<br>- Number of valid requirements split by review status`
+
+:raw-html:`format`
+++++++++++++++++++
+
+.. requirement:: Dim_format_general
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The command line interface of Dim shall provide a &quot;format&quot; subcommand which formats the loaded requirements files. Missing references are allowed by default while formatting.`
+
+.. requirement:: Dim_format_whitespaces
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The formatter shall adapt the whitespaces in a predefined style.`
+
+.. requirement:: Dim_format_order
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The formatter shall arrange the attributes in a predefined order.`
+
+.. requirement:: Dim_format_form
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The formatter shall change requirements from regular to short form if possible.`
+
+.. requirement:: Dim_format_default
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The formatter shall not remove any attributes, even if the default value is specified.`
+
+.. requirement:: Dim_format_duplicated
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The formatter shall remove duplicate values in &quot;tags&quot;, &quot;verification_methods&quot;, &quot;sources&quot; and &quot;refs&quot;.`
+
+.. requirement:: Dim_format_inPlace
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`By default, the formatter shall change the files in-place.`
+
+.. requirement:: Dim_format_checkOnly
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to only check the formatting without changing the files. In case of incorrect formatting, an error message shall be printed and Dim shall exit with an exit code != 0. Different line endings like CRLF and LF shall be ignored.`
+
+.. requirement:: Dim_format_extra
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to write the formatted data to extra files and not overwrite the original files. This makes it easier to use third-party compare-tools.`
+
+.. requirement:: Dim_format_vim
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to read the input from STDIN and to print the formatted output to the STDOUT. This functionality supports auto-formatting in text editors like Vim.`
+
+.. requirement:: Dim_format_verificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The Dim formatter shall remove the &quot;test_setups&quot; attribute from formatted file and keep only &apos;verification_methods&apos;.`
+
+:raw-html:`export`
+++++++++++++++++++
+
+.. requirement:: Dim_export_general
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The command line interface of Dim shall provide an &quot;export&quot; subcommand which exports the requirements data to other file formats. It shall be possible to specify the output folder.`
+
+.. requirement:: Dim_export_documents
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Within the output folder, a new folder for every document shall be created with a requirements file named &quot;&lt;document&gt;/Requirements.&lt;type&gt;&quot;, e.g. &quot;myModule/Requirements.json&quot;. The document name shall be sanitized, e.g. &quot;/&quot; shall be converted to &quot;_&quot; to avoid invalid folder names.`
+
+.. requirement:: Dim_export_enclosed
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Files specified in the enclosed attributes shall be copied to the appropriate document&apos;s output folder.`
+
+.. requirement:: Dim_export_filter
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to filter requirements for exports based on their attributes, e.g. that only input and software requirements are exported.`
+
+.. requirement:: Dim_export_cleanup
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`After exporting is complete, files from exported folder which are no longer referenced in the exported folder shall be cleaned up.`
+
+.. requirement:: Dim_export_verificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/export.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Exported requirements file shall contain &quot;verification_methods&quot; and not &quot;test_setups&quot;.`
+
+:raw-html:`JSON`
+~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_export_json
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/json.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`JSON exports shall have all requirement attributes as key/value pairs plus ID, document name and originator.`
+
+:raw-html:`CSV`
+~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_export_csvSep
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/csv.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`CSV exports shall have &quot;Sep=,&quot; in the first line to specify the separator character.`
+
+.. requirement:: Dim_export_csvAttributes
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/csv.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`CSV exports shall have all requirement attributes plus ID, document name and originator in the second line. The following lines shall consist of the values of the requirements according to the attribute names defined in the second line.`
+
+.. requirement:: Dim_export_csvValues
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/csv.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All values shall be wrapped by double quotes. Double quotes in the values shall be escaped.`
+
+:raw-html:`RST`
+~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_export_rst
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/rst.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`RST exports shall export the data according to the Sphinx dox_trace extension syntax.`
+
+.. requirement:: Dim_export_rstStrings
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/rst.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`In the RST export, literals like &quot;text&quot; or &quot;verification_criteria&quot; shall be exported as Sphinx raw-html elements to avoid invalid RST files. This means special characters like &quot;&lt;&quot; or &quot;\n&quot; must be escaped or converted. It shall be possible to mark substrings explicitly to skip this conversion.`
+
+.. requirement:: Dim_export_rstChange
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/rst.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Existing RST files shall only be overwritten if data has been changed to keep the time stamp of the files.`
+
+.. requirement:: Dim_export_rstIndex
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/commands/exporter/rst.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Additionally to the requirements files, the RST exporter shall create index files for each originator/category pair to be directly used by Sphinx.`
+
+.. requirement:: Dim_format_customAttributes
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/options.rb, lib/dim/loader.rb, lib/dim/commands/format.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Before formatting requirements files with custom attributes, Dim shall load the attributes file first.`
+
+:raw-html:`Ruby API`
+--------------------
+
+:raw-html:`Reading`
++++++++++++++++++++
+
+.. requirement:: Dim_api_reading
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to load files by using the Dim Ruby API directly. A data structure shall be provided with resolved default values if the values are not provided explicitly in the requirements files.`
+
+:raw-html:`Convenience Methods for Requirements`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_api_safetyRelevant
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall provide a method &quot;safety_relevant?&quot; which returns true if &quot;asil&quot; is not set to &quot;QM&quot; or &quot;not_set&quot;, otherwise false.`
+
+.. requirement:: Dim_api_securityRelevant
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirements object shall provide a method &quot;security_relevant?&quot; which returns true if &quot;cal&quot; is set to &quot;CAL_4&quot;, otherwise false.`
+
+:raw-html:`Additional Getters`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_api_documentName
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the document name.`
+
+.. requirement:: Dim_api_originator
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the originator. The value shall be taken from the config file. If a requirements file was loaded directly without a config file, the originator shall be &quot;&quot;.`
+
+.. requirement:: Dim_api_category
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the category. The value shall be taken from the config file. If a requirements file was loaded directly without a config file, the category shall be &quot;unspecified&quot;.`
+
+.. requirement:: Dim_api_filename
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the filename.`
+
+.. requirement:: Dim_api_lineNumber
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the line number.`
+
+.. requirement:: Dim_api_backwardRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the backward references which are calculated automatically by Dim.`
+
+.. requirement:: Dim_api_existingRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: Dim_loading_checkMissingDisable
+    :sources: lib/dim/requirements.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for the existing references. When loading with disabled missing-reference-check, the list can be shorter than the original list in refs attribute.`
+
+.. requirement:: Dim_api_upstreamRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb lib/dim/loader.rb lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for upstream references, which means a list of IDs from refs to higher category level plus backward-refs from higher or same category level IDs.`
+
+.. requirement:: Dim_api_downstreamRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/requirement.rb lib/dim/loader.rb lib/dim/consistency.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A requirement shall have a getter for downstream references, which means a list of IDs from refs to lower or same category level plus backward-refs from lower category level IDs.`
+
+.. requirement:: Dim_api_metadata
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The metadata of the documents shall be available via the API.`
+
+:raw-html:`Convenience Methods for Attributes With Comma Separated Values`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. requirement:: Dim_api_stringCleanSplit
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;cleanSplit&quot; method which returns an array of the elements without leading and trailing whitespaces.`
+
+.. requirement:: Dim_api_stringCleanArray
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;cleanArray&quot; method which returns the same as &quot;cleanSplit&quot; but same as cleanSplit, but without empty elements.`
+
+.. requirement:: Dim_api_stringCleanUniqArray
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;cleanUniqArray&quot; method which returns the same as &quot;cleanArray&quot; but also removes duplicates.`
+
+.. requirement:: Dim_api_stringCleanString
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;cleanString&quot; method which returns a string without empty elements, leading and trailing whitespaces.`
+
+.. requirement:: Dim_api_stringCleanUniqString
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;cleanUniqString&quot; method which returns the same as &quot;cleanString&quot; but also removes duplicates.`
+
+.. requirement:: Dim_api_stringAddEnum
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with an &quot;addEnum&quot; method which add an enum to the string, makes the enums unique and returns the result.`
+
+.. requirement:: Dim_api_stringRemoveEnum
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/string.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Dim shall extend the String class with a &quot;removeEnum&quot; method which removes all enums from the string and returns the result.`
+
+:raw-html:`Writing`
++++++++++++++++++++
+
+.. requirement:: Dim_api_changing
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/loader.rb, lib/dim/requirements.rb, lib/dim/formatter.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`It shall be possible to change requirements files by using the Dim Ruby API directly. A data structure shall be provided without resolved default values to be able to work on the original data. It shall be possible to write the changed data back to the file system.`
+
+:raw-html:`Testing Requirements`
+--------------------------------
+
+.. requirement:: Dim_testing_output
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: lib/dim/ext/output.rb
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`To ease testing, it shall be possible to read the command line output of Dim in unit tests when calling functions directly. This means stdout and stderr need to be redirected through string streams.`

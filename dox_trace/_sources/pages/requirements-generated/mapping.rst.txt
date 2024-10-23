@@ -1,0 +1,1151 @@
+Test Case Mapping
+=================
+
+.. list-table::
+    :width: 100%
+    :widths: 30 25 50
+    :header-rows: 1
+
+    * - Requirements ID
+      - Test Case Location
+      - Test Case Description
+    * - :ref:`DoxTrace_Build_Single <DoxTrace_Build_Single>`
+      - spec/parallel_spec.rb:12
+      - dox_trace shall support single-threaded build on all platforms
+    * - :ref:`DoxTrace_Build_Multi <DoxTrace_Build_Multi>`
+      - spec/parallel_spec.rb:32
+      - dox_trace shall support parallel build on all platforms
+    * - :ref:`DoxTrace_Syntax_Types <DoxTrace_Syntax_Types>`
+      - spec/directives_spec.rb:11
+      - dox_trace shall provide the directives requirement, information, srs, spec, unit and interface
+    * - :ref:`DoxTrace_Syntax_Structure <DoxTrace_Syntax_Structure>`
+      - spec/directives_spec.rb:24
+      - dox_trace shall provide optional attributes and content for the directives
+    * -
+      - spec/directives_spec.rb:31
+      - dox_trace shall provide a mandatory ID argument for the directives
+    * -
+      - spec/directives_spec.rb:44
+      - dox_trace shall abort the build with an appropriate error message if the ID argument for a directive is missing
+    * -
+      - spec/directives_spec.rb:55
+      - dox_trace shall abort the build with appropriate error message if an empty line is missing before the content
+    * - :ref:`DoxTrace_Syntax_Anchor <DoxTrace_Syntax_Anchor>`
+      - spec/general_spec.rb:12
+      - dox_trace in general shall create anchors for every specification
+    * - :ref:`DoxTrace_Syntax_Stripped <DoxTrace_Syntax_Stripped>`
+      - spec/general_spec.rb:24
+      - dox_trace in general shall strip the attribute values
+    * - :ref:`DoxTrace_Syntax_Empty <DoxTrace_Syntax_Empty>`
+      - spec/general_spec.rb:33
+      - dox_trace in general shall treat empty values as empty strings
+    * - :ref:`DoxTrace_Syntax_Multi <DoxTrace_Syntax_Multi>`
+      - spec/general_spec.rb:45
+      - dox_trace in general shall load multi-enum attributes correctly
+    * - :ref:`DoxTrace_Syntax_FreeText <DoxTrace_Syntax_FreeText>`
+      - spec/general_spec.rb:62
+      - dox_trace in general shall load free-text attributes and the content correctly
+    * - :ref:`DoxTrace_Syntax_Newlines <DoxTrace_Syntax_Newlines>`
+      - spec/general_spec.rb:80
+      - dox_trace in general shall preserve newlines in attributes expect line ends with backslash
+    * - :ref:`DoxTrace_Syntax_Status <DoxTrace_Syntax_Status>`
+      - spec/status_spec.rb:12
+      - The attribute status with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/status_spec.rb:39
+      - The attribute status with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Syntax_ReviewStatus <DoxTrace_Syntax_ReviewStatus>`
+      - spec/review_status_spec.rb:11
+      - The attribute review_status with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/review_status_spec.rb:32
+      - The attribute review_status with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Syntax_Asil <DoxTrace_Syntax_Asil>`
+      - spec/asil_spec.rb:11
+      - The attribute asil with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/asil_spec.rb:38
+      - The attribute asil with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Syntax_Cal <DoxTrace_Syntax_Cal>`
+      - spec/cal_spec.rb:11
+      - The attribute cal with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/cal_spec.rb:49
+      - The attribute cal with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Syntax_Security <DoxTrace_Syntax_Security>`
+      - spec/security_spec.rb:11
+      - The attribute security with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/security_spec.rb:51
+      - The attribute security with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Syntax_SecurityToCal <DoxTrace_Syntax_SecurityToCal>`
+      - spec/cal_spec.rb:38
+      - The attribute cal with correct syntax shall derive the value from security if cal is not defined
+    * - :ref:`DoxTrace_Syntax_CalToSecurity <DoxTrace_Syntax_CalToSecurity>`
+      - spec/security_spec.rb:38
+      - The attribute security with correct syntax shall derive the value from cal if security is not defined
+    * - :ref:`DoxTrace_Syntax_Reuse <DoxTrace_Syntax_Reuse>`
+      - spec/reuse_spec.rb:11
+      - The attribute reuse with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/reuse_spec.rb:31
+      - The attribute reuse specified in a requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/reuse_spec.rb:44
+      - The attribute reuse specified in a information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/reuse_spec.rb:57
+      - The attribute reuse specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/reuse_spec.rb:70
+      - The attribute reuse specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/reuse_spec.rb:83
+      - The attribute reuse specified in a interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/reuse_spec.rb:96
+      - The attribute reuse specified in a srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Usage <DoxTrace_Syntax_Usage>`
+      - spec/usage_spec.rb:11
+      - The attribute usage with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/usage_spec.rb:31
+      - The attribute usage specified in a requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/usage_spec.rb:44
+      - The attribute usage specified in a information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/usage_spec.rb:57
+      - The attribute usage specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/usage_spec.rb:70
+      - The attribute usage specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/usage_spec.rb:83
+      - The attribute usage specified in a interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/usage_spec.rb:96
+      - The attribute usage specified in a srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Developer <DoxTrace_Syntax_Developer>`
+      - spec/developer_spec.rb:11
+      - The attribute developer with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/developer_spec.rb:36
+      - The attribute developer with correct syntax shall be exported correctly
+    * -
+      - spec/developer_spec.rb:66
+      - The attribute developer specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Tester <DoxTrace_Syntax_Tester>`
+      - spec/tester_spec.rb:11
+      - The attribute tester with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/tester_spec.rb:40
+      - The attribute tester with correct syntax shall be exported correctly
+    * -
+      - spec/tester_spec.rb:67
+      - The attribute tester specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/tester_spec.rb:80
+      - The attribute tester specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_TestSetups <DoxTrace_Syntax_TestSetups>`
+      - spec/test_setups_spec.rb:11
+      - The attribute test_setups with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/test_setups_spec.rb:45
+      - The attribute test_setups with correct syntax shall be exported correctly
+    * -
+      - spec/test_setups_spec.rb:76
+      - The attribute test_setups specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/test_setups_spec.rb:89
+      - The attribute test_setups specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_VerificationMethods <DoxTrace_Syntax_VerificationMethods>`
+      - spec/verification_methods_spec.rb:11
+      - The attribute verification_methods with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/verification_methods_spec.rb:45
+      - The attribute verification_methods with correct syntax shall be exported correctly
+    * -
+      - spec/verification_methods_spec.rb:76
+      - The attribute verification_methods specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/verification_methods_spec.rb:89
+      - The attribute verification_methods specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/verification_methods_spec.rb:102
+      - The attribute verification_methods specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_TestSetupsToVerificationMethods <DoxTrace_Syntax_TestSetupsToVerificationMethods>`
+      - spec/verification_methods_spec.rb:35
+      - The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined
+    * - :ref:`DoxTrace_Syntax_VerificationMethodsToTestSetups <DoxTrace_Syntax_VerificationMethodsToTestSetups>`
+      - spec/test_setups_spec.rb:35
+      - The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined
+    * - :ref:`DoxTrace_Syntax_Tags <DoxTrace_Syntax_Tags>`
+      - spec/tags_spec.rb:12
+      - The attribute tags with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/tags_spec.rb:38
+      - The attribute tags with correct syntax shall be exported correctly
+    * -
+      - spec/tags_spec.rb:66
+      - The attribute tags specified in a mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_VerificationCriteria <DoxTrace_Syntax_VerificationCriteria>`
+      - spec/verification_criteria_spec.rb:11
+      - The attribute verification_criteria with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/verification_criteria_spec.rb:41
+      - The attribute verification_criteria with correct syntax shall be exported correctly
+    * -
+      - spec/verification_criteria_spec.rb:69
+      - The attribute verification_criteria specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/verification_criteria_spec.rb:82
+      - The attribute verification_criteria specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Comment <DoxTrace_Syntax_Comment>`
+      - spec/comment_spec.rb:11
+      - The attribute comment with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/comment_spec.rb:33
+      - The attribute comment specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/comment_spec.rb:46
+      - The attribute comment specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/comment_spec.rb:59
+      - The attribute comment specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/comment_spec.rb:72
+      - The attribute comment specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/comment_spec.rb:85
+      - The attribute comment specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Miscellaneous <DoxTrace_Syntax_Miscellaneous>`
+      - spec/miscellaneous_spec.rb:11
+      - The attribute miscellaneous with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/miscellaneous_spec.rb:33
+      - The attribute miscellaneous specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/miscellaneous_spec.rb:46
+      - The attribute miscellaneous specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/miscellaneous_spec.rb:59
+      - The attribute miscellaneous specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/miscellaneous_spec.rb:72
+      - The attribute miscellaneous specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/miscellaneous_spec.rb:85
+      - The attribute miscellaneous specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Feature <DoxTrace_Syntax_Feature>`
+      - spec/feature_spec.rb:11
+      - The attribute feature with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/feature_spec.rb:29
+      - The attribute feature specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/feature_spec.rb:42
+      - The attribute feature specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/feature_spec.rb:55
+      - The attribute feature specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/feature_spec.rb:68
+      - The attribute feature specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/feature_spec.rb:81
+      - The attribute feature specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/feature_spec.rb:94
+      - The attribute feature specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_ChangeRequest <DoxTrace_Syntax_ChangeRequest>`
+      - spec/change_request_spec.rb:11
+      - The attribute change_request with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/change_request_spec.rb:29
+      - The attribute change_request specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/change_request_spec.rb:42
+      - The attribute change_request specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/change_request_spec.rb:55
+      - The attribute change_request specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/change_request_spec.rb:68
+      - The attribute change_request specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/change_request_spec.rb:81
+      - The attribute change_request specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/change_request_spec.rb:94
+      - The attribute change_request specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Sources <DoxTrace_Syntax_Sources>`
+      - spec/sources_spec.rb:11
+      - The attribute sources with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/sources_spec.rb:43
+      - The attribute sources with correct syntax shall be exported correctly
+    * -
+      - spec/sources_spec.rb:75
+      - The attribute sources specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/sources_spec.rb:88
+      - The attribute sources specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Refs <DoxTrace_Syntax_Refs>`
+      - spec/downstream_references_spec.rb:11
+      - The calculated attribute Downstream References with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/downstream_references_spec.rb:42
+      - The calculated attribute Downstream References with correct syntax shall be exported correctly
+    * -
+      - spec/refs_spec.rb:12
+      - The attribute refs specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Location <DoxTrace_Syntax_Location>`
+      - spec/location_spec.rb:11
+      - The attribute location with correct syntax shall be displayed correctly without any error
+    * -
+      - spec/location_spec.rb:47
+      - The attribute location specified in an information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/location_spec.rb:60
+      - The attribute location specified in an requirement directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/location_spec.rb:73
+      - The attribute location specified in an spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/location_spec.rb:86
+      - The attribute location specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/location_spec.rb:99
+      - The attribute location specified in an unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/location_spec.rb:112
+      - The attribute location specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_Category <DoxTrace_Syntax_Category>`
+      - spec/category_spec.rb:11
+      - The attribute category with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/category_spec.rb:38
+      - The attribute category specified in a spec directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/category_spec.rb:51
+      - The attribute category specified in a unit directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/category_spec.rb:64
+      - The attribute category specified in an interface directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/category_spec.rb:77
+      - The attribute category specified in an mod directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/category_spec.rb:90
+      - The attribute category specified in an srs directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Syntax_IgnoreInExport <DoxTrace_Syntax_IgnoreInExport>`
+      - spec/ignore_in_export_spec.rb:12
+      - The attribute ignore_in_export if set shall disable the export of the particular specification
+    * - :ref:`DoxTrace_Checks_Cyclic <DoxTrace_Checks_Cyclic>`
+      - spec/checks_spec.rb:10
+      - dox_trace shall check for self-references and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:21
+      - dox_trace shall check for cyclic references through several specifications and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:32
+      - dox_trace shall check for cyclic references not through several levels and abort the build with appropriate error message if detected
+    * - :ref:`DoxTrace_Checks_InvalidRefs <DoxTrace_Checks_InvalidRefs>`
+      - spec/checks_spec.rb:43
+      - dox_trace shall check for invalid references and abort the build with appropriate error message if detected
+    * - :ref:`DoxTrace_Checks_Case <DoxTrace_Checks_Case>`
+      - spec/checks_spec.rb:54
+      - dox_trace shall check for references with wrong case and abort the build with appropriate error message if detected
+    * - :ref:`DoxTrace_Checks_Sources <DoxTrace_Checks_Sources>`
+      - spec/checks_spec.rb:65
+      - dox_trace shall check for sources in spec which do not exist and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:76
+      - dox_trace shall check for sources in unit which do not exist and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:87
+      - dox_trace shall check for sources in interface which do not exist and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:98
+      - dox_trace shall check for sources in srs which do not exist and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:109
+      - dox_trace shall not check for invalid sources in requirement and not abort the build in these cases
+    * - :ref:`DoxTrace_Checks_Comments <DoxTrace_Checks_Comments>`
+      - spec/checks_spec.rb:119
+      - dox_trace shall check for invalid comment "spec:" and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:130
+      - dox_trace shall check for invalid comment ":unit:" and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:141
+      - dox_trace shall check for invalid comment "interface" and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:152
+      - dox_trace shall check for invalid comment ":mod" and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:163
+      - dox_trace shall check for invalid comment "srs.." and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:174
+      - dox_trace shall ignore valid comments and not abort the build in these cases
+    * - :ref:`DoxTrace_Checks_Unique <DoxTrace_Checks_Unique>`
+      - spec/checks_spec.rb:184
+      - dox_trace shall check if an ID is used twice and abort the build with appropriate error message if detected
+    * - :ref:`DoxTrace_Checks_Newline <DoxTrace_Checks_Newline>`
+      - spec/checks_spec.rb:195
+      - dox_trace shall check if an ID contains a newline and abort the build with appropriate error message if detected
+    * - :ref:`DoxTrace_Checks_Naming <DoxTrace_Checks_Naming>`
+      - spec/checks_spec.rb:206
+      - dox_trace shall check if an ID has two underscores after the prefix instead of one and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:217
+      - dox_trace shall check if an ID has incorrect case and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:228
+      - dox_trace shall check if an ID does not have a character after the first underscore and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:250
+      - dox_trace shall check if spec ID does not contain three underscores and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:261
+      - dox_trace shall check if an interface ID does not start with wrong prefix and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:272
+      - dox_trace shall check if a mod ID does not start with wrong prefix and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:283
+      - dox_trace shall check if an srs ID does not start with wrong prefix and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:294
+      - dox_trace shall check if a unit ID does not start with wrong prefix and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:316
+      - dox_trace shall accept valid IDs and not abort the build in these cases
+    * - :ref:`DoxTrace_Checks_NamingDeprecated <DoxTrace_Checks_NamingDeprecated>`
+      - spec/checks_spec.rb:239
+      - dox_trace shall check if a deprecated ID does not have a character after the first underscore and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:305
+      - dox_trace shall check if a deprecated ID does not start with wrong prefix and abort the build with appropriate error message if detected
+    * -
+      - spec/checks_spec.rb:326
+      - dox_trace shall accept valid deprecated IDs and not abort the build in these cases
+    * - :ref:`DoxTrace_Checks_SphinxVersion <DoxTrace_Checks_SphinxVersion>`
+      - spec/checks_spec.rb:349
+      - dox_trace shall check if Sphinx 6.2 or later is used and abort the build with appropriate error message if Sphinx version is too old
+    * - :ref:`DoxTrace_Checks_PythonVersion <DoxTrace_Checks_PythonVersion>`
+      - spec/checks_spec.rb:337
+      - dox_trace shall check if Python 3.8 or later is used and abort the build with appropriate error message if Python version is too old
+    * - :ref:`DoxTrace_HTML_Incremental <DoxTrace_HTML_Incremental>`
+      - spec/html_spec.rb:11
+      - dox_trace HTML output shall support incremental build and enforce a rebuild if the extension version has changed
+    * - :ref:`DoxTrace_HTML_Version <DoxTrace_HTML_Version>`
+      - spec/html_spec.rb:11
+      - dox_trace HTML output shall support incremental build and enforce a rebuild if the extension version has changed
+    * - :ref:`DoxTrace_HTML_Table <DoxTrace_HTML_Table>`
+      - spec/html_spec.rb:61
+      - dox_trace HTML output shall contain a table with attributes for every specification in correct design
+    * - :ref:`DoxTrace_HTML_Background <DoxTrace_HTML_Background>`
+      - spec/html_spec.rb:61
+      - dox_trace HTML output shall contain a table with attributes for every specification in correct design
+    * - :ref:`DoxTrace_HTML_Attributes <DoxTrace_HTML_Attributes>`
+      - spec/html_spec.rb:61
+      - dox_trace HTML output shall contain a table with attributes for every specification in correct design
+    * - :ref:`DoxTrace_HTML_Strike <DoxTrace_HTML_Strike>`
+      - spec/html_spec.rb:61
+      - dox_trace HTML output shall contain a table with attributes for every specification in correct design
+    * - :ref:`DoxTrace_HTML_Content <DoxTrace_HTML_Content>`
+      - spec/content_spec.rb:11
+      - The content of specifications shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_TypeID <DoxTrace_HTML_TypeID>`
+      - spec/html_spec.rb:98
+      - dox_trace HTML output shall contain type and ID for every specification in correct design
+    * - :ref:`DoxTrace_HTML_ReviewStatus <DoxTrace_HTML_ReviewStatus>`
+      - spec/review_status_spec.rb:50
+      - The attribute review_status with correct syntax shall only be shown in HTML if not accepted or type is input
+    * - :ref:`DoxTrace_HTML_Reuse <DoxTrace_HTML_Reuse>`
+      - spec/reuse_spec.rb:11
+      - The attribute reuse with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Usage <DoxTrace_HTML_Usage>`
+      - spec/usage_spec.rb:11
+      - The attribute usage with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Developer <DoxTrace_HTML_Developer>`
+      - spec/developer_spec.rb:11
+      - The attribute developer with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Tester <DoxTrace_HTML_Tester>`
+      - spec/tester_spec.rb:11
+      - The attribute tester with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_TestSetups <DoxTrace_HTML_TestSetups>`
+      - spec/test_setups_spec.rb:11
+      - The attribute test_setups with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/test_setups_spec.rb:35
+      - The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined
+    * -
+      - spec/verification_methods_spec.rb:35
+      - The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined
+    * - :ref:`DoxTrace_HTML_VerificationMethods <DoxTrace_HTML_VerificationMethods>`
+      - spec/test_setups_spec.rb:35
+      - The attribute test_setups with correct syntax shall get the value from verification_methods if test_setups is not defined
+    * -
+      - spec/verification_methods_spec.rb:11
+      - The attribute verification_methods with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/verification_methods_spec.rb:35
+      - The attribute verification_methods with correct syntax shall get the value from test_setups if verification_methods is not defined
+    * - :ref:`DoxTrace_HTML_Cal <DoxTrace_HTML_Cal>`
+      - spec/security_spec.rb:38
+      - The attribute security with correct syntax shall derive the value from cal if security is not defined
+    * - :ref:`DoxTrace_HTML_Security <DoxTrace_HTML_Security>`
+      - spec/cal_spec.rb:38
+      - The attribute cal with correct syntax shall derive the value from security if cal is not defined
+    * - :ref:`DoxTrace_HTML_Tags <DoxTrace_HTML_Tags>`
+      - spec/tags_spec.rb:12
+      - The attribute tags with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_VerificationCriteria <DoxTrace_HTML_VerificationCriteria>`
+      - spec/verification_criteria_spec.rb:11
+      - The attribute verification_criteria with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Comment <DoxTrace_HTML_Comment>`
+      - spec/comment_spec.rb:11
+      - The attribute comment with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Miscellaneous <DoxTrace_HTML_Miscellaneous>`
+      - spec/miscellaneous_spec.rb:11
+      - The attribute miscellaneous with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Feature <DoxTrace_HTML_Feature>`
+      - spec/feature_spec.rb:11
+      - The attribute feature with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_ChangeRequest <DoxTrace_HTML_ChangeRequest>`
+      - spec/change_request_spec.rb:11
+      - The attribute change_request with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Sources <DoxTrace_HTML_Sources>`
+      - spec/sources_spec.rb:11
+      - The attribute sources with correct syntax shall be loaded and displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_Location <DoxTrace_HTML_Location>`
+      - spec/location_spec.rb:11
+      - The attribute location with correct syntax shall be displayed correctly without any error
+    * -
+      - spec/location_spec.rb:30
+      - The attribute location with correct syntax shall have correct color in HTML
+    * - :ref:`DoxTrace_HTML_UpstreamRefs <DoxTrace_HTML_UpstreamRefs>`
+      - spec/refs_spec.rb:42
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links
+    * -
+      - spec/upstream_references_spec.rb:11
+      - The calculated attribute Upstream References for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_DownstreamRefs <DoxTrace_HTML_DownstreamRefs>`
+      - spec/downstream_references_spec.rb:11
+      - The calculated attribute Downstream References with correct syntax shall be loaded and displayed correctly without any error
+    * -
+      - spec/refs_spec.rb:42
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links
+    * - :ref:`DoxTrace_HTML_RefsRed <DoxTrace_HTML_RefsRed>`
+      - spec/refs_spec.rb:25
+      - The attribute refs including an undefined target building with dox_trace_allow_undefined_refs=False shall cause dox_trace to abort with exit code != 0 and print an warning message
+    * -
+      - spec/refs_spec.rb:37
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall NOT cause dox_trace to abort with exit code != 0 and NOT print a warning message
+    * -
+      - spec/refs_spec.rb:42
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display defined targets as links
+    * -
+      - spec/refs_spec.rb:51
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall display undefined targets in red
+    * - :ref:`DoxTrace_HTML_RefsExport <DoxTrace_HTML_RefsExport>`
+      - spec/refs_spec.rb:75
+      - The attribute refs including undefined targets building with dox_trace_allow_undefined_refs=True shall not export unresolved references
+    * - :ref:`DoxTrace_HTML_UpstreamAsil <DoxTrace_HTML_UpstreamAsil>`
+      - spec/parent_asil_spec.rb:11
+      - The calculated attribute Upstream Tags for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_UpstreamCal <DoxTrace_HTML_UpstreamCal>`
+      - spec/parent_cal_spec.rb:11
+      - The calculated attribute Upstream Cal for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_UpstreamSecurity <DoxTrace_HTML_UpstreamSecurity>`
+      - spec/parent_security_spec.rb:11
+      - The calculated attribute Upstream Security for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_UpstreamTags <DoxTrace_HTML_UpstreamTags>`
+      - spec/parent_tags_spec.rb:11
+      - The calculated attribute Upstream Tags for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_DerivedFeature <DoxTrace_HTML_DerivedFeature>`
+      - spec/derived_feature_spec.rb:11
+      - The calculated attribute Derived Feature for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_DerivedChangeRequest <DoxTrace_HTML_DerivedChangeRequest>`
+      - spec/derived_change_request_spec.rb:11
+      - The calculated attribute Derived Change Request for specifications shall be displayed correctly without any error
+    * - :ref:`DoxTrace_HTML_ConfigDirective <DoxTrace_HTML_ConfigDirective>`
+      - spec/config_spec.rb:44
+      - The directive dox_trace_config shall expand to a configuration table using jQuery and the local storage of the browser
+    * - :ref:`DoxTrace_HTML_ConfigStorage <DoxTrace_HTML_ConfigStorage>`
+      - spec/config_spec.rb:44
+      - The directive dox_trace_config shall expand to a configuration table using jQuery and the local storage of the browser
+    * - :ref:`DoxTrace_HTML_ConfigReadingMode <DoxTrace_HTML_ConfigReadingMode>`
+      - spec/config_spec.rb:23
+      - The directive dox_trace_config shall be used to hide/show complete attribute rows
+    * -
+      - spec/config_spec.rb:62
+      - The directive dox_trace_config shall be used to hide/show empty/missing attributes
+    * -
+      - spec/config_spec.rb:123
+      - The directive dox_trace_config shall also hide the vertical bar between "Tags" and "Upstream Tags" if at least one of them is hidden
+    * -
+      - spec/config_spec.rb:144
+      - The directive dox_trace_config shall hide a row if all attributes in this row are hidden
+    * -
+      - spec/config_spec.rb:151
+      - The directive dox_trace_config shall not add an unnecessary line break if "Developer", "Tester" and "Verification Methods" are hidden
+    * - :ref:`DoxTrace_HTML_EnclosedDirective <DoxTrace_HTML_EnclosedDirective>`
+      - spec/enclosed_spec.rb:12
+      - The directive enclosed shall copy files to build folder listed in the content of the directive
+    * -
+      - spec/enclosed_spec.rb:27
+      - The directive enclosed shall warn if a file listed in the content of the directive does not exist
+    * - :ref:`DoxTrace_HTML_TraceabilityReportInput <DoxTrace_HTML_TraceabilityReportInput>`
+      - spec/tr_input_spec.rb:13
+      - The traceability report for input requirements developer table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:26
+      - The traceability report for input requirements developer table developer table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:56
+      - The traceability report for input requirements status table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:69
+      - The traceability report for input requirements status table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:82
+      - The traceability report for input requirements status table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:113
+      - The traceability report for input requirements review_status table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:126
+      - The traceability report for input requirements review_status table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:139
+      - The traceability report for input requirements review_status table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:176
+      - The traceability report for input requirements safety table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:189
+      - The traceability report for input requirements safety table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:202
+      - The traceability report for input requirements safety table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:236
+      - The traceability report for input requirements cal table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:249
+      - The traceability report for input requirements cal table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:262
+      - The traceability report for input requirements cal table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:296
+      - The traceability report for input requirements security table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:309
+      - The traceability report for input requirements security table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:322
+      - The traceability report for input requirements security table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:353
+      - The traceability report for input requirements referenced/derived table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:366
+      - The traceability report for input requirements referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:379
+      - The traceability report for input requirements referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_input_spec.rb:407
+      - The traceability report for input requirements list of requirements with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:420
+      - The traceability report for input requirements list of requirements with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_input_spec.rb:433
+      - The traceability report for input requirements list of requirements with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * - :ref:`DoxTrace_HTML_TraceabilityReportSoftware <DoxTrace_HTML_TraceabilityReportSoftware>`
+      - spec/tr_software_spec.rb:13
+      - The traceability report for software requirements status table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:26
+      - The traceability report for software requirements status table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:39
+      - The traceability report for software requirements status table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_software_spec.rb:74
+      - The traceability report for software requirements safety table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:87
+      - The traceability report for software requirements safety table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:100
+      - The traceability report for software requirements safety table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_software_spec.rb:139
+      - The traceability report for software requirements cal table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:152
+      - The traceability report for software requirements cal table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:165
+      - The traceability report for software requirements cal table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_software_spec.rb:204
+      - The traceability report for software requirements security table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:217
+      - The traceability report for software requirements security table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:230
+      - The traceability report for software requirements security table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_software_spec.rb:265
+      - The traceability report for software requirements referenced/derived table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:278
+      - The traceability report for software requirements referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:291
+      - The traceability report for software requirements referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_software_spec.rb:330
+      - The traceability report for software requirements list of requirements with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:343
+      - The traceability report for software requirements list of requirements with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_software_spec.rb:356
+      - The traceability report for software requirements list of requirements with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * - :ref:`DoxTrace_HTML_TraceabilityReportArchitecture <DoxTrace_HTML_TraceabilityReportArchitecture>`
+      - spec/tr_architecture_spec.rb:13
+      - The traceability report for architecture status table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:26
+      - The traceability report for architecture status table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:39
+      - The traceability report for architecture status table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:70
+      - The traceability report for architecture type table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:83
+      - The traceability report for architecture type table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:96
+      - The traceability report for architecture type table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:127
+      - The traceability report for architecture safety table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:140
+      - The traceability report for architecture safety table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:153
+      - The traceability report for architecture safety table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:187
+      - The traceability report for architecture cal table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:200
+      - The traceability report for architecture cal table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:213
+      - The traceability report for architecture cal table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:247
+      - The traceability report for architecture security table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:260
+      - The traceability report for architecture security table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:273
+      - The traceability report for architecture security table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:304
+      - The traceability report for architecture referenced/derived table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:317
+      - The traceability report for architecture referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:330
+      - The traceability report for architecture referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_architecture_spec.rb:380
+      - The traceability report for architecture list of specifications with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:393
+      - The traceability report for architecture list of specifications with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_architecture_spec.rb:406
+      - The traceability report for architecture list of specifications with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * - :ref:`DoxTrace_HTML_TraceabilityReportModule <DoxTrace_HTML_TraceabilityReportModule>`
+      - spec/tr_module_spec.rb:14
+      - The traceability report for module status table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:27
+      - The traceability report for module status table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:40
+      - The traceability report for module status table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:72
+      - The traceability report for module type table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:85
+      - The traceability report for module type table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:98
+      - The traceability report for module type table with valid data without deprecated interface type shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:123
+      - The traceability report for module type table with valid data with deprecated interface type shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:154
+      - The traceability report for module safety table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:167
+      - The traceability report for module safety table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:180
+      - The traceability report for module safety table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:214
+      - The traceability report for module cal table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:227
+      - The traceability report for module cal table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:240
+      - The traceability report for module cal table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:274
+      - The traceability report for module security table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:287
+      - The traceability report for module security table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:300
+      - The traceability report for module security table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:332
+      - The traceability report for module referenced/derived table with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:345
+      - The traceability report for module referenced/derived table with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:358
+      - The traceability report for module referenced/derived table with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * -
+      - spec/tr_module_spec.rb:410
+      - The traceability report for module list of specifications with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:423
+      - The traceability report for module list of specifications with all data filtered out shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_module_spec.rb:436
+      - The traceability report for module list of specifications with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * - :ref:`DoxTrace_HTML_TraceabilityReportSource <DoxTrace_HTML_TraceabilityReportSource>`
+      - spec/tr_source_spec.rb:11
+      - The traceability report for source with no data shall display an appropriate note instead of an empty table
+    * -
+      - spec/tr_source_spec.rb:23
+      - The traceability report for source with valid data shall contain correct data with module/value pairs including TOTAL and links
+    * - :ref:`DoxTrace_HTML_TraceabilityReportUnknownCategory <DoxTrace_HTML_TraceabilityReportUnknownCategory>`
+      - spec/tr_general_spec.rb:32
+      - The traceability report with invalid traceability report category shall abort and print an appropriate error message
+    * - :ref:`DoxTrace_HTML_TraceabilityReportUnknownModule <DoxTrace_HTML_TraceabilityReportUnknownModule>`
+      - spec/tr_general_spec.rb:11
+      - The traceability report shall determine the module name of the specifications and if not possible, use "Unknown" as fallback
+    * - :ref:`DoxTrace_HTML_TraceabilityReportIgnore <DoxTrace_HTML_TraceabilityReportIgnore>`
+      - spec/tr_general_spec.rb:68
+      - The traceability report shall ignore specifications with attribute ignore_in_export
+    * - :ref:`DoxTrace_HTML_TraceabilityDeveloper <DoxTrace_HTML_TraceabilityDeveloper>`
+      - spec/tr_general_spec.rb:43
+      - The traceability report shall have an option to filter for developers and abort the build if not specified
+    * -
+      - spec/tr_general_spec.rb:54
+      - The traceability report shall be tolerant with filtering for developer using a generic regex
+    * - :ref:`DoxTrace_HTML_UndefinedRefsListDirective <DoxTrace_HTML_UndefinedRefsListDirective>`
+      - spec/undefined_refs_spec.rb:11
+      - The directive undefined_refs for specifications with undefined references shall generate a list of specifications including their undefined references
+    * -
+      - spec/undefined_refs_spec.rb:27
+      - The directive undefined_refs for specifications without undefined references shall generate a helper note that no undefined references exist
+    * - :ref:`DoxTrace_Export_Config <DoxTrace_Export_Config>`
+      - spec/export_spec.rb:17
+      - The export to Dim format with a valid dox_trace_dim_root configuration shall contain srs, spec, unit, interface, mod with their IDs
+    * -
+      - spec/export_spec.rb:134
+      - The export to Dim format without a valid dox_trace_dim_root configuration shall be skipped and not error returned
+    * -
+      - spec/export_spec.rb:147
+      - The export to Dim format with an invalid dox_trace_dim_root configuration shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_Export_Filenames <DoxTrace_Export_Filenames>`
+      - spec/export_spec.rb:53
+      - The export to Dim format with a valid dox_trace_dim_root configuration shall create the same folder and filename structure as the according RST files
+    * - :ref:`DoxTrace_Export_Delete <DoxTrace_Export_Delete>`
+      - spec/export_spec.rb:76
+      - The export to Dim format with a valid dox_trace_dim_root configuration shall cleanup the output folder before writing the RST files for srs, swa and smd
+    * -
+      - spec/export_spec.rb:116
+      - The export to Dim format with only swa and smd shall cleanup the output folder before writing the RST files for swa and smd, but not srs
+    * - :ref:`DoxTrace_Export_ModuleName <DoxTrace_Export_ModuleName>`
+      - spec/export_spec.rb:87
+      - The export to Dim format with a valid dox_trace_dim_root configuration shall include the correct module names
+    * - :ref:`DoxTrace_Export_IDs <DoxTrace_Export_IDs>`
+      - spec/export_spec.rb:17
+      - The export to Dim format with a valid dox_trace_dim_root configuration shall contain srs, spec, unit, interface, mod with their IDs
+    * - :ref:`DoxTrace_Export_Attributes <DoxTrace_Export_Attributes>`
+      - spec/asil_spec.rb:38
+      - The attribute asil with correct syntax shall be exported correctly
+    * -
+      - spec/cal_spec.rb:49
+      - The attribute cal with correct syntax shall be exported correctly
+    * -
+      - spec/developer_spec.rb:36
+      - The attribute developer with correct syntax shall be exported correctly
+    * -
+      - spec/downstream_references_spec.rb:42
+      - The calculated attribute Downstream References with correct syntax shall be exported correctly
+    * -
+      - spec/review_status_spec.rb:32
+      - The attribute review_status with correct syntax shall be exported correctly
+    * -
+      - spec/security_spec.rb:51
+      - The attribute security with correct syntax shall be exported correctly
+    * -
+      - spec/sources_spec.rb:43
+      - The attribute sources with correct syntax shall be exported correctly
+    * -
+      - spec/status_spec.rb:39
+      - The attribute status with correct syntax shall be exported correctly
+    * -
+      - spec/tags_spec.rb:38
+      - The attribute tags with correct syntax shall be exported correctly
+    * -
+      - spec/test_setups_spec.rb:45
+      - The attribute test_setups with correct syntax shall be exported correctly
+    * -
+      - spec/tester_spec.rb:40
+      - The attribute tester with correct syntax shall be exported correctly
+    * -
+      - spec/verification_criteria_spec.rb:41
+      - The attribute verification_criteria with correct syntax shall be exported correctly
+    * -
+      - spec/verification_methods_spec.rb:45
+      - The attribute verification_methods with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Category <DoxTrace_Export_Category>`
+      - spec/category_spec.rb:26
+      - The attribute category with correct syntax shall not be exported
+    * - :ref:`DoxTrace_Export_Cal <DoxTrace_Export_Cal>`
+      - spec/security_spec.rb:51
+      - The attribute security with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Security <DoxTrace_Export_Security>`
+      - spec/cal_spec.rb:49
+      - The attribute cal with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_VerificationCriteria <DoxTrace_Export_VerificationCriteria>`
+      - spec/verification_criteria_spec.rb:41
+      - The attribute verification_criteria with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Reuse <DoxTrace_Export_Reuse>`
+      - spec/reuse_spec.rb:19
+      - The attribute reuse with correct syntax shall not be exported
+    * - :ref:`DoxTrace_Export_Usage <DoxTrace_Export_Usage>`
+      - spec/usage_spec.rb:19
+      - The attribute usage with correct syntax shall not be exported
+    * - :ref:`DoxTrace_Export_Location <DoxTrace_Export_Location>`
+      - spec/location_spec.rb:25
+      - The attribute location with correct syntax shall not be exported
+    * - :ref:`DoxTrace_Export_Content <DoxTrace_Export_Content>`
+      - spec/content_spec.rb:32
+      - The content of specifications shall be exported correctly
+    * - :ref:`DoxTrace_Export_Tester <DoxTrace_Export_Tester>`
+      - spec/tester_spec.rb:40
+      - The attribute tester with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_TestSetups <DoxTrace_Export_TestSetups>`
+      - spec/test_setups_spec.rb:45
+      - The attribute test_setups with correct syntax shall be exported correctly
+    * -
+      - spec/verification_methods_spec.rb:45
+      - The attribute verification_methods with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_VerificationMethods <DoxTrace_Export_VerificationMethods>`
+      - spec/test_setups_spec.rb:45
+      - The attribute test_setups with correct syntax shall be exported correctly
+    * -
+      - spec/verification_methods_spec.rb:45
+      - The attribute verification_methods with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Unit <DoxTrace_Export_Unit>`
+      - spec/tags_spec.rb:38
+      - The attribute tags with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Interface <DoxTrace_Export_Interface>`
+      - spec/tags_spec.rb:38
+      - The attribute tags with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_Mod <DoxTrace_Export_Mod>`
+      - spec/tags_spec.rb:38
+      - The attribute tags with correct syntax shall be exported correctly
+    * - :ref:`DoxTrace_Export_IgnoreInExport <DoxTrace_Export_IgnoreInExport>`
+      - spec/ignore_in_export_spec.rb:12
+      - The attribute ignore_in_export if set shall disable the export of the particular specification
+    * - :ref:`DoxTrace_CustomGeneral_Config <DoxTrace_CustomGeneral_Config>`
+      - spec/custom_name_spec.rb:46
+      - The custom attribute name config with invalid type shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_name_spec.rb:57
+      - The custom attribute name config invalid dictionary shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomName_Available <DoxTrace_CustomName_Available>`
+      - spec/custom_name_spec.rb:11
+      - The custom attribute name with valid configuration shall be available in RST files for directives
+    * - :ref:`DoxTrace_CustomName_Conflict <DoxTrace_CustomName_Conflict>`
+      - spec/custom_name_spec.rb:24
+      - The custom attribute name config with conflicting name shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_name_spec.rb:35
+      - The custom attribute name config with reserved name text shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomDirectives_Syntax <DoxTrace_CustomDirectives_Syntax>`
+      - spec/custom_directives_spec.rb:11
+      - The custom attribute directives with valid configuration shall assign the attribute to a list of directives
+    * -
+      - spec/custom_directives_spec.rb:68
+      - The custom attribute directives used for non-specified directives shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomDirectives_Check <DoxTrace_CustomDirectives_Check>`
+      - spec/custom_directives_spec.rb:46
+      - The custom attribute directives config with empty list shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_directives_spec.rb:57
+      - The custom attribute directives config missing shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_directives_spec.rb:80
+      - The custom attribute directives config wrong type shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_directives_spec.rb:91
+      - The custom attribute directives config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomCategories_Syntax <DoxTrace_CustomCategories_Syntax>`
+      - spec/custom_categories_spec.rb:11
+      - The custom attribute categories with valid configuration shall filter the attribute for the directives correctly without any error
+    * -
+      - spec/custom_categories_spec.rb:45
+      - The custom attribute categories config missing in a requirement/information directive shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_categories_spec.rb:56
+      - The custom attribute categories config with wrong type shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_categories_spec.rb:67
+      - The custom attribute categories config with empty list shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomCategories_Value <DoxTrace_CustomCategories_Value>`
+      - spec/custom_categories_spec.rb:11
+      - The custom attribute categories with valid configuration shall filter the attribute for the directives correctly without any error
+    * -
+      - spec/custom_categories_spec.rb:78
+      - The custom attribute categories config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomTypes_Syntax <DoxTrace_CustomTypes_Syntax>`
+      - spec/custom_type_spec.rb:11
+      - The custom attribute type with valid configuration shall be available in RST files for directives
+    * -
+      - spec/custom_type_spec.rb:38
+      - The custom attribute type config with missing value shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_type_spec.rb:49
+      - The custom attribute type config with invalid type shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_type_spec.rb:60
+      - The custom attribute type config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomTypes_Text <DoxTrace_CustomTypes_Text>`
+      - spec/custom_type_spec.rb:11
+      - The custom attribute type with valid configuration shall be available in RST files for directives
+    * - :ref:`DoxTrace_CustomTypes_Enum <DoxTrace_CustomTypes_Enum>`
+      - spec/custom_type_spec.rb:11
+      - The custom attribute type with valid configuration shall be available in RST files for directives
+    * - :ref:`DoxTrace_CustomTypes_Refs <DoxTrace_CustomTypes_Refs>`
+      - spec/custom_type_spec.rb:11
+      - The custom attribute type with valid configuration shall be available in RST files for directives
+    * - :ref:`DoxTrace_CustomDefault_Syntax <DoxTrace_CustomDefault_Syntax>`
+      - spec/custom_default_spec.rb:11
+      - The custom attribute default with valid configuration shall set the default value for attributes correctly without any error
+    * - :ref:`DoxTrace_CustomDefault_Type <DoxTrace_CustomDefault_Type>`
+      - spec/custom_default_spec.rb:52
+      - The custom attribute default config with wrong type for text attributes shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_default_spec.rb:63
+      - The custom attribute default config with wrong type for non-text attributes shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`DoxTrace_CustomDefault_Default <DoxTrace_CustomDefault_Default>`
+      - spec/custom_default_spec.rb:11
+      - The custom attribute default with valid configuration shall set the default value for attributes correctly without any error
+    * - :ref:`DoxTrace_CustomExport_Syntax <DoxTrace_CustomExport_Syntax>`
+      - spec/custom_export_spec.rb:11
+      - The custom attribute export with valid configuration shall export the attribute if set to yes
+    * -
+      - spec/custom_export_spec.rb:21
+      - The custom attribute export with valid configuration shall not export the attribute if set to no
+    * -
+      - spec/custom_export_spec.rb:38
+      - The custom attribute export config wrong type shall cause dox_trace to abort with exit code != 0 and print an error message
+    * -
+      - spec/custom_export_spec.rb:49
+      - The custom attribute export config with invalid value shall cause dox_trace to abort with exit code != 0 and print an error message
+    * - :ref:`dox_trace_properties_file <dox_trace_properties_file>`
+      - spec/properties_spec.rb:11
+      - Properties file values shall be used for non-set attributes if the ID is specified with full name
+    * -
+      - spec/properties_spec.rb:18
+      - Properties file values shall be used for non-set attributes if the ID is specified with module name
+    * -
+      - spec/properties_spec.rb:24
+      - Properties file values shall be used for non-set attributes if the ID is specified with category name
+    * -
+      - spec/properties_spec.rb:30
+      - Properties file values shall be used for non-set attributes if _default_ is specified
+    * -
+      - spec/properties_spec.rb:38
+      - Properties file values shall be used unless attributes are already specified
+    * -
+      - spec/properties_spec.rb:44
+      - Properties file values shall be used also for custom attributes
+    * -
+      - spec/properties_spec.rb:71
+      - Properties file not exist shall abort the the build aborted with an appropriate error message
+    * -
+      - spec/properties_spec.rb:83
+      - Properties file not specified but used shall abort the the build aborted with an appropriate error message
+    * -
+      - spec/properties_spec.rb:95
+      - Properties file with invalid syntax shall abort the the build aborted with an appropriate error message
+    * - :ref:`DoxTrace_Properties_Use <DoxTrace_Properties_Use>`
+      - spec/properties_spec.rb:11
+      - Properties file values shall be used for non-set attributes if the ID is specified with full name
+    * -
+      - spec/properties_spec.rb:18
+      - Properties file values shall be used for non-set attributes if the ID is specified with module name
+    * -
+      - spec/properties_spec.rb:24
+      - Properties file values shall be used for non-set attributes if the ID is specified with category name
+    * -
+      - spec/properties_spec.rb:30
+      - Properties file values shall be used for non-set attributes if _default_ is specified
+    * -
+      - spec/properties_spec.rb:38
+      - Properties file values shall be used unless attributes are already specified
+    * -
+      - spec/properties_spec.rb:58
+      - Properties file values shall be used as string even they are defined as boolean in YAML
+    * -
+      - spec/properties_spec.rb:107
+      - Properties file with attribute name not found shall abort the the build aborted with an appropriate error message
+    * -
+      - spec/properties_spec.rb:119
+      - Properties file with attribute value not found shall abort the the build aborted with an appropriate error message
+    * -
+      - spec/properties_spec.rb:131
+      - Properties file value used without colon shall abort the the build aborted with an appropriate error message
+    * - :ref:`DoxTrace_Properties_Custom <DoxTrace_Properties_Custom>`
+      - spec/properties_spec.rb:44
+      - Properties file values shall be used also for custom attributes
+    * - :ref:`DoxTrace_Properties_Standalone <DoxTrace_Properties_Standalone>`
+      - spec/properties_spec.rb:50
+      - Properties file values shall be used for standalone roles and directives

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Checks &mdash; dox_style  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_util_colors.css?v=dd14b177" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Changelog" href="../appendix/changelog.html" />
+    <link rel="prev" title="Footer String" href="config/footer_string.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_style
+          </a>
+              <div class="version">
+                0.2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Style Checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-checks">Built-In Checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-options">Global Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-specific-options">Check-Specific Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/extending.html">Extending Checks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_style</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Style Checks</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="style-checks">
+<h1>Style Checks<a class="headerlink" href="#style-checks" title="Link to this heading"></a></h1>
+<p>This extension is capable of checking several style rules in configurable manner and hooks itself
+up into the regular Sphinx build process. It’s triggered by Sphinx as soon as all documents have
+been discovered and filtered. Hence, only changed documents will be checked.</p>
+<section id="built-in-checks">
+<h2>Built-In Checks<a class="headerlink" href="#built-in-checks" title="Link to this heading"></a></h2>
+<p>The following checks are included and enabled by default:</p>
+<ul class="simple">
+<li><ul>
+<li><p>Whitespaces</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">trailing_whitespaces</span></code> Trailing whitespaces are not allowed.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p>Heading Syntax</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">heading_levels</span></code> Enforces the style of heading underline characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">underline_length</span></code> Headline underline length must match the length of the headline itself.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p>Top-Level Headings</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">top_level_heading</span></code> All documents must have a top-level heading.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top_level_length</span></code> Top-level heading must not exceed a configurable maximum length.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top_level_modulename</span></code> The top-level heading in <em>index.rst</em> of modules must start with the
+module name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top_level_casing</span></code> Module name in top-level heading must match the module name
+in terms of capitalization.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p>Include Directives</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">include_rst</span></code> Includes must not point to an <code class="docutils literal notranslate"><span class="pre">*.rst</span></code> file</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>To use the dox_style extension just register it in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>To configure the checks, specify the <code class="docutils literal notranslate"><span class="pre">stylecheck</span></code> variable in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.
+Only non-default values need to be specified.</p>
+<p>The full list of options including defaults can be obtained by running</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dox_style
+</pre></div>
+</div>
+<p>from within the extension repository.</p>
+<section id="global-options">
+<h3>Global Options<a class="headerlink" href="#global-options" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Excluding files from all checks:</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="nb">list</span> <span class="n">of</span> <span class="n">glob</span> <span class="n">patterns</span><span class="o">&gt;</span><span class="p">]</span>  <span class="c1"># default: []</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Defining how many lines of context above/below the finding are show</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;excerpt&#39;</span><span class="p">:</span> <span class="mi">4</span>  <span class="c1"># default: 2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="check-specific-options">
+<h3>Check-Specific Options<a class="headerlink" href="#check-specific-options" title="Link to this heading"></a></h3>
+<p>Each check has its own key in the <code class="docutils literal notranslate"><span class="pre">stylecheck</span></code> variable and features at least the following
+options for globally disabling this check and to exclude certain files from this particular check:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;trailing_whitespaces&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+</pre></div>
+</div>
+<p>All checks are enabled by default and their exclusion list is empty.</p>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<p>This is an example configuration:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">stylecheck</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;**/gptp/**&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;excerpt&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;trailing_whitespaces&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;**/3rdparty/**&#39;</span><span class="p">]},</span>
+    <span class="s1">&#39;top_level_length&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
+    <span class="s1">&#39;top_level_modulename&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To disable all checks, use this configuration:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">stylecheck</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:19, UNOFFICIAL BUILD.</p>
+
+    
+      <a href="../../_sources/pages/user/checks.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

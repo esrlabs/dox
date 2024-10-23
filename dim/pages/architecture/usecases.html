@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use Cases &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Classes" href="classes.html" />
+    <link rel="prev" title="Input / Output" href="inout.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture.html">Architecture</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="inout.html">Input / Output</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Use Cases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-from-customer">Import from Customer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-to-customer">Export to Customer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-requirements">Change Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tool-information">Get Tool Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#printing-built-in-statistics">Printing Built-In Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-data-with-ruby-api">Read Data with Ruby API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-data-with-ruby-api">Write Data with Ruby API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-control-system">(Version Control System)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fmea.html">FMEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legend.html">Diagram Legend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../architecture.html">Architecture</a> &raquo;</li>
+        
+        <li>Use Cases</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="use-cases">
+<span id="id1"></span><h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h1>
+<p>This page shows how Dim is used from a black box perspective.</p>
+<section id="import-from-customer">
+<h2>Import from Customer<a class="headerlink" href="#import-from-customer" title="Link to this heading"></a></h2>
+<p>Documents with requirements are received from customers, HW vendors etc. in different formats like
+Doors.</p>
+<ul class="simple">
+<li><p>First, the documents are converted to Dim format, <code class="docutils literal notranslate"><span class="pre">temporary</span> <span class="pre">input</span> <span class="pre">files</span></code> are written.</p></li>
+<li><p>Then these <code class="docutils literal notranslate"><span class="pre">temporary</span> <span class="pre">input</span> <span class="pre">files</span></code> are read and merged with the already existing
+<code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">files</span></code>. It must be defined, which attributes are owned by the customer and which
+are owned by project and under which conditions the the <cite>review_status</cite> has to be reset
+(e.g. when the customer changes the <cite>text</cite> attribute).
+In case the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">files</span></code> don’t exist yet, the complete data from the <code class="docutils literal notranslate"><span class="pre">temporary</span> <span class="pre">input</span> <span class="pre">files</span></code>
+are taken over.</p></li>
+<li><p>The result is written back to the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">files</span></code> which have to be verified.</p></li>
+</ul>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/import.drawio.png"><img alt="../../_images/import.drawio.png" src="../../_images/import.drawio.png" style="width: 1619.0px; height: 638.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Import from customer</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="export-to-customer">
+<span id="use-case-export-to-customer"></span><h2>Export to Customer<a class="headerlink" href="#export-to-customer" title="Link to this heading"></a></h2>
+<p>To provide changed requirements data to the customer, the data in Dim format is exported to CSV,
+which is input for a conversion tool. The output of this tool is then sent to the customer.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/export.drawio1.png"><img alt="../../_images/export.drawio1.png" src="../../_images/export.drawio1.png" style="width: 836.0px; height: 492.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Export to customer</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="change-requirements">
+<span id="use-case-change-requirements"></span><h2>Change Requirements<a class="headerlink" href="#change-requirements" title="Link to this heading"></a></h2>
+<p>The following diagram shows the workflow when requirements are changed, e.g. customer requirements
+are reviewed, software requirements written and improved, references are set, etc.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/change.drawio.png"><img alt="../../_images/change.drawio.png" src="../../_images/change.drawio.png" style="width: 1399.0px; height: 393.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Change requirements</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="get-tool-information">
+<h2>Get Tool Information<a class="headerlink" href="#get-tool-information" title="Link to this heading"></a></h2>
+<p>The following information can be printed:</p>
+<ul class="simple">
+<li><p>Dim version</p></li>
+<li><p>Command line usage</p></li>
+<li><p>License information</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/data.drawio.png"><img alt="../../_images/data.drawio.png" src="../../_images/data.drawio.png" style="width: 521.0px; height: 201.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Get tool information</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="printing-built-in-statistics">
+<h2>Printing Built-In Statistics<a class="headerlink" href="#printing-built-in-statistics" title="Link to this heading"></a></h2>
+<p>To create (project) specific statistics, see use case <a class="reference internal" href="#use-case-read-data"><span class="std std-ref">Read Data with Ruby API</span></a>.</p>
+<p>To get a quick overview of the input files without the need of writing a Ruby script, Dim can print
+generic statistics like total number of requirements.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/stats.drawio1.png"><img alt="../../_images/stats.drawio1.png" src="../../_images/stats.drawio1.png" style="width: 836.0px; height: 492.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Printing built-in statistics</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="read-data-with-ruby-api">
+<span id="use-case-read-data"></span><h2>Read Data with Ruby API<a class="headerlink" href="#read-data-with-ruby-api" title="Link to this heading"></a></h2>
+<p>With the Ruby API, the requirements data can be read programmatically and further processed, e.g. to
+monitor the progression of the requirements engineering activities by some scripts or to create a
+traceability overview.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/reading.drawio.png"><img alt="../../_images/reading.drawio.png" src="../../_images/reading.drawio.png" style="width: 701.0px; height: 481.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Read data with Ruby API</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="write-data-with-ruby-api">
+<h2>Write Data with Ruby API<a class="headerlink" href="#write-data-with-ruby-api" title="Link to this heading"></a></h2>
+<p>Requirements data is written programmatically with the Ruby API.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/writing.drawio.png"><img alt="../../_images/writing.drawio.png" src="../../_images/writing.drawio.png" style="width: 861.0px; height: 481.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Write data with Ruby API</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="version-control-system">
+<span id="use-case-vcs"></span><h2>(Version Control System)<a class="headerlink" href="#version-control-system" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Version Control System</strong> is not a use case by it’s own, it’s an activity which is performed by
+the use cases described above.</p>
+</div>
+<p>A <cite>Version Control System</cite> is a technical quality gate which must be passed before any changes are
+merged into the Git repository. For the <cite>input files</cite> two stages are relevant:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Automatic</span> <span class="pre">Checks</span></code>: This stage is also known as the “verifier” and checks the consistency and
+formatting of the input files. Additionally the data is exported to RST.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Manual</span> <span class="pre">Review</span></code>: The RST files are used by Sphinx to build a HTML documentation which is very
+convenient in a review.</p></li>
+</ul>
+<p>Only if everything is correct and the changes are approved by the reviewer, the commit is accepted
+and merged to the Git repository.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/verifier.drawio.png"><img alt="../../_images/verifier.drawio.png" src="../../_images/verifier.drawio.png" style="width: 1301.0px; height: 522.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Version control system</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/architecture/usecases.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

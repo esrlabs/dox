@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toctree &mdash; dox_util  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_util_colors.css?v=dd14b177" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example 1" href="toctree/example1.html" />
+    <link rel="prev" title="source" href="source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_util
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="extlinks.html">extlinks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linkcheck.html">linkcheck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">source</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">toctree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tolerant-toctree">tolerant-toctree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toctree/example1.html">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toctree/example2.html">Example 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#doclist">doclist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="weak.html">weak</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_util</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>toctree</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toctree">
+<h1>toctree<a class="headerlink" href="#toctree" title="Link to this heading"></a></h1>
+<section id="tolerant-toctree">
+<span id="id1"></span><h2>tolerant-toctree<a class="headerlink" href="#tolerant-toctree" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tolerant-toctree</span></code> directive works the same as the regular <code class="docutils literal notranslate"><span class="pre">toctree</span></code>
+directive except that non-existing files will not result in a warning.</p>
+<div class="line-block">
+<div class="line">Glob pattern <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">?</span></code> are supported, e.g. <em>toctree/example*</em>.</div>
+<div class="line">If no file is found, the toctree is not rendered.</div>
+</div>
+<p>It’s used when files are generated and/or are not always there.</p>
+<p>Example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>html</p></th>
+<th class="head"><p>rst</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tree 1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="toctree/example1.html">Example 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toctree/example2.html">Example 2</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</td>
+<td><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tolerant-toctree</span><span class="p">::</span>
+    <span class="nc">:caption:</span> Tree 1
+    <span class="nc">:glob:</span>
+
+    toctree/example1
+    toctree/*2
+    toctree/example3
+
+<span class="p">..</span> <span class="ow">tolerant-toctree</span><span class="p">::</span>
+    <span class="nc">:caption:</span> Tree 2
+    <span class="nc">:glob:</span>
+
+    toctree/doesNot*Exist
+    toctree/sameHere
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><em>toctree/example3</em> does not exist, so this entry will be ignored.</div>
+<div class="line"><em>Tree 2</em> is completely hidden because no files are found.</div>
+</div>
+</section>
+<section id="doclist">
+<h2>doclist<a class="headerlink" href="#doclist" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">doctree</span></code> directive creates a flat bullet list of doc-links.
+The same glob pattern as for <code class="docutils literal notranslate"><span class="pre">toctree</span></code> are supported.</div>
+<div class="line">It has no options.</div>
+</div>
+<p>Example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>html</p></th>
+<th class="head"><p>rst</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ul class="simple">
+<li><p><a class="reference internal" href="toctree/example1.html"><span class="doc">Example 1</span></a></p></li>
+<li><p><a class="reference internal" href="toctree/example2.html"><span class="doc">Example 2</span></a></p></li>
+<li><p><a class="reference internal" href="extlinks.html"><span class="doc">extlinks</span></a></p></li>
+<li><p><a class="reference internal" href="linkcheck.html"><span class="doc">linkcheck</span></a></p></li>
+<li><p><a class="reference internal" href="rule.html"><span class="doc">rule</span></a></p></li>
+<li><p><a class="reference internal" href="source.html"><span class="doc">source</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">toctree</span></a></p></li>
+<li><p><a class="reference internal" href="todo.html"><span class="doc">todo</span></a></p></li>
+<li><p><a class="reference internal" href="weak.html"><span class="doc">weak</span></a></p></li>
+</ul>
+</td>
+<td><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">doclist</span><span class="p">::</span>
+
+    toctree/example1
+    toctree/example2
+    *
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:22, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_util, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/user/toctree.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

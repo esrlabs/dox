@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruby Interface &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Formatting" href="format.html" />
+    <link rel="prev" title="Command Line Interface" href="cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ruby Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading">Loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-access">Data Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convenience-methods">Convenience Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#string-lists">String Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#original-data-expert-usage">Original Data (Expert Usage)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Ruby Interface</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ruby-interface">
+<span id="id1"></span><h1>Ruby Interface<a class="headerlink" href="#ruby-interface" title="Link to this heading"></a></h1>
+<p>It is possible to access the data via Ruby. All default fields are already evaluated.</p>
+<section id="loading">
+<h2>Loading<a class="headerlink" href="#loading" title="Link to this heading"></a></h2>
+<p>Instantiate a loader and call the <code class="docutils literal notranslate"><span class="pre">load()</span></code> method. <code class="docutils literal notranslate"><span class="pre">load()</span></code> offers three arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">file:</span></code> Either a requirements or a config filename. Mandatory argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attributes_file:</span></code> Project specific custom attributes filename, Optional, defaults to empty filepath.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_missing</span></code> Ignore unresolved references if set to <em>true</em>. Optional, defaults to <em>false</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">silent</span></code> Suppress logging output while loading files if set to <em>true</em>. Optional, defaults to
+<em>true</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_check_enclosed</span></code> Skips the enclosed file check. Optional, defaults to <em>false</em>.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;dim/loader&#39;</span>
+
+<span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Loader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">l</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module.dim&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">attributes_file</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;attributes.dim&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">allow_missing</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">,</span><span class="w"> </span><span class="ss">silent</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="data-access">
+<span id="id2"></span><h2>Data Access<a class="headerlink" href="#data-access" title="Link to this heading"></a></h2>
+<p>After loading, all data is accessible via the member variable <em>requirements</em> of the loader. This
+variable is a hash, the keys are the IDs of the requirements, the values the requirement objects.</p>
+<p>A requirements object has the following getters:</p>
+<ul class="simple">
+<li><p>All <strong>attribute names</strong> from <a class="reference internal" href="syntax/requirement.html#requirements-files"><span class="std std-ref">Requirements Files</span></a> to access the data, like <em>text</em>,
+<em>review_status</em>, etc.</p></li>
+<li><p><strong>document</strong>: the document name used in the <a class="reference internal" href="syntax/requirement.html#requirements-files"><span class="std std-ref">Requirements Files</span></a></p></li>
+<li><p><strong>id</strong>: for convenience, same as the key in the <em>requirements</em> hash</p></li>
+<li><p><strong>origin</strong>, <strong>category</strong>: from config file</p></li>
+<li><p><strong>filename</strong>, <strong>line_number</strong>: to print error messages, etc.</p></li>
+<li><p><strong>existingRefs</strong>: array of ref-IDs which really exists (useful if <cite>allow_missing</cite> was set to
+<em>true</em>)</p></li>
+<li><p><strong>backwardRefs</strong>: array of ref-IDs which reference <em>this</em> requirement</p></li>
+<li><p><strong>upstreamRefs</strong>: array of IDs from refs to higher category level plus
+backward-refs from higher or same category level</p></li>
+<li><p><strong>downstreamRefs</strong>: array of IDs from refs to lower or same category level plus
+backward refs from lower category</p></li>
+</ul>
+<p>The following table shows the return types of the getter methods:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Strings</p></th>
+<th class="head"><p>Array of Strings</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>asil</p></td>
+<td><p>backwardRefs</p></td>
+</tr>
+<tr class="row-odd"><td><p>cal</p></td>
+<td><p>developer</p></td>
+</tr>
+<tr class="row-even"><td><p>change_request</p></td>
+<td><p>downstreamRefs</p></td>
+</tr>
+<tr class="row-odd"><td><p>comment</p></td>
+<td><p>existingRefs</p></td>
+</tr>
+<tr class="row-even"><td><p>feature</p></td>
+<td><p>refs</p></td>
+</tr>
+<tr class="row-odd"><td><p>filename</p></td>
+<td><p>sources</p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>tags</p></td>
+</tr>
+<tr class="row-odd"><td><p>miscellaneous</p></td>
+<td><p>verification_methods</p></td>
+</tr>
+<tr class="row-even"><td><p>document</p></td>
+<td><p>tester</p></td>
+</tr>
+<tr class="row-odd"><td><p>origin</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>review_status</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>verification_criteria</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Some examples:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;dim/loader&#39;</span>
+
+<span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Loader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">l</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="n">requirements_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="o">.</span><span class="n">requirements</span><span class="o">[</span><span class="s2">&quot;myId&quot;</span><span class="o">].</span><span class="n">text</span>
+<span class="n">modules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="o">.</span><span class="n">requirements</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="o">|</span><span class="n">r</span><span class="o">|</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">document</span><span class="p">}</span><span class="o">.</span><span class="n">uniq</span>
+<span class="n">valid_notRejected_Reqs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="o">.</span><span class="n">requirements</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">select</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">r</span><span class="o">|</span>
+<span class="w">  </span><span class="n">r</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;requirement&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;valid&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">review_status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;rejected&quot;</span>
+<span class="k">end</span>
+<span class="n">devMyCompany</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reqs</span><span class="o">.</span><span class="n">select</span><span class="w"> </span><span class="p">{</span><span class="o">|</span><span class="n">r</span><span class="o">|</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">developer</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;MyCompany&quot;</span><span class="p">)}</span>
+<span class="n">reqsWithRefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reqs</span><span class="o">.</span><span class="n">select</span><span class="w"> </span><span class="p">{</span><span class="o">|</span><span class="n">r</span><span class="o">|</span><span class="w"> </span><span class="o">!</span><span class="n">r</span><span class="o">.</span><span class="n">refs</span><span class="o">.</span><span class="n">empty?</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <strong>metadata</strong> is available via the member variable <em>metadata</em> of the loader.
+This variable is a hash with document name as key and the metadata as string value.</p>
+<p>Example:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;dim/loader&#39;</span>
+
+<span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Loader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">l</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">l</span><span class="o">.</span><span class="n">metadata</span><span class="o">[</span><span class="s2">&quot;document&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="convenience-methods">
+<h2>Convenience Methods<a class="headerlink" href="#convenience-methods" title="Link to this heading"></a></h2>
+<section id="string-lists">
+<h3>String Lists<a class="headerlink" href="#string-lists" title="Link to this heading"></a></h3>
+<p>Dim extends the Ruby String class with the following methods which can be also used by custom
+scripts:</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cleanSplit</span></code> returns an array of the elements without leading and trailing whitespaces</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,a,b</span>&#160;&#160;&#160; <span class="pre">,,</span>&#160; <span class="pre">c&quot;.cleanSplit()</span> <span class="pre">==</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;&quot;,</span> <span class="pre">&quot;c&quot;]</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cleanArray</span></code> same as cleanSplit, but without empty elements</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,a,b</span>&#160;&#160;&#160; <span class="pre">,,</span>&#160; <span class="pre">c&quot;.cleanArray()</span> <span class="pre">==</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cleanUniqArray</span></code> same as cleanArray, but also removes duplicates</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,a,b</span>&#160;&#160;&#160; <span class="pre">,,</span>&#160; <span class="pre">c&quot;.cleanArray()</span> <span class="pre">==</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cleanString</span></code> removes empty elements, leading and trailing whitespaces</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,a,b</span>&#160;&#160;&#160; <span class="pre">,,</span>&#160; <span class="pre">c&quot;.cleanString()</span> <span class="pre">==</span> <span class="pre">&quot;a,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c&quot;</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cleanUniqString</span></code> same as cleanString but also removes duplicates</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,a,b</span>&#160;&#160;&#160; <span class="pre">,,</span>&#160; <span class="pre">c&quot;.cleanUniqString()</span> <span class="pre">==</span> <span class="pre">&quot;a,</span> <span class="pre">b,</span> <span class="pre">c&quot;</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">addEnum</span></code> adds another element to the list and makes all elements in the list unique</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">a&quot;.addEnum(&quot;d&quot;)</span> <span class="pre">==</span> <span class="pre">&quot;a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d&quot;</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">removeEnum</span></code> removes all enums with a specific value from the list</div>
+<div class="line">Example: <code class="code docutils literal notranslate"><span class="pre">&quot;a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">a&quot;.removeEnum(&quot;a&quot;)</span> <span class="pre">==</span> <span class="pre">&quot;b,</span> <span class="pre">c&quot;</span></code></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="calculations">
+<span id="convenience-calculations"></span><h3>Calculations<a class="headerlink" href="#calculations" title="Link to this heading"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">safety_relevant?</span></code> returns</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>true</em> if the <em>asil</em> in the requirement is neither <em>QM</em> nor <em>not_set</em>,</p></li>
+<li><p>otherwise <em>false</em>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">security_relevant?</span></code> returns</p>
+<ul class="simple">
+<li><p><em>true</em> if the <em>cal</em> in the requirement is neither <em>QM</em> nor <em>not_set</em>,</p></li>
+<li><p>otherwise <em>false</em>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="original-data-expert-usage">
+<span id="original-data"></span><h2>Original Data (Expert Usage)<a class="headerlink" href="#original-data-expert-usage" title="Link to this heading"></a></h2>
+<p>For special expert usages, the loader also provides a member variable <em>original_data</em>.
+This is a hash of <strong>filenames</strong> to the <strong>data read from the files</strong> via YAML library.</p>
+<p>Note, that a few things are nevertheless changed and not completely “original”:</p>
+<ul class="simple">
+<li><p>converting short forms to regular forms</p></li>
+<li><p>converting  non-breaking spaces to regular spaces</p></li>
+<li><p>removing duplicate entries from verification_methods and tags</p></li>
+<li><p>stripping strings</p></li>
+<li><p>adding non-existing attributes of a requirement as empty strings</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename.dim</span>
+<span class="nt">document</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myModule</span>
+
+<span class="nt">myId</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span>
+</pre></div>
+</div>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="c1"># script</span>
+<span class="nb">require</span><span class="w"> </span><span class="s1">&#39;dim/loader&#39;</span>
+
+<span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Loader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">l</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="n">l</span><span class="o">.</span><span class="n">original_data</span><span class="o">[</span><span class="s2">&quot;filename.dim&quot;</span><span class="o">][</span><span class="s2">&quot;module&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;myModule&quot;</span>
+<span class="n">l</span><span class="o">.</span><span class="n">original_data</span><span class="o">[</span><span class="s2">&quot;filename.dim&quot;</span><span class="o">][</span><span class="s2">&quot;myId&quot;</span><span class="o">][</span><span class="s2">&quot;text&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;abc&quot;</span>
+</pre></div>
+</div>
+<p>Use the formatter to write changed data back to the requirements files:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;dim/commands/format&#39;</span>
+
+<span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Loader</span><span class="o">.</span><span class="n">new</span>
+<span class="n">l</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="n">l</span><span class="o">.</span><span class="n">original_data</span><span class="w"> </span><span class="o">...</span>
+
+<span class="n">formatter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Dim</span><span class="o">::</span><span class="no">Format</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">formatter</span><span class="o">.</span><span class="n">execute</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/api.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development of Dim &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dim" href="requirements/Dim/Requirements.html" />
+    <link rel="prev" title="Diagram Legend" href="architecture/legend.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development of Dim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bug-tracking-and-feature-planning">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html"><span class="raw-html">Dim</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reqSources.html">Source Code Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reqConfig.html">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Development of Dim</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="development-of-dim">
+<span id="development"></span><h1>Development of Dim<a class="headerlink" href="#development-of-dim" title="Link to this heading"></a></h1>
+<section id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading"></a></h2>
+<p>Dim is developed on GitHub including a <strong>review</strong> and <strong>verification</strong> process.</p>
+<ul class="simple">
+<li><p>Every commit must be approved.</p></li>
+<li><p>The unit test of Dim covers 100% of the code. Whenever the code changes, the verifier ensures
+that all tests are passing. In case of a failing test the commit is rejected.</p></li>
+</ul>
+</section>
+<section id="bug-tracking-and-feature-planning">
+<span id="bug-tracking"></span><h2>Bug Tracking and Feature Planning<a class="headerlink" href="#bug-tracking-and-feature-planning" title="Link to this heading"></a></h2>
+<p>Bugs and new features are handled with GitHub issues.
+In case you have found a bug or if you have feature request, please open a ticket.</p>
+</section>
+<section id="release">
+<h2>Release<a class="headerlink" href="#release" title="Link to this heading"></a></h2>
+<p>Merging a change to GitHub does not mean it’s automatically available for the users. A new Dim
+version must be released explicitly:</p>
+<blockquote>
+<div><ul>
+<li><p>Increment the version in <code class="docutils literal notranslate"><span class="pre">version.txt</span></code>.</p></li>
+<li><p>Document the changes in <code class="docutils literal notranslate"><span class="pre">documentation/source/pages/changelog.rst</span></code>.</p></li>
+<li><p>Push these changed files to GitHub.</p></li>
+<li><p>After successful merge, build the gem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gem</span> <span class="n">build</span> <span class="n">dim</span><span class="o">.</span><span class="n">gemspec</span>
+</pre></div>
+</div>
+</li>
+<li><p>Push the gem to RubyGems, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gem</span> <span class="n">push</span> <span class="n">dim</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="mf">1.2.3</span><span class="o">.</span><span class="n">gem</span> <span class="o">--</span><span class="n">host</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="o">--</span><span class="n">key</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>Push the documentation to <a class="reference external" href="https://esrlabs.github.io/dox/dim">https://esrlabs.github.io/dox/dim</a>.</p></li>
+<li><p>Add a new release tag.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<p>The requirements for Dim are written in Dim itself, exported to Sphinx and available in this
+documentation. There is also an overview of the mapping between requirement IDs and test cases with
+additional statistics generated.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="requirements/Dim/Requirements.html"><span class="raw-html">Dim</span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#command-line-interface"><span class="raw-html">Command Line Interface</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#information"><span class="raw-html">Information</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#errors"><span class="raw-html">Errors</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#syntax"><span class="raw-html">Syntax</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#requirements-files"><span class="raw-html">Requirements Files</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#regular-form"><span class="raw-html">Regular Form</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#short-form"><span class="raw-html">Short Form</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#config-files"><span class="raw-html">Config Files</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#properties-file"><span class="raw-html">Properties File</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#loading-files"><span class="raw-html">Loading Files</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#reading-data"><span class="raw-html">Reading Data</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#consistency-checks"><span class="raw-html">Consistency Checks</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#subcommands"><span class="raw-html">Subcommands</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#check"><span class="raw-html">check</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#stats"><span class="raw-html">stats</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#format"><span class="raw-html">format</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#export"><span class="raw-html">export</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#json"><span class="raw-html">JSON</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#csv"><span class="raw-html">CSV</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#rst"><span class="raw-html">RST</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#ruby-api"><span class="raw-html">Ruby API</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#reading"><span class="raw-html">Reading</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#convenience-methods-for-requirements"><span class="raw-html">Convenience Methods for Requirements</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#additional-getters"><span class="raw-html">Additional Getters</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="requirements/Dim/Requirements.html#convenience-methods-for-attributes-with-comma-separated-values"><span class="raw-html">Convenience Methods for Attributes With Comma Separated Values</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="requirements/Dim/Requirements.html#writing"><span class="raw-html">Writing</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="requirements/Dim/Requirements.html#testing-requirements"><span class="raw-html">Testing Requirements</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reqSources.html">Source Code Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements-generated/stats.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirements-generated/stats.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements-generated/stats.html#test-cases">Test Cases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reqConfig.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reqConfig.html#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reqConfig.html#preview">Preview</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/development.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

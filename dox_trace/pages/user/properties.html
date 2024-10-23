@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Properties &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Traceability" href="traceability.html" />
+    <link rel="prev" title="HTML in Attributes" href="rawhtml.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Properties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#yaml-format">YAML Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx-configuration">Sphinx Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specification-usage">Specification Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standalone-usage">Standalone Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Properties</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="properties">
+<span id="id1"></span><h1>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h1>
+<p>Properties, also called characteristics, are defined at a <strong>single</strong> location but can be used in
+<strong>several</strong> places.</p>
+<section id="yaml-format">
+<h2>YAML Format<a class="headerlink" href="#yaml-format" title="Link to this heading"></a></h2>
+<p>The properties are defined in an external <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SMD_cpp2can</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">asil</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QM</span>
+<span class="w">    </span><span class="nt">reuse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="nt">SMD_safeNvM</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">asil</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ASIL_B</span>
+<span class="w">    </span><span class="nt">reuse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="w">    </span><span class="nt">cal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CAL_2</span>
+</pre></div>
+</div>
+<p>You can write the information also in one line, it’s just syntactic sugar:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SMD_cpp2can</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> asil</span><span class="p">:</span><span class="w"> </span><span class="nv">QM</span><span class="p p-Indicator">,</span><span class="nt">     reuse</span><span class="p">:</span><span class="w"> </span><span class="nv">yes</span><span class="w">            </span><span class="p p-Indicator">}</span>
+<span class="nt">SMD_safeNvM</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> asil</span><span class="p">:</span><span class="w"> </span><span class="nv">ASIL_B</span><span class="p p-Indicator">,</span><span class="nt"> reuse</span><span class="p">:</span><span class="w"> </span><span class="nv">no</span><span class="p p-Indicator">,</span><span class="nt"> cal</span><span class="p">:</span><span class="w"> </span><span class="nv">CAL_2</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<p>Multi-line strings are also supported:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SWA_mod_abcAdapter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">             </span><span class="no">This module is about</span>
+
+<span class="w">              </span><span class="no">- this</span>
+<span class="w">              </span><span class="no">- that</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">A referenced but missing property will lead to an error!</div>
+<div class="line">It is possible to define default values with the special ID <code class="docutils literal notranslate"><span class="pre">_default_</span></code>.</div>
+</div>
+</section>
+<section id="sphinx-configuration">
+<h2>Sphinx Configuration<a class="headerlink" href="#sphinx-configuration" title="Link to this heading"></a></h2>
+<p>Configure the filename of the properties in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">properties_file</span> <span class="o">=</span> <span class="s1">&#39;&lt;some path&gt;/properties.yaml&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="specification-usage">
+<h2>Specification Usage<a class="headerlink" href="#specification-usage" title="Link to this heading"></a></h2>
+<p>It is possible to overwrite the default values for attributes of specifications.</p>
+<p>The property ID is matched in the following order:</p>
+<ul class="simple">
+<li><p>Equal to the complete specification ID, e.g. <em>SMD_cpp2can_abc</em></p></li>
+<li><p>Equal to the specification ID until one character before the second “_”, e.g. <em>SMD_cpp2can</em></p></li>
+<li><p>Equal to the specification ID until one character before the first “_”, e.g. <em>SMD</em></p></li>
+<li><p>Equal to <em>_default_</em></p></li>
+</ul>
+<p>If</p>
+<ul class="simple">
+<li><p>a specification in an RST file does not specify an attribute explicitly and</p></li>
+<li><p>the ID is found in the properties file and</p></li>
+<li><p>the attribute is defined for this ID in the properties file</p></li>
+</ul>
+<p>then the corresponding value is used instead of the standard default value defined in
+<a class="reference internal" href="explicitAttributes.html#dim-attr"><span class="std std-ref">Standard Attributes</span></a> and <a class="reference internal" href="customAttributes.html#dim-custom-attr"><span class="std std-ref">Custom Attributes</span></a>. This applies to all explicit attributes as well as for
+the content of the specifications.</p>
+<p>Example:</p>
+<p><strong>properties.yaml:</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SMD_cpp2can</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> asil</span><span class="p">:</span><span class="w"> </span><span class="nv">QM</span><span class="p p-Indicator">,</span><span class="nt"> cal</span><span class="p">:</span><span class="w"> </span><span class="nv">CAL_1</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="nt">SWA</span><span class="p">:</span><span class="w">         </span><span class="p p-Indicator">{</span><span class="nt"> developer</span><span class="p">:</span><span class="w"> </span><span class="nv">MyCompany</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<p><strong>RST:</strong></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SMD_cpp2can_abc
+    <span class="nc">:cal:</span> CAL_4
+
+<span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_featureX_abc
+</pre></div>
+</div>
+<p><strong>HTML:</strong></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="smd_cpp2can_abc"><span class="pre">[spec]</span> <a class="reference internal" href="#smd_cpp2can_abc"><span class="pre">SMD_cpp2can_abc</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> QM | <strong>Cal:</strong> CAL_4<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> off_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        [missing]
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="swa_featurex_abc"><span class="pre">[spec]</span> <a class="reference internal" href="#swa_featurex_abc"><span class="pre">SWA_featureX_abc</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        [missing]
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="standalone-usage">
+<h2>Standalone Usage<a class="headerlink" href="#standalone-usage" title="Link to this heading"></a></h2>
+<p>Properties can be used as a <em>role</em> or as a <em>directive</em>:</p>
+<ul class="simple">
+<li><p>role: <code class="docutils literal notranslate"><span class="pre">:prop:`&lt;key&gt;:&lt;value&gt;`</span></code></p></li>
+<li><p>directive: <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">prop::</span> <span class="pre">&lt;key&gt;:&lt;value&gt;</span></code></p></li>
+</ul>
+<p>These are the main differences:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head"><p>Directive</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Inline text</p></td>
+<td><p>Separate block</p></td>
+</tr>
+<tr class="row-odd"><td><p>Single-line</p></td>
+<td><p>Multi-line</p></td>
+</tr>
+<tr class="row-even"><td><p>Value interpreted as string</p></td>
+<td><p>Value interpreted as RST</p></td>
+</tr>
+<tr class="row-odd"><td><p>Styled with CSS</p></td>
+<td><p>Rendered by Sphinx</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p><strong>properties.yaml:</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">_default_</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> key3</span><span class="p">:</span><span class="w"> </span><span class="nv">value3</span><span class="w"> </span><span class="p p-Indicator">}</span>
+
+<span class="nt">ID1</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">key1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">    </span><span class="nt">key2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+</pre></div>
+</div>
+<p><strong>RST:</strong></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The values: <span class="na">:prop:</span><span class="nv">`ID1:key1`</span>, <span class="na">:prop:</span><span class="nv">`ID1:key2`</span>, <span class="na">:prop:</span><span class="nv">`ID1:key3`</span>
+
+<span class="p">..</span> <span class="ow">list-table</span><span class="p">::</span>
+    <span class="nc">:header-rows:</span> 1
+
+    <span class="m">*</span> - Key
+      <span class="m">-</span> Value
+    <span class="m">*</span> - key1
+      <span class="m">-</span> .. prop:: ID1:key1
+    <span class="m">*</span> - key2
+      <span class="m">-</span> .. prop:: ID1:key2
+    <span class="m">*</span> - key3
+      <span class="m">-</span> .. prop:: ID1:key3
+</pre></div>
+</div>
+<p><strong>HTML:</strong></p>
+<p><code class="highlight highlight-prop docutils literal notranslate"><span class="pre">value1</span></code>, <code class="highlight highlight-prop docutils literal notranslate"><span class="pre">value2</span></code>, <code class="highlight highlight-prop docutils literal notranslate"><span class="pre">value3</span></code></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key1</p></td>
+<td><p>value1</p></td>
+</tr>
+<tr class="row-odd"><td><p>key2</p></td>
+<td><p>value2</p></td>
+</tr>
+<tr class="row-even"><td><p>key3</p></td>
+<td><p>value3</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/user/properties.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Behaviour &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Scripting" href="scripting.html" />
+    <link rel="prev" title="Classes" href="classes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../architecture.html">Architecture</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="inout.html">Input / Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html">Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dynamic Behaviour</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parse-options">Parse Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-files">Load Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-subcommand">Execute Subcommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subcommand-check">Subcommand “check”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subcommand-export">Subcommand “export”</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rst">RST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json">JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#csv">CSV</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#subcommand-format">Subcommand “format”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subcommand-stats">Subcommand “stats”</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fmea.html">FMEA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legend.html">Diagram Legend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../architecture.html">Architecture</a> &raquo;</li>
+        
+        <li>Dynamic Behaviour</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dynamic-behaviour">
+<h1>Dynamic Behaviour<a class="headerlink" href="#dynamic-behaviour" title="Link to this heading"></a></h1>
+<section id="main">
+<span id="workflow-main"></span><h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
+<p>This is the base workflow:</p>
+<figure class="align-center" id="id1">
+<span id="workflow-main-fig"></span><a class="reference internal image-reference" href="../../_images/main_workflow.drawio.png"><img alt="../../_images/main_workflow.drawio.png" src="../../_images/main_workflow.drawio.png" style="width: 2218.0px; height: 922.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Main workflow</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Not all subcommands require to load files, e.g. for printing the version.</p></li>
+<li><p>If any action fails, the exit code is set to 1 instead of 0.</p></li>
+<li><p>Exceptions are not caught. If a Ruby application terminates abnormally, the exit code is set to
+a value != 0 depending on the exception type.</p></li>
+</ul>
+</section>
+<section id="parse-options">
+<span id="workflow-parse-options"></span><h2>Parse Options<a class="headerlink" href="#parse-options" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/options.drawio.png"><img alt="../../_images/options.drawio.png" src="../../_images/options.drawio.png" style="width: 679.0px; height: 586.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Options</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The outcome of this workflow can be either:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>An option was found which causes the tool to gracefully exit immediately, e.g. after
+printing the license.</p></li>
+<li><p>Parsing failed, e.g. something is missing, invalid or inconsistent.</p></li>
+<li><p>All options successfully loaded and stored globally.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="load-files">
+<span id="workflow-loader"></span><h2>Load Files<a class="headerlink" href="#load-files" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/loader.drawio.png"><img alt="../../_images/loader.drawio.png" src="../../_images/loader.drawio.png" style="width: 871.0px; height: 2331.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Loader</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line"><strong>Load</strong>:</div>
+<div class="line">If a filename was specified in the options, this <em>loader</em> workflow is executed. The file can be
+a config file or a requirements file. A config file can refer to one or more requirements files.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Store</strong>:</div>
+<div class="line">Loaded requirements are harmonized, which means not specified attributes will become empty
+strings. This makes further processing easier.
+The result of this harmonization is called <em>original data</em> and stored in the loader instance.
+It is used by e.g. the <em>format</em> subcommand. Afterwards the default values get resolved and are set
+for empty attributes if applicable.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Check:</strong></div>
+<div class="line">At the end the consistency is always checked, independently from the subcommand.</div>
+</div>
+</section>
+<section id="execute-subcommand">
+<span id="workflow-execute-subcommand"></span><h2>Execute Subcommand<a class="headerlink" href="#execute-subcommand" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/subcommand.drawio.png"><img alt="../../_images/subcommand.drawio.png" src="../../_images/subcommand.drawio.png" style="width: 626.0px; height: 461.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Subcommands</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This part of the program flow is straight forward. Depending on the command line options, the
+appropriate subcommand is executed. Invalid subcommand options were already handled in
+<a class="reference internal" href="#workflow-parse-options"><span class="std std-ref">Parse Options</span></a>.</p>
+</section>
+<section id="subcommand-check">
+<span id="workflow-check"></span><h2>Subcommand “check”<a class="headerlink" href="#subcommand-check" title="Link to this heading"></a></h2>
+<p>This subcommand is just a dummy and completely empty. The consistency check is always done when
+<a class="reference internal" href="#workflow-loader"><span class="std std-ref">loading</span></a> the files.</p>
+</section>
+<section id="subcommand-export">
+<span id="workflow-export"></span><h2>Subcommand “export”<a class="headerlink" href="#subcommand-export" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/export.drawio.png"><img alt="../../_images/export.drawio.png" src="../../_images/export.drawio.png" style="width: 652.0px; height: 541.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Exporting requirements</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The files are exported to a specific output <strong>folder</strong> in a specific <strong>type</strong> specified with
+command line options. A <strong>filter</strong> can be specified to export only a part of the requirements.
+Files like images listed in the <cite>enclosed</cite> attribute of the input file are also copied to the output
+folder.</p>
+<p>The algorithm is always the same, but internally different implementations of the ExporterInterface
+(see <a class="reference internal" href="classes.html#dim-classes"><span class="std std-ref">Classes</span></a>) are called depending on the type which can be RST, JSON and CSV.</p>
+<section id="rst">
+<span id="workflow-export-rst"></span><h3>RST<a class="headerlink" href="#rst" title="Link to this heading"></a></h3>
+<p>Requirements are exported to Sphinx so that the <cite>dox_trace</cite> extension of Sphinx can understand the
+content and generate a nice HTML view.</p>
+<p>This is the only export type where an index file is generated (with the Sphinx <cite>toctree</cite> element).</p>
+</section>
+<section id="json">
+<span id="workflow-export-json"></span><h3>JSON<a class="headerlink" href="#json" title="Link to this heading"></a></h3>
+<p>This exporter simply uses the Ruby JSON library to convert the requirement objects to JSON objects
+which can be written to the output folder.</p>
+<p>No index file is written.</p>
+</section>
+<section id="csv">
+<span id="workflow-export-csv"></span><h3>CSV<a class="headerlink" href="#csv" title="Link to this heading"></a></h3>
+<p>The requirements are converted to a CSV format.</p>
+<p>No index file is written.</p>
+</section>
+</section>
+<section id="subcommand-format">
+<span id="workflow-format"></span><h2>Subcommand “format”<a class="headerlink" href="#subcommand-format" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/format.drawio.png"><img alt="../../_images/format.drawio.png" src="../../_images/format.drawio.png" style="width: 668.0px; height: 751.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Formatting input files</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following types of formatting are possible:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in-place</span></code>: See use case <a class="reference internal" href="usecases.html#use-case-change-requirements"><span class="std std-ref">Change Requirements</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check-only</span></code>: Executed from the verifier in the <a class="reference internal" href="usecases.html#use-case-vcs"><span class="std std-ref">Version Control System</span></a> use
+case.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra</span></code>: A debugging feature to write to separate files instead of changing the input files
+directly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code>: similar to <cite>extra</cite>, but writing the output to the console.</p></li>
+</ul>
+</section>
+<section id="subcommand-stats">
+<span id="workflow-stats"></span><h2>Subcommand “stats”<a class="headerlink" href="#subcommand-stats" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/stats.drawio.png"><img alt="../../_images/stats.drawio.png" src="../../_images/stats.drawio.png" style="width: 511.0px; height: 181.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Printing statistics</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This subcommand prints generic statistics of the requirements specified in the input files
+like number of total number of requirements and number of accepted or rejected requirements.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/architecture/dynamic.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

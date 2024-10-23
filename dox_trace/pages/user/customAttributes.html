@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Attributes &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Calculated Values" href="calcedValues.html" />
+    <link rel="prev" title="Standard Attributes" href="explicitAttributes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#values">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Custom Attributes</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="custom-attributes">
+<span id="dim-custom-attr"></span><h1>Custom Attributes<a class="headerlink" href="#custom-attributes" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="explicitAttributes.html#dim-attr"><span class="std std-ref">Standard Attributes</span></a> can be extended by custom attributes using the <em>dox_trace_custom_attributes</em>
+option in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dox_trace_custom_attributes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directives&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">directives</span><span class="o">-</span><span class="nb">list</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1"># mandatory</span>
+        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">categories</span><span class="o">-</span><span class="nb">list</span><span class="o">&gt;</span><span class="p">,</span> <span class="c1"># mandatory if directives include &quot;requirement&quot; or &quot;information&quot;</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text|enum|refs&quot;</span><span class="p">,</span>        <span class="c1"># mandatory</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">,</span>            <span class="c1"># optional, defaults to &quot;&quot; or [], depending on type</span>
+        <span class="s2">&quot;export&quot;</span><span class="p">:</span> <span class="s2">&quot;yes|no&quot;</span>               <span class="c1"># optional, defaults to &quot;no&quot;</span>
+    <span class="p">}</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>dox_trace_custom_attributes</em> must be a hash with:</p>
+<ul class="simple">
+<li><p>key: name of the attribute</p></li>
+<li><p>value: parameter of the attribute</p></li>
+</ul>
+<p>The names must be unique and not conflict with <a class="reference internal" href="explicitAttributes.html#dim-attr"><span class="std std-ref">Standard Attributes</span></a>.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<p><strong>directives</strong> is mandatory; it lists all specification <a class="reference internal" href="directives.html#spec-types"><span class="std std-ref">Types</span></a> for which the attribute
+shall be available. It must be a non-empty list of strings.</p>
+<p><strong>categories</strong> is mandatory if the <em>directives</em> parameter includes <em>requirement</em> or <em>information</em>.
+It must be a non-empty list of strings containing <em>input</em>, <em>system</em> and/or <em>software</em>.</p>
+<p><strong>type</strong> is mandatory; must be one of <em>text</em>, <em>enum</em> and <em>refs</em>.</p>
+<ul class="simple">
+<li><p><em>text</em>: Attribute value interpreted as <strong>RST syntax</strong>.</p></li>
+<li><p><em>enum</em>: Comma separated <strong>textual</strong> string list.</p></li>
+<li><p><em>refs</em>: Comma separated list of <strong>Sphinx references</strong>. The references are not considered for
+calculating downstream or upstream references.</p></li>
+</ul>
+<p><strong>default</strong> is optional; used if the attribute is not set explicitly in specifications.</p>
+<p><strong>export</strong> is optional; setting to “yes” enables the export to Dim files. Note, that the Dim
+configuration must also support this attribute.</p>
+</section>
+<section id="values">
+<h2>Values<a class="headerlink" href="#values" title="Link to this heading"></a></h2>
+<p>An attribute value is one of the following (in that particular order):</p>
+<ul class="simple">
+<li><p>explicitly set in the specifications</p></li>
+<li><p>defined in the <a class="reference internal" href="properties.html#properties"><span class="std std-ref">properties files</span></a></p></li>
+<li><p>taken from the <strong>default</strong> parameter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">[]</span></code>, depending on the <strong>type</strong></p></li>
+</ul>
+<p>The output is formatted according to the type. Empty attributes are rendered as <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>conf.py:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dox_trace_custom_attributes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;custom_text&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directives&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;spec&quot;</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;THIS IS THE DEFAULT VALUE&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;custom_enum&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directives&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;spec&quot;</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;enum&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;export&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;custom_refs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directives&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;spec&quot;</span><span class="p">,</span> <span class="s2">&quot;requirement&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;refs&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>RST file:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">requirement</span><span class="p">::</span> CRS_CustomAttribute_Requirement
+    <span class="nc">:category:</span> input
+
+<span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_CustomAttribute_Spec
+    <span class="nc">:custom_text:</span>
+        |br|
+        This is <span class="ge">*italic text*</span>,
+        <span class="m">-</span> some bullet
+        <span class="m">-</span> points and ...
+<span class="p">        ..</span> <span class="ow">note</span><span class="p">::</span>
+<span class="cp">            ... a small note!</span>
+<span class="cp">    :custom_enum: a, b, c</span>
+<span class="cp">    :custom_refs: SMD_CustomAttribute_Unit, CRS_CustomAttribute_Requirement, dim_custom_attr</span>
+
+<span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_CustomAttribute_Unit
+</pre></div>
+</div>
+<p>Rendered output:</p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-requirement docutils literal notranslate" id="crs_customattribute_requirement"><span class="pre">[requirement]</span> <a class="reference internal" href="#crs_customattribute_requirement"><span class="pre">CRS_CustomAttribute_Requirement</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft | <strong>Review Status:</strong> not_reviewed</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span><span class="dox-trace-attribute-empty"> | <strong>Verification Methods:</strong> -</span><span class="dox-trace-attribute-missing"><br></span>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        [missing]
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Comment:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Feature:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Change Request:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Miscellaneous:</strong> -<br></span>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="swa_customattribute_spec"><span class="pre">[spec]</span> <a class="reference internal" href="#swa_customattribute_spec"><span class="pre">SWA_CustomAttribute_Spec</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        [missing]
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span><p><span class="raw-html"></br></span></p>
+<p>This is <em>italic text</em>,</p>
+<ul class="simple">
+<li><p>some bullet</p></li>
+<li><p>points and …</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>… a small note!</p>
+</div>
+</span>        <strong>Custom Enum:</strong> a, b, c<br>
+        <strong>Custom Refs:</strong> <span><a class="reference internal" href="#smd_customattribute_unit"><span class="std std-ref">SMD_CustomAttribute_Unit</span></a></span>, <span><a class="reference internal" href="#crs_customattribute_requirement"><span class="std std-ref">CRS_CustomAttribute_Requirement</span></a></span>, <span><a class="reference internal" href="#dim-custom-attr"><span class="std std-ref">Custom Attributes</span></a></span><br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-unit docutils literal notranslate" id="smd_customattribute_unit"><span class="pre">[unit]</span> <a class="reference internal" href="#smd_customattribute_unit"><span class="pre">SMD_CustomAttribute_Unit</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> off_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        [missing]
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
+        <span class="dox-trace-attribute-missing"><strong>Sources:</strong> [missing]</span>
+    </p></td></tr>
+    </tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/user/customAttributes.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

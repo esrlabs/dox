@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Config Files &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Properties File" href="property.html" />
+    <link rel="prev" title="Requirements Files" href="requirement.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration.html">Integration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../syntax.html">Syntax</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="requirement.html">Requirements Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Config Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#originator">originator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#category">category</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#files">files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">Properties File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html">Attributes File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html.html">HTML Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues.html">Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../syntax.html">Syntax</a> &raquo;</li>
+        
+        <li>Config Files</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="config-files">
+<span id="id1"></span><h1>Config Files<a class="headerlink" href="#config-files" title="Link to this heading"></a></h1>
+<p>Dim config files are used</p>
+<ul class="simple">
+<li><p>to load a set of multiple files,</p></li>
+<li><p>to define the originators and categories of the files and</p></li>
+<li><p>to specify a properties file which influences the <a class="reference internal" href="requirement.html#asil"><span class="std std-ref">asil</span></a> and
+<a class="reference internal" href="requirement.html#cal"><span class="std std-ref">cal</span></a> values.</p></li>
+<li><p>to specify an <a class="reference internal" href="attributes.html#attributes-file"><span class="std std-ref">attributes</span></a> file which accepts project specific custom attributes.</p></li>
+</ul>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Config</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;originator&gt;</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;category&gt;</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;glob pattern&gt;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;originator&gt;</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;category&gt;</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;glob pattern&gt;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;glob pattern&gt;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="nt">Properties</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">File</span>
+<span class="nt">Attributes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">File</span>
+</pre></div>
+</div>
+<section id="originator">
+<h3>originator<a class="headerlink" href="#originator" title="Link to this heading"></a></h3>
+<p>The originator is typically the company name.</p>
+</section>
+<section id="category">
+<h3>category<a class="headerlink" href="#category" title="Link to this heading"></a></h3>
+<p>Category must be one of <em>input</em>, <em>system</em>, <em>software</em>, <em>architecture</em> and <em>module</em>.</p>
+<p>They are interpreted in the following top-down order when calculating <em>upstreamRefs</em> and
+<em>downstreamRefs</em>, see <a class="reference internal" href="../api.html#data-access"><span class="std std-ref">Data Access</span></a>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Level</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Full Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>input</p></td>
+<td><p>Input Requirement</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>system</p></td>
+<td><p>System Requirement</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>software</p></td>
+<td><p>Software Requirement</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>architecture</p></td>
+<td><p>Architecture Specification</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>module</p></td>
+<td><p>Module / Component Specification</p></td>
+</tr>
+</tbody>
+</table>
+<p>It’s important to understand that the requirements within the <em>module</em> category are based on those
+in the <em>architecture</em> category, which in turn are derived from the <em>software</em> category, and so on.
+This means that <em>module</em> is the lowest in the category hierarchy, while <em>input</em> holds a higher
+position.</p>
+</section>
+<section id="files">
+<h3>files<a class="headerlink" href="#files" title="Link to this heading"></a></h3>
+<p>Files can be defined as a string or as an array of strings containing glob patterns with relative
+path names. The patterns must not include <code class="docutils literal notranslate"><span class="pre">..</span></code>. Use forward slashes <code class="docutils literal notranslate"><span class="pre">/</span></code>, not backslashes <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+</section>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h3>
+<p>Defines the <a class="reference internal" href="property.html#property-files"><span class="std std-ref">Properties File</span></a>.</p>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h3>
+<p>Defines the <a class="reference internal" href="attributes.html#attributes-file"><span class="std std-ref">Attributes File</span></a>.</p>
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Config</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accenture</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;modules/**/*.dim&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;safety_modules/**/*.dim&quot;</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">module</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerA</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;input/&lt;CustomerA&gt;/**/*.dim&quot;</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">input</span>
+<span class="nt">Properties</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;properties.yaml&quot;</span>
+<span class="nt">Attributes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;attributes.dim&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="software-requirements">
+<h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h2>
+<p>Whenever <cite>category</cite> in the config file is set to <code class="docutils literal notranslate"><span class="pre">software</span></code>, Dim checks the following naming
+conventions:</p>
+<ul class="simple">
+<li><p>IDs and the document name must start with <code class="docutils literal notranslate"><span class="pre">SRS</span></code>.</p></li>
+<li><p>IDs must be named <code class="docutils literal notranslate"><span class="pre">SRS_&lt;feature-name&gt;_&lt;topic-name&gt;</span></code>. They must have exactly two underscores.</p></li>
+<li><p>Document must be named <code class="docutils literal notranslate"><span class="pre">SRS_&lt;feature-name&gt;</span></code>. It must have exactly one underscore.</p></li>
+<li><p><em>&lt;feature-name&gt;</em> and <em>&lt;topic-name&gt;</em> must only contain alphanumeric characters and hyphens (-).</p></li>
+</ul>
+<p>In case of violation, Dim will report an error exit the process.</p>
+<p>For legacy software requirements, you can disable this check by setting the option
+<code class="docutils literal notranslate"><span class="pre">disable_naming_convention_check</span></code> to <cite>yes</cite> for the respective originator in
+the config file. Default for <code class="docutils literal notranslate"><span class="pre">disable_naming_convention_check</span></code> is <cite>no</cite>.</p>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Config</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accenture</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_module.dim</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testing_module.dim</span>
+<span class="w">    </span><span class="nt">disable_naming_convention_check</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"> </span><span class="c1"># Dim will skip the SRS naming convention checks for all files from this originator</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">originator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer</span>
+<span class="w">    </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="c1"># Dim will check for SRS naming conventions</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software_sample.dim</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hardware_sample.dim</span>
+<span class="w">    </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software</span>
+</pre></div>
+</div>
+<p>Example requirements file with valid document name and ID:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">document</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SRS_display</span>
+
+<span class="nt">SRS_display_refresh-rate</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Refresh rate shall be 90 Hz.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/syntax/config.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dim" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integration &mdash; Dim  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Syntax" href="syntax.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Dim
+          </a>
+              <div class="version">
+                2.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verifier">Verifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export">Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scripting">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training">Training</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Ruby Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_handling.html">Version Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development of Dim</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Integration</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integration">
+<h1>Integration<a class="headerlink" href="#integration" title="Link to this heading"></a></h1>
+<section id="compatibility">
+<span id="id1"></span><h2>Compatibility<a class="headerlink" href="#compatibility" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Dim requires at least Ruby 2.7. It does not use any special third-party library, the standard
+installation is enough.</p></li>
+<li><p>The officially supported platforms are Windows, Linux and macOS.</p></li>
+</ul>
+</section>
+<section id="folder-structure">
+<h2>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Dim can handle almost any folder structure specified through the <a class="reference internal" href="syntax/config.html#config-files"><span class="std std-ref">Config Files</span></a>.</div>
+<div class="line">One of the few constrains is to place the <a class="reference internal" href="syntax/requirement.html#requirements-files"><span class="std std-ref">Requirements Files</span></a> not above the config file.</div>
+</div>
+<p>Use the following structure as a guidance, tailor it depending on the project specific needs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>req
+  input
+    customerA
+      lastenheft1
+        Requirements.dim
+        data
+          image1.png
+          image2.png
+      lastenheft2
+        Requirements.dim
+        data
+          image3.png
+          image4.png
+  srs
+    feature1
+      Requirements.dim
+      data
+        image5.png
+        image6.png
+    feature2
+      Requirements.dim
+  config.dim
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Choose a root folder for the requirements, here <code class="docutils literal notranslate"><span class="pre">req</span></code>.</p></li>
+<li><p>Add a config file there, like <code class="docutils literal notranslate"><span class="pre">config.dim</span></code>.</p></li>
+<li><p>Create folders for every category, e.g. <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">srs</span></code>.</p></li>
+<li><p><cite>Input Requirements</cite> may be originated by different customers, so create subfolders for every
+customer, for example <code class="docutils literal notranslate"><span class="pre">customerA</span></code>.</p></li>
+<li><p>Create another level of subfolders for the requirements files, e.g. <code class="docutils literal notranslate"><span class="pre">lastenheft1</span></code> or
+<code class="docutils literal notranslate"><span class="pre">feature1</span></code>.</p></li>
+<li><p>Place the requirements files into these folders. The ending should be <code class="docutils literal notranslate"><span class="pre">*.dim</span></code>.</p></li>
+<li><p>Put any enclosed file to a <code class="docutils literal notranslate"><span class="pre">data</span></code> subfolder.</p></li>
+</ul>
+</section>
+<section id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading"></a></h2>
+<p>The file must be compliant to the specified syntax for the <a class="reference internal" href="syntax/config.html#config-files"><span class="std std-ref">Config Files</span></a> and
+<a class="reference internal" href="syntax/requirement.html#requirements-files"><span class="std std-ref">Requirements Files</span></a>.</p>
+<p>Some general advices:</p>
+<ul class="simple">
+<li><p>Use headings and subheadings to make especially large documents more readable.</p></li>
+<li><p>Avoid more than four heading levels.</p></li>
+<li><p>Don’t use YAML comments, they will be removed when using the Dim formatter.</p></li>
+</ul>
+</section>
+<section id="verifier">
+<span id="integration-verifier"></span><h2>Verifier<a class="headerlink" href="#verifier" title="Link to this heading"></a></h2>
+<p>The <strong>check</strong> command must be added to a project specific verifier which checks the changes before
+they are merged into the repository. If the exit code is not 0, the verifier must reject the commit.
+The commit must be also rejected if Dim hangs and is terminated due to a timeout, etc.</p>
+<p>This way it’s ensured that always syntactically correct and consistent files are merged to the
+repository. This also helps to prevent safety and security issues.</p>
+</section>
+<section id="export">
+<span id="integration-export"></span><h2>Export<a class="headerlink" href="#export" title="Link to this heading"></a></h2>
+<p>When exporting to another format, e.g.</p>
+<ul class="simple">
+<li><p>to CSV as input for a requirements exchange with the customer or</p></li>
+<li><p>to RST as input for a Sphinx build,</p></li>
+</ul>
+<p>review the exported data or the result of the tool using the exported data for correctness.</p>
+</section>
+<section id="statistics">
+<span id="integration-stats"></span><h2>Statistics<a class="headerlink" href="#statistics" title="Link to this heading"></a></h2>
+<p>When using the <code class="docutils literal notranslate"><span class="pre">stats</span></code> subcommand, review the results for correctness by doing a sanity check.
+This shall avoid that wrong or incomplete files are loaded without recognizing it.</p>
+</section>
+<section id="scripting">
+<span id="integration-scripting"></span><h2>Scripting<a class="headerlink" href="#scripting" title="Link to this heading"></a></h2>
+<p>When using a script to access the Ruby API, perform at least one of the following reviews:</p>
+<ul class="simple">
+<li><p>Review the script for correctness.</p></li>
+<li><p>Review the outcome of the script for correctness.</p></li>
+</ul>
+<p>Depending on the complexity of the script, unit tests or a complete tool evaluation / qualification
+might be necessary.</p>
+</section>
+<section id="bugs">
+<h2>Bugs<a class="headerlink" href="#bugs" title="Link to this heading"></a></h2>
+<p>Bugs must be tracked on regular basis, see also <a class="reference internal" href="development.html#bug-tracking"><span class="std std-ref">Bug Tracking and Feature Planning</span></a>. Check whether the reported
+bugs have an impact on the project and take appropriate actions like updating Dim in that project.</p>
+</section>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
+<p>It must be ensured that only the correct (qualified) version of this tool is used.</p>
+<ul class="simple">
+<li><p>Log the version of Dim in the official CI-jobs and</p></li>
+<li><p>compare this version with the version specified for the project.</p></li>
+</ul>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">All users of Dim must read this documentation.</div>
+<div class="line">They have to be trained in the usage of this tool to fully understand all features which are needed
+for their work.</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:40, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../_sources/pages/integration.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

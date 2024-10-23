@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FMEA &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Diagram Legend" href="legend.html" />
+    <link rel="prev" title="Dynamic Behaviour" href="dynamic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FMEA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fault-model">Fault Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generalized-errors">Generalized Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-workflow">Main Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>FMEA</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fmea">
+<h1>FMEA<a class="headerlink" href="#fmea" title="Link to this heading"></a></h1>
+<p>The FMEA is done on the “first zoom level” of the architecture, the
+<a class="reference internal" href="dynamic.html#workflow"><span class="std std-ref">main workflow</span></a>.</p>
+<p>The relevant elements are annotated by oval labels, see also the <a class="reference internal" href="legend.html#legend"><span class="std std-ref">diagram legend</span></a>.</p>
+<section id="fault-model">
+<h2>Fault Model<a class="headerlink" href="#fault-model" title="Link to this heading"></a></h2>
+<p>The following analysis is based on this generic <em>fault model</em> for activity diagrams:</p>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Element Type</p></th>
+<th class="head"><p>Error ID</p></th>
+<th class="head"><p>Generic Error Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data storage</p></td>
+<td><p>DS1</p></td>
+<td><p>Stored data changed before read operation</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>DS2</p></td>
+<td><p>New data not stored / keeps old data / stuck at specific value</p></td>
+</tr>
+<tr class="row-even"><td><p>Data flow</p></td>
+<td><p>DF1</p></td>
+<td><p>Transferred data changed</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>DF2</p></td>
+<td><p>Transferred data lost</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DF3</p></td>
+<td><p>Data stored at / read from wrong location in data store</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>DF4</p></td>
+<td><p>Data transferred to wrong data store</p></td>
+</tr>
+<tr class="row-even"><td><p>Processing</p></td>
+<td><p>PR1</p></td>
+<td><p>Calculates wrong results</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>Processing is skipped</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>PR3</p></td>
+<td><p>Processing too slow/fast</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control flow</p></td>
+<td><p>CF1</p></td>
+<td><p>Control flow stops</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>CF2</p></td>
+<td><p>Control flow proceeds to wrong process</p></td>
+</tr>
+</tbody>
+</table>
+<p>If more than one error is identified for the same element with the same error ID, a counter is
+added, e.g. <cite>PR1.1</cite>, <cite>PR1.2</cite>, etc.</p>
+<p>In the following sections, references to files are shown which end with <code class="docutils literal notranslate"><span class="pre">_spec.rb</span></code>. These files
+are test files which can be found in the <code class="docutils literal notranslate"><span class="pre">spec</span></code> folder of the <em>dox_trace</em> extension, e.g.
+<code class="docutils literal notranslate"><span class="pre">&lt;dox_trace</span> <span class="pre">root&gt;/spec/asil_spec.rb</span></code>.</p>
+</section>
+<section id="generalized-errors">
+<h2>Generalized Errors<a class="headerlink" href="#generalized-errors" title="Link to this heading"></a></h2>
+<p>The following errors are analyzed generically and not on architectural element level.</p>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 16.2%" />
+<col style="width: 40.5%" />
+<col style="width: 43.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Error ID</p></th>
+<th class="head"><p>General Error Description</p></th>
+<th class="head"><p>Measures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DF1, DF2, DF3</p></td>
+<td><p>Data is corrupted or lost during file access or wrong files are accessed.</p></td>
+<td><p>This tool runs without network access or memory queues. It is assumed that underlying layers like Python or the OS are qualified. Potential issues with data are analyzed in “Data storage” and “Processing” elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DF4</p></td>
+<td><p>Every data store type exists only once in the system, e.g. <cite>RST files</cite> cannot be stored in <cite>Exit code</cite>.</p></td>
+<td><p>Trying to do something like this will lead to a program exception. dox_trace will terminate with an exit code != 0.</p></td>
+</tr>
+<tr class="row-even"><td><p>PR3</p></td>
+<td><p>dox_trace has no timing constraints. But a too slow execution might frustrate the user, so that the user removes the mandatory check on the code review tool.</p></td>
+<td><p>It’s mentioned in the <a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a> of dox_trace that the verifier from the code review tool is mandatory and must not be removed or skipped.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CF1</p></td>
+<td><p>A complete stop of the control flow is usually no problem for a tool which runs offline and not on the target hardware. dox_trace is used for verifying changes on a code review tool. A stopped or terminated Sphinx build due to timeout must not lead to a merged commit.</p></td>
+<td><p>It’s mentioned in the <a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a> of dox_trace that the verifier from the code review tool must exit successfully, otherwise the commit must be rejected.</p></td>
+</tr>
+<tr class="row-even"><td><p>CF2</p></td>
+<td><p>This is a very generic problem and can lead to random errors.</p></td>
+<td><p>The likelihood is reduced to a minimum by intensive unit tests. To ensure that enough unit tests are written, the code coverage is 100%.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-workflow">
+<span id="fmea-command-line-workflow"></span><h2>Main Workflow<a class="headerlink" href="#main-workflow" title="Link to this heading"></a></h2>
+<p>This analysis is done on the <a class="reference internal" href="dynamic.html#workflow-main-fig"><span class="std std-numref">Fig. 7</span></a> with the <a class="reference internal" href="usecases.html#use-cases"><span class="std std-ref">Use Cases</span></a> in mind.</p>
+<table class="docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 5.3%" />
+<col style="width: 5.3%" />
+<col style="width: 26.3%" />
+<col style="width: 36.8%" />
+<col style="width: 26.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Element ID</p></th>
+<th class="head"><p>Error ID</p></th>
+<th class="head"><p>Specific Error Description</p></th>
+<th class="head"><p>Measures</p></th>
+<th class="head"><p>References</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>p1</p></td>
+<td><p>PR1.1</p></td>
+<td><p>Cache is not prepared properly which could lead to undefined behaviour.</p></td>
+<td><ul class="simple">
+<li><p>If the cache is not prepared properly, subsequent read and write calls will result in exceptions due to missing data structures which means Sphinx is terminated with exit code != 0.</p></li>
+<li><p>The verifier executes a complete build to avoid problems with incremental builds.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Cache access is implicitly tested by almost every test case.</p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR1.2</p></td>
+<td><p>The version is not determined correctly which  may lead in using incompatible cache data.</p></td>
+<td><p>This is only relevant if the extension is updated.</p>
+<ul class="simple">
+<li><p>It’s likely that an exception occurs due to incompatible cache data.</p></li>
+<li><p>The verifier executes a complete build to avoid problems with incremental builds.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>PR2</p></td>
+<td><p>Callbacks or directives are not registered which means the extension is not active.</p></td>
+<td><p>When trying to parse specifications, Sphinx will raise an exception due to unknown directives and terminate with exit code != 0.</p></td>
+<td><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>p2</p></td>
+<td><p>PR1.1</p></td>
+<td><p>Files are loaded incorrectly or not loaded completely.</p></td>
+<td><ul class="simple">
+<li><p>In most cases syntax and consistency checks within the loader will recognize the errors and Sphinx will terminate with exit code != 0.</p></li>
+<li><p>Users have to review the output.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">checks_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>PR1.2</p></td>
+<td><p>Wrong files are loaded.</p></td>
+<td><ul class="simple">
+<li><p>In almost every case random files are neither syntactically correct nor consistent which will lead to loading errors.</p></li>
+<li><p>Users have to review the output.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>If loading is skipped, no specifications are available for subsequent steps.</p></td>
+<td><p>This is recognized by the user or latest by the reviewer in the code review tool because the HTML output and the Dim export will be empty.</p></td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>p3</p></td>
+<td><p>PR1</p></td>
+<td><p>Consistency checks are passed even with inconsistent data.</p></td>
+<td><ul class="simple">
+<li><p>In most cases inconsistent data will lead to exceptions in further processing of the data, e.g. due to unresolved references.</p></li>
+<li><p>Users have to review the output.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">checks_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>Consistency checks are not executed.</p></td>
+<td><p><span class="greyitalic">see p3/PR1</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td><p>p4</p></td>
+<td><p>PR1</p></td>
+<td><p>HTML output is wrong.</p></td>
+<td><ul class="simple">
+<li><p>Users have to review the output.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>HTML output is missing or stored at wrong location.</p></td>
+<td><ul class="simple">
+<li><p>Users have to review the output.</p></li>
+<li><p>Missing output is detected by the verifier.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>p5</p></td>
+<td><p>PR1</p></td>
+<td><p>Dim export is wrong.</p></td>
+<td><ul class="simple">
+<li><p>Syntactically wrong Dim files are recognized by the verifier during the <cite>dim check</cite>.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>Dim export is missing or stored at wrong location.</p></td>
+<td><ul class="simple">
+<li><p>Users have to review the output.</p></li>
+<li><p>Recognized by the verifier during the <cite>dim check</cite>.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>p6</p></td>
+<td><p>PR1</p></td>
+<td><p>The exit code is set to a value != 0 instead of 0.</p></td>
+<td><ul class="simple">
+<li><p>An exit code != 0 indicates an error. The code review tool will reject the commit.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>In almost every unit test the exit code is checked.</p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>The exit code is not set explicitly which means it can be != 0 instead of 0.</p></td>
+<td><p><span class="greyitalic">see p6/PR1</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td><p>p7</p></td>
+<td><p>PR1</p></td>
+<td><p>The exit code is set to 0 instead of != 0.</p></td>
+<td><p>Tested by unit tests.</p></td>
+<td><p>In almost every unit test the exit code is checked.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>PR2</p></td>
+<td><p>The exit code is not set explicitly which means it can be 0 instead of != 0.</p></td>
+<td><p><span class="greyitalic">see p7/PR1</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td><p>s1, s8</p></td>
+<td><p>DS1.1</p></td>
+<td><p>Wrong specification data is loaded.</p></td>
+<td><ul class="simple">
+<li><p>In most cases syntax and consistency checks within the loader will recognize the errors and Sphinx will terminate with exit code != 0.</p></li>
+<li><p>Users have to review the output.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>DS1.2</p></td>
+<td><p>Files do not exist in the file system.</p></td>
+<td><p>If files do not exist, Sphinx will terminate with an exit code != 0.</p></td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p><span class="greyitalic">n/a, only read access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>s2</p></td>
+<td><p>DS1</p></td>
+<td><p>The cache is corrupted.</p></td>
+<td><ul class="simple">
+<li><p>In most cases consistency checks will recognize the errors and Sphinx will terminate with exit code != 0. It is also likely that the Dim export will produce incorrect Dim files which is recognized by a <cite>dim check</cite>.</p></li>
+<li><p>Users have to review the output.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p>The cache is not updated.</p></td>
+<td><ul class="simple">
+<li><p>If the cache is not prepared properly, subsequent read and write calls will result in exceptions due to missing data structures which means Sphinx is terminated with exit code != 0.</p></li>
+<li><p>The verifier executes a complete build to avoid problems with incremental builds.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>s3</p></td>
+<td><p>DS1</p></td>
+<td><p><span class="greyitalic">n/a, only write access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p>Existing HTML files are not updated.</p></td>
+<td><p><span class="greyitalic">see p4/PR2</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>s4</p></td>
+<td><p>DS1.1</p></td>
+<td><p>Dim export is missing or stored at wrong location.</p></td>
+<td><p><span class="greyitalic">see p5/PR1 and p5/PR2</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS1.2</p></td>
+<td><p>Properties file is not loaded.</p></td>
+<td><p>Fallback values of all attributes are either empty or <cite>not_set</cite>, which means this is identified by manual review or automatic checks.</p></td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>DS1.3</p></td>
+<td><p>Other configuration parameters e.g. regarding backward compatibility are not as intended.</p></td>
+<td><ul class="simple">
+<li><p>In most cases this will lead to a parsing error and Sphinx will terminate with exit code != 0.</p></li>
+<li><p>Users have to review the output.</p></li>
+</ul>
+</td>
+<td><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p><span class="greyitalic">n/a, only read access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>s5</p></td>
+<td><p>DS1</p></td>
+<td><p><span class="greyitalic">n/a, only write access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p>Existing Dim  files are not updated correctly.</p></td>
+<td><p><span class="greyitalic">see p5/PR1 and p5/PR2</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>s6</p></td>
+<td><p>DS1</p></td>
+<td><p><span class="greyitalic">n/a, only write access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p>Wrong exit code is used.</p></td>
+<td><p><span class="greyitalic">see p6/PR2 and p7/PR2</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>s7</p></td>
+<td><p>DS1</p></td>
+<td><p><span class="greyitalic">n/a, only write access</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+<td><p><span class="greyitalic">n/a</span></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DS2</p></td>
+<td><p>Error messages are wrong or not visible on the console.</p></td>
+<td><ul class="simple">
+<li><p>The user might miss the information, but the exit code != 0 indicates that something went wrong. The verifier will reject the commit.</p></li>
+<li><p>Tested by unit tests.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">*_spec.rb</span></code></p></li>
+<li><p><a class="reference internal" href="../started/integration.html#integration"><span class="std std-ref">Integration Guide</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:31, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/architecture/fmea.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+Statistics
+==========
+
+Requirements
+------------
+
+.. list-table::
+    :width: 100%
+    :widths: 50 50
+
+    * - Total number of requirements
+      - 111
+    * - Valid requirements
+      - 111
+    * - Covered requirements
+      - 111
+    * - Tested requirements
+      - 111
+    * - Requirements mapped to test cases
+      - 111
+
+Test Cases
+----------
+
+.. list-table::
+    :width: 100%
+    :widths: 50 50
+
+    * - Total number of test cases
+      - 338
+    * - Test cases with valid requirement IDs
+      - 338
+    * - Test cases without invalid requirement IDs
+      - 338

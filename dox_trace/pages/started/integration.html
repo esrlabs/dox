@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integration &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Specification Directives" href="../user/directives.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specification-structure">Specification Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verifier">Verifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#review">Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#official-builds">Official Builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bugs">Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training">Training</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Integration</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integration">
+<span id="id1"></span><h1>Integration<a class="headerlink" href="#integration" title="Link to this heading"></a></h1>
+<section id="compatibility">
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Requires at least Python 3.8.</p></li>
+<li><p>Requires at least Sphinx 6.2.</p></li>
+<li><p><em>dox_trace</em> is optimized for the  <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/">Read the Docs Sphinx Theme</a>.
+For convenience, use the <em>dox_style</em> extension enhances the original <em>RTD theme</em> by some nice
+features.</p></li>
+<li><p>The officially supported platforms are <em>Windows</em>, <em>Linux</em> and <em>macOS</em>.</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>To use the dox_trace extension in your workspace, you have to reference it in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<p>In the following example, the <em>dox_trace</em> extension was copied into an <code class="docutils literal notranslate"><span class="pre">_ext</span></code> folder, see also
+<a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EXTENSION_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;_ext&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">EXTENSION_ROOT</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)])</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;sphinxcontrib.jquery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dox_trace&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><em>dox_trace</em> is using jQuery. <code class="docutils literal notranslate"><span class="pre">sphinxcontrib.jquery</span></code> needs to be added as extension to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>
+as well.</p>
+<p>The extension can be configured with the following parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_custom_attributes</span></code>: definition of <a class="reference internal" href="../user/customAttributes.html#dim-custom-attr"><span class="std std-ref">custom attributes</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_allow_undefined_refs</span></code>: allowing <a class="reference internal" href="../user/explicitAttributes.html#spec-attr-refs"><span class="std std-ref">references</span></a> to non-existing
+targets</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_allow_deprecated</span></code>: enabling backward compatibility for
+<a class="reference internal" href="../user/directives.html#spec-types"><span class="std std-ref">specification</span></a> types</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_security_backward</span></code>: enabling backward compatibility for
+<a class="reference internal" href="../user/backward.html#backward-compatibility-security"><span class="std std-ref">security</span></a> attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_test_setups_backward</span></code>: enabling backward compatibility for
+<a class="reference internal" href="../user/backward.html#backward-compatibility-test-setups"><span class="std std-ref">test_setups</span></a> attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace_dim_root</span></code>: <a class="reference internal" href="../user/export.html#spec2dim"><span class="std std-ref">exporting to Dim files</span></a></p></li>
+</ul>
+</section>
+<section id="folder-structure">
+<h2>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading"></a></h2>
+<p>There is no limitation regarding the folder structure from tooling perspective, but please follow
+project specific guidelines.
+When exporting to Dim, the Sphinx folder structure is used to create Dim files, e.g.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a/b/c.rst  --&gt;  a/b/c.dim
+</pre></div>
+</div>
+</section>
+<section id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading"></a></h2>
+<p>There is also no limitation regarding the file structure, but again, please follow project specific
+guidelines.</p>
+<div class="line-block">
+<div class="line">The IDs for <em>srs</em> must start with <code class="docutils literal notranslate"><span class="pre">SRS_&lt;string&gt;_&lt;string&gt;</span></code>.</div>
+<div class="line">The IDs for <em>spec</em> must start with <code class="docutils literal notranslate"><span class="pre">SMD|SWA_&lt;string&gt;_&lt;string&gt;</span></code>.</div>
+<div class="line">The IDs for <em>mod</em> and <em>interface</em> must start with <code class="docutils literal notranslate"><span class="pre">SWA_&lt;string&gt;_&lt;string&gt;</span></code>.</div>
+<div class="line">The IDs for <em>unit</em> must start with <code class="docutils literal notranslate"><span class="pre">SMD_&lt;string&gt;_&lt;string&gt;</span></code>.</div>
+</div>
+<p>All IDs must contain exactly two <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p>In earlier version of this extensions, the rules were less strict. It was only checked if the ID
+starts with <code class="docutils literal notranslate"><span class="pre">SMD|SWA_</span></code>. To re-enable this behavior, set the config variable
+<em>dox_trace_tolerant_naming_convention</em> in <em>conf.py</em> to <em>True</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dox_trace_tolerant_naming_convention</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>When exporting to Dim, a folder is injected into the path depending on the first element of the ID,
+either <code class="docutils literal notranslate"><span class="pre">srs</span></code>, <code class="docutils literal notranslate"><span class="pre">swa</span></code> or <code class="docutils literal notranslate"><span class="pre">smd</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;documentation root&gt;/a/b/c.rst  --&gt;  &lt;Dim export root&gt;/swa/a/b/c.dim
+</pre></div>
+</div>
+</section>
+<section id="specification-structure">
+<h2>Specification Structure<a class="headerlink" href="#specification-structure" title="Link to this heading"></a></h2>
+<p>Follow the syntax described in the <em>User Documentation</em>. dox_trace will automatically check if the
+syntax is correct during the build except attributes which have fixed enums values like <em>status</em> or
+<em>asil</em>. These values are checked when exporting to Dim and running the <code class="docutils literal notranslate"><span class="pre">dim</span> <span class="pre">check</span></code>.</p>
+</section>
+<section id="verifier">
+<h2>Verifier<a class="headerlink" href="#verifier" title="Link to this heading"></a></h2>
+<p>Include the documentation build in a verifier (no incremental build). Also export the specifications
+to Dim files and run the <code class="docutils literal notranslate"><span class="pre">dim</span> <span class="pre">check</span></code>. The verifier must reject the commit if:</p>
+<ul class="simple">
+<li><p>the exit code is not 0 for Sphinx / Dim</p></li>
+<li><p>Sphinx / Dim hangs and is terminated due to a timeout</p></li>
+</ul>
+<p>This ensures that only syntactically correct and consistent files are merged to the repository.
+It also helps to prevent safety and security issues.</p>
+</section>
+<section id="review">
+<h2>Review<a class="headerlink" href="#review" title="Link to this heading"></a></h2>
+<p>Always review the HTML output to check that the specifications are displayed as expected.</p>
+<p>Always perform a sanity check of the Dim export, e.g. are files written, is something obvious
+missing and do some spot checks.</p>
+</section>
+<section id="official-builds">
+<h2>Official Builds<a class="headerlink" href="#official-builds" title="Link to this heading"></a></h2>
+<p>When building the official documentation (with or without a Dim export) always perform a complete
+build, not an incremental build. Make sure that the <code class="docutils literal notranslate"><span class="pre">build</span></code> folder does not exist before starting
+the build.</p>
+</section>
+<section id="bugs">
+<h2>Bugs<a class="headerlink" href="#bugs" title="Link to this heading"></a></h2>
+<p>Bugs must be tracked on regular basis, see also <a class="reference internal" href="../development/bugTracking.html#bug-tracking"><span class="std std-ref">Bug Tracking and Feature Planning</span></a>. Evaluate if the reported
+bugs have an impact on your project and take appropriate actions like updating <em>dox_trace</em> in that
+project to a newer version.</p>
+</section>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
+<p>It must be ensured that only the correct (qualified) version of this tool is used.</p>
+<ul class="simple">
+<li><p>Log the version of <em>dox_trace</em> in the official CI-jobs.</p></li>
+<li><p>Compare this version with the version specified for the project.</p></li>
+</ul>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">All users of <em>dox_trace</em> must read this documentation.</div>
+<div class="line">They have to be trained in the usage of this tool to fully understand all features which are needed
+for their work.</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/started/integration.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

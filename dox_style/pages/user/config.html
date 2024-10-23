@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration &mdash; dox_style  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_util_colors.css?v=dd14b177" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data Classification" href="config/data_classification.html" />
+    <link rel="prev" title="dox_style" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_style
+          </a>
+              <div class="version">
+                0.2.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common">Common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html">HTML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config/data_classification.html">Data Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/document_status.html">Document Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/text_colors.html">Text Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/table_colors.html">Colored Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config/footer_string.html">Footer String</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#latex">LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checks.html">Style Checks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/extending.html">Extending Checks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_style</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Configuration</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h1>
+<p>This extension <strong>pre-configures</strong> the Sphinx workspace with default settings and provides
+common <strong>styles</strong> for HTML and LaTeX output. It significantly reduces copy/paste between different
+Sphinx configuration files and harmonizes the look and feel of documentations.</p>
+<p>The following default configuration can be overwritten (if really needed!) by adding a file
+<em>extend_conf.py</em> next to <em>conf.py</em>. This file must provide a function
+<em>def extend_conf(config: dict)</em>. The loading order of the configurations is <em>conf.py</em>, then
+this extension and finally <em>extend_conf.py</em>.</p>
+<section id="common">
+<h2>Common<a class="headerlink" href="#common" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Adds a check for duplicate labels, which does not work reliable in parallel builds, see also
+<a class="reference external" href="https://github.com/sphinx-doc/sphinx/issues/4459">https://github.com/sphinx-doc/sphinx/issues/4459</a></p></li>
+<li><p>Enables PlantUML</p></li>
+<li><p>Makes glossary case insensitive</p></li>
+</ul>
+</section>
+<section id="html">
+<h2>HTML<a class="headerlink" href="#html" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Sets <a class="reference external" href="https://docs.readthedocs.io/en/stable/index.html">Read the Docs</a> as theme and changes
+some default settings</p></li>
+<li><p>Makes the <strong>navigation bar</strong> in HTML output a little bit wider</p></li>
+<li><p>Allows up to six <strong>navigation levels</strong> in the navigation bar</p></li>
+<li><p>Makes navigation bar <strong>sticky</strong></p></li>
+<li><p><strong>Wraps</strong> text in tables by default</p></li>
+<li><p>Adds a small superscripted icon after <strong>external links</strong></p></li>
+<li><p>Hides <strong>previous/next</strong> page buttons</p></li>
+<li><p>Removes the <strong>Generated with Sphinx</strong> text from the footer</p></li>
+<li><p>Adds the build date to the page footer</p></li>
+<li><p>Adds the build type (unofficial/offical) to the page footer</p></li>
+<li><p>Adds an optional <a class="reference internal" href="config/footer_string.html#sphinx-footer-string"><span class="std std-ref">Footer String</span></a> to the page footer</p></li>
+<li><p>Adds <a class="reference internal" href="config/data_classification.html#sphinx-data-classification"><span class="std std-ref">Data Classification</span></a></p></li>
+<li><p>Adds <a class="reference internal" href="config/document_status.html#sphinx-document-status"><span class="std std-ref">Document Status</span></a></p></li>
+<li><p>Adds <a class="reference internal" href="config/text_colors.html#sphinx-text-colors"><span class="std std-ref">Text Colors</span></a></p></li>
+<li><p>Adds <a class="reference internal" href="config/table_colors.html#sphinx-table-colors"><span class="std std-ref">Colored Tables</span></a></p></li>
+<li><p>Adds <strong>raw-html</strong> role</p></li>
+<li><p>Removes the <strong>integrity-check</strong> for script files. <span class="raw-html"></br></span>
+This prevents problems with <em>cross-origin resource sharing</em> e.g. when trying to load jQuery.</p></li>
+<li><p>Replaces style for <strong>download</strong> role (e.g. download <a class="reference download internal" download="" href="../../_downloads/df48f90de333081ec7d0e93dca0be0d3/config.rst"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">page</span></code></a>)</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="latex">
+<h2>LaTeX<a class="headerlink" href="#latex" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Configures LaTeX exporter to handle special <strong>unicode characters</strong></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:19, UNOFFICIAL BUILD.</p>
+
+    
+      <a href="../../_sources/pages/user/config.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

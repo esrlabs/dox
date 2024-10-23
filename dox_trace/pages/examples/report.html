@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traceability Report &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Undefined References" href="undefined_refs.html" />
+    <link rel="prev" title="Specifications" href="specifications.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/directives.html">Specification Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Traceability Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-requirements">Input Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#developer">Developer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#status">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#review-status">Review Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functional-safety">Functional Safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cyber-security">Cyber Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downstream">Downstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-requirements">List of Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-requirements">Software Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Functional Safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Cyber Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upstream-and-downstream">Upstream and Downstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">List of Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-architecture">Software Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Functional Safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Cyber Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Upstream and Downstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-specifications">List of Specifications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-module-design">Software Module Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Functional Safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Cyber Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Upstream and Downstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">List of Specifications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Traceability Report</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="traceability-report">
+<span id="id1"></span><h1>Traceability Report<a class="headerlink" href="#traceability-report" title="Link to this heading"></a></h1>
+<section id="input-requirements">
+<h2>Input Requirements<a class="headerlink" href="#input-requirements" title="Link to this heading"></a></h2>
+<section id="developer">
+<h3>Developer<a class="headerlink" href="#developer" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>MyCompany</p></th>
+<th class="head"><p>other</p></th>
+<th class="head"><p>not set</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_input_4_all_TOTAL">4</a>
+<div id="traceabilityReportModal_input_4_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_4_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#crs_customattribute_requirement">CRS_CustomAttribute_Requirement</a><br>
+<a href="specifications.html#customer_deriveparent_1">Customer_DeriveParent_1</a><br>
+<a href="../user/rawhtml.html#req2">Req2</a><br>
+<a href="../user/rawhtml.html#req3">Req3</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_input_4_other_TOTAL">1</a>
+<div id="traceabilityReportModal_input_4_other_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_4_other_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#customer_deriveparent_1">Customer_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_input_4_not set_TOTAL">3</a>
+<div id="traceabilityReportModal_input_4_not set_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_4_not set_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#crs_customattribute_requirement">CRS_CustomAttribute_Requirement</a><br>
+<a href="../user/rawhtml.html#req2">Req2</a><br>
+<a href="../user/rawhtml.html#req3">Req3</a></p>
+</div></div>
+</td>
+</tr>
+<tr class="row-odd"><td>Custom Attributes</td>
+<td><a id="traceabilityReportButton_input_1_all_Custom Attributes">1</a>
+<div id="traceabilityReportModal_input_1_all_Custom Attributes" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_1_all_Custom Attributes" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#crs_customattribute_requirement">CRS_CustomAttribute_Requirement</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_input_1_not set_Custom Attributes">1</a>
+<div id="traceabilityReportModal_input_1_not set_Custom Attributes" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_1_not set_Custom Attributes" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#crs_customattribute_requirement">CRS_CustomAttribute_Requirement</a></p>
+</div></div>
+</td>
+</tr>
+<tr class="row-even"><td>HTML in Attributes</td>
+<td><a id="traceabilityReportButton_input_2_all_HTML in Attributes">2</a>
+<div id="traceabilityReportModal_input_2_all_HTML in Attributes" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_2_all_HTML in Attributes" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/rawhtml.html#req2">Req2</a><br>
+<a href="../user/rawhtml.html#req3">Req3</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_input_2_not set_HTML in Attributes">2</a>
+<div id="traceabilityReportModal_input_2_not set_HTML in Attributes" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_2_not set_HTML in Attributes" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/rawhtml.html#req2">Req2</a><br>
+<a href="../user/rawhtml.html#req3">Req3</a></p>
+</div></div>
+</td>
+</tr>
+<tr class="row-odd"><td>Specifications</td>
+<td><a id="traceabilityReportButton_input_3_all_Specifications">1</a>
+<div id="traceabilityReportModal_input_3_all_Specifications" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_3_all_Specifications" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#customer_deriveparent_1">Customer_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_input_3_other_Specifications">1</a>
+<div id="traceabilityReportModal_input_3_other_Specifications" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_input_3_other_Specifications" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#customer_deriveparent_1">Customer_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="status">
+<h3>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="review-status">
+<h3>Review Status<a class="headerlink" href="#review-status" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="functional-safety">
+<h3>Functional Safety<a class="headerlink" href="#functional-safety" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> review_status = accepted</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="cyber-security">
+<h3>Cyber Security<a class="headerlink" href="#cyber-security" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> review_status = accepted</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="downstream">
+<h3>Downstream<a class="headerlink" href="#downstream" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> review_status = accepted <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Downstream Sufficiency:</strong> <span class="raw-html"></br></span> Either a downstream reference exists, the element is not <em>rejected</em> or the element is tagged with <em>covered</em>.</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="list-of-requirements">
+<h3>List of Requirements<a class="headerlink" href="#list-of-requirements" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> review_status = accepted</p>
+<p><em>No data yet</em></p>
+</section>
+</section>
+<section id="software-requirements">
+<h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Status<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement / srs <span class="raw-html"></br></span> developer = MyCompany</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id3">
+<h3>Functional Safety<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement / srs <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id4">
+<h3>Cyber Security<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement / srs <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="upstream-and-downstream">
+<h3>Upstream and Downstream<a class="headerlink" href="#upstream-and-downstream" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement / srs <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Upstream Sufficiency:</strong> <span class="raw-html"></br></span> Either an upstream reference exists or the element is tagged with <em>tool</em>. <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Downstream Sufficiency:</strong> <span class="raw-html"></br></span> Either a downstream reference exists, the element is tagged with <em>covered</em> or a source is specified.</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id5">
+<h3>List of Requirements<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = requirement / srs <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+</section>
+<section id="software-architecture">
+<h2>Software Architecture<a class="headerlink" href="#software-architecture" title="Link to this heading"></a></h2>
+<section id="id6">
+<h3>Status<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>valid</p></th>
+<th class="head"><p>draft</p></th>
+<th class="head"><p>invalid</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_architecture_13_all_TOTAL">12</a>
+<div id="traceabilityReportModal_architecture_13_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_13_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#swa_customattribute_spec">SWA_CustomAttribute_Spec</a><br>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a><br>
+<a href="undefined_refs.html#swa_spec_1">SWA_Spec_1</a><br>
+<a href="undefined_refs.html#swa_spec_2">SWA_Spec_2</a><br>
+<a href="undefined_refs.html#swa_spec_3">SWA_Spec_3</a><br>
+<a href="specifications.html#swa_example_abc">SWA_example_abc</a><br>
+<a href="../user/properties.html#swa_featurex_abc">SWA_featureX_abc</a><br>
+<a href="../user/directives.html#swa_feature_id1">SWA_feature_id1</a><br>
+<a href="../user/directives.html#swa_feature_id2">SWA_feature_id2</a><br>
+<a href="../user/directives.html#swa_mod_name">SWA_mod_name</a><br>
+<a href="../user/traceability.html#swa_stream_id2">SWA_stream_id2</a><br>
+<a href="../user/traceability.html#swa_stream_id3">SWA_stream_id3</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_13_valid_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_13_valid_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_13_valid_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_13_draft_TOTAL">11</a>
+<div id="traceabilityReportModal_architecture_13_draft_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_13_draft_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#swa_customattribute_spec">SWA_CustomAttribute_Spec</a><br>
+<a href="undefined_refs.html#swa_spec_1">SWA_Spec_1</a><br>
+<a href="undefined_refs.html#swa_spec_2">SWA_Spec_2</a><br>
+<a href="undefined_refs.html#swa_spec_3">SWA_Spec_3</a><br>
+<a href="specifications.html#swa_example_abc">SWA_example_abc</a><br>
+<a href="../user/properties.html#swa_featurex_abc">SWA_featureX_abc</a><br>
+<a href="../user/directives.html#swa_feature_id1">SWA_feature_id1</a><br>
+<a href="../user/directives.html#swa_feature_id2">SWA_feature_id2</a><br>
+<a href="../user/directives.html#swa_mod_name">SWA_mod_name</a><br>
+<a href="../user/traceability.html#swa_stream_id2">SWA_stream_id2</a><br>
+<a href="../user/traceability.html#swa_stream_id3">SWA_stream_id3</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_CustomAttribute</td>
+<td><a id="traceabilityReportButton_architecture_5_all_SWA_CustomAttribute">1</a>
+<div id="traceabilityReportModal_architecture_5_all_SWA_CustomAttribute" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_5_all_SWA_CustomAttribute" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#swa_customattribute_spec">SWA_CustomAttribute_Spec</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_5_draft_SWA_CustomAttribute">1</a>
+<div id="traceabilityReportModal_architecture_5_draft_SWA_CustomAttribute" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_5_draft_SWA_CustomAttribute" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/customAttributes.html#swa_customattribute_spec">SWA_CustomAttribute_Spec</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>SWA_DeriveParent</td>
+<td><a id="traceabilityReportButton_architecture_6_all_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_6_all_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_6_all_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_6_valid_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_6_valid_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_6_valid_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_Spec</td>
+<td><a id="traceabilityReportButton_architecture_7_all_SWA_Spec">3</a>
+<div id="traceabilityReportModal_architecture_7_all_SWA_Spec" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_7_all_SWA_Spec" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="undefined_refs.html#swa_spec_1">SWA_Spec_1</a><br>
+<a href="undefined_refs.html#swa_spec_2">SWA_Spec_2</a><br>
+<a href="undefined_refs.html#swa_spec_3">SWA_Spec_3</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_7_draft_SWA_Spec">3</a>
+<div id="traceabilityReportModal_architecture_7_draft_SWA_Spec" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_7_draft_SWA_Spec" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="undefined_refs.html#swa_spec_1">SWA_Spec_1</a><br>
+<a href="undefined_refs.html#swa_spec_2">SWA_Spec_2</a><br>
+<a href="undefined_refs.html#swa_spec_3">SWA_Spec_3</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>SWA_example</td>
+<td><a id="traceabilityReportButton_architecture_8_all_SWA_example">1</a>
+<div id="traceabilityReportModal_architecture_8_all_SWA_example" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_8_all_SWA_example" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_example_abc">SWA_example_abc</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_8_draft_SWA_example">1</a>
+<div id="traceabilityReportModal_architecture_8_draft_SWA_example" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_8_draft_SWA_example" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_example_abc">SWA_example_abc</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_feature</td>
+<td><a id="traceabilityReportButton_architecture_9_all_SWA_feature">2</a>
+<div id="traceabilityReportModal_architecture_9_all_SWA_feature" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_9_all_SWA_feature" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/directives.html#swa_feature_id1">SWA_feature_id1</a><br>
+<a href="../user/directives.html#swa_feature_id2">SWA_feature_id2</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_9_draft_SWA_feature">2</a>
+<div id="traceabilityReportModal_architecture_9_draft_SWA_feature" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_9_draft_SWA_feature" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/directives.html#swa_feature_id1">SWA_feature_id1</a><br>
+<a href="../user/directives.html#swa_feature_id2">SWA_feature_id2</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>SWA_featureX</td>
+<td><a id="traceabilityReportButton_architecture_10_all_SWA_featureX">1</a>
+<div id="traceabilityReportModal_architecture_10_all_SWA_featureX" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_10_all_SWA_featureX" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/properties.html#swa_featurex_abc">SWA_featureX_abc</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_10_draft_SWA_featureX">1</a>
+<div id="traceabilityReportModal_architecture_10_draft_SWA_featureX" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_10_draft_SWA_featureX" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/properties.html#swa_featurex_abc">SWA_featureX_abc</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_mod</td>
+<td><a id="traceabilityReportButton_architecture_11_all_SWA_mod">1</a>
+<div id="traceabilityReportModal_architecture_11_all_SWA_mod" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_11_all_SWA_mod" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/directives.html#swa_mod_name">SWA_mod_name</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_11_draft_SWA_mod">1</a>
+<div id="traceabilityReportModal_architecture_11_draft_SWA_mod" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_11_draft_SWA_mod" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/directives.html#swa_mod_name">SWA_mod_name</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>SWA_stream</td>
+<td><a id="traceabilityReportButton_architecture_12_all_SWA_stream">2</a>
+<div id="traceabilityReportModal_architecture_12_all_SWA_stream" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_12_all_SWA_stream" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/traceability.html#swa_stream_id2">SWA_stream_id2</a><br>
+<a href="../user/traceability.html#swa_stream_id3">SWA_stream_id3</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_12_draft_SWA_stream">2</a>
+<div id="traceabilityReportModal_architecture_12_draft_SWA_stream" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_12_draft_SWA_stream" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="../user/traceability.html#swa_stream_id2">SWA_stream_id2</a><br>
+<a href="../user/traceability.html#swa_stream_id3">SWA_stream_id3</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="type">
+<h3>Type<a class="headerlink" href="#type" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>spec</p></th>
+<th class="head"><p>interface</p></th>
+<th class="head"><p>mod</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_architecture_15_all_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_15_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_15_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_15_spec_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_15_spec_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_15_spec_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_DeriveParent</td>
+<td><a id="traceabilityReportButton_architecture_14_all_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_14_all_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_14_all_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_14_spec_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_14_spec_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_14_spec_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h3>Functional Safety<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>not_set</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_architecture_17_all_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_17_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_17_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_17_not_set_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_17_not_set_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_17_not_set_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+</tr>
+<tr class="row-odd"><td>SWA_DeriveParent</td>
+<td><a id="traceabilityReportButton_architecture_16_all_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_16_all_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_16_all_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_16_not_set_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_16_not_set_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_16_not_set_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h3>Cyber Security<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>not_set</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_architecture_19_all_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_19_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_19_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_19_not_set_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_19_not_set_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_19_not_set_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+</tr>
+<tr class="row-odd"><td>SWA_DeriveParent</td>
+<td><a id="traceabilityReportButton_architecture_18_all_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_18_all_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_18_all_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_18_not_set_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_18_not_set_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_18_not_set_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h3>Upstream and Downstream<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Upstream Sufficiency:</strong> <span class="raw-html"></br></span> Either an upstream reference exists to SRS/SWA or the element is tagged with <em>tool</em>. <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Downstream Sufficiency:</strong> <span class="raw-html"></br></span> Either a downstream reference exists, the element is tagged with <em>covered</em> or a location/source is specified.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>all</p></th>
+<th class="head"><p>Upstream Sufficient</p></th>
+<th class="head"><p>Upstream Missing</p></th>
+<th class="head"><p>Downstream Sufficient</p></th>
+<th class="head"><p>Downstream Missing</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>TOTAL</td>
+<td><a id="traceabilityReportButton_architecture_21_all_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_21_all_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_21_all_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_21_Upstream Sufficient_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_21_Upstream Sufficient_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_21_Upstream Sufficient_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_21_Downstream Sufficient_TOTAL">1</a>
+<div id="traceabilityReportModal_architecture_21_Downstream Sufficient_TOTAL" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_21_Downstream Sufficient_TOTAL" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>SWA_DeriveParent</td>
+<td><a id="traceabilityReportButton_architecture_20_all_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_20_all_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_20_all_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td><a id="traceabilityReportButton_architecture_20_Upstream Sufficient_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_20_Upstream Sufficient_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_20_Upstream Sufficient_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+<td><a id="traceabilityReportButton_architecture_20_Downstream Sufficient_SWA_DeriveParent">1</a>
+<div id="traceabilityReportModal_architecture_20_Downstream Sufficient_SWA_DeriveParent" class="dox-trace-modal">
+<div class="dox-trace-modal-content">
+<span id="traceabilityReportClose_architecture_20_Downstream Sufficient_SWA_DeriveParent" class="dox-trace-close">&times;</span>
+<br><br><p>
+<a href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></p>
+</div></div>
+</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="list-of-specifications">
+<h3>List of Specifications<a class="headerlink" href="#list-of-specifications" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / mod <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<table class="dox-trace-small-font-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head dox-trace-strikethrough-cell"></th>
+<th class="head"><p>ID</p></th>
+<th class="head"><p>Upstream</p></th>
+<th class="head"><p>Downstream</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>SWA_DeriveParent</td>
+<td><span><a class="reference internal" href="specifications.html#swa_deriveparent_1">SWA_DeriveParent_1</a></span></td>
+<td><span><a class="reference internal" href="specifications.html#srs_deriveparent_1">SRS_DeriveParent_1</a></span>,<br><span><a class="reference internal" href="specifications.html#srs_deriveparent_2">SRS_DeriveParent_2</a></span></td>
+<td><span><a class="reference internal" href="specifications.html#smd_deriveparent_1">SMD_DeriveParent_1</a></span></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="software-module-design">
+<h2>Software Module Design<a class="headerlink" href="#software-module-design" title="Link to this heading"></a></h2>
+<section id="id10">
+<h3>Status<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id11">
+<h3>Type<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id12">
+<h3>Functional Safety<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id13">
+<h3>Cyber Security<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id14">
+<h3>Upstream and Downstream<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Upstream Sufficiency:</strong> <span class="raw-html"></br></span> Either an upstream reference exists to SWA/SMD or the element is tagged with <em>tool</em>. <span class="raw-html"></br></span> <span class="raw-html"></br></span> <strong>Downstream Sufficiency:</strong> <span class="raw-html"></br></span> Either a downstream reference exists, the element is tagged with <em>covered</em> or a source is specified.</p>
+<p><em>No data yet</em></p>
+</section>
+<section id="id15">
+<h3>List of Specifications<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<p><strong>Filter:</strong> <span class="raw-html"></br></span> type = spec / interface / unit <span class="raw-html"></br></span> developer = MyCompany <span class="raw-html"></br></span> status = valid</p>
+<p><em>No data yet</em></p>
+</section>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Link to this heading"></a></h2>
+<span><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/_static/dox_trace.css</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_strike">DoxTrace_HTML_Strike</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_table">DoxTrace_HTML_Table</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_typeid">DoxTrace_HTML_TypeID</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/_static/dox_trace.js</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configdirective">DoxTrace_HTML_ConfigDirective</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configreadingmode">DoxTrace_HTML_ConfigReadingMode</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configstorage">DoxTrace_HTML_ConfigStorage</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/backward_refs.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_derivedchangerequest">DoxTrace_HTML_DerivedChangeRequest</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_derivedfeature">DoxTrace_HTML_DerivedFeature</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamasil">DoxTrace_HTML_UpstreamAsil</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamcal">DoxTrace_HTML_UpstreamCal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamsecurity">DoxTrace_HTML_UpstreamSecurity</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamtags">DoxTrace_HTML_UpstreamTags</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/checks.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_case">DoxTrace_Checks_Case</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_comments">DoxTrace_Checks_Comments</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_cyclic">DoxTrace_Checks_Cyclic</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_invalidrefs">DoxTrace_Checks_InvalidRefs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_undefinedrefslistdirective">DoxTrace_HTML_UndefinedRefsListDirective</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/config.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customcategories_syntax">DoxTrace_CustomCategories_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_default">DoxTrace_CustomDefault_Default</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_syntax">DoxTrace_CustomDefault_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_type">DoxTrace_CustomDefault_Type</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdirectives_check">DoxTrace_CustomDirectives_Check</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdirectives_syntax">DoxTrace_CustomDirectives_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customexport_syntax">DoxTrace_CustomExport_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customgeneral_config">DoxTrace_CustomGeneral_Config</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customname_available">DoxTrace_CustomName_Available</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customname_conflict">DoxTrace_CustomName_Conflict</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_enum">DoxTrace_CustomTypes_Enum</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_refs">DoxTrace_CustomTypes_Refs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_syntax">DoxTrace_CustomTypes_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_text">DoxTrace_CustomTypes_Text</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configdirective">DoxTrace_HTML_ConfigDirective</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configreadingmode">DoxTrace_HTML_ConfigReadingMode</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/dim_write.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_attributes">DoxTrace_Export_Attributes</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_cal">DoxTrace_Export_Cal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_category">DoxTrace_Export_Category</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_config">DoxTrace_Export_Config</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_content">DoxTrace_Export_Content</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_delete">DoxTrace_Export_Delete</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_filenames">DoxTrace_Export_Filenames</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_ids">DoxTrace_Export_IDs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_ignoreinexport">DoxTrace_Export_IgnoreInExport</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_interface">DoxTrace_Export_Interface</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_mod">DoxTrace_Export_Mod</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_modulename">DoxTrace_Export_ModuleName</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_reuse">DoxTrace_Export_Reuse</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_security">DoxTrace_Export_Security</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_tester">DoxTrace_Export_Tester</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_testsetups">DoxTrace_Export_TestSetups</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_unit">DoxTrace_Export_Unit</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_verificationcriteria">DoxTrace_Export_VerificationCriteria</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_verificationmethods">DoxTrace_Export_VerificationMethods</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_asil">DoxTrace_Syntax_Asil</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_cal">DoxTrace_Syntax_Cal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_changerequest">DoxTrace_Syntax_ChangeRequest</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_comment">DoxTrace_Syntax_Comment</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_developer">DoxTrace_Syntax_Developer</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_feature">DoxTrace_Syntax_Feature</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_miscellaneous">DoxTrace_Syntax_Miscellaneous</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_refs">DoxTrace_Syntax_Refs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_reuse">DoxTrace_Syntax_Reuse</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_reviewstatus">DoxTrace_Syntax_ReviewStatus</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_security">DoxTrace_Syntax_Security</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_sources">DoxTrace_Syntax_Sources</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_status">DoxTrace_Syntax_Status</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_tags">DoxTrace_Syntax_Tags</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_tester">DoxTrace_Syntax_Tester</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_testsetups">DoxTrace_Syntax_TestSetups</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_usage">DoxTrace_Syntax_Usage</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_verificationcriteria">DoxTrace_Syntax_VerificationCriteria</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_verificationmethods">DoxTrace_Syntax_VerificationMethods</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/directives.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#dox_trace_properties_file">dox_trace_properties_file</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_naming">DoxTrace_Checks_Naming</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_namingdeprecated">DoxTrace_Checks_NamingDeprecated</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_newline">DoxTrace_Checks_Newline</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_sources">DoxTrace_Checks_Sources</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customcategories_syntax">DoxTrace_CustomCategories_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customcategories_value">DoxTrace_CustomCategories_Value</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_default">DoxTrace_CustomDefault_Default</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_syntax">DoxTrace_CustomDefault_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdefault_type">DoxTrace_CustomDefault_Type</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdirectives_check">DoxTrace_CustomDirectives_Check</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customdirectives_syntax">DoxTrace_CustomDirectives_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customexport_syntax">DoxTrace_CustomExport_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customgeneral_config">DoxTrace_CustomGeneral_Config</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customname_available">DoxTrace_CustomName_Available</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customname_conflict">DoxTrace_CustomName_Conflict</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_enum">DoxTrace_CustomTypes_Enum</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_refs">DoxTrace_CustomTypes_Refs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_syntax">DoxTrace_CustomTypes_Syntax</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_customtypes_text">DoxTrace_CustomTypes_Text</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_attributes">DoxTrace_Export_Attributes</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_cal">DoxTrace_Export_Cal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_content">DoxTrace_Export_Content</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_location">DoxTrace_Export_Location</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_security">DoxTrace_Export_Security</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_tester">DoxTrace_Export_Tester</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_testsetups">DoxTrace_Export_TestSetups</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_usage">DoxTrace_Export_Usage</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_verificationcriteria">DoxTrace_Export_VerificationCriteria</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_export_verificationmethods">DoxTrace_Export_VerificationMethods</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_attributes">DoxTrace_HTML_Attributes</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_background">DoxTrace_HTML_Background</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_cal">DoxTrace_HTML_Cal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_changerequest">DoxTrace_HTML_ChangeRequest</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_comment">DoxTrace_HTML_Comment</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_configreadingmode">DoxTrace_HTML_ConfigReadingMode</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_content">DoxTrace_HTML_Content</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_derivedchangerequest">DoxTrace_HTML_DerivedChangeRequest</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_derivedfeature">DoxTrace_HTML_DerivedFeature</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_developer">DoxTrace_HTML_Developer</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_downstreamrefs">DoxTrace_HTML_DownstreamRefs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_feature">DoxTrace_HTML_Feature</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_incremental">DoxTrace_HTML_Incremental</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_location">DoxTrace_HTML_Location</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_miscellaneous">DoxTrace_HTML_Miscellaneous</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_refsexport">DoxTrace_HTML_RefsExport</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_refsred">DoxTrace_HTML_RefsRed</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_reuse">DoxTrace_HTML_Reuse</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_reviewstatus">DoxTrace_HTML_ReviewStatus</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_security">DoxTrace_HTML_Security</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_sources">DoxTrace_HTML_Sources</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_strike">DoxTrace_HTML_Strike</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_table">DoxTrace_HTML_Table</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_tags">DoxTrace_HTML_Tags</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_tester">DoxTrace_HTML_Tester</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_testsetups">DoxTrace_HTML_TestSetups</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamasil">DoxTrace_HTML_UpstreamAsil</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamcal">DoxTrace_HTML_UpstreamCal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamrefs">DoxTrace_HTML_UpstreamRefs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamsecurity">DoxTrace_HTML_UpstreamSecurity</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_upstreamtags">DoxTrace_HTML_UpstreamTags</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_usage">DoxTrace_HTML_Usage</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_verificationcriteria">DoxTrace_HTML_VerificationCriteria</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_verificationmethods">DoxTrace_HTML_VerificationMethods</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_custom">DoxTrace_Properties_Custom</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_use">DoxTrace_Properties_Use</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_asil">DoxTrace_Syntax_Asil</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_cal">DoxTrace_Syntax_Cal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_caltosecurity">DoxTrace_Syntax_CalToSecurity</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_category">DoxTrace_Syntax_Category</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_changerequest">DoxTrace_Syntax_ChangeRequest</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_comment">DoxTrace_Syntax_Comment</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_developer">DoxTrace_Syntax_Developer</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_empty">DoxTrace_Syntax_Empty</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_feature">DoxTrace_Syntax_Feature</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_freetext">DoxTrace_Syntax_FreeText</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_ignoreinexport">DoxTrace_Syntax_IgnoreInExport</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_location">DoxTrace_Syntax_Location</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_miscellaneous">DoxTrace_Syntax_Miscellaneous</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_multi">DoxTrace_Syntax_Multi</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_newlines">DoxTrace_Syntax_Newlines</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_refs">DoxTrace_Syntax_Refs</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_reuse">DoxTrace_Syntax_Reuse</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_reviewstatus">DoxTrace_Syntax_ReviewStatus</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_security">DoxTrace_Syntax_Security</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_securitytocal">DoxTrace_Syntax_SecurityToCal</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_sources">DoxTrace_Syntax_Sources</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_status">DoxTrace_Syntax_Status</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_stripped">DoxTrace_Syntax_Stripped</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_structure">DoxTrace_Syntax_Structure</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_tags">DoxTrace_Syntax_Tags</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_tester">DoxTrace_Syntax_Tester</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_testsetups">DoxTrace_Syntax_TestSetups</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_testsetupstoverificationmethods">DoxTrace_Syntax_TestSetupsToVerificationMethods</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_types">DoxTrace_Syntax_Types</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_usage">DoxTrace_Syntax_Usage</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_verificationcriteria">DoxTrace_Syntax_VerificationCriteria</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_verificationmethods">DoxTrace_Syntax_VerificationMethods</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_verificationmethodstotestsetups">DoxTrace_Syntax_VerificationMethodsToTestSetups</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/enclosed.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_encloseddirective">DoxTrace_HTML_EnclosedDirective</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/env.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_unique">DoxTrace_Checks_Unique</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/helper.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_freetext">DoxTrace_Syntax_FreeText</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/main.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_build_multi">DoxTrace_Build_Multi</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_build_single">DoxTrace_Build_Single</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_pythonversion">DoxTrace_Checks_PythonVersion</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_checks_sphinxversion">DoxTrace_Checks_SphinxVersion</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_version">DoxTrace_HTML_Version</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_structure">DoxTrace_Syntax_Structure</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_types">DoxTrace_Syntax_Types</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/properties.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_custom">DoxTrace_Properties_Custom</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_standalone">DoxTrace_Properties_Standalone</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_use">DoxTrace_Properties_Use</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/report.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper">DoxTrace_HTML_TraceabilityDeveloper</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportarchitecture">DoxTrace_HTML_TraceabilityReportArchitecture</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportignore">DoxTrace_HTML_TraceabilityReportIgnore</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportinput">DoxTrace_HTML_TraceabilityReportInput</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportmodule">DoxTrace_HTML_TraceabilityReportModule</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsoftware">DoxTrace_HTML_TraceabilityReportSoftware</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsource">DoxTrace_HTML_TraceabilityReportSource</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportunknowncategory">DoxTrace_HTML_TraceabilityReportUnknownCategory</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportunknownmodule">DoxTrace_HTML_TraceabilityReportUnknownModule</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/roles.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_incremental">DoxTrace_HTML_Incremental</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_typeid">DoxTrace_HTML_TypeID</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_syntax_anchor">DoxTrace_Syntax_Anchor</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/undefined_refs.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_undefinedrefslistdirective">DoxTrace_HTML_UndefinedRefsListDirective</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/unresolved_refs.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_refsexport">DoxTrace_HTML_RefsExport</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_refsred">DoxTrace_HTML_RefsRed</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dox_trace/yaml.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#dox_trace_properties_file">dox_trace_properties_file</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_properties_standalone">DoxTrace_Properties_Standalone</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pages/_static/module1/include/source1.h</span></code></p>
+<p><a class="reference internal" href="../user/traceability.html#smd_trace_file">SMD_trace_file</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pages/_static/module1/include/source2.h</span></code></p>
+<p><a class="reference internal" href="specifications.html#smd_deriveparent_1">SMD_DeriveParent_1</a>, <a class="reference internal" href="specifications.html#smd_example_xy">SMD_example_xy</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_architecture.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper">DoxTrace_HTML_TraceabilityDeveloper</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_generic.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper">DoxTrace_HTML_TraceabilityDeveloper</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportarchitecture">DoxTrace_HTML_TraceabilityReportArchitecture</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportinput">DoxTrace_HTML_TraceabilityReportInput</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportmodule">DoxTrace_HTML_TraceabilityReportModule</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsoftware">DoxTrace_HTML_TraceabilityReportSoftware</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsource">DoxTrace_HTML_TraceabilityReportSource</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_input.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper">DoxTrace_HTML_TraceabilityDeveloper</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportinput">DoxTrace_HTML_TraceabilityReportInput</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_module.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilitydeveloper">DoxTrace_HTML_TraceabilityDeveloper</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_source.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsource">DoxTrace_HTML_TraceabilityReportSource</a></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">report_table.py</span></code></p>
+<p><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportarchitecture">DoxTrace_HTML_TraceabilityReportArchitecture</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportinput">DoxTrace_HTML_TraceabilityReportInput</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportmodule">DoxTrace_HTML_TraceabilityReportModule</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsoftware">DoxTrace_HTML_TraceabilityReportSoftware</a>, <a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html#doxtrace_html_traceabilityreportsource">DoxTrace_HTML_TraceabilityReportSource</a></p>
+</li>
+</ul>
+</span></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/examples/report.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

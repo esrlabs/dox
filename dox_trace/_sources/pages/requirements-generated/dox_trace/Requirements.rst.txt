@@ -1,0 +1,2807 @@
+:raw-html:`dox_trace`
+=====================
+
+:raw-html:`Execution`
+---------------------
+
+.. requirement:: DoxTrace_Build_Single
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall support single-threaded builds.`
+
+.. requirement:: DoxTrace_Build_Multi
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall support multi-threaded builds.`
+
+:raw-html:`Syntax`
+------------------
+
+:raw-html:`Directives`
+++++++++++++++++++++++
+
+.. requirement:: DoxTrace_Syntax_Types
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide the following directives:<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>Note: they are called generically &quot;specifications&quot; in this document regardless of the type.`
+
+.. requirement:: DoxTrace_Syntax_Structure
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall use the following syntax for the directives:<br>.. &lt;type&gt;:: &lt;ID&gt;<br> &nbsp&nbsp&nbsp:&lt;attribute1&gt;: &lt;value1&gt;<br> &nbsp&nbsp&nbsp:&lt;attribute2&gt;: &lt;value2&gt;<br> &nbsp&nbsp&nbsp&lt;empty line&gt;<br> &nbsp&nbsp&nbsp&lt;content&gt;<br>The ID is mandatory, the attributes are optional. Also the content can be omitted.`
+
+:raw-html:`General Handling`
+++++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_Syntax_Anchor
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/roles.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The specifications shall be referencable by their ID like any other regular anchor.`
+
+.. requirement:: DoxTrace_Syntax_Stripped
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All values shall be stripped (removing leading and trailing whitespaces).`
+
+.. requirement:: DoxTrace_Syntax_Empty
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Attributes with empty values, &quot;&quot; or &apos;&apos; shall be treated as empty strings.`
+
+.. information:: DoxTrace_Syntax_Check
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags:
+    :comment:
+    :miscellaneous:
+    :refs:
+
+    :raw-html:`dox_trace does not check the general syntax of RST files. If e.g. a directive does not match Sphinx syntax, Sphinx aborts the build and returns with an exit code != 0. dox_trace does not check if the values are correct, e.g. if an invalid tag is used. This is done by the Dim tool after an export.`
+
+.. requirement:: DoxTrace_Syntax_Multi
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attributes &quot;tags&quot;, &quot;verification_methods&quot;, &quot;sources&quot;, and &quot;refs&quot; shall be treated as comma separated lists.<br>When loading the values the following is done to harmonize further processing of the data like displaying in HTML:<br>- split by &quot;,&quot;<br>- strip<br>- remove duplicated values<br>- remove empty values, &quot;&quot; and &apos;&apos;<br>- join again with &quot;, &quot; as separator.`
+
+.. requirement:: DoxTrace_Syntax_FreeText
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/helper.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`All other attributes and the content shall be treated as free text supporting any Sphinx syntax like images, tables, etc.`
+
+:raw-html:`Attributes`
+++++++++++++++++++++++
+
+.. requirement:: DoxTrace_Syntax_Newlines
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Text attributes shall preserve newlines except a line ends with a backslash.`
+
+.. requirement:: DoxTrace_Syntax_Status
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;status&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>The default value shall be &quot;draft&quot;.`
+
+.. requirement:: DoxTrace_Syntax_ReviewStatus
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;review_status&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>The default value shall be &quot;not_reviewed&quot; for input requirements, otherwise &quot;accepted&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Asil
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;asil&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>The default value shall be &quot;not_set&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Cal
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;cal&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>The default value shall be &quot;not_set&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Security
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;security&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>- mod<br>The default value shall be &quot;not_set&quot;.`
+
+.. requirement:: DoxTrace_Syntax_SecurityToCal
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If<br>- the config parameter &quot;dox_trace_security_backward&quot; is not set to &quot;True&quot; AND<br>- &quot;cal&quot; is not set AND<br>- &quot;security&quot; is set&quot;,<br>the attribute &quot;cal&quot; shall be derived from &quot;security&quot; with the following mapping:<br>- &quot;yes&quot; -&gt; &quot;CAL_4&quot;<br>- &quot;no&quot; -&gt; &quot;QM&quot;<br>- &quot;not_set&quot; -&gt; &quot;not_set&quot;<br>Otherwise it shall be ignored.`
+
+.. requirement:: DoxTrace_Syntax_CalToSecurity
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If<br>- the config parameter &quot;dox_trace_security_backward&quot; is set to &quot;True&quot; AND<br>- &quot;cal&quot; is set AND<br>- &quot;security&quot; is not set&quot;,<br>the attribute &quot;security&quot; shall be derived from &quot;cal&quot; with the following mapping:<br>- &quot;CAL_1&quot; -&gt; &quot;yes&quot;<br>- &quot;CAL_2&quot; -&gt; &quot;yes&quot;<br>- &quot;CAL_3&quot; -&gt; &quot;yes&quot;<br>- &quot;CAL_4&quot; -&gt; &quot;yes&quot;<br>- &quot;QM&quot; -&gt; &quot;no&quot;<br>- &quot;not_set&quot; -&gt; &quot;not_set&quot;<br>Otherwise it shall be ignored.`
+
+.. requirement:: DoxTrace_Syntax_Reuse
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;reuse&quot; shall be available for:<br>- mod<br>The default value shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_Usage
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;usage&quot; shall be available for:<br>- mod<br>The default value shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_Developer
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;developer&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- mod<br>The default value shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_Tester
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;tester&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>Ignore:<br>- For interface with ID starting with &quot;SMD_&quot; this attribute shall be ignored.<br>Default:<br>- The default value shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_TestSetups
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;test_setups&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>Ignore:<br>- For interface with ID starting with &quot;SMD_&quot; this attribute shall be ignored.<br>Default:<br>- For srs, spec and unit the default value shall be &quot;off_target&quot; if the ID starts with &quot;SMD_&quot;, otherwise &quot;on_target&quot;.<br>- Otherwise &quot;none&quot;.`
+
+.. requirement:: DoxTrace_Syntax_VerificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;verification_methods&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>Ignore:<br>- For interface with ID starting with &quot;SMD_&quot; this attribute shall be ignored.<br>Default:<br>- For srs, spec and unit the default value shall be &quot;off_target&quot; if the ID starts with &quot;SMD_&quot;, otherwise &quot;on_target&quot;.<br>- Otherwise &quot;none&quot;.`
+
+.. requirement:: DoxTrace_Syntax_TestSetupsToVerificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If<br>- the config parameter &quot;dox_trace_test_setups_backward&quot; is not set to &quot;True&quot; AND<br>- &quot;verification_methods&quot; is not set AND<br>- &quot;test_setups&quot; is set&quot;,<br>the attribute &quot;verification_methods&quot; shall be set to the value from &quot;test_setups&quot;.`
+
+.. requirement:: DoxTrace_Syntax_VerificationMethodsToTestSetups
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If<br>- the config parameter &quot;dox_trace_test_setups_backward&quot; is set to &quot;True&quot; AND<br>- &quot;test_setups&quot; is not set AND<br>- &quot;verification_methods&quot; is set&quot;,<br>the attribute &quot;test_setups&quot; shall be set to the value from &quot;verification_methods&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Tags
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;tags&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>The default shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_VerificationCriteria
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;verification_criteria&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>For interface with ID starting with &quot;SMD_&quot; this attribute shall be ignored.<br>Default shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_Comment
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;comment&quot; shall be available for:<br>- requirement<br>- information<br>Default shall be empty.<br>It shall be ignored if category is not &quot;input&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Miscellaneous
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;miscellaneous&quot; shall be available for:<br>- requirement<br>- information<br>Default shall be empty.<br>It shall be ignored if category is not &quot;input&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Feature
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;feature&quot; shall be available for:<br>- requirement<br>Default shall be empty.<br>It shall be ignored if category is not &quot;input&quot;.`
+
+.. requirement:: DoxTrace_Syntax_ChangeRequest
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;change_request&quot; shall be available for:<br>- requirement<br>Default shall be empty.<br>It shall be ignored if category is not &quot;input&quot;.`
+
+.. requirement:: DoxTrace_Syntax_Sources
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;sources&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>The default shall be empty.<br>It shall be used to reference source code files.`
+
+.. requirement:: DoxTrace_Syntax_Refs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;refs&quot; shall be available for:<br>- srs<br>- spec<br>- unit<br>- interface<br>- requirement<br>- information<br>The default shall be empty.<br>It shall be used to reference other specifications.`
+
+.. requirement:: DoxTrace_Syntax_Location
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;location&quot; shall be available for:<br>- mod<br>The default shall be empty.`
+
+.. requirement:: DoxTrace_Syntax_Category
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;category&quot; shall be available for:<br>- requirement<br>- information<br>The default shall be &quot;input&quot;.<br>Note: this attribute is used by the Dim tool, it&apos;s not intended to be used manually.`
+
+.. requirement:: DoxTrace_Syntax_IgnoreInExport
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;ignore_in_export&quot; shall be available for all types.<br>It shall have no value. It&apos;s either set or not set.`
+
+:raw-html:`Checks`
+------------------
+
+.. requirement:: DoxTrace_Checks_Cyclic
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/checks.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check for cyclic references of specifications.<br>If a cyclic reference is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_InvalidRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/checks.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check for references in &quot;refs&quot; attributes which do not point to another specification but to other anchors.<br>If such reference is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_Case
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/checks.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Sphinx is internally converting anchors and references to lower case, which means references with incorrect case are also working.<br>To avoid confusion and problems in further processing of the specifications, Sphinx shall check for references in &quot;refs&quot; attributes which have incorrect case.<br>If such reference is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_Sources
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check for source files specified in &quot;sources&quot; attributes in &quot;srs&quot;, &quot;spec&quot;, &quot;unit&quot; and &quot;interface&quot; which do not exist.<br>If such a source file is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.<br>dox_trace shall not check &quot;sources&quot; in &quot;requirements&quot;, because this is already done in Dim and the source files might not be exported by Dim.<br>dox_trace shall accept paths relative to the following two locations:<br>- the folder which contains the RST-file OR<br>- the parent folder of the closest &quot;doc&quot;-folder: &lt;path&gt;/doc/**/&lt;RST-file&gt;.`
+
+.. requirement:: DoxTrace_Checks_Comments
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/checks.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The syntactical difference between a directive and a comment is very small in Sphinx.<br>To avoid unintended comments when writing specifications, Sphinx shall check if the first line of a comment contains only &quot;srs&quot;, &quot;spec&quot;, &quot;mod&quot;, &quot;interface&quot; or &quot;unit&quot; beside other non-word characters.<br>If such comment is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_Unique
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/env.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if an ID is used twice.<br>If such an ID is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_Newline
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if an ID contains a newline.<br>If such an ID is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_Naming
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if an IDs does not follow the naming scheme &lt;prefix&gt;_&lt;string&gt;_&lt;string&gt;.<br>- &lt;string&gt; must not be empty and not contain additional underscores<br>- &lt;prefix&gt; depends on the type:<br> &nbsp&nbsp&nbsp- srs: SRS<br> &nbsp&nbsp&nbsp- mod, interface: SWA<br> &nbsp&nbsp&nbsp- spec: SWA or SMD<br> &nbsp&nbsp&nbsp- unit: SMD<br>If such an ID is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_NamingDeprecated
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx configuration variable &quot;dox_trace_allow_deprecated&quot;.<br>If set to True, dox_trace shall use a less strict naming scheme for mod, spec, unit and interface:<br>- &lt;prefix&gt;_&lt;string&gt;<br>- &lt;string&gt; must not be empty and not start with an underscore<br>- the &lt;prefix&gt; can be SWA or SMD<br>If a violation is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_SphinxVersion
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if Sphinx 6.2+ is used. This is needed due to an important bugfix for nested parsing.<br>If an older Sphinx version is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_Checks_PythonVersion
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if Python 3.8+ is used, which is needed by Sphinx 6.2.<br>If an older Python version is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+:raw-html:`HTML`
+----------------
+
+:raw-html:`General`
++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_Incremental
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/roles.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall support the HTML-transformer of Sphinx including incremental builds. Only the mandatory pages shall be rebuilt (e.g. when adding a new specification).`
+
+.. requirement:: DoxTrace_HTML_Version
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/main.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the version of this extension has changed compared to the previous build, all files shall be rebuilt to avoid inconsistent data.`
+
+.. requirement:: DoxTrace_HTML_Table
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/_static/dox_trace.css
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Every specification shall be rendered as table with a black border containing all attributes which belong to this specification.`
+
+.. requirement:: DoxTrace_HTML_Background
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The table background shall be light-grey except for the actual content of the specification which shall be white.`
+
+.. requirement:: DoxTrace_HTML_Attributes
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Regular attribute names shall be black bold.<br>Regular attribute values shall be black normal.<br>Upstream and derived attribute names shall be grey bold.<br>Upstream and derived attribute values shall be grey normal.<br>Note: The content of some attributes can overwrite this behaviour, see DoxTrace_Syntax_FreeText.`
+
+.. requirement:: DoxTrace_HTML_Strike
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/_static/dox_trace.css
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The complete specification shall be greyed out and struck through if:<br>- &quot;status&quot; is &quot;invalid&quot; &nbspOR<br>- &quot;review_status&quot; is &quot;rejected&quot; or &quot;not_relevant&quot;`
+
+.. requirement:: DoxTrace_HTML_Content
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the content is empty, it shall be displayed as &quot;[missing]&quot;.`
+
+:raw-html:`Regular Attributes`
+++++++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_TypeID
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/roles.py, dox_trace/_static/dox_trace.css
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The specification type and ID shall be rendered in the following form: &quot;[&lt;type&gt;] &lt;ID&gt;&quot;, e.g. &quot;[unit] SMD_MyModule_Abc&quot;<br>- The complete string shall have a white background.<br>- The types &quot;requirement&quot;, &quot;spec&quot;, &quot;unit&quot; and &quot;interface&quot; shall be rendered in black bold font.<br>- The type &quot;information&quot; shall be rendered in light-grey bold font.<br>- The ID shall be rendered as link to itself (so the anchor can be simply copied from the address bar of the browser).`
+
+.. requirement:: DoxTrace_HTML_ReviewStatus
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;review_status&quot; attribute shall only be shown if:<br>- it is not &quot;accepted&quot; OR<br>- the specification is an input requirement.`
+
+.. requirement:: DoxTrace_HTML_Reuse
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;reuse&quot; attribute shall be displayed as &quot;-&quot; if it is empty.`
+
+.. requirement:: DoxTrace_HTML_Usage
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;usage&quot; attribute shall be displayed as &quot;-&quot; if it is empty.`
+
+.. requirement:: DoxTrace_HTML_Developer
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;developer&quot; attribute is empty it shall be displayed as:<br>- &quot;[missing]&quot; if the specification is not struck through<br>- &quot;-&quot; otherwise`
+
+.. requirement:: DoxTrace_HTML_Tester
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;tester&quot; attribute is empty it shall be displayed as:<br>- &quot;[missing]&quot;<br> &nbsp&nbsp&nbsp- if the specification is not struck through AND<br> &nbsp&nbsp&nbsp- &quot;verification_methods&quot; is not &quot;none&quot;<br>- &quot;-&quot; otherwise<br>&quot;tester&quot; shall not be displayed for interfaces with ID starting with &quot;SMD_&quot;.`
+
+.. requirement:: DoxTrace_HTML_TestSetups
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_test_setups_backward&quot; is not set to &quot;True&quot;, the &quot;test_setups&quot; attribute shall not be displayed.<br>If the &quot;test_setups&quot; attribute is empty it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_VerificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_test_setups_backward&quot; is set to &quot;True&quot;, the &quot;verification_methods&quot; attribute shall not be displayed.<br>If the &quot;verification_methods&quot; attribute is empty it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_Cal
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_security_backward&quot; is set to &quot;True&quot;, the &quot;cal&quot; attribute shall not be displayed.`
+
+.. requirement:: DoxTrace_HTML_Security
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_security_backward&quot; is not set to &quot;True&quot;, the &quot;security&quot; attribute shall not be displayed.`
+
+.. requirement:: DoxTrace_HTML_Tags
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;tags&quot; attribute is empty, it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_VerificationCriteria
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;verification_criteria&quot; attribute is empty, it shall be displayed as:<br>- &quot;[missing]&quot; for software requirements without &quot;tool&quot; in &quot;tags&quot; which are not struck through<br>- &quot;-&quot; otherwise<br>&quot;verification_criteria&quot; shall not be displayed for interfaces with ID starting with &quot;SMD_&quot;.`
+
+.. requirement:: DoxTrace_HTML_Comment
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;comment&quot; attribute is empty, it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_Miscellaneous
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;miscellaneous&quot; attribute is empty, it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_Feature
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;feature&quot; attribute is empty, it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_ChangeRequest
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;change_request&quot; attribute is empty, it shall be displayed as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_HTML_Sources
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attribute &quot;sources&quot; shall only be shown for:<br>- &quot;unit&quot;<br>- &quot;interface&quot; if the ID starts with SMD_<br>- value is not empty.<br>If the value is empty (for &quot;unit&quot; and SMD &quot;interfaces&quot;), it shall be displayed as:<br>- &quot;[missing]&quot; if &quot;covered&quot; is not in &quot;tags&quot; and the specification is not struck through<br>- &quot;-&quot; otherwise`
+
+.. requirement:: DoxTrace_HTML_Location
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the attribute &quot;location&quot; is empty, it shall be displayed as:<br>- &quot;[missing]&quot; if the specification is not struck through<br>- &quot;-&quot; otherwise<br>If the attribute &quot;location&quot; is not empty, it shall be displayed as<br>- link to the corresponding module if location + &quot;doc/index.rst&quot; exists<br>- as is if the specification is struck through<br>- as is in red otherwise`
+
+:raw-html:`Additional Calculated Attributes`
+++++++++++++++++++++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_UpstreamRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall derive from &quot;refs&quot; attribute backward references.<br>dox_trace shall, based on these (backward) references, compile a list of upstream and downstream references per specification.<br>Upstream references are (backward) references to a higher category and backward references to the same category.<br>Downstream references are (backward) references to a lower category and explicit references to the same category.<br>Categories are top-down: input, system, software, architecture and module.<br>dox_trace shall show the upstream references in an &quot;Upstream Reference&quot; field as comma separated, clickable links to the referenced specifications.<br>If no upstream references are available, the field shall shall be displayed as:<br>- &quot;[missing]&quot; if<br>a) &quot;tool&quot; is not in &quot;tags&quot; AND<br>b) the specification is not struck through AND<br>c) the type is not &quot;information&quot; AND<br>d) the category is not &quot;input&quot;<br>- &quot;-&quot; otherwise`
+
+.. requirement:: DoxTrace_HTML_DownstreamRefs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall show the downstream references in an &quot;Downstream Reference&quot; field as comma separated, clickable links to the referenced specifications.<br>If no downstream references are available, the field shall shall be displayed as:<br>- &quot;[missing]&quot; if<br>a) &quot;covered&quot; is not in &quot;tags&quot; AND<br>b) the specification is not struck through AND<br>c) the type is not &quot;information&quot; or &quot;unit&quot; AND<br>d) the specification is not of type &quot;interface&quot; in category &quot;module&quot;<br>- &quot;-&quot; otherwise`
+
+.. requirement:: DoxTrace_HTML_RefsRed
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/unresolved_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx configuration variable &quot;dox_trace_allow_undefined_refs&quot;.<br>If explicitly set to True, dox_trace shall suppress warnings about undefined references in the &quot;refs&quot; attribute.<br>Instead, these IDs shall be displayed in red in &quot;Downstream References&quot;.`
+
+.. requirement:: DoxTrace_HTML_RefsExport
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/unresolved_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall not export unresolved references.`
+
+.. requirement:: DoxTrace_HTML_UpstreamAsil
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`An &quot;Upstream Asil&quot; attribute shall be displayed if the category is not &quot;input&quot;.<br>It shall be a comma separated list of all &quot;asil&quot; attributes from direct upstream references, but not from indirect upstream references.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+.. requirement:: DoxTrace_HTML_UpstreamCal
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`An &quot;Upstream Cal&quot; attribute shall be displayed if the category is not &quot;input&quot;.<br>It shall be a comma separated list of all &quot;cal&quot; attributes from direct upstream references, but not from indirect upstream references.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+.. requirement:: DoxTrace_HTML_UpstreamSecurity
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If<br>- the config parameter &quot;dox_trace_security_backward&quot; is set to &quot;True&quot; AND<br>- the category is not &quot;input&quot;<br>an &quot;Upstream Security&quot; attribute shall be displayed instead of &quot;Upstream Cal&quot;.<br>It shall be a comma separated list of all &quot;security&quot; attributes from direct upstream references, but not from indirect upstream references.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+.. requirement:: DoxTrace_HTML_UpstreamTags
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`An &quot;Upstream Tags&quot; attribute shall be displayed if neither the category is &quot;input&quot; nor the type is &quot;mod&quot;.<br>It shall be a comma separated list of all tags from direct upstream references, but not from indirect upstream references.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+.. requirement:: DoxTrace_HTML_DerivedFeature
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A &quot;Derived Feature&quot; attribute shall be displayed except for category &quot;input&quot; and types &quot;information&quot; and &quot;mod&quot;.<br>It shall be a comma separated list of all &quot;feature&quot; attributes from direct and indirect upstream references which are input requirements.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+.. requirement:: DoxTrace_HTML_DerivedChangeRequest
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/backward_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A &quot;Derived Change Request&quot; attribute shall be displayed except for category &quot;input&quot; and types &quot;information&quot; and &quot;mod&quot;.<br>It shall be a comma separated list of all &quot;change request&quot; attributes from direct and indirect upstream references which are input requirements.<br>Upstream references to &quot;information&quot; and struck through specifications shall be ignored.<br>The values shall be unique.<br>If the list is empty, &quot;-&quot; shall be displayed.`
+
+:raw-html:`Configuration`
++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_ConfigDirective
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/_static/dox_trace.js
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide the argument-less directive &quot;.. dox_trace_config::&quot;. This directive shall generate a configuration table to change the HTML output on-the-fly using jQuery described below.`
+
+.. requirement:: DoxTrace_HTML_ConfigStorage
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/_static/dox_trace.js
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The configuration shall be stored permanently in local storage of the browser based on the Sphinx project name.`
+
+.. requirement:: DoxTrace_HTML_ConfigReadingMode
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/config.py, dox_trace/_static/dox_trace.js
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The configuration directive shall provide a setting to hide/show attributes:<br>- Show all<br>- Hide empty<br>- Hide empty and &quot;[missing]&quot;<br>- Hide all<br>Type, ID and the content shall always be shown.`
+
+:raw-html:`Enclosed Files`
+++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_EnclosedDirective
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/enclosed.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a directive &quot;enclosed&quot; which copies all listed files to the build folder.`
+
+:raw-html:`Traceability Report`
++++++++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportInput
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_table.py, report_input.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx directive to create a traceability report for input requirements.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportSoftware
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_table.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx directive to create a traceability report for software requirements.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportArchitecture
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_table.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx directive to create a traceability report for software architecture.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportModule
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_table.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx directive to create a traceability report for software module design.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportSource
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_table.py, report_source.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx directive to create a traceability report for source files.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportUnknownCategory
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the traceability report is specified for an unknown category, dox_trace shall abort the build and print an appropriate error message.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportUnknownModule
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`For the traceability report, the module names need to be determined. If that is not possible, the module name &quot;Unknown&quot; shall be used as fallback.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityReportIgnore
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall ignore specifications with attribute &quot;ignore_in_export&quot; for the traceability report.`
+
+.. requirement:: DoxTrace_HTML_TraceabilityDeveloper
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/report.py, report_generic.py, report_input.py, report_architecture.py, report_module.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The directive for the traceability report shall provide an option to specify the developer to select the relevant entries. This option shall be mandatory for all reports except for source files. dox_trace shall be tolerant applying this option regarding whitespaces and capitalization.`
+
+:raw-html:`List of Undefined References`
+++++++++++++++++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_HTML_UndefinedRefsListDirective
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: DoxTrace_HTML_RefsRed
+    :sources: dox_trace/checks.py, dox_trace/undefined_refs.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide the argument-less directive &quot;.. undefined_refs::&quot;. This directive shall generate a list of all specifications, which have undefined references.`
+
+:raw-html:`Export`
+------------------
+
+.. requirement:: DoxTrace_Export_Config
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx configuration variable &quot;dox_trace_dim_root&quot;.<br>If set, dox_trace shall export all &quot;srs&quot;, &quot;spec&quot;, &quot;unit&quot; &quot;interface&quot; and &quot;mod&quot; elements to this folder in Dim format.<br>If not set, no export shall be made.`
+
+.. requirement:: DoxTrace_Export_Filenames
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The filenames shall be &quot;&lt;dox_trace_dim_root&gt;/&lt;prefix&gt;/&lt;docname&gt;.dim&quot;:<br>- &lt;dox_trace_dim_root&gt; is defined by the configuration variable<br>- &lt;prefix&gt; shall either be &quot;srs&quot;, &quot;swa&quot; or &quot;smd&quot;, depending on the ID to be exported<br>- &lt;docname&gt; is given by Sphinx, e.g. if the specifications are in &lt;source root&gt;/a/b/c.rst, &lt;docname&gt; will be &quot;a/b/c&quot;<br>Note, that &lt;source root&gt; is defined by the user when calling the Sphinx executable.`
+
+.. requirement:: DoxTrace_Export_Delete
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Before doing the export, dox_trace shall delete all files in the &quot;dox_trace_dim_root&quot; folder from a potential previous export, which means:<br>- &quot;&lt;dox_trace_dim_root&gt;/srs/**/*.dim&quot;,<br>- &quot;&lt;dox_trace_dim_root&gt;/swa/**/*.dim&quot; and<br>- &quot;&lt;dox_trace_dim_root&gt;/smd/**/*.dim&quot;.`
+
+.. requirement:: DoxTrace_Export_ModuleName
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;module&quot; attribute of the Dim file shall taken from the first specification of the particular RST-files with the following regex: &quot;^[^_]+_[^_]+&quot;.<br>This means the module name of &quot;SWA_MyFeature_Abc&quot; is &quot;SWA_MyFeature&quot;.`
+
+.. requirement:: DoxTrace_Export_IDs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The IDs of the Dim requirements shall be the same as the dox_trace specification IDs.`
+
+.. requirement:: DoxTrace_Export_Attributes
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The attributes for the Dim requirements shall be exported 1:1 from the dox_trace specifications with the exceptions stated below.`
+
+.. requirement:: DoxTrace_Export_Category
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;category&quot; attributes shall never be exported.`
+
+.. requirement:: DoxTrace_Export_Cal
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_security_backward&quot; is set to &quot;True&quot;, the &quot;cal&quot; attribute shall not be exported.`
+
+.. requirement:: DoxTrace_Export_Security
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_security_backward&quot; is not set to &quot;True&quot;, the &quot;security&quot; attribute shall not be exported.`
+
+.. requirement:: DoxTrace_Export_VerificationCriteria
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If type is &quot;interface&quot; and the ID starts with &quot;SMD_&quot;, &quot;verification_criteria&quot; shall not be exported.<br>If &quot;verification_criteria&quot; is set, it shall be replaced by &quot;See Sphinx documentation.&quot; for the export.`
+
+.. requirement:: DoxTrace_Export_Reuse
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;reuse&quot; attributes shall never be exported.`
+
+.. requirement:: DoxTrace_Export_Usage
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;usage&quot; attributes shall never be exported.`
+
+.. requirement:: DoxTrace_Export_Location
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;location&quot; attributes shall never be exported.`
+
+.. requirement:: DoxTrace_Export_Content
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The specification content has no explicit attribute name in dox_trace. For the export the name &quot;text&quot; shall be used.<br>The value shall always be replaced by &quot;See Sphinx documentation.&quot; for the export if the content is not empty.`
+
+.. requirement:: DoxTrace_Export_Tester
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`&quot;tester&quot; shall be set to &quot;&quot; for the export if:<br>- type is &quot;mod&quot;<br>- type is &quot;interface&quot; and the ID starts with &quot;SMD_&quot;`
+
+.. requirement:: DoxTrace_Export_TestSetups
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_test_setups_backward&quot; is not set to &quot;True&quot;, the &quot;test_setups&quot; attribute shall not be exported.<br>&quot;test_setups&quot; shall be set to &quot;none&quot; for the export if:<br>- type is &quot;mod&quot;<br>- type is &quot;interface&quot; and the ID starts with &quot;SMD_&quot; &nbsptags: tool, covered, tested`
+
+.. requirement:: DoxTrace_Export_VerificationMethods
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the config parameter &quot;dox_trace_test_setups_backward&quot; is set to &quot;True&quot;, the &quot;verification_methods&quot; attribute shall not be exported.<br>&quot;verification_methods&quot; shall be set to &quot;none&quot; for the export if:<br>- type is &quot;mod&quot;<br>- type is &quot;interface&quot; and the ID starts with &quot;SMD_&quot;`
+
+.. requirement:: DoxTrace_Export_Unit
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;tags&quot; attribute shall be extended with &quot;unit&quot; for &quot;unit&quot; specifications for the export.`
+
+.. requirement:: DoxTrace_Export_Interface
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;tags&quot; attribute shall be extended with &quot;interface&quot; for &quot;interface&quot; specifications for the export.`
+
+.. requirement:: DoxTrace_Export_Mod
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: DoxTrace_HTML_Location
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The &quot;tags&quot; attribute shall be extended with &quot;covered&quot; for &quot;mod&quot; specifications for the export if the attribute &quot;location&quot; points to a valid module.`
+
+.. requirement:: DoxTrace_Export_IgnoreInExport
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/dim_write.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If &quot;ignore_in_export&quot; is set, the particular specification shall not be exported.`
+
+:raw-html:`Custom Attributes`
+-----------------------------
+
+:raw-html:`Configuration`
++++++++++++++++++++++++++
+
+.. requirement:: DoxTrace_CustomGeneral_Config
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx configuration variable &quot;dox_trace_custom_attributes&quot;, which shall be a hash with:<br><br>- key: &quot;name&quot; of the attribute<br>- value: parameter hash for the attribute (details see following requirements)`
+
+:raw-html:`Name`
+++++++++++++++++
+
+.. requirement:: DoxTrace_CustomName_Available
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall make the attributes available for specifications using the configured names.`
+
+.. requirement:: DoxTrace_CustomName_Conflict
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall check if the specified attribute names already exist.<br>If a name conflict is detected, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+:raw-html:`Directives`
+++++++++++++++++++++++
+
+.. requirement:: DoxTrace_CustomDirectives_Syntax
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs: DoxTrace_Syntax_Types
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A custom attribute shall have a mandatory &quot;directives&quot; parameter with a non-empty list of all specification types for which the attribute shall be available.`
+
+.. requirement:: DoxTrace_CustomDirectives_Check
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If that &quot;directives&quot; parameter is not provided, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+:raw-html:`Categories`
+++++++++++++++++++++++
+
+.. requirement:: DoxTrace_CustomCategories_Syntax
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;directives&quot; parameter includes &quot;requirement&quot; or &quot;information, the custom attribute shall also have a &quot;categories&quot; parameter with a non-empty list of all category types for which the attribute shall be available.`
+
+.. requirement:: DoxTrace_CustomCategories_Value
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The allowed values for &quot;categories&quot; shall be &quot;system&quot;, &quot;software&quot; and &quot;input&quot;.<br>If another value is used, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+:raw-html:`Type`
+++++++++++++++++
+
+.. requirement:: DoxTrace_CustomTypes_Syntax
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A custom attribute shall have a mandatory &quot;type&quot; parameter with the allowed values &quot;text&quot;, &quot;enum&quot; and &quot;refs&quot;.`
+
+.. requirement:: DoxTrace_CustomTypes_Text
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;type&quot; parameter is set to &quot;text&quot;, dox_trace shall handle this parameter as RST syntax and format the output accordingly.<br>Empty &quot;text&quot; attributes shall be rendered as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_CustomTypes_Enum
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;type&quot; parameter is set to &quot;enum&quot;, dox_trace shall handle this parameter as a comma separated string list and format the output accordingly.<br>Empty &quot;enum&quot; attributes shall be rendered as &quot;-&quot;.`
+
+.. requirement:: DoxTrace_CustomTypes_Refs
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If the &quot;type&quot; parameter is set to &quot;refs&quot;, dox_trace shall handle this parameter as a comma separated list of Sphinx references and format the output accordingly.<br>Empty &quot;refs&quot; attributes shall be rendered as &quot;-&quot;.`
+
+:raw-html:`Default`
++++++++++++++++++++
+
+.. requirement:: DoxTrace_CustomDefault_Syntax
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A custom attribute shall have an optional &quot;default&quot; parameter.<br>If the custom attribute is not set in a specification, this default value shall be taken.`
+
+.. requirement:: DoxTrace_CustomDefault_Type
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The type of the &quot;default&quot; parameter shall be:<br><br>- string for attribute type &quot;text&quot;<br>- list for attribute types &quot;enum&quot; and &quot;refs&quot;<br><br>If another type is used, the build shall be aborted with exit code != 0 and an error message be printed to the console.`
+
+.. requirement:: DoxTrace_CustomDefault_Default
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If &quot;default&quot; is not set, the value of this parameter shall be treated as:<br><br>- empty string for attribute type &quot;text&quot;<br>- empty list for attribute types &quot;enum&quot; and &quot;refs&quot;`
+
+:raw-html:`Export`
+++++++++++++++++++
+
+.. requirement:: DoxTrace_CustomExport_Syntax
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/config.py, dox_trace/directives.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`A custom attribute shall have an optional &quot;export&quot; parameter with the allowed values &quot;yes&quot; and &quot;no&quot;.<br>If not set, the value of this parameter shall be treated as &quot;no&quot;.<br><br>Attributes shall be exported to Dim if the &quot;export&quot; parameter is set to &quot;yes&quot;.`
+
+:raw-html:`Properties`
+----------------------
+
+.. requirement:: dox_trace_properties_file
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/yaml.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`dox_trace shall provide a Sphinx configuration variable &quot;dox_trace_properties_file&quot;.<br>This file shall be a YAML file consisting of a hash with an ID as key and another hash as value.<br>The inner hashes shall be the attribute key/value pairs for specifications.<br><br>Example:<br><br>SMD_myQmModule: { asil: QM, cal: QM }<br>SWA_mySafeFeature: { asil: ASIL_B, cal: CAL_2 }<br>_default_: { asil: ASIL_D, cal: CAL_2 }`
+
+.. requirement:: DoxTrace_Properties_Use
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/properties.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`If an attribute or the content is not explicitly specified in an RST file, dox_trace shall try to find a matching property before falling back to the default value.<br><br>The IDs shall be matched in the following order:<br><br>- prio 1: property ID = specification ID, e.g. SWA_Feature_XY<br>- prio 2: property ID = specification ID until one character before the second &quot;_&quot;, e.g. SWA_Feature<br>- prio 3: property ID = specification ID until one character before the first &quot;_&quot;, e.g. SWA<br>- prio 4: property ID = &quot;_default_&quot;<br><br>If an ID including the attribute name is found, the value shall be used for the corresponding specification.`
+
+.. requirement:: DoxTrace_Properties_Custom
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/directives.py, dox_trace/properties.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`Properties shall also apply to custom attributes.`
+
+.. requirement:: DoxTrace_Properties_Standalone
+    :category: software
+    :status: valid
+    :review_status: accepted
+    :asil: QM
+    :cal: QM
+    :tags: tool, covered, tested
+    :comment:
+    :miscellaneous:
+    :refs:
+    :sources: dox_trace/yaml.py, dox_trace/properties.py
+    :feature:
+    :change_request:
+    :developer: Accenture
+    :tester: Accenture
+    :verification_methods: off_target
+    :verification_criteria:
+
+    :raw-html:`The properties shall also be usable as roles and directives independent from specifications:<br><br>- role: :prop:&#96;&lt;key&gt;:&lt;value&gt;&#96;<br>- directive: .. prop:: &lt;key&gt;:&lt;value&gt;<br><br>The fallback &quot;_default_&quot; shall be applied here the same way as for specifications.`

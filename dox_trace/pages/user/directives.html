@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="dox_trace" name="dox_trace_storage" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specification Directives &mdash; dox_trace  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd_theme_overrides.css?v=6fd0d55b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colors.css?v=3cafd8aa" />
+      <link rel="stylesheet" type="text/css" href="../../_static/colored_table.css?v=34b816d5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/header.css?v=e632285e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/dox_trace.css?v=60d3f72c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/dox_trace.js?v=40719b51"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Standard Attributes" href="explicitAttributes.html" />
+    <link rel="prev" title="Integration" href="../started/integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            dox_trace
+          </a>
+              <div class="version">
+                3.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/integration.html">Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Specification Directives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-convention-of-ids">Naming Convention of IDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx-links">Sphinx Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="explicitAttributes.html">Standard Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customAttributes.html">Custom Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcedValues.html">Calculated Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parentValues.html">Upstream and Derived Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newlines.html">Newlines in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rawhtml.html">HTML in Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traceability.html">Traceability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export to Dim Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enclosed.html">Enclosed Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unintended.html">Unintended Comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backward.html">Backward Compatibility</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/report.html">Traceability Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/undefined_refs.html">Undefined References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Requirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/dox_trace/Requirements.html"><span class="raw-html">dox_trace</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/mapping.html">Test Case Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements-generated/stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/reqConfig.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/inout.html">Input / Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/usecases.html">Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/static.html">Classes and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/dynamic.html">Dynamic Behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/fmea.html">FMEA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/legend.html">Diagram Legend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development of dox_trace</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bugTracking.html">Bug Tracking and Feature Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release.html">Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/config.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dox_trace</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+        <li>Specification Directives</li>
+    
+
+    
+
+      <li class="wy-breadcrumbs-aside">
+
+        <!-- DOCUMENT STATUS -->
+
+        
+            
+
+            
+                
+            
+
+            
+
+            
+
+            
+            
+
+            
+
+            <span class="header-label document-status-released">
+              Released</span>
+        
+
+        <!-- DATA CLASSIFICATION -->
+
+        
+
+      </li>
+
+    
+  </ul>
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specification-directives">
+<span id="spec"></span><h1>Specification Directives<a class="headerlink" href="#specification-directives" title="Link to this heading"></a></h1>
+<section id="types">
+<span id="spec-types"></span><h2>Types<a class="headerlink" href="#types" title="Link to this heading"></a></h2>
+<p>Five types are provided for manually written specifications:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">srs</span></code> A <strong>software requirement</strong>, usually derived to specs. A srs needs to be tested.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spec</span></code> An <strong>architectural</strong> or <strong>design specification</strong>, e.g. a use case or resource usage.
+It does not directly link to source code but needs to be refined and linked to other specs, mods,
+interfaces or units. A spec needs to be tested.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> A <strong>software module</strong>. This element has an informative nature, it links to the module
+documentation and provides a brief description of the module. It does not need to be tested
+directly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interface</span></code> An <strong>interface</strong> between two modules in the architecture. Needs to be linked to
+the caller unit, the callee unit and if applicable to the interface unit. Interface tests are
+obligatory. <span class="raw-html"></br></span> <em>The usage in software module design is deprecated.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code> A <strong>single functionality</strong>, which is not split any further, usually a
+class or a function. It refers to source code and is tested.</p></li>
+</ul>
+<p>Two additional types of are not intended to be used manually. They are generated by Dim when
+exporting data to reStructuredText.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requirement</span></code> An <strong>input requirement</strong>, <strong>system requirement</strong> or a <strong>software requirement</strong>.
+Requirements have to be linked to the software architecture and software module design.
+Note, that software requirements in Dim are deprecated, write them in Sphinx directly as <em>srs</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">information</span></code> Additional <strong>non-binding</strong> information.</p></li>
+</ul>
+<p>See <a class="reference internal" href="traceability.html#spec-trace"><span class="std std-ref">Traceability</span></a> chapter for information about how to connect these elements.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/types.drawio.png"><img alt="../../_images/types.drawio.png" src="../../_images/types.drawio.png" style="width: 781.0px; height: 398.0px;" />
+</a>
+</figure>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">interface</span></code> with an ID starting with <code class="docutils literal notranslate"><span class="pre">SMD_</span></code>, an error will be raised during the
+build. To skip that check, set the variable <em>dox_trace_allow_deprecated</em> in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to <em>True</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dox_trace_allow_deprecated</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<p>To create a specification, use one of the following the directives:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">srs::</span> <span class="pre">&lt;unique_id&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">spec::</span> <span class="pre">&lt;unique_id&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">mod::</span> <span class="pre">&lt;unique_id&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">interface::</span> <span class="pre">&lt;unique_id&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">unit::</span> <span class="pre">&lt;unique_id&gt;</span></code></p></li>
+</ul>
+<p>The <strong>description</strong> is placed into the <strong>content</strong> part of the directive. It can be <strong>simple text</strong>
+or any other <strong>complex Sphinx syntax</strong> including headings.
+In the following example many <a class="reference internal" href="explicitAttributes.html#dim-attr"><span class="std std-ref">attributes</span></a> are shown automatically, which are
+explained in further sections on this guideline page.</p>
+<p>The ID is rendered as HTML link to itself, so the anchor can be simply copied from the address bar
+of the browser and e.g. pasted into a ticket.</p>
+<p><strong>Example</strong></p>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">srs</span><span class="p">::</span> SRS_topic_aspect
+
+    Description of the <span class="gs">**srs**</span>.
+
+<span class="p">..</span> <span class="ow">mod</span><span class="p">::</span> SWA_mod_name
+
+    Description of the <span class="gs">**mod**</span>.
+
+<span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_feature_id1
+
+    Description of the <span class="gs">**spec**</span>.
+
+<span class="p">    ..</span> <span class="ow">image</span><span class="p">::</span> ../_static/example.png
+
+<span class="p">..</span> <span class="ow">interface</span><span class="p">::</span> SWA_feature_id2
+
+    Description of
+
+    the <span class="gs">**interface**</span>.
+
+<span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_module_classX
+
+    Description of
+    the <span class="gs">**unit**</span>.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-srs docutils literal notranslate" id="srs_topic_aspect"><span class="pre">[srs]</span> <a class="reference internal" href="#srs_topic_aspect"><span class="pre">SRS_topic_aspect</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Description of the <strong>srs</strong>.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-missing"><strong>Verification Criteria:</strong> [missing]<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-mod docutils literal notranslate" id="swa_mod_name"><span class="pre">[mod]</span> <a class="reference internal" href="#swa_mod_name"><span class="pre">SWA_mod_name</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span class="dox-trace-attribute-empty"> | <strong>Reuse:</strong> -</span><span class="dox-trace-attribute-empty"> | <strong>Usage:</strong> -</span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Description of the <strong>mod</strong>.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span class="dox-trace-attribute-missing"><strong>Location:</strong> [missing]</span>
+    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-spec docutils literal notranslate" id="swa_feature_id1"><span class="pre">[spec]</span> <a class="reference internal" href="#swa_feature_id1"><span class="pre">SWA_feature_id1</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Description of the <strong>spec</strong>.</p>
+<img alt="../../_images/example.png" src="../../_images/example.png" />
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+        <span class="dox-trace-attribute-empty"><strong>Custom Refs:</strong> -<br></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-interface docutils literal notranslate" id="swa_feature_id2"><span class="pre">[interface]</span> <a class="reference internal" href="#swa_feature_id2"><span class="pre">SWA_feature_id2</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <strong>Developer:</strong> MyCompany<span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> on_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Description of</p>
+<p>the <strong>interface</strong>.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Downstream References:</strong> [missing]<br></span></span>    </p></td></tr>
+    </tbody>
+</table>
+<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
+    <colgroup><col style="width: 100%" /></colgroup>
+    <tbody>
+    <tr class="row-odd"><td><p>
+        <code class="highlight highlight-unit docutils literal notranslate" id="smd_module_classx"><span class="pre">[unit]</span> <a class="reference internal" href="#smd_module_classx"><span class="pre">SMD_module_classX</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> draft</span>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute"><td><p>
+        <strong>Asil:</strong> not_set | <strong>Cal:</strong> not_set<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
+        <span class="dox-trace-attribute-missing"><strong>Developer:</strong> [missing]</span><span class="dox-trace-attribute-missing"> | <strong>Tester:</strong> [missing]</span> | <strong>Verification Methods:</strong> off_target<br>
+        <span class="dox-trace-attribute-empty"><strong>Tags:</strong> -</span><span class="dox-trace-grey dox-trace-attribute-empty"> | </span><span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream Tags:</strong> -</span></span>
+    </p></td></tr>
+     <tr class="row-even"><td><p>
+        <p>Description of
+the <strong>unit</strong>.</p>
+    </p></td></tr>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
+        <strong>Custom Text:</strong> <span>THIS IS THE DEFAULT VALUE</span><br>
+        <strong>Custom Enum:</strong> x, y<br>
+    </p></td></tr>
+    <tr class="row-even" hidden/>
+    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
+        <span><span class="dox-trace-grey dox-trace-attribute-missing"><strong>Upstream References:</strong> [missing]<br></span></span>
+        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
+        <span class="dox-trace-attribute-missing"><strong>Sources:</strong> [missing]</span>
+    </p></td></tr>
+    </tbody>
+</table>
+</section>
+<section id="naming-convention-of-ids">
+<span id="naming-convention"></span><h2>Naming Convention of IDs<a class="headerlink" href="#naming-convention-of-ids" title="Link to this heading"></a></h2>
+<p>The naming convention of IDs is independent from the type. The names must be <strong>unique</strong>.
+Use short but concise strings.</p>
+<ul class="simple">
+<li><p><strong>Software Requirements:</strong> <code class="docutils literal notranslate"><span class="pre">SRS_&lt;topic&gt;_&lt;id&gt;</span></code></p></li>
+<li><p><strong>Software Architecture:</strong> <code class="docutils literal notranslate"><span class="pre">SWA_&lt;aspect/feature&gt;_&lt;id&gt;</span></code> <span class="raw-html"></br></span>
+For mods use: <code class="docutils literal notranslate"><span class="pre">SWA_mod_&lt;moduleName&gt;</span></code></p></li>
+<li><p><strong>Software Module Design:</strong> <code class="docutils literal notranslate"><span class="pre">SMD_&lt;moduleName&gt;_&lt;id&gt;</span></code> <span class="raw-html"></br></span>
+For units use the class name and/or method name:
+<code class="docutils literal notranslate"><span class="pre">SMD_&lt;moduleName&gt;_&lt;className&gt;::&lt;methodName&gt;</span></code></p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">srs</span><span class="p">::</span> SRS_Deployment_FunctionalSafety
+
+<span class="p">..</span> <span class="ow">mod</span><span class="p">::</span> SWA_mod_xcpEthernetAdapter
+
+<span class="p">..</span> <span class="ow">spec</span><span class="p">::</span> SWA_XCP_Paging
+
+<span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_xcp_XcpSlave
+
+<span class="p">..</span> <span class="ow">unit</span><span class="p">::</span> SMD_xcp_XcpSlave::dispatcher
+</pre></div>
+</div>
+</section>
+<section id="sphinx-links">
+<h2>Sphinx Links<a class="headerlink" href="#sphinx-links" title="Link to this heading"></a></h2>
+<p>The specifications can be <strong>referenced</strong> from any other location using the regular Sphinx <code class="docutils literal notranslate"><span class="pre">ref</span></code>.
+Note, that a <code class="docutils literal notranslate"><span class="pre">ref</span></code> is only a simple link to navigate through the documentation. The default
+display name is the last part of ID.</p>
+<p><strong>Example</strong></p>
+<p><em>rst:</em></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Links to
+<span class="na">:ref:</span><span class="nv">`SMD_module_classX`</span>,
+<span class="na">:ref:</span><span class="nv">`SRS_topic_aspect &lt;SRS_topic_aspect&gt;`</span> and
+<span class="na">:ref:</span><span class="nv">`some text &lt;SWA_feature_id1&gt;`</span>.
+</pre></div>
+</div>
+<p><em>html:</em></p>
+<table class="docutils align-default" style="width: 100%">
+<tbody>
+<tr class="row-odd"><td><p>Links to
+<a class="reference internal" href="#smd_module_classx"><span class="std std-ref">classX</span></a>,
+<a class="reference internal" href="#srs_topic_aspect"><span class="std std-ref">SRS_topic_aspect</span></a> and
+<a class="reference internal" href="#swa_feature_id1"><span class="std std-ref">some text</span></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To add references for <a class="reference internal" href="traceability.html#spec-trace"><span class="std std-ref">traceability</span></a>,
+use the <a class="reference internal" href="explicitAttributes.html#spec-attr-refs"><span class="std std-ref">refs</span></a> attribute of the specification directives.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+  </div>
+
+  <div role="footer_string">
+    <p>Documentation from 2024-10-23 08:28:32, UNOFFICIAL BUILD.<br>Based on https://github.com/esrlabs/dox, folder dox_trace, from 2024-10-23 05:42:35, commit a53d9fd.</p>
+
+    
+      <a href="../../_sources/pages/user/directives.rst.txt" rel="nofollow"> View page source</a>
+    
+
+  </div>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
