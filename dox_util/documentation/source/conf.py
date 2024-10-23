@@ -7,10 +7,7 @@ sys.path = [str(path.resolve()) for path in EXTENSION_ROOT.glob("dox_*")] + sys.
 
 project = "dox_util"
 author = "Accenture"
-copyright = (
-    f"{datetime.now().year} Accenture. All rights reserved. "
-    f"Accenture proprietary and confidential material"
-)
+copyright = f"{datetime.now().year} Accenture"
 
 global __version__
 exec(open(f"../../{project}/version.py", "r").read(), globals())
