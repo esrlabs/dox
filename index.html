@@ -54,6 +54,7 @@
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#release-steps">Release Steps</a></li>
 </ul>
 </div>
         </div>
@@ -158,6 +159,87 @@ It also checks several style conventions.</p></td>
 <h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h1>
 <p>Contributions are welcome, please create pull requests! If you want to actively develop these tools,
 please contact the owners of <a class="reference external" href="https://github.com/esrlabs/dox">https://github.com/esrlabs/dox</a>.</p>
+<p>To merge a pull request, two requirements must be fulfilled:</p>
+<ul class="simple">
+<li><p>A code-owner must approve the PR.</p></li>
+<li><p>The <a class="reference external" href="https://github.com/esrlabs/dox/actions">automatic checks</a> must not report any error.</p></li>
+</ul>
+</section>
+<section id="release-steps">
+<h1>Release Steps<a class="headerlink" href="#release-steps" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is for the code-owners.</p>
+</div>
+<ul>
+<li><p>Ensure that all relevant <a class="reference external" href="https://github.com/esrlabs/dox/pulls">pull requests</a> are merged and
+<a class="reference external" href="https://github.com/esrlabs/dox/issues">issues</a> are closed.</p></li>
+<li><p>Increment the version.</p>
+<ul class="simple">
+<li><p>Dim: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dim/version.txt</span></code></p></li>
+<li><p>Sphinx extensions: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dox_*/dox_*/version.py</span></code></p></li>
+</ul>
+</li>
+<li><p>Extend the change log.</p>
+<ul class="simple">
+<li><p>Dim: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dim/documentation/source/pages/changelog.rst</span></code></p></li>
+<li><p>Sphinx extensions: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dox_*/documentation/source/pages/changelog.rst</span></code></p></li>
+</ul>
+</li>
+<li><p>Adapt the overall documentation in <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/documentation</span></code>.</p></li>
+<li><p>If applicable, update the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> files:</p>
+<ul class="simple">
+<li><p>Overall: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/README.md</span></code></p></li>
+<li><p>Dim: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dim/README.md</span></code></p></li>
+<li><p>Sphinx extensions: <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dox_*/README.md</span></code></p></li>
+</ul>
+</li>
+<li><p>Push and merge the changes to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of <a class="reference external" href="https://github.com/esrlabs/dox">https://github.com/esrlabs/dox</a> with a
+pull request.</p></li>
+<li><p>Build the documentation. Go to <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/documentation</span></code> and type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make dist
+</pre></div>
+</div>
+</li>
+<li><p>Push the output from <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/documentation/build/html</span></code> to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch of
+<a class="reference external" href="https://github.com/esrlabs/dox">https://github.com/esrlabs/dox</a>. Please do not delete the empty <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> file, otherwise the
+HTML style sheets will not work correctly.</p></li>
+<li><p>Create the packages.</p>
+<ul>
+<li><p>Dim: Go to <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dim</span></code> and type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gem build dim.gemspec
+</pre></div>
+</div>
+<p>For more information about Ruby gems see <a class="reference external" href="https://guides.rubygems.org">https://guides.rubygems.org</a>.</p>
+</li>
+<li><p>Sphinx packages: Go to <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dox_*</span></code> and type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m build
+</pre></div>
+</div>
+<p>For more information about Python packages see <a class="reference external" href="https://packaging.python.org">https://packaging.python.org</a>.</p>
+</li>
+</ul>
+</li>
+<li><p>Upload the packages (accounts and appropriate access rights are required).</p>
+<ul>
+<li><p>Dim: Go to <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dim</span></code> and type:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gem push dim-toolkit-1.2.3.gem
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Sphinx packages: Go to <code class="docutils literal notranslate"><span class="pre">&lt;dox</span> <span class="pre">root&gt;/dox_*</span></code> and type:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m twine upload dist/*
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>Add a new release tag and copy/paste the changelog entries to <a class="reference external" href="https://github.com/esrlabs/dox/tags">https://github.com/esrlabs/dox/tags</a>.</p></li>
+</ul>
 </section>
 
 
@@ -168,11 +250,11 @@ please contact the owners of <a class="reference external" href="https://github.
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024 Accenture. All rights reserved. Accenture proprietary and confidential material.</p>
+    <p>&#169; Copyright 2024 Accenture.</p>
   </div>
 
   <div role="footer_string">
-    <p>Documentation from 2024-10-23 08:28:03, UNOFFICIAL BUILD.</p>
+    <p>Documentation from 2024-10-23 16:49:29, official build.<br>Based on https://github.com/esrlabs/dox, folder documentation, from 2024-10-23 13:12:25, commit c3d97e8.</p>
 
     
       <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>

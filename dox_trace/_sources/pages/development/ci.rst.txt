@@ -1,7 +1,7 @@
 Continuous Integration
 ======================
 
-*dox_trace* is developed in https://github.com/esrlabs/dox.
+*dox_trace* is developed on GitHub: https://github.com/esrlabs/dox
 
 Every commit must be approved by a non-author.
 

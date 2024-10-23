@@ -17,30 +17,22 @@ Dim is developed on GitHub including a **review** and **verification** process.
 Bug Tracking and Feature Planning
 ---------------------------------
 
-Bugs and new features are handled with GitHub issues.
-In case you have found a bug or if you have feature request, please open a ticket.
+| Bugs and new features are managed with GitHub issues: https://github.com/esrlabs/dox/issues
+| In case you have found a bug or if you have feature request, please open a ticket.
 
 Release
 -------
 
-Merging a change to GitHub does not mean it's automatically available for the users. A new Dim
-version must be released explicitly:
+After the features and bug fixes including documentation and unit tests are merged to the
+repository, a new version of the *Dim* extension can be released.
 
-    - Increment the version in ``version.txt``.
-    - Document the changes in ``documentation/source/pages/changelog.rst``.
-    - Push these changed files to GitHub.
-    - After successful merge, build the gem:
+- Increment the version in ``version.txt``.
+- Document the changes in ``documentation/source/pages/changelog.rst``.
+- Push the changes to the ``master`` branch of https://github.com/esrlabs/dox.
+- Build and upload the documentation to the ``gh-pages`` branch.
+- Create a new gem and push it to https://rubygems.org/gems/dim-toolkit.
 
-      .. code-block::
-
-            gem build dim.gemspec
-    - Push the gem to RubyGems, e.g.:
-
-      .. code-block::
-
-            gem push dim-toolkit-1.2.3.gem --host https://rubygems.org/ --key ...
-    - Push the documentation to https://esrlabs.github.io/dox/dim.
-    - Add a new release tag.
+See also *Release Steps* on https://esrlabs.github.io/dox.
 
 Requirements
 ------------
