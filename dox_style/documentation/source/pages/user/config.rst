@@ -31,7 +31,7 @@ HTML
 - Hides **previous/next** page buttons
 - Removes the **Generated with Sphinx** text from the footer
 - Adds the build date to the page footer
-- Adds the build type (unofficial/offical) to the page footer
+- Adds the :ref:`sphinx_build_type` (unofficial/offical) to the page footer
 - Adds an optional :ref:`sphinx_footer_string` to the page footer
 - Adds :ref:`sphinx_data_classification`
 - Adds :ref:`sphinx_document_status`
@@ -46,11 +46,12 @@ HTML
    :maxdepth: 1
    :hidden:
 
+   config/build_type
+   config/footer_string
    config/data_classification
    config/document_status
    config/text_colors
    config/table_colors
-   config/footer_string
 
 LaTeX
 -----
