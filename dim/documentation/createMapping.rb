@@ -87,7 +87,7 @@ File.open("#{File.dirname(__FILE__)}/source/pages/requirements-generated/stats.r
   f.puts '    * - Test cases with valid requirement IDs'
   not_valid = test_cases.select { |_loc, ids| ids.any? { |id| !req_ids.include?(id) } }
   f.puts "      - #{test_cases.length - not_valid.length}"
-  not_valid.each do |loc, _ids|
+  not_valid.each_key do |loc|
     f.puts "        |br|:red:`#{loc}`"
   end
   invalid = test_cases.select { |_loc, ids| ids.any? { |id| !req_ids.include?(id) } }

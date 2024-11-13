@@ -10,12 +10,12 @@ RSpec.describe 'Dim::Helpers::AttributeHelper' do
       let(:config) { { type: 'single' } }
 
       it "replaces 'type' key in the config with the 'format_style' with value",
-        doc_refs: ['Dim_AttributeLoading_UnitTests'] do
-          expect(subject).to eq('single')
-          expect(config[:format_style]).to eq('single')
-          expect(config[:type]).to be nil
-          expect(config.keys).to eq([:format_style])
-        end
+         doc_refs: ['Dim_AttributeLoading_UnitTests'] do
+        expect(subject).to eq('single')
+        expect(config[:format_style]).to eq('single')
+        expect(config[:type]).to be nil
+        expect(config.keys).to eq([:format_style])
+      end
     end
 
     context "when 'type' is not given" do
@@ -43,7 +43,7 @@ RSpec.describe 'Dim::Helpers::AttributeHelper' do
 
     context 'when attributes.dim redefines the default attributes' do
       let(:attributes) { { 'type' => { format_style: :text, default: '', format_shift: 0 } } }
-      let(:err_msg) { "Error: Defining standard attributes as a custom attributes is not allowed" }
+      let(:err_msg) { 'Error: Defining standard attributes as a custom attributes is not allowed' }
 
       it 'exits process with error message', doc_refs: ['Dim_AttributeLoading_UnitTests'] do
         Dim::Test.execute { dummy_class.check_for_default_attributes(attributes, filename) }
@@ -122,7 +122,7 @@ RSpec.describe 'Dim::Helpers::AttributeHelper' do
         Dim::Test.execute { dummy_class.validate_default('default', config) }
 
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include("Error: Invalid")
+        expect(@test_stderr).to include('Error: Invalid')
       end
     end
   end
@@ -156,7 +156,7 @@ RSpec.describe 'Dim::Helpers::AttributeHelper' do
           Dim::Test.execute { dummy_class.validate_default_for_enum('default', config) }
 
           expect(Dim::ExitHelper.exit_code).to eq 1
-          expect(@test_stderr).to include("Error: default value for default must be from allowed list")
+          expect(@test_stderr).to include('Error: default value for default must be from allowed list')
         end
       end
     end

@@ -39,9 +39,8 @@ module Dim
           formatted = File.read("#{path}/#{f}.inplace.dim").universal_newline
           expected = File.read("#{path}/#{f}.dim.expected").universal_newline
           expect(formatted).to eq(expected)
+          FileUtils.rm_f("#{path}/#{f}.inplace.dim")
         end
-
-        %w[first second].each { |f| FileUtils.rm_f("#{path}/#{f}.inplace.dim") }
       end
 
       it '"extra" files', doc_refs: ['Dim_format_extra'] do
@@ -53,9 +52,8 @@ module Dim
           formatted = File.read("#{path}/#{f}.dim.formatted").universal_newline
           expected = File.read("#{path}/#{f}.dim.expected").universal_newline
           expect(formatted).to eq(expected)
+          FileUtils.rm_f("#{path}/#{f}.dim.formatted")
         end
-
-        %w[first second].each { |f| FileUtils.rm_f("#{path}/#{f}.dim.formatted") }
       end
 
       it '"check-only", valid files shall not lead to an error', doc_refs: ['Dim_format_checkOnly'] do
@@ -251,7 +249,8 @@ module Dim
 
     context 'when invalid format style is present' do
       before do
-        Dim::Requirement::SYNTAX['dummy'] = { check: nil, format_style: :dummy, format_shift: 0, default: '', allowed: nil }
+        Dim::Requirement::SYNTAX['dummy'] =
+          { check: nil, format_style: :dummy, format_shift: 0, default: '', allowed: nil }
       end
 
       it 'shall throw a meaningful error and exit', doc_refs: ['Dim_format_general'] do

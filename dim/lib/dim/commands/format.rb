@@ -14,7 +14,7 @@ module Dim
     end
 
     def short_type(type)
-      return "h#{type[8..]}" if /\Aheading_(\d+)\z/ === type
+      return "h#{type[8..]}" if type.match?(/\Aheading_(\d+)\z/)
 
       'info' # type == "information"
     end
@@ -23,7 +23,10 @@ module Dim
       input = val.strip
       return ['|'] + input.split("\n") if input.include?("\n")
 
-      if "#,[]{}&*!|>\)\"%@`'?:-".include?(input[0]) || input =~ /(:(\s|\Z)|\s#)/ || (input.length > line_width_first && input =~ /\s\s/)
+      if "#,[]{}&*!|>\)\"%@`'?:-".include?(input[0]) ||
+         input =~ /(:(\s|\Z)|\s#)/ ||
+         (input.length > line_width_first && input =~ /\s\s/)
+
         return ['|', input] if input.length <= line_width_first
 
         res = ['>']

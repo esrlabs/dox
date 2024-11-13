@@ -16,7 +16,8 @@ module Dim
   class Loader
     include Helpers::AttributeHelper
 
-    attr_reader :requirements, :config, :property_table, :properties, :original_data, :module_data, :metadata, :dim_file, :all_attributes, :custom_attributes
+    attr_reader :requirements, :config, :property_table, :properties, :original_data, :module_data, :metadata,
+                :dim_file, :all_attributes, :custom_attributes
 
     # YAML standard:
     # invalid C0 control characters: 0x00 - 0x1F (except TAB 0x09, LF 0x0A and CR 0x0D)
@@ -60,7 +61,8 @@ module Dim
       @requirements.keep_if { |_id, r| r.filter(str) }
     end
 
-    def load(file: nil, attributes_file: nil, allow_missing: false, no_check_enclosed: false, silent: true, input_filenames: [])
+    def load(file: nil, attributes_file: nil, allow_missing: false, no_check_enclosed: false, silent: true,
+             input_filenames: [])
       ::Psych::Nodes::Scalar.add_patch
       ::Psych::Visitors::ToRuby.add_patch
 
@@ -69,7 +71,7 @@ module Dim
       # content will be read from the stdin and printed out to stdout. This is to enhance the
       # formatting in the vim.
       unless OPTIONS[:output_format] == 'stdout'
-        if input_filenames.length > 0 and file
+        if input_filenames.length.positive? && file
           Dim::ExitHelper.exit(code: 1, msg: 'use either file or input_filenames argument (deprecated) for load method')
         end
         if input_filenames.length > 1
@@ -90,12 +92,16 @@ module Dim
         puts 'Start Loading...'
       end
 
-      Dim::ExitHelper.exit(code: 1, filename: file, msg: 'does not exist') unless File.exist?(file.to_s) || OPTIONS[:output_format] == 'stdout'
+      unless File.exist?(file.to_s) || OPTIONS[:output_format] == 'stdout'
+        Dim::ExitHelper.exit(code: 1, filename: file,
+                             msg: 'does not exist')
+      end
 
       @dim_file = OPTIONS[:output_format] == 'stdout' ? $stdin.read.chomp : File.binread(file).chomp
 
       if attributes_file
-        fetch_attributes!(folder: File.dirname(attributes_file), filename: attributes_file.split('/').last, silent: silent)
+        fetch_attributes!(folder: File.dirname(attributes_file), filename: attributes_file.split('/').last,
+                          silent: silent)
       elsif !dim_file.match(/^Config:/)
         folder = search_attributes_file(file.to_s)
         fetch_attributes!(folder: folder, filename: 'attributes.dim', silent: silent) if folder
@@ -224,16 +230,17 @@ module Dim
       hscan = attr.scan(/\Ah(\d+)\s.+/)
       if hscan.length == 1
         level = hscan[0][0].to_i
-        return { 'type' => "heading_#{level}", 'text' => attr[2 + hscan[0][0].length..-1].strip }
+        return { 'type' => "heading_#{level}", 'text' => attr[2 + hscan[0][0].length..].strip }
       else
         iscan = attr.scan(/\Ainfo\s.+/)
-        return { 'type' => 'information', 'text' => attr[5..-1].strip } if iscan.length == 1
+        return { 'type' => 'information', 'text' => attr[5..].strip } if iscan.length == 1
       end
       nil
     end
 
-    def load_file(filename:, origin:, silent:, category:, disable_naming_convention_check: false, no_check_enclosed: false)
-      puts "Loading [#{origin.empty? ? "unknown" : origin}] #{filename}..." unless silent
+    def load_file(filename:, origin:, silent:, category:, disable_naming_convention_check: false,
+                  no_check_enclosed: false)
+      puts "Loading [#{origin.empty? ? 'unknown' : origin}] #{filename}..." unless silent
       binary_data = OPTIONS[:output_format] == 'stdout' ? @dim_file : File.binread(filename).force_encoding('UTF-8')
 
       # this looks expensive but measurement showed it's close to zero
@@ -262,8 +269,7 @@ module Dim
 
       unless reqs.is_a?(Hash)
         Dim::ExitHelper.exit(code: 1, filename: filename,
-                             msg: 'top level must be a hash with keys "module", "enclosed", "metadata" and/or unique ids'
-        )
+                             msg: 'top level must be a hash with keys "module", "enclosed", "metadata" and/or unique ids')
       end
 
       # TODO: Remove module backward compatibility in future version
@@ -297,13 +303,13 @@ module Dim
       if @module_data.key?(document)
         if @module_data[document][:origin] != origin
           Dim::ExitHelper.exit(code: 1, filename: filename, msg:
-            "files of the same module must have the same owner:\n" +
-            "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:origin]})\n" +
+            "files of the same module must have the same owner:\n" \
+            "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:origin]})\n" \
             "- #{filename} (#{origin})")
         elsif @module_data[document][:category] != category
           Dim::ExitHelper.exit(code: 1, filename: filename, msg:
-            "files of the same module must have the same category:\n" +
-            "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:category]})\n" +
+            "files of the same module must have the same category:\n" \
+            "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:category]})\n" \
             "- #{filename} (#{category})")
         end
       else
@@ -349,8 +355,8 @@ module Dim
           p = Pathname.new(l)
           Dim::ExitHelper.exit(code: 1, filename: filename, msg: "'#{l}' must not be an absolute path") if p.absolute?
           if p.each_filename.any? do |name|
-              name == '..'
-            end
+            name == '..'
+          end
             Dim::ExitHelper.exit(code: 1, filename: filename,
                                  msg: "'#{l}' must not include '..'")
           end
@@ -399,8 +405,8 @@ module Dim
         else
           Dim::ExitHelper.exit(code: 1, filename: filename, msg: "attributes for id \"#{id}\" must be key-value pairs")
         end
-        unless attr.key?('verification_methods')
-          attr['verification_methods'] = attr['test_setups'] if attr.key?('test_setups')
+        if !attr.key?('verification_methods') && attr.key?('test_setups')
+          attr['verification_methods'] = attr['test_setups']
         end
         attr.each do |key, value|
           unless value.is_a?(String)
@@ -419,22 +425,23 @@ module Dim
       @original_data[filename] = Marshal.load(Marshal.dump(reqs))
     end
 
-    def load_pattern(config_filename:, pattern:, origin:, silent:, category:, disable_naming_convention_check: false, no_check_enclosed: false)
+    def load_pattern(config_filename:, pattern:, origin:, silent:, category:, disable_naming_convention_check: false,
+                     no_check_enclosed: false)
       if pattern.match?(/\\/)
         puts "Warning: Backward slashes detected in pattern #{pattern}. Use '/' over '\\'"
         pattern.gsub!('\\', '/')
       end
       pattern_search = config_filename ? File.join(File.dirname(config_filename), pattern) : pattern
       fs = Dir.glob(pattern_search).sort
-      if fs.empty? && !silent
-        puts "Info: no matches for \"#{pattern}\" in \"#{config_filename}\""
-      end
+      puts "Info: no matches for \"#{pattern}\" in \"#{config_filename}\"" if fs.empty? && !silent
       fs.each do |f|
-        load_file(filename: f, origin: origin, silent: silent, category: category, disable_naming_convention_check: disable_naming_convention_check, no_check_enclosed: no_check_enclosed)
+        load_file(filename: f, origin: origin, silent: silent, category: category,
+                  disable_naming_convention_check: disable_naming_convention_check, no_check_enclosed: no_check_enclosed)
       end
       return unless OPTIONS[:output_format] == 'stdout'
 
-      load_file(filename: '', origin: origin, silent: silent, category: category, disable_naming_convention_check: disable_naming_convention_check, no_check_enclosed: no_check_enclosed)
+      load_file(filename: '', origin: origin, silent: silent, category: category,
+                disable_naming_convention_check: disable_naming_convention_check, no_check_enclosed: no_check_enclosed)
     end
 
     def resolve_properties(folder:, properties_filename:)
@@ -454,9 +461,9 @@ module Dim
           end
 
           if @all_attributes.dig(attr, :allowed).nil? ||
-            !property_value.cleanArray.select do |val|
-              !@all_attributes[attr][:allowed].include?(val)
-            end.any?
+             property_value.cleanArray.reject do |val|
+               @all_attributes[attr][:allowed].include?(val)
+             end.none?
             @property_table[document] ||= {}
             @property_table[document][attr] = property_value.strip
           else
@@ -480,6 +487,7 @@ module Dim
         nil
       else
         return path if Dir.new(path).children.include?('attributes.dim')
+
         search_attributes_file(path)
       end
     end
@@ -492,7 +500,7 @@ module Dim
       end
 
       if value['category'] != ALLOWED_CATEGORIES[:software]
-        warn("Warning: disable_naming_convention_check attribute will only take effect when category is software")
+        warn('Warning: disable_naming_convention_check attribute will only take effect when category is software')
       end
 
       if disable_naming_convention_check == 'yes'
@@ -569,13 +577,13 @@ module Dim
         )
       end
 
-      if aspect.match?(SRS_NAME_REGEX)
-        Dim::ExitHelper.exit(
-          code: 1,
-          filename: filename,
-          msg: "aspect in ID #{name} in software requirement contains non-alphanumeric characters"
-        )
-      end
+      return unless aspect.match?(SRS_NAME_REGEX)
+
+      Dim::ExitHelper.exit(
+        code: 1,
+        filename: filename,
+        msg: "aspect in ID #{name} in software requirement contains non-alphanumeric characters"
+      )
     end
   end
 end

@@ -119,7 +119,7 @@ module Dim
     def calc_depth
       @depth = 1
       hres = @data['type']&.scan(/^heading_(\d+)$/) || ''
-      return unless hres.length > 0
+      return unless hres.length.positive?
 
       dep = hres[0][0].to_i
       return unless dep > 1
@@ -140,7 +140,7 @@ module Dim
         return
       end
 
-      allowed_values = elem[:allowed].reject{ |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
+      allowed_values = elem[:allowed].reject { |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
       Dim::ExitHelper.exit(
         code: 1,
         filename: filename,
@@ -155,7 +155,7 @@ module Dim
       value_array.each do |v|
         next if element[:allowed].include?(v)
 
-        allowed_values = element[:allowed].reject{ |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
+        allowed_values = element[:allowed].reject { |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
         Dim::ExitHelper.exit(
           code: 1,
           filename: filename,
@@ -189,7 +189,7 @@ module Dim
                 format_shift: reference_settings[:format_shift]
               }
             end
-            loader.requirements.each { |_id, r| r.data[k] = '' }
+            loader.requirements.each_value { |r| r.data[k] = '' }
             Dim::Requirement.define_method(k) do
               @data[k]
             end

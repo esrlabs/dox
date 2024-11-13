@@ -97,7 +97,7 @@ module Dim
       requirements_by_module = {}
       module_keys = @loader.module_data.keys
       module_keys.each { |um| requirements_by_module[um] = [] }
-      @loader.requirements.each { |_id, r| requirements_by_module[r.document] << r }
+      @loader.requirements.each_value { |r| requirements_by_module[r.document] << r }
 
       @exporter = EXPORTER[OPTIONS[:type]].new(@loader)
       requirements_by_module.each do |doc, reqs|

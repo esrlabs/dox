@@ -3,9 +3,7 @@ module Dim
     @exit_code = 0
 
     class << self
-      def exit_code
-        @exit_code
-      end
+      attr_reader :exit_code
 
       def reset_exit_code
         @exit_code = 0

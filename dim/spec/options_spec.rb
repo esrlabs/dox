@@ -60,7 +60,7 @@ module Dim
 
     context 'when empty argument is passed' do
       it 'shall throw an error and print error message', doc_ref: ['Dim_CLI_help'] do
-        Test.main("")
+        Test.main('')
         expect(Dim::ExitHelper.exit_code).to eq 1
         expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format> [options]')
       end
@@ -68,7 +68,7 @@ module Dim
 
     context 'when invalid subcommand is passed' do
       it 'shall throw an error and print error message', doc_ref: ['Dim_CLI_exit'] do
-        Test.main("wrong")
+        Test.main('wrong')
         expect(Dim::ExitHelper.exit_code).to eq 1
         expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format> [options]')
       end

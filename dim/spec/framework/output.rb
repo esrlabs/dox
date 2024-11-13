@@ -35,7 +35,7 @@ class ThreadOut < IO
   end
 end
 
-STDOUT.sync = true
-STDERR.sync = true
-$stdout = ThreadOut.new(STDOUT, :stdout)
-$stderr = ThreadOut.new(STDERR, :stderr)
+$stdout.sync = true
+$stderr.sync = true
+$stdout = ThreadOut.new($stdout, :stdout)
+$stderr = ThreadOut.new($stderr, :stderr)

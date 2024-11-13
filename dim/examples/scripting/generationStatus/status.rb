@@ -14,7 +14,7 @@ puts "\nNumber requirements with (developer == CompanyName) and (outgoing refere
 reqs_company = reqs.select { |r| r.developer.include?('CompanyName') }
 mods.each do |m|
   reqs_company_module = reqs_company.select { |r| r.document == m }
-  reqs_matching = reqs_company_module.select { |r| r.verification_methods != ['none'] }
+  reqs_matching = reqs_company_module.reject { |r| r.verification_methods == ['none'] }
   puts "#{m}: #{reqs_matching.length} of #{reqs_company_module.length}"
-  puts reqs_matching.map { |r| "- #{r.id}" }
+  puts(reqs_matching.map { |r| "- #{r.id}" })
 end

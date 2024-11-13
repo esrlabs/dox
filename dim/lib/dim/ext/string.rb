@@ -12,7 +12,7 @@ class String
   end
 
   def cleanArray
-    cleanSplit.select { |s| !s.empty? }
+    cleanSplit.reject(&:empty?)
   end
 
   def cleanSplit
@@ -48,7 +48,7 @@ class String
   end
 
   def get_next_escape_token(pos)
-    ind = index(%r{<\s*(\/?)\s*html\s*>}, pos)
+    ind = index(%r{<\s*(/?)\s*html\s*>}, pos)
     return [:none, length - pos, -1] if ind.nil?
 
     type = Regexp.last_match(1).empty? ? :start : :end
@@ -59,9 +59,9 @@ class String
     str = ''
     search_pos = 0
     nested = 0
-    while true
+    loop do
       next_token, token_pos, after_token_pos = get_next_escape_token(search_pos)
-      if nested == 0
+      if nested.zero?
         str << self[search_pos, token_pos].escapeHtmlOutside
         nested = 1 if next_token == :start
       else

@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../../lib')
+$LOAD_PATH.unshift("#{File.dirname(__FILE__)}/../../lib")
 
 module Kernel
   alias __at_exit at_exit
@@ -12,7 +12,7 @@ module Kernel
 end
 
 require 'rspec/core/rake_task'
-SPEC_PATTERN = 'spec/**/*_spec.rb'
+SPEC_PATTERN = 'spec/**/*_spec.rb'.freeze
 
 namespace :test do
   desc 'Run specs'

@@ -10,7 +10,7 @@ module Dim
     end
 
     def document(f, name)
-      raw_html_name = ':raw-html:`' + name + '`'
+      raw_html_name = ":raw-html:`#{name}`"
       f.puts raw_html_name
       f.puts '=' * raw_html_name.length
       @lastHeadingLevel = 0
@@ -40,7 +40,7 @@ module Dim
     def handle_empty_value(value)
       return '' if value.empty?
 
-      ' ' + (value.is_a?(Array) ? value.join(', ') : value)
+      " #{value.is_a?(Array) ? value.join(', ') : value}"
     end
 
     def createMultiLanguageElement(r, name)
@@ -68,7 +68,7 @@ module Dim
           f.puts level2char(l) * str.length
         end
         f.puts ''
-        str = ':raw-html:`' + r.data['text'] + '`'
+        str = ":raw-html:`#{r.data['text']}`"
         f.puts str
         f.puts level2char(r.depth) * str.length
         @lastHeadingLevel = r.depth
@@ -80,7 +80,7 @@ module Dim
       text = createMultiLanguageElement(r, 'text')
       comment = createMultiLanguageElement(r, 'comment')
       refs = r.data['refs'].cleanUniqArray.select do |ref|
-        !@loader.requirements.has_key?(ref) || !@loader.requirements[ref].type.start_with?('heading')
+        !@loader.requirements.key?(ref) || !@loader.requirements[ref].type.start_with?('heading')
       end
       tags = r.data['tags'].cleanUniqString
       sources = r.data['sources'].cleanUniqString
@@ -127,7 +127,7 @@ module Dim
     end
 
     def index(f, category, origin, modules)
-      caption = category.capitalize + ' (' + origin + ')'
+      caption = "#{category.capitalize} (#{origin})"
       f.puts caption
       f.puts '=' * caption.length
       f.puts ''

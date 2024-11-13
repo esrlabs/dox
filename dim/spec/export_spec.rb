@@ -20,7 +20,7 @@ module Dim
 
       it 'shall merge a module which is split in several requirements files', doc_refs: ['Dim_export_documents'] do
         Test.main("export -i #{TEST_INPUT_DIR}/one_module_in_several_files/Config.yml -o #{TEST_OUTPUT_DIR} -f json")
-        j = JSON.load(File.read("#{TEST_OUTPUT_DIR}/TestModule/Requirements.json"))
+        j = JSON.parse(File.read("#{TEST_OUTPUT_DIR}/TestModule/Requirements.json"))
         expect(j.length).to eq 2 # number of entries
         expect(j.select { |e| e['document_name'] == 'TestModule' }.length).to eq 2
         expect(Dim::ExitHelper.exit_code).to eq 0
@@ -51,8 +51,8 @@ module Dim
       it 'shall print info message when silent option is set to false', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/language/module_ok.dim -o #{TEST_OUTPUT_DIR} -f json --silent")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).not_to include "Exporting..."
-        expect(@test_stdout).not_to include "Done."
+        expect(@test_stdout).not_to include 'Exporting...'
+        expect(@test_stdout).not_to include 'Done.'
       end
     end
 
@@ -89,7 +89,7 @@ module Dim
          doc_refs: ['Dim_export_json'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR}/new_dir -f json")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        j = JSON.load(File.read("#{TEST_OUTPUT_DIR}/new_dir/test_module_1/Requirements.json"))
+        j = JSON.parse(File.read("#{TEST_OUTPUT_DIR}/new_dir/test_module_1/Requirements.json"))
         expect(j.find { |e| e['id'] == 'test_id_1' } ['text']).to eq 'Another test req'
         expect(j.find { |e| e['id'] == 'test_id_1' } ['document_name']).to eq 'test_module_1'
         expect(j.find { |e| e['id'] == 'test_id_1' } ['originator']).to eq 'CompanyName'
@@ -123,7 +123,7 @@ module Dim
          doc_refs: %w[Dim_export_rst Dim_export_rstIndex] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR} -f rst")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        #noinspection RubyLiteralArrayInspection
+        # noinspection RubyLiteralArrayInspection
         ['index_001_software_companyname',
          'index_002_module_companyname',
          'index_003_module_xy_company',
@@ -168,7 +168,7 @@ module Dim
       end
 
       it 'shall only write to file system if data has been changed without logs when silent option given',
-        doc_refs: ['Dim_export_rstChange'] do
+         doc_refs: ['Dim_export_rstChange'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR} -f rst -s")
         expect(Dim::ExitHelper.exit_code).to eq 0
         expect(@test_stdout).not_to include 'Creating spec/test_output/mod09/Requirements.rst... done'
@@ -232,8 +232,8 @@ module Dim
             "export -i #{TEST_INPUT_DIR}/export_with_custom_attributes/Config.dim -o #{TEST_OUTPUT_DIR} -f json"
           )
           expect(Dim::ExitHelper.exit_code).to eq 0
-          expected = JSON.load(File.read("#{TEST_INPUT_DIR}/export_with_custom_attributes/output/Requirements.json"))
-          actual = JSON.load(File.read("#{TEST_OUTPUT_DIR}/test_module/Requirements.json"))
+          expected = JSON.parse(File.read("#{TEST_INPUT_DIR}/export_with_custom_attributes/output/Requirements.json"))
+          actual = JSON.parse(File.read("#{TEST_OUTPUT_DIR}/test_module/Requirements.json"))
 
           expect(expected.to_json).to eq(actual.to_json)
         end
@@ -361,27 +361,27 @@ module Dim
       it 'shall not raise an error', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_empty_requirements/module.dim -o #{TEST_OUTPUT_DIR} -f rst")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).not_to include "Creating"
+        expect(@test_stdout).not_to include 'Creating'
       end
     end
 
     context 'when file is already present in export folder' do
       before do
-        FileUtils.mkdir_p("./spec/test_output/sample_export/export_test")
+        FileUtils.mkdir_p('./spec/test_output/sample_export/export_test')
         FileUtils.cp(
-          "./spec/test_input/export_when_media_file_present/different_sample.txt",
-          "./spec/test_output/sample_export/export_test/sample.txt"
+          './spec/test_input/export_when_media_file_present/different_sample.txt',
+          './spec/test_output/sample_export/export_test/sample.txt'
         )
       end
 
       after do
-        FileUtils.remove_dir("./spec/test_output/sample_export")
+        FileUtils.remove_dir('./spec/test_output/sample_export')
       end
 
       it 'shall not copy the file', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_when_media_file_present/module.dim -o #{TEST_OUTPUT_DIR}/sample_export -f rst")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).to include "Copying"
+        expect(@test_stdout).to include 'Copying'
       end
     end
   end

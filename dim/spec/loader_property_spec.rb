@@ -14,7 +14,7 @@ module Dim
 
     context 'with non-allowed attribute value' do
       let(:err_msg) do
-        "Error: in properties.yaml: The properties file includes an invalid asil value " \
+        'Error: in properties.yaml: The properties file includes an invalid asil value ' \
         "'ASIL_Y' for module: test_module_3."
       end
 

@@ -14,7 +14,7 @@ module Dim
     def requirement(_f, r)
       vals = { 'id' => r.id, 'document_name' => r.document, 'originator' => r.origin }
 
-      @loader.all_attributes.keys.each do |k|
+      @loader.all_attributes.each_key do |k|
         next if k == 'test_setups'
 
         v = r.data[k]

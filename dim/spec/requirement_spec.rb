@@ -8,22 +8,22 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/module/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_document'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
-          end
+           doc_refs: ['Dim_ReqFiles_document'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
+        end
       end
 
       context 'when value string is empty' do
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/module/empty.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_document'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
-          end
+           doc_refs: ['Dim_ReqFiles_document'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
+        end
       end
 
       it 'shall default to the folder name of the requirements file', doc_refs: ['Dim_ReqFiles_document'] do
@@ -78,19 +78,19 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/notexist.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include 'module_non_existing.dim" in "enclosed" does not refer to any existing file'
-            expect(@test_stderr).to include filename
-          end
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include 'module_non_existing.dim" in "enclosed" does not refer to any existing file'
+          expect(@test_stderr).to include filename
+        end
       end
 
       context 'when string is empty' do
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/empty_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: \"enclosed\" must be a non-empty string or an array of non-empty strings"
@@ -101,7 +101,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/dotdot.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: '../enclosed/dotdot.dim' must not include '..'"
@@ -149,7 +149,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/metadata/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_metadata'] do
+           doc_refs: ['Dim_ReqFiles_metadata'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: metadata must be a string"
@@ -287,7 +287,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/text/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_text'] do
+           doc_refs: ['Dim_ReqFiles_text'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"text\" must be String not Array"
@@ -314,7 +314,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/vc/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_verificationCriteria'] do
+           doc_refs: ['Dim_ReqFiles_verificationCriteria'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"verification_criteria\" must be String not Array"
@@ -341,7 +341,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/feature/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_feature'] do
+           doc_refs: ['Dim_ReqFiles_feature'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"feature\" must be String not Array"
@@ -368,7 +368,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/cr/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_changeRequest'] do
+           doc_refs: ['Dim_ReqFiles_changeRequest'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"change_request\" must be String not Array"
@@ -684,13 +684,13 @@ module Dim
           let(:requirement) { loader.requirements['ID_1'] }
 
           it 'shall have test_setups and verification_methods set to none',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement.test_setups).to match_array ['none']
-              expect(requirement.data['test_setups']).to eq 'none'
+             doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
+            expect(requirement.test_setups).to match_array ['none']
+            expect(requirement.data['test_setups']).to eq 'none'
 
-              expect(requirement.verification_methods).to match_array ['none']
-              expect(requirement.data['verification_methods']).to eq 'none'
-            end
+            expect(requirement.verification_methods).to match_array ['none']
+            expect(requirement.data['verification_methods']).to eq 'none'
+          end
         end
 
         context 'when verification_methods present in the Dim file while test_setups is missing' do
@@ -701,59 +701,59 @@ module Dim
           let(:expected_array) { %w[off_target on_target] }
 
           it 'shall return test_setups same as verification_methods',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement_2.test_setups).to match_array expected_array
-              expect(requirement_2.verification_methods).to match_array expected_array
+             doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
+            expect(requirement_2.test_setups).to match_array expected_array
+            expect(requirement_2.verification_methods).to match_array expected_array
 
-              expect(requirement_3.test_setups).to match_array ['off_target']
-              expect(requirement_3.verification_methods).to match_array ['off_target']
+            expect(requirement_3.test_setups).to match_array ['off_target']
+            expect(requirement_3.verification_methods).to match_array ['off_target']
 
-              expect(requirement_4.test_setups).to match_array expected_array
-              expect(requirement_4.verification_methods).to match_array expected_array
+            expect(requirement_4.test_setups).to match_array expected_array
+            expect(requirement_4.verification_methods).to match_array expected_array
 
-              expect(requirement_2.data['test_setups']).to eq 'off_target, on_target'
-              expect(requirement_2.data['verification_methods']).to eq 'off_target, on_target'
+            expect(requirement_2.data['test_setups']).to eq 'off_target, on_target'
+            expect(requirement_2.data['verification_methods']).to eq 'off_target, on_target'
 
-              expect(requirement_3.data['test_setups']).to eq 'off_target'
-              expect(requirement_3.data['verification_methods']).to eq 'off_target'
+            expect(requirement_3.data['test_setups']).to eq 'off_target'
+            expect(requirement_3.data['verification_methods']).to eq 'off_target'
 
-              expect(requirement_4.data['test_setups']).to eq 'off_target, on_target'
-              expect(requirement_4.data['verification_methods']).to eq 'off_target, on_target'
-            end
+            expect(requirement_4.data['test_setups']).to eq 'off_target, on_target'
+            expect(requirement_4.data['verification_methods']).to eq 'off_target, on_target'
+          end
         end
 
         context 'when verification_methods is missing from Dim file and test_setups are present' do
           let(:requirement) { loader.requirements['ID_5'] }
 
           it 'shall have values from test_setups added to verification_methods',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement.test_setups).to match_array %w[manual off_target on_target]
-              expect(requirement.verification_methods).to match_array %w[manual off_target on_target]
+             doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
+            expect(requirement.test_setups).to match_array %w[manual off_target on_target]
+            expect(requirement.verification_methods).to match_array %w[manual off_target on_target]
 
-              expect(requirement.data['test_setups']).to eq 'off_target, on_target, manual'
-              expect(requirement.data['verification_methods']).to eq 'off_target, on_target, manual'
-            end
-        end 
+            expect(requirement.data['test_setups']).to eq 'off_target, on_target, manual'
+            expect(requirement.data['verification_methods']).to eq 'off_target, on_target, manual'
+          end
+        end
       end
 
-      context 'when verification_methods contains none and test_setups is present in the Dim file'  do
+      context 'when verification_methods contains none and test_setups is present in the Dim file' do
         it 'shall throw an error with the meaningful error message',
-          doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-            Test.main("check -i spec/test_input/verification_methods/none_verification_methods.dim")
+           doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
+          Test.main('check -i spec/test_input/verification_methods/none_verification_methods.dim')
 
-            expect(Dim::ExitHelper.exit_code).to be 1
-            expect(@test_stderr).to include("test_setups for \"ID_1\" can't include 'none' along with off_target")
-          end
+          expect(Dim::ExitHelper.exit_code).to be 1
+          expect(@test_stderr).to include("test_setups for \"ID_1\" can't include 'none' along with off_target")
+        end
       end
 
       context 'when verification_methods are present in Dim and test_setups is none' do
         it 'shall throw an error with a meaningful error message',
-          doc_refs: %w[Dim_ReqFiles_verificationMethods_backward Dim_ReqFiles_verificationMethods] do
-            Test.main("check -i spec/test_input/verification_methods/none_test_setups.dim")
+           doc_refs: %w[Dim_ReqFiles_verificationMethods_backward Dim_ReqFiles_verificationMethods] do
+          Test.main('check -i spec/test_input/verification_methods/none_test_setups.dim')
 
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include("verification_methods or test_setups for \"ID_1\" can't include 'none' along with off_target")
-          end
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include("verification_methods or test_setups for \"ID_1\" can't include 'none' along with off_target")
+        end
       end
 
       context 'when verification_methods and test_setups in Dim contains none' do
@@ -1062,7 +1062,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/text_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"text_german\" must be String not Array"
@@ -1104,7 +1104,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/vc_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"verification_criteria_german\" must be String not Array"
@@ -1146,7 +1146,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/comment_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"comment_german\" must be String not Array"

@@ -62,7 +62,7 @@ module Dim
         Test.main("check -i #{filename}")
         expect(Dim::ExitHelper.exit_code).to be 1
         expect(@test_stderr).to include "each hash in 'Config' array must have key/value pairs for files, category, originator, disable_naming_convention_check."
-        expect(@test_stderr).to include "#{filename}"
+        expect(@test_stderr).to include filename.to_s
       end
     end
 
@@ -159,7 +159,7 @@ module Dim
     end
 
     context 'when absolute path is given' do
-      let(:filepath) { "#{TEST_INPUT_DIR}/invalid_input/absolute_file_path.dim"}
+      let(:filepath) { "#{TEST_INPUT_DIR}/invalid_input/absolute_file_path.dim" }
       let(:pattern) { '/modules/test_module_1.dim' }
 
       it 'shall throw an error and print error message', doc_refs: ['Dim_ConfigFiles_Files'] do
@@ -211,41 +211,45 @@ module Dim
 
       context 'with dependencies within the categories even if circularly referenced' do
         it 'does not error out even if there is circular dependency within different levels',
-            doc_refs: %w[Dim_api_upstreamRefs Dim_api_downstreamRefs Dim_loading_checkCyclic] do
-              loader = Dim::Loader.new
-              loader.load(file: "#{TEST_INPUT_DIR}/backward_reference_within_category/config.dim")
+           doc_refs: %w[Dim_api_upstreamRefs Dim_api_downstreamRefs Dim_loading_checkCyclic] do
+          loader = Dim::Loader.new
+          loader.load(file: "#{TEST_INPUT_DIR}/backward_reference_within_category/config.dim")
 
-              expect(Dim::ExitHelper.exit_code).to eq 0
-              expect(loader.requirements['SRS_requirement_1'].upstreamRefs).to match_array %w[SYS_requirement1 SRS_requirement_2]
-              expect(loader.requirements['SRS_requirement_1'].downstreamRefs).to match_array ['SWA_requirement1']
+          expect(Dim::ExitHelper.exit_code).to eq 0
+          expect(loader.requirements['SRS_requirement_1'].upstreamRefs).to match_array %w[SYS_requirement1
+                                                                                          SRS_requirement_2]
+          expect(loader.requirements['SRS_requirement_1'].downstreamRefs).to match_array ['SWA_requirement1']
 
-              expect(loader.requirements['SRS_requirement_2'].upstreamRefs).to match_array []
-              expect(loader.requirements['SRS_requirement_2'].downstreamRefs).to match_array %w[SRS_requirement_1 SWA_requirement1]
+          expect(loader.requirements['SRS_requirement_2'].upstreamRefs).to match_array []
+          expect(loader.requirements['SRS_requirement_2'].downstreamRefs).to match_array %w[SRS_requirement_1
+                                                                                            SWA_requirement1]
 
-              expect(loader.requirements['SWA_requirement1'].upstreamRefs).to match_array %w[SRS_requirement_1 SRS_requirement_2 SYS_requirement1]
-              expect(loader.requirements['SWA_requirement1'].downstreamRefs).to match_array []
+          expect(loader.requirements['SWA_requirement1'].upstreamRefs).to match_array %w[SRS_requirement_1
+                                                                                         SRS_requirement_2 SYS_requirement1]
+          expect(loader.requirements['SWA_requirement1'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['SWA_requirement2'].upstreamRefs).to match_array []
-              expect(loader.requirements['SWA_requirement2'].downstreamRefs).to match_array []
+          expect(loader.requirements['SWA_requirement2'].upstreamRefs).to match_array []
+          expect(loader.requirements['SWA_requirement2'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['SMD_requirement1'].upstreamRefs).to match_array []
-              expect(loader.requirements['SMD_requirement1'].downstreamRefs).to match_array []
+          expect(loader.requirements['SMD_requirement1'].upstreamRefs).to match_array []
+          expect(loader.requirements['SMD_requirement1'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['SMD_requirement2'].upstreamRefs).to match_array []
-              expect(loader.requirements['SMD_requirement2'].downstreamRefs).to match_array []
+          expect(loader.requirements['SMD_requirement2'].upstreamRefs).to match_array []
+          expect(loader.requirements['SMD_requirement2'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['IN_requirement1'].upstreamRefs).to match_array []
-              expect(loader.requirements['IN_requirement1'].downstreamRefs).to match_array []
+          expect(loader.requirements['IN_requirement1'].upstreamRefs).to match_array []
+          expect(loader.requirements['IN_requirement1'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['IN_requirement2'].upstreamRefs).to match_array []
-              expect(loader.requirements['IN_requirement2'].downstreamRefs).to match_array []
+          expect(loader.requirements['IN_requirement2'].upstreamRefs).to match_array []
+          expect(loader.requirements['IN_requirement2'].downstreamRefs).to match_array []
 
-              expect(loader.requirements['SYS_requirement1'].upstreamRefs).to match_array []
-              expect(loader.requirements['SYS_requirement1'].downstreamRefs).to match_array %w[SRS_requirement_1 SWA_requirement1]
+          expect(loader.requirements['SYS_requirement1'].upstreamRefs).to match_array []
+          expect(loader.requirements['SYS_requirement1'].downstreamRefs).to match_array %w[SRS_requirement_1
+                                                                                           SWA_requirement1]
 
-              expect(loader.requirements['SYS_requirement2'].upstreamRefs).to match_array []
-              expect(loader.requirements['SYS_requirement2'].downstreamRefs).to match_array []
-            end
+          expect(loader.requirements['SYS_requirement2'].upstreamRefs).to match_array []
+          expect(loader.requirements['SYS_requirement2'].downstreamRefs).to match_array []
+        end
       end
 
       context 'with dependencies within the same categories' do
@@ -266,7 +270,9 @@ module Dim
     end
 
     context 'when software files mentioned' do
-      let(:warning) { "Warning: disable_naming_convention_check attribute will only take effect when category is software" }
+      let(:warning) do
+        'Warning: disable_naming_convention_check attribute will only take effect when category is software'
+      end
 
       context 'when category is software' do
         it 'does not put a warning or error out the execution', doc_refs: ['Dim_ConfigFiles_disableNameCheck'] do

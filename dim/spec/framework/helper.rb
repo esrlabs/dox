@@ -16,8 +16,8 @@ $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/../../lib")
 require 'dim/dimmain'
 require_relative './output'
 
-TEST_OUTPUT_DIR = 'spec/test_output'
-TEST_INPUT_DIR  = 'spec/test_input'
+TEST_OUTPUT_DIR = 'spec/test_output'.freeze
+TEST_INPUT_DIR  = 'spec/test_input'.freeze
 
 module Dim
   module Test
@@ -32,12 +32,10 @@ module Dim
     end
 
     def self.execute(&block)
-      begin
-        $test_exception = nil
-        yield block
-      rescue Exception => e
-        $test_exception = e
-      end
+      $test_exception = nil
+      yield block
+    rescue Exception => e
+      $test_exception = e
     end
 
     def self.clean_testdata

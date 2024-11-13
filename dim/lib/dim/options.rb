@@ -33,7 +33,7 @@ module Dim
           Dim::ExitHelper.exit(code: 0, msg: Dim::Ver.sion)
         end
         opts.on('-l', '--license', 'prints license') do
-          Dim::ExitHelper.exit(code: 0, msg: File.read(File.dirname(__FILE__) + '/../../license.txt'))
+          Dim::ExitHelper.exit(code: 0, msg: File.read("#{File.dirname(__FILE__)}/../../license.txt"))
         end
 
         opts.separator "\nFor check, export, stats, format:"
@@ -86,7 +86,10 @@ module Dim
       Dim::ExitHelper.exit(code: 1, msg: op) if args.empty? || !SUBCOMMANDS.keys.include?(args[0])
       OPTIONS[:subcommand] = args[0]
 
-      Dim::ExitHelper.exit(code: 1, msg: 'no input file specified.') if OPTIONS[:input].nil? && OPTIONS[:output_format] != 'stdout'
+      if OPTIONS[:input].nil? && OPTIONS[:output_format] != 'stdout'
+        Dim::ExitHelper.exit(code: 1,
+                             msg: 'no input file specified.')
+      end
 
       if OPTIONS[:subcommand] == 'export'
         Dim::ExitHelper.exit(code: 1, msg: 'specify output folder') if OPTIONS[:folder].nil?
@@ -104,13 +107,13 @@ module Dim
         OPTIONS[:allow_missing] = true
       end
 
-      if OPTIONS[:subcommand] == 'format'
-        OPTIONS[:allow_missing] = true
+      return unless OPTIONS[:subcommand] == 'format'
 
-        return if %w[in-place extra check-only stdout].include?(OPTIONS[:output_format])
+      OPTIONS[:allow_missing] = true
 
-        Dim::ExitHelper.exit(code: 1, msg: 'output-format must be in-place, extra or check-only')
-      end
+      return if %w[in-place extra check-only stdout].include?(OPTIONS[:output_format])
+
+      Dim::ExitHelper.exit(code: 1, msg: 'output-format must be in-place, extra or check-only')
     end
   end
 end
