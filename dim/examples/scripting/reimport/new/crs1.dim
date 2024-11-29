@@ -1,4 +1,4 @@
-module: CRS1
+document: CRS1
 
 CRS1_0:                     h1 Changed heading
 
@@ -16,6 +16,6 @@ CRS1_2:
 CRS1_3:
   text:                     review_status must not be added.
   tags: srs
-  
+
 CRS1_5:
   text:                     This requirement is new.

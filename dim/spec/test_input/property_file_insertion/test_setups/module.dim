@@ -1,3 +1,3 @@
-module: test_setups_insertion
+document: test_setups_insertion
 
 ID_empty_test_setups:

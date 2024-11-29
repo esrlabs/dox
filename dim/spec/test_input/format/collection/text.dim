@@ -1,4 +1,4 @@
-module: text_test
+document: text_test
 
 TEXT_R0:
     text:
@@ -54,7 +54,7 @@ TEXT_R2a:
 
 TEXT_R2b:
     text: "  "
-    
+
 TEXT_R2c:
     text: " \n "
 

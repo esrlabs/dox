@@ -1,4 +1,4 @@
-module: test_module_2
+document: test_module_2
 
 test_module_2-0000-0001:
   text: req2

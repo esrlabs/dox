@@ -1,4 +1,4 @@
-module: enclosed
+document: enclosed
 
 enclosed: data/a.txt
 

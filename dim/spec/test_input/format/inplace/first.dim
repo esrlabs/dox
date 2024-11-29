@@ -1,4 +1,4 @@
 R0:
-          text: INPLACE  
+          text: INPLACE
 
-module: abc
+document: abc

@@ -1,4 +1,4 @@
-module: valid_test_1
+document: valid_test_1
 
 ESR-0010-4138:
   text: req2

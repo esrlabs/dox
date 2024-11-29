@@ -1,4 +1,4 @@
-module: status_test
+document: status_test
 
 STATUS_R1:
     status:   valid

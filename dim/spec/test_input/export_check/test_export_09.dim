@@ -1,4 +1,4 @@
-module: mod09
+document: mod09
 
 Test_Export_09:
     test_setups: none

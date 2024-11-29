@@ -1,4 +1,4 @@
-module: test_export_12
+document: test_export_12
 
 export_1:
   text: Another test req

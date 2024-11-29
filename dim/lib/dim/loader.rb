@@ -262,35 +262,18 @@ module Dim
 
       unless reqs.is_a?(Hash)
         Dim::ExitHelper.exit(code: 1, filename: filename,
-                             msg: 'top level must be a hash with keys "module", "enclosed", "metadata" and/or unique ids'
+                             msg: 'top level must be a hash with keys "document", "enclosed", "metadata" and/or unique ids'
         )
       end
 
-      # TODO: Remove module backward compatibility in future version
-      if reqs.key?('document') && reqs.key?('module')
-        Dim::ExitHelper.exit(
-          code: 1,
-          filename: filename,
-          msg: 'module and document found in the file; please rename module to document'
-        )
-      end
-
-      if reqs.key?('document')
-        if !reqs['document'].is_a?(String) || reqs['document'].empty?
-          Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'document must be a non-empty string')
-        end
-        document = reqs['document']
-        # TODO: Remove module backward compatibility in future version
-        reqs['module'] = document
-      elsif reqs.key?('module')
-        if !(reqs['module'].is_a? String) || reqs['module'].empty?
-          Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'module name must be a non-empty string')
-        end
-        document = reqs['module']
-        reqs['document'] = document
-      else
+      if !reqs.key?('document')
         Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'Document name is missing; please add document name')
       end
+
+      if !reqs['document'].is_a?(String) || reqs['document'].empty?
+        Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'document name must be a non-empty string')
+      end
+      document = reqs['document']
 
       validate_srs_name(document, disable_naming_convention_check, category, filename)
 

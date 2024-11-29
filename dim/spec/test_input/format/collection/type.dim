@@ -1,4 +1,4 @@
-module: type_test
+document: type_test
 
 TYPE_R1:
     type:   heading_1

@@ -1,4 +1,4 @@
-module: esr_input
+document: esr_input
 
 IN_requirement1:
   text: sample text

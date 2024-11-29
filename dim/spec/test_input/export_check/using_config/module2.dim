@@ -1,4 +1,4 @@
-module: test_module_2
+document: test_module_2
 
 Test_Export_11:
     developer:

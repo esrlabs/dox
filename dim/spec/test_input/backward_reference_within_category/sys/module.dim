@@ -1,4 +1,4 @@
-module: esr_sys
+document: esr_sys
 
 SYS_requirement1:
   text: sample text

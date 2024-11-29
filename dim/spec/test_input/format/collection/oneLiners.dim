@@ -1,4 +1,4 @@
-module: one_liners
+document: one_liners
 
 REQ_0a: info In total 150 chars in one-liner......................................................................................
 REQ_0b:
@@ -24,4 +24,4 @@ REQ_1b: |
 
 REQ_2a:
     type: heading_0
-    text: MyHeading 
+    text: MyHeading

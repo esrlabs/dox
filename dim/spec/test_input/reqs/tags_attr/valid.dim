@@ -1,7 +1,7 @@
-module: Name1
+document: Name1
 
 id_v1:
-    tags: memory 
+    tags: memory
 
 id_v2:
     tags: functional_safety_mechanism, cybersecurity_control, confidentiality, integrity, availability, authenticity, authority,

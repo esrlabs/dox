@@ -1,10 +1,10 @@
-module: Name1
+document: Name1
 
 id_draft:
-  status: draft 
+  status: draft
 
 id_valid:
-  status: valid 
+  status: valid
 
 id_invalid:
   status: invalid

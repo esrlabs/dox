@@ -1,4 +1,4 @@
-module: SRS_moduleA
+document: SRS_moduleA
 
 SRS_:
   text: sample text

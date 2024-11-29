@@ -1,4 +1,4 @@
-module: invalid_format_style
+document: invalid_format_style
 
 id_1:
   text: when invalid format style is given for the attribute

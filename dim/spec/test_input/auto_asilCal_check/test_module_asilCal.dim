@@ -1,4 +1,4 @@
-module: test_module_asilCal
+document: test_module_asilCal
 
 test_id_asilCalNotSet:
   asil: not_set

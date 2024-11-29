@@ -1,4 +1,4 @@
-module: Windows1250
+document: Windows1250
 
 test_id_1:
-    text: µC shall trigger ä if µP reaches temperature x°.
+    text: ÂµC shall trigger Ã¤ if ÂµP reaches temperature xÂ°.

@@ -1,4 +1,4 @@
-module: TestModule
+document: TestModule
 
 ID2:
   text: great again.

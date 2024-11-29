@@ -1,10 +1,10 @@
-module: Name1
+document: Name1
 
 id_v1:
-    cal: CAL_4 
+    cal: CAL_4
 
 id_v2:
-    cal: QM 
+    cal: QM
 
 id_v3:
     cal: not_set

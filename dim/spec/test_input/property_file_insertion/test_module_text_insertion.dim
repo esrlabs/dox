@@ -1,4 +1,4 @@
-module: test_module_text_insertion
+document: test_module_text_insertion
 
 test_module_text_insertion_text:
   text: test text

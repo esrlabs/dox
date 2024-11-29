@@ -1,4 +1,4 @@
-module: nb_space
+document: nb_space
 
 Has_Non_Breaking_Space:
   text:  ABC    ABC    

@@ -1,4 +1,4 @@
-module: invalid_enclosed
+document: invalid_enclosed
 
 enclosed:
   - /module/valid_test_1.dim

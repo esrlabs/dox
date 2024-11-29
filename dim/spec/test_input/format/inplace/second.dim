@@ -1,4 +1,4 @@
-module: abc
+document: abc
 R1:
     type: heading_1
     text: Soso

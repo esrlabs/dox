@@ -1,4 +1,4 @@
-module: test/module
+document: test/module
 
 test_id_1:
   type: heading_1

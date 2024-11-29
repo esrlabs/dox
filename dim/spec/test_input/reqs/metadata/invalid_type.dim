@@ -1,4 +1,4 @@
-module: metadata
+document: metadata
 metadata:
     - abc
     - def

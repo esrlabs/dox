@@ -1,4 +1,4 @@
-module: test_module_3
+document: test_module_3
 
 test_id_10:
   text: test req of dim file without module name

@@ -1,9 +1,9 @@
-module: tester
+document: tester
 
 TESTER_R1:
     tester:
 TESTER_R2:
-    tester:  auto  
+    tester:  auto
 TESTER_R3:
     tester: you
 TESTER_R4:

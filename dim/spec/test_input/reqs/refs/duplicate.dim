@@ -1,4 +1,4 @@
-module: Name1
+document: Name1
 
 id_d:
     refs: id_v3   ,id_v2, id_v3, id_v2

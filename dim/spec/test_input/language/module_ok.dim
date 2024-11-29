@@ -1,4 +1,4 @@
-module: language
+document: language
 
 ESR_Test_1:
     text: |

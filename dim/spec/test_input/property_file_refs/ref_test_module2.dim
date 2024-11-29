@@ -1,4 +1,4 @@
-module: ref_test_module2
+document: ref_test_module2
 
 ref_test_module2_req1:
   type: requirement

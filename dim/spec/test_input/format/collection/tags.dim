@@ -1,4 +1,4 @@
-module: tag_test
+document: tag_test
 
 TAGS_R1:
     tags:

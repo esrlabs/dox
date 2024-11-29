@@ -1,4 +1,4 @@
-module: Name1
+document: Name1
 
 id_duplicate:
     test_setups: off_target, on_target, off_target

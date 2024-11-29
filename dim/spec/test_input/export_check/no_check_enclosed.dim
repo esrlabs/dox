@@ -1,4 +1,4 @@
-module: no_enclosed_check
+document: no_enclosed_check
 
 
 no_check_1:

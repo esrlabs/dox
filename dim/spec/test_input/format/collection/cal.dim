@@ -1,4 +1,4 @@
-module: cal_test
+document: cal_test
 
 CAL_R1:
     cal: CAL_1

@@ -1,4 +1,4 @@
-module: Test_Test_Core
+document: Test_Test_Core
 
 RESOLVE_001:
   text: Test req

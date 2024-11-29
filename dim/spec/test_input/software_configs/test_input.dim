@@ -1,4 +1,4 @@
-module: moduleA
+document: moduleA
 
 ESR-0001:
   text: sample_text

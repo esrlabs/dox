@@ -1,4 +1,4 @@
-module: ISO8859-1
+document: ISO8859-1
 
 test_id_1:
-    text: µC: shall trigger ä if µP reaches temperature x°.
+    text: ÂµC: shall trigger Ã¤ if ÂµP reaches temperature xÂ°.

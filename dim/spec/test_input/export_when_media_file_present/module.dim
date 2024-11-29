@@ -1,4 +1,4 @@
-module: export_test
+document: export_test
 
 enclosed:
   - sample.txt

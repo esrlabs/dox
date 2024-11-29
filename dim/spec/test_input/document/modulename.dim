@@ -1,4 +1,4 @@
-module: ABC
+document: ABC
 
 ID_1:
   text: document test

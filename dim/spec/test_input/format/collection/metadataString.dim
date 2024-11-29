@@ -1,4 +1,4 @@
-  module: metadata_string
+  document: metadata_string
 
   metadata: >
             [Version 1.0] LAH xy

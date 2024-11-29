@@ -1,4 +1,4 @@
-module: SRS_missing-feature
+document: SRS_missing-feature
 
 SRS__aspect:
   text: sample text.

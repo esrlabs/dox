@@ -1,4 +1,4 @@
-module: mod08
+document: mod08
 
 Test_Export_08:
     test_setups: none

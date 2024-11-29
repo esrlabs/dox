@@ -1,4 +1,4 @@
-module: Software_1
+document: Software_1
 
 SRS_Spec_Main:
   refs:  SRS_module_1, SRS_module_2

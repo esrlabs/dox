@@ -64,20 +64,12 @@ module Dim
       end
     end
 
-    context 'loading a dim file with document and module' do
-      it 'shall exit and throw meaningful error message', doc_refs: ['Dim_loading_document'] do
-        Test.main("check -i #{TEST_INPUT_DIR}/document/document_and_modulename.dim")
-        expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include('module and document found in the file; please rename module to document')
-      end
-    end
-
     context 'when loading dim file with a empty document' do
       it 'shall throw an error with meaningful error message', doc_refs: ['Dim_loading_document'] do
         Test.main("check -i #{TEST_INPUT_DIR}/document/empty_document.dim")
 
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include 'document must be a non-empty string'
+        expect(@test_stderr).to include 'document name must be a non-empty string'
       end
     end
 

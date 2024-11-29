@@ -1,4 +1,4 @@
-module: yaml_syntax_invalid_char
+document: yaml_syntax_invalid_char
 
 ESR-0010-4139:
   text: req1

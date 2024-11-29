@@ -1,4 +1,4 @@
-module: moduleA
+document: moduleA
 
 feature#1_aspect#2:
   text: sample text

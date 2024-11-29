@@ -1,4 +1,4 @@
-module: mod02
+document: mod02
 
 Test_Export_02:
     tester: X

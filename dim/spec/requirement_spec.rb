@@ -3,48 +3,46 @@ require_relative 'framework/helper'
 # rubocop:disable Metric/BlockLength, Layout/LineLength
 module Dim
   describe 'Requirements file attribute' do
-    context 'module' do
+    context 'document' do
       context 'when value is no string' do
-        let(:filename) { "#{TEST_INPUT_DIR}/reqs/module/invalid_type.dim" }
+        let(:filename) { "#{TEST_INPUT_DIR}/reqs/document/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
           doc_refs: ['Dim_ReqFiles_document'] do
             Test.main("check -i #{filename}")
             expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
+            expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
           end
       end
 
       context 'when value string is empty' do
-        let(:filename) { "#{TEST_INPUT_DIR}/reqs/module/empty.dim" }
+        let(:filename) { "#{TEST_INPUT_DIR}/reqs/document/empty.dim" }
 
         it 'shall throw an error and print a meaningful error message',
           doc_refs: ['Dim_ReqFiles_document'] do
             Test.main("check -i #{filename}")
             expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: module name must be a non-empty string"
+            expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
           end
       end
 
       it 'shall default to the folder name of the requirements file', doc_refs: ['Dim_ReqFiles_document'] do
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/module/default.dim")
-        expect(loader.requirements['ID_0'].moduleName).to eq('module')
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/document/default.dim")
         expect(loader.requirements['ID_0'].document).to eq('module')
         expect(Dim::ExitHelper.exit_code).to eq 0
       end
 
       it 'shall be non-unique', doc_refs: ['Dim_ReqFiles_document'] do
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/module/config.dim")
-        expect(loader.requirements['ID_1'].moduleName).to eq('Name1')
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/document/config.dim")
         expect(loader.requirements['ID_1'].document).to eq('Name1')
         expect(loader.requirements['ID_2'].document).to eq('Name1')
         expect(Dim::ExitHelper.exit_code).to eq 0
       end
 
-      context 'when module is missing' do
-        let(:filename) { "#{TEST_INPUT_DIR}/reqs/module/without_module.dim" }
+      context 'when document is missing' do
+        let(:filename) { "#{TEST_INPUT_DIR}/reqs/document/without_module.dim" }
 
         it 'shall throw an error', doc_refs: ['Dim_ReqFiles_MissingDocument'] do
           Test.main("check -i #{filename}")
@@ -733,7 +731,7 @@ module Dim
               expect(requirement.data['test_setups']).to eq 'off_target, on_target, manual'
               expect(requirement.data['verification_methods']).to eq 'off_target, on_target, manual'
             end
-        end 
+        end
       end
 
       context 'when verification_methods contains none and test_setups is present in the Dim file'  do

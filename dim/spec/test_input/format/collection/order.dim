@@ -1,4 +1,4 @@
-module: ordered
+document: ordered
 
 enclosed:
     - order.dim

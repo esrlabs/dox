@@ -1,6 +1,6 @@
-module: Name1
+document: Name1
 
 id_v:
     miscellaneous:
         - Invalid
-        - Type 
+        - Type

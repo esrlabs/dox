@@ -1,4 +1,4 @@
-module: nested_html
+document: nested_html
 
 No_Html:
   text: "'x'<b>A</b>'x'<b>B</b>'x'"

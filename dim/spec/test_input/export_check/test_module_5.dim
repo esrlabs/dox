@@ -1,4 +1,4 @@
-module: test_module_5
+document: test_module_5
 
 test_5_c1a:
     text: dummy

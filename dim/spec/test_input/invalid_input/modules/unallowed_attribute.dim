@@ -1,4 +1,4 @@
-module: test_module
+document: test_module
 
 test_id_1:
   text: First test requirement

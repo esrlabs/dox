@@ -1,7 +1,7 @@
-module: Name1
+document: Name1
 
 id_v1:
-    tester: Hallo 
+    tester: Hallo
 
 id_v2:
     tester:

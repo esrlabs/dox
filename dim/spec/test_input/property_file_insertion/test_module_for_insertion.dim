@@ -1,4 +1,4 @@
-module: test_module_for_insertion
+document: test_module_for_insertion
 
 test_module_for_insertion_empty:
 

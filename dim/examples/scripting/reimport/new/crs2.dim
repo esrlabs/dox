@@ -1,4 +1,4 @@
-module: CRS2
+document: CRS2
 
 CRS2_1:
   text:                     Only this text, nothing else changes.

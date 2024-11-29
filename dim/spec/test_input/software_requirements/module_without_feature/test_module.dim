@@ -1,4 +1,4 @@
-module: SRSFeature
+document: SRSFeature
 
 SRS_req_asp:
   text: sample text

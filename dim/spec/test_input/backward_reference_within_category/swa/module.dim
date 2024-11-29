@@ -1,4 +1,4 @@
-module: esr_swa
+document: esr_swa
 
 SWA_requirement1:
   text: sample text

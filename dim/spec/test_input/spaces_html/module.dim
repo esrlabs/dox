@@ -1,4 +1,4 @@
-module: spaces_html
+document: spaces_html
 
 Spaces_NoHtml_1:
   text: " x x "

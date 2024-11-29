@@ -1,4 +1,4 @@
-module: test_verification_methods
+document: test_verification_methods
 
 ID_1:
   verification_methods: off_target

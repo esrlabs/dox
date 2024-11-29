@@ -1,4 +1,4 @@
-module: invalid_value
+document: invalid_value
 Files:
   CompanyName:
     files:

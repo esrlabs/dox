@@ -1,4 +1,4 @@
-module: comment_lang
+document: comment_lang
 ESR_Test_1:
     comment: |
           juhu

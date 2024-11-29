@@ -1,4 +1,4 @@
-module: ABC123
+document: ABC123
 
 SRS_A_1:
   text: bla

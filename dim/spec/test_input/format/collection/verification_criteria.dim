@@ -1,4 +1,4 @@
-module: verification_test
+document: verification_test
 
 VC_R0:
     verification_criteria:

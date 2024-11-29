@@ -1,4 +1,4 @@
-module: SRS_esr
+document: SRS_esr
 
 SRS_req_3:
   text: sample text

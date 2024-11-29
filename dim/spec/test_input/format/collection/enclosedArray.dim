@@ -1,4 +1,4 @@
-module: enclosed_array
+document: enclosed_array
 
 enclosed:
     -    enclosedString.dim

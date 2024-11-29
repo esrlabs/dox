@@ -1,4 +1,4 @@
-module: empty_type
+document: empty_type
 
 ID_T1:
     type:

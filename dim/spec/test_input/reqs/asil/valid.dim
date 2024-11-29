@@ -1,10 +1,10 @@
-module: Name1
+document: Name1
 
 id_v1:
-    asil: QM 
+    asil: QM
 
 id_v2:
-    asil: QM(A) 
+    asil: QM(A)
 
 id_v3:
     asil: ASIL_D

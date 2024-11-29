@@ -6,7 +6,7 @@ require_relative 'ext/string'
 
 module Dim
   class Requirement
-    attr_accessor :data, :moduleName, :document, :depth, :id, :origin, :loader, :existingRefs, :backwardRefs, :filename,
+    attr_accessor :data, :document, :depth, :id, :origin, :loader, :existingRefs, :backwardRefs, :filename,
                   :category, :line_number, :all_attributes, :upstreamRefs, :downstreamRefs, :category_level
 
     # rubocop:disable Layout/LineLength, Layout/HashAlignment
@@ -82,7 +82,6 @@ module Dim
 
     def initialize(id, document, filename, attr, origin, loader, category, line_number, all_attributes)
       @id = id
-      @moduleName = document
       @document = document
       @filename = filename
       @data = attr

@@ -1,4 +1,4 @@
-module: SRS_moduleA
+document: SRS_moduleA
 
 feature-1_aspect-1:
   text: sample text

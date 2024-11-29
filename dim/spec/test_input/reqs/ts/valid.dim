@@ -1,7 +1,7 @@
-module: Name1
+document: Name1
 
 id_v1:
-    test_setups: none 
+    test_setups: none
 
 id_v2:
     test_setups: off_target, on_target, manual

@@ -1,4 +1,4 @@
-module: test
+document: test
 
 test_id_1:
   text_german:

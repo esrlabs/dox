@@ -1,4 +1,4 @@
-module: language
+document: language
 
 LANGUAGE_1:
     comment: c
@@ -21,6 +21,6 @@ LANGUAGE_6:
 
 LANGUAGE_7:
     verification_criteria_blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: x x x x x x x x x x x x x x x
-    
+
 LANGUAGE_8:
     verification_criteria_blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x

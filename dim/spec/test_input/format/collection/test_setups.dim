@@ -1,4 +1,4 @@
-module: test_setup
+document: test_setup
 
 TS_R1:
 TS_R2:

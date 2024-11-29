@@ -1,4 +1,4 @@
-module: test_module_1
+document: test_module_1
 
 test_id_1:
   text: Another test req

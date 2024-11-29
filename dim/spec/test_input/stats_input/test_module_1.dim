@@ -1,4 +1,4 @@
-module: test_module_1
+document: test_module_1
 
 test_id_1:
   text: First Test Requirement
@@ -46,4 +46,3 @@ test_id_9:
   text: Ninth Test Requirement
   review_status: accepted
   status: valid
-  

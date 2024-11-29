@@ -1,4 +1,4 @@
-module: test2
+document: test2
 
 module_r:
   type: requirement

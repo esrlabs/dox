@@ -1,4 +1,4 @@
-module: esr_module
+document: esr_module
 
 SMD_requirement1:
   text: sample text

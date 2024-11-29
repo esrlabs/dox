@@ -1,4 +1,4 @@
-module: vc_lang
+document: vc_lang
 
 ESR_Test_1:
     verification_criteria: |

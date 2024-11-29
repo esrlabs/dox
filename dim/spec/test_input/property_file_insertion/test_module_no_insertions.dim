@@ -1,4 +1,4 @@
-module: test_module_no_insertion
+document: test_module_no_insertion
 
 test_module_no_insertion_empty:
   type: requirement

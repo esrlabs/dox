@@ -1,4 +1,4 @@
-module: test_module_4
+document: test_module_4
 
 test_4_normal:
     text: yay

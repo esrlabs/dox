@@ -1,4 +1,4 @@
-module: mod06
+document: mod06
 
 Test_Export_06:
     test_setups: none

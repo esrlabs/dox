@@ -1,4 +1,4 @@
-module: mod10
+document: mod10
 
 Test_Export_10:
     test_setups: none

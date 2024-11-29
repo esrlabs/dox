@@ -1,4 +1,4 @@
-module: test1
+document: test1
 
 input_r:
   type: requirement

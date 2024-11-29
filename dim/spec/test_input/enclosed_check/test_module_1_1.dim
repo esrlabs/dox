@@ -1,4 +1,4 @@
-module: test_module
+document: test_module
 
 enclosed:
   - test.txt

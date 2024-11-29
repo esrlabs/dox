@@ -1,4 +1,4 @@
-module: ABC123
+document: ABC123
 
 SRS_ABC123_req1:
   text: Text1
