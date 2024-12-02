@@ -716,13 +716,6 @@ Dim_format_vim:
            lib/dim/options.rb,
            lib/dim/commands/format.rb
 
-Dim_format_verificationMethods:
-  text:                     The Dim formatter shall remove the "test_setups" attribute from formatted file and keep
-                            only 'verification_methods'.
-  tags: tool, covered, tested
-  status: valid
-  sources: lib/dim/options.rb lib/dim/commands/format.rb
-
 Dim_export_heading:         h2 export
 
 Dim_export_general:
@@ -762,12 +755,6 @@ Dim_export_filter:
 Dim_export_cleanup:
   text:                     After exporting is complete, files from exported folder which are no longer referenced in
                             the exported folder shall be cleaned up.
-  tags: tool, covered, tested
-  status: valid
-  sources: lib/dim/commands/export.rb
-
-Dim_export_verificationMethods:
-  text:                     Exported requirements file shall contain "verification_methods" and not "test_setups".
   tags: tool, covered, tested
   status: valid
   sources: lib/dim/commands/export.rb
