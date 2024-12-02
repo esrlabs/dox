@@ -86,8 +86,8 @@ module Dim
         compareFormat('empty/none.dim')
       end
 
-      it 'only module attribute', doc_refs: %w[Dim_format_whitespaces Dim_format_default] do
-        compareFormat('collection/onlyModule.dim')
+      it 'only document attribute', doc_refs: %w[Dim_format_whitespaces Dim_format_default] do
+        compareFormat('collection/onlyDocument.dim')
       end
 
       it 'only metadata metadata', doc_refs: %w[Dim_format_whitespaces Dim_format_default] do
@@ -227,22 +227,11 @@ module Dim
 
     context 'document' do
       context 'when present' do
-        it 'shall format the document', doc_refs: %w[Dim_loading_document Dim_format_general] do
+        it 'shall format the document', doc_refs: %w[Dim_format_general] do
           Test.main("format -i #{TEST_INPUT_DIR}/document/document.dim --output-format extra")
 
           expected = File.read("#{TEST_INPUT_DIR}/document/document.dim.expected")
           actual = File.read("#{TEST_INPUT_DIR}/document/document.dim.formatted")
-
-          expect(actual).to eq(expected)
-        end
-      end
-
-      context 'when module is given' do
-        it 'shall replace the module with document', doc_refs: %w[Dim_loading_document Dim_format_general] do
-          Test.main("format -i #{TEST_INPUT_DIR}/document/modulename.dim --output-format extra")
-
-          expected = File.read("#{TEST_INPUT_DIR}/document/modulename.dim.expected")
-          actual = File.read("#{TEST_INPUT_DIR}/document/modulename.dim.formatted")
 
           expect(actual).to eq(expected)
         end

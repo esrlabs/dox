@@ -36,7 +36,7 @@ module Dim
       loader.load(file: "#{TEST_INPUT_DIR}/different_encodings/Windows1250_input.dim")
       it 'shall convert the data to UTF-8 and not lead to an error', doc_refs: ['Dim_Syntax_utf8'] do
         req = loader.requirements['test_id_1']
-        expect(req.data['text']).to match '?C shall trigger ä if ?P reaches temperature x?.'
+        expect(req.data['text']).to match '?C shall trigger ? if ?P reaches temperature x?.'
       end
     end
 
@@ -45,7 +45,7 @@ module Dim
       loader.load(file: "#{TEST_INPUT_DIR}/different_encodings/ISO8859-1_input.dim")
       it 'shall convert the data to UTF-8 and not lead to an error', doc_refs: ['Dim_Syntax_utf8'] do
         req = loader.requirements['test_id_1']
-        expect(req.data['text']).to match '?C shall trigger ä if ?P reaches temperature x?.'
+        expect(req.data['text']).to match '?C shall trigger ? if ?P reaches temperature x?.'
       end
     end
 

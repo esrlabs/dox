@@ -18,7 +18,7 @@ module Dim
         expect(File.exist?("#{TEST_OUTPUT_DIR}/new_dir/test_module_2/Requirements.json")).to eq true
       end
 
-      it 'shall merge a module which is split in several requirements files', doc_refs: ['Dim_export_documents'] do
+      it 'shall merge a modules which is split in several requirements files', doc_refs: ['Dim_export_documents'] do
         Test.main("export -i #{TEST_INPUT_DIR}/one_module_in_several_files/Config.yml -o #{TEST_OUTPUT_DIR} -f json")
         j = JSON.load(File.read("#{TEST_OUTPUT_DIR}/TestModule/Requirements.json"))
         expect(j.length).to eq 2 # number of entries
@@ -26,7 +26,7 @@ module Dim
         expect(Dim::ExitHelper.exit_code).to eq 0
       end
 
-      it 'shall sanitize module names', doc_refs: ['Dim_export_documents'] do
+      it 'shall sanitize document names', doc_refs: ['Dim_export_documents'] do
         Test.main("export -i #{TEST_INPUT_DIR}/slash_in_modname/test_module_1.dim -o #{TEST_OUTPUT_DIR} -f json --allow-missing")
         expect(Dim::ExitHelper.exit_code).to eq 0
         expect(File.exist?("#{TEST_OUTPUT_DIR}/test_module/Requirements.json")).to eq true
@@ -85,7 +85,7 @@ module Dim
     end
 
     context 'to JSON' do
-      it 'shall include attributes as key/values pairs plus  ID, module name and originator',
+      it 'shall include attributes as key/values pairs plus  ID, document name and originator',
          doc_refs: ['Dim_export_json'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR}/new_dir -f json")
         expect(Dim::ExitHelper.exit_code).to eq 0
@@ -103,7 +103,7 @@ module Dim
         csv_content = File.readlines("#{TEST_OUTPUT_DIR}/ABC123/Requirements.csv")
         expect(csv_content[0].strip).to eq('Sep=,')
       end
-      it 'shall print all attributes, id, module name, originator',
+      it 'shall print all attributes, id, document name, originator',
          doc_refs: ['Dim_export_csvAttributes'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_calculated_infos/Input1.yml -o #{TEST_OUTPUT_DIR} -f csv")
         exported = File.read("#{TEST_OUTPUT_DIR}/ABC123/Requirements.csv")
@@ -226,7 +226,7 @@ module Dim
 
     context 'when custom attributes are provided by config file' do
       context 'to JSON' do
-        it 'shall include attributes as key/values pairs plus  ID, module name and originator',
+        it 'shall include attributes as key/values pairs plus  ID, document name and originator',
            doc_refs: %w[Dim_ConfigFiles_Attribute Dim_AttrFiles_Attribute Dim_export_json] do
           Test.main(
             "export -i #{TEST_INPUT_DIR}/export_with_custom_attributes/Config.dim -o #{TEST_OUTPUT_DIR} -f json"
@@ -297,16 +297,7 @@ module Dim
 
     context 'document' do
       context 'to json' do
-        it 'shall replace module with document', doc_refs: %w[Dim_loading_document Dim_export_general] do
-          Test.main("export -i #{TEST_INPUT_DIR}/document/modulename.dim -o #{TEST_OUTPUT_DIR} -f json")
-
-          expected = File.read("#{TEST_INPUT_DIR}/document/output/json/Requirements.json")
-          actual = File.read("#{TEST_OUTPUT_DIR}/ABC/Requirements.json")
-
-          expect(actual).to eq(expected)
-        end
-
-        it 'shall export document dim file', doc_refs: %w[Dim_loading_document Dim_export_general] do
+        it 'shall export document dim file', doc_refs: %w[Dim_export_general] do
           Test.main("export -i #{TEST_INPUT_DIR}/document/document.dim -o #{TEST_OUTPUT_DIR} -f json")
 
           expected = File.read("#{TEST_INPUT_DIR}/document/output/json/Requirements.json")
@@ -317,16 +308,7 @@ module Dim
       end
 
       context 'to csv' do
-        it 'shall replace module with document', doc_refs: %w[Dim_loading_document Dim_export_general] do
-          Test.main("export -i #{TEST_INPUT_DIR}/document/modulename.dim -o #{TEST_OUTPUT_DIR} -f csv")
-
-          expected = File.read("#{TEST_INPUT_DIR}/document/output/csv/Requirements.csv")
-          actual = File.read("#{TEST_OUTPUT_DIR}/ABC/Requirements.csv")
-
-          expect(actual).to eq(expected)
-        end
-
-        it 'shall export document dim file', doc_refs: %w[Dim_loading_document Dim_export_general] do
+        it 'shall export document dim file', doc_refs: %w[Dim_export_general] do
           Test.main("export -i #{TEST_INPUT_DIR}/document/document.dim -o #{TEST_OUTPUT_DIR} -f csv")
 
           expected = File.read("#{TEST_INPUT_DIR}/document/output/csv/Requirements.csv")
@@ -337,16 +319,7 @@ module Dim
       end
 
       context 'to rst' do
-        it 'shall replace module with document', doc_refs: %w[Dim_loading_document Dim_export_general] do
-          Test.main("export -i #{TEST_INPUT_DIR}/document/modulename.dim -o #{TEST_OUTPUT_DIR} -f rst")
-
-          expected = File.read("#{TEST_INPUT_DIR}/document/output/rst/Requirements.rst")
-          actual = File.read("#{TEST_OUTPUT_DIR}/ABC/Requirements.rst")
-
-          expect(actual).to eq(expected)
-        end
-
-        it 'shall export document dim file', doc_refs: %w[Dim_loading_document Dim_export_general] do
+        it 'shall export document dim file', doc_refs: %w[Dim_export_general] do
           Test.main("export -i #{TEST_INPUT_DIR}/document/document.dim -o #{TEST_OUTPUT_DIR} -f rst")
 
           expected = File.read("#{TEST_INPUT_DIR}/document/output/rst/Requirements.rst")

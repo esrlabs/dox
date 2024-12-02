@@ -601,12 +601,13 @@ Dim_loading_checkDocument:
   status: valid
   sources: lib/dim/loader.rb
 
-Dim_loading_document:
-  text:                     Dim shall support "module" as alias for "document". If "module" is specified, "document"
-                            shall be set to the value of "module". If both are specified, an error shall be raised.
+Dim_loading_emptyDocument:
+  text:                     Dim shall throw an error with meaningful error message if Dim file with empty document is
+                            loaded and shall exit the process with exit code != 0.
   tags: tool, covered, tested
   status: valid
-  sources: lib/dim/commands/export.rb
+  sources: lib/dim/loader.rb
+
 
 Dim_loading_checkMetadata:
   text:                     If several files share the same document name, "metadata" must not be defined more than

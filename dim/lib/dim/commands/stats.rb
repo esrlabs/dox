@@ -14,7 +14,7 @@ module Dim
       if type == :all
         top = 'ALL'
         is_owner = proc { |_x| true }
-      else # :module
+      else # :document
         is_owner = proc { |x| x.document == module_name }
         top = "DOCUMENT: #{module_name}"
       end

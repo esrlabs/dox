@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.2.0
+-----
+
+### TBD
+
+- Removed backward compatibility for module which is replaced by document. (#25)
+
+
 2.1.1
 -----
 

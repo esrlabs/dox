@@ -65,7 +65,7 @@ module Dim
     end
 
     context 'when loading dim file with a empty document' do
-      it 'shall throw an error with meaningful error message', doc_refs: ['Dim_loading_document'] do
+      it 'shall throw an error with meaningful error message', doc_refs: ['Dim_loading_emptyDocument'] do
         Test.main("check -i #{TEST_INPUT_DIR}/document/empty_document.dim")
 
         expect(Dim::ExitHelper.exit_code).to be 1

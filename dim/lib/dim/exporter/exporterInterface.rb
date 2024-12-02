@@ -3,11 +3,11 @@ module Dim
   #
   # initialize()
   #
-  # for every module:
+  # for every document:
   #   header()
   #   document()
   #   metadata()
-  #   for every requirement in module:
+  #   for every requirement in document:
   #     requirement()
   #   footer()
   #

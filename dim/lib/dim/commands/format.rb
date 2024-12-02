@@ -79,7 +79,7 @@ module Dim
       end
 
       data.each do |id, req|
-        next if %w[module enclosed document].include? id
+        next if %w[enclosed document].include? id
 
         # do not write default values
         next unless req.is_a?(Hash)

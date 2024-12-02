@@ -15,7 +15,7 @@ module Dim
     context 'with non-allowed attribute value' do
       let(:err_msg) do
         "Error: in properties.yaml: The properties file includes an invalid asil value " \
-        "'ASIL_Y' for module: test_module_3."
+        "'ASIL_Y' for document: test_module_3."
       end
 
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_PropFiles_Property'] do

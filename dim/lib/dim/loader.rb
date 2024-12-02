@@ -280,12 +280,12 @@ module Dim
       if @module_data.key?(document)
         if @module_data[document][:origin] != origin
           Dim::ExitHelper.exit(code: 1, filename: filename, msg:
-            "files of the same module must have the same owner:\n" +
+            "files of the same document must have the same owner:\n" +
             "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:origin]})\n" +
             "- #{filename} (#{origin})")
         elsif @module_data[document][:category] != category
           Dim::ExitHelper.exit(code: 1, filename: filename, msg:
-            "files of the same module must have the same category:\n" +
+            "files of the same document must have the same category:\n" +
             "- #{@module_data[document][:files].first[0]} (#{@module_data[document][:category]})\n" +
             "- #{filename} (#{category})")
         end
@@ -306,7 +306,7 @@ module Dim
         end
         unless reqs['metadata'].empty?
           unless @metadata[document].empty?
-            Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'only one metadata per module allowed')
+            Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'only one metadata per document allowed')
           end
           @metadata[document] = reqs['metadata'].strip
         end
@@ -351,7 +351,7 @@ module Dim
       line_numbers = psych_doc.line_numbers
 
       reqs.each do |id, attr|
-        next if %w[module enclosed metadata document].include? id
+        next if %w[enclosed metadata document].include? id
 
         if @requirements.key?(id)
           Dim::ExitHelper.exit(code: 1, filename: filename, msg: "id \"#{id}\" found more than once")
@@ -444,7 +444,7 @@ module Dim
             @property_table[document][attr] = property_value.strip
           else
             Dim::ExitHelper.exit(code: 1, filename: properties_filename,
-                                 msg: "The properties file includes an invalid #{attr} value '#{property_value}' for module: #{document}.")
+                                 msg: "The properties file includes an invalid #{attr} value '#{property_value}' for document: #{document}.")
           end
         end
       end
@@ -493,7 +493,7 @@ module Dim
       )
     end
 
-    def validate_srs_name(name, disable_naming_convention_check, category, filename, attr = 'module')
+    def validate_srs_name(name, disable_naming_convention_check, category, filename, attr = 'document')
       return if category != ALLOWED_CATEGORIES[:software] || disable_naming_convention_check
 
       # raise error if not starting with SRS_
@@ -533,16 +533,16 @@ module Dim
         )
       end
 
-      if attr == 'module' && !aspect.to_s.empty?
+      if attr == 'document' && !aspect.to_s.empty?
         Dim::ExitHelper.exit(
           code: 1,
           filename: filename,
-          msg: "invalid module #{name} in software requirement; must contain exactly one \"_\""
+          msg: "invalid document #{name} in software requirement; must contain exactly one \"_\""
         )
       end
 
       # Check naming convention for aspect only in case of IDs
-      return if attr == 'module'
+      return if attr == 'document'
 
       if aspect.to_s.empty?
         Dim::ExitHelper.exit(

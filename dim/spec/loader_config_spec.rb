@@ -405,38 +405,38 @@ module Dim
         end
       end
 
-      context 'when module contains multiple underscores' do
+      context 'when document name contains multiple underscores' do
         let(:filepath) { 'module_with_multiple_underscores' }
 
         it 'throws error with meaningful message and exits', doc_refs: ['Dim_ConfigFiles_SRS'] do
           subject
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include(
-            'module SRS_feature_aspect in software requirement; must contain exactly one "_"'
+            'document SRS_feature_aspect in software requirement; must contain exactly one "_"'
           )
         end
       end
 
-      context 'when module is missing feature' do
+      context 'when document name is missing feature' do
         let(:filepath) { 'module_without_feature' }
 
         it 'throws error with meaningful message and exits', doc_refs: ['Dim_ConfigFiles_SRS'] do
           subject
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include(
-            'module SRSFeature in software requirement must start with "SRS_"'
+            'document SRSFeature in software requirement must start with "SRS_"'
           )
         end
       end
 
-      context 'when module does not start with SRS' do
+      context 'when document name does not start with SRS' do
         let(:filepath) { 'module_without_srs' }
 
         it 'throws error with meaningful message and exits', doc_refs: ['Dim_ConfigFiles_SRS'] do
           subject
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include(
-            'module SRSFeature_feature in software requirement must start with "SRS_"'
+            'document SRSFeature_feature in software requirement must start with "SRS_"'
           )
         end
       end
@@ -468,14 +468,14 @@ module Dim
           end
         end
 
-        context 'in module' do
+        context 'in document name' do
           let(:filepath) { 'module_with_invalid_chars' }
 
           it 'throws meaningful error and exits', doc_refs: ['Dim_ConfigFiles_SRS'] do
             subject
             expect(Dim::ExitHelper.exit_code).to be 1
             expect(@test_stderr).to include(
-              'feature in module SRS_feature#1 in software requirement contains non-alphanumeric characters'
+              'feature in document SRS_feature#1 in software requirement contains non-alphanumeric characters'
             )
           end
         end

@@ -63,31 +63,31 @@ module Dim
       end
     end
 
-    context 'when loading files with same module but different category' do
+    context 'when loading files with same document but different category' do
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_loading_checkDocument'] do
         Test.main("check -i #{TEST_INPUT_DIR}/invalid_input/same_module_different_category.dim")
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include 'Error: in spec/test_input/invalid_input/modules/valid_test_2.dim: files of the same module must have the same category:'
+        expect(@test_stderr).to include 'Error: in spec/test_input/invalid_input/modules/valid_test_2.dim: files of the same document must have the same category:'
         expect(@test_stderr).to include '- spec/test_input/invalid_input/modules/valid_test_1.dim (system)'
         expect(@test_stderr).to include '- spec/test_input/invalid_input/modules/valid_test_2.dim (software)'
       end
     end
 
-    context 'when loading files with same module but different owner' do
+    context 'when loading files with same document but different owner' do
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_loading_checkDocument'] do
         Test.main("check -i #{TEST_INPUT_DIR}/invalid_input/same_module_different_owner.dim")
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include 'Error: in spec/test_input/invalid_input/modules/valid_test_2.dim: files of the same module must have the same owner:'
+        expect(@test_stderr).to include 'Error: in spec/test_input/invalid_input/modules/valid_test_2.dim: files of the same document must have the same owner:'
         expect(@test_stderr).to include '- spec/test_input/invalid_input/modules/valid_test_1.dim (ABC)'
         expect(@test_stderr).to include '- spec/test_input/invalid_input/modules/valid_test_2.dim (DEF)'
       end
     end
 
-    context 'when loading files with same module but multiple metadata' do
+    context 'when loading files with same document but multiple metadata' do
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_loading_checkMetadata'] do
         Test.main("check -i #{TEST_INPUT_DIR}/invalid_input/duplicate_metadata.dim")
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include 'invalid_input/modules/duplicate_meta2.dim: only one metadata per module allowed'
+        expect(@test_stderr).to include 'invalid_input/modules/duplicate_meta2.dim: only one metadata per document allowed'
       end
     end
   end
