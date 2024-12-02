@@ -1,4 +1,4 @@
-module: Name1
+document: Name1
 
 id_unknown:
     verification_methods: unknown
