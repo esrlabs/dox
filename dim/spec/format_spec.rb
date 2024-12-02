@@ -114,7 +114,6 @@ module Dim
 
       it 'multi enums', doc_refs: %w[Dim_format_whitespaces Dim_format_default Dim_format_duplicated] do
         compareFormat('collection/tags.dim')
-        compareFormat('collection/test_setups.dim')
         compareFormat('collection/verification_methods.dim')
       end
 
@@ -149,31 +148,6 @@ module Dim
 
       it 'order', doc_refs: ['Dim_format_order'] do
         compareFormat('collection/order.dim')
-      end
-    end
-
-    context 'shall not include test_setups' do
-      it 'shall format the document with verification_methods and not test_setups',
-         doc_refs: %w[Dim_format_verificationMethods] do
-        Test.main("format -i #{TEST_INPUT_DIR}/verification_methods/verification_methods.dim --output-format extra")
-        expected = File.read("#{TEST_INPUT_DIR}/verification_methods/verification_methods.dim.expected")
-        actual = File.read("#{TEST_INPUT_DIR}/verification_methods/verification_methods.dim.formatted")
-        expect(actual).to eq expected
-
-        Test.main("format -i #{TEST_INPUT_DIR}/verification_methods/single_none.dim --output-format extra")
-        expected = File.read("#{TEST_INPUT_DIR}/verification_methods/single_none.dim.expected")
-        actual = File.read("#{TEST_INPUT_DIR}/verification_methods/single_none.dim.formatted")
-        expect(actual).to eq expected
-
-        Test.main("format -i #{TEST_INPUT_DIR}/verification_methods/all_none.dim --output-format extra")
-        expected = File.read("#{TEST_INPUT_DIR}/verification_methods/all_none.dim.expected")
-        actual = File.read("#{TEST_INPUT_DIR}/verification_methods/all_none.dim.formatted")
-        expect(actual).to eq expected
-
-        Test.main("format -i #{TEST_INPUT_DIR}/verification_methods/single_none.dim --output-format extra")
-        expected = File.read("#{TEST_INPUT_DIR}/verification_methods/single_none.dim.expected")
-        actual = File.read("#{TEST_INPUT_DIR}/verification_methods/single_none.dim.formatted")
-        expect(actual).to eq expected
       end
     end
 

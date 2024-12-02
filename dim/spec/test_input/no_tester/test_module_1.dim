@@ -2,5 +2,5 @@ document: test_module_1
 
 test_id_1:
   text: First test requirement
-  test_setups: on_target
+  verification_methods: on_target
   tester: ''

@@ -86,8 +86,6 @@ module Dim
 
         req.delete_if { |_key, value| value.nil? }
 
-        req.delete('test_setups')
-
         %w[tags verification_methods refs].each do |e|
           req[e] = req[e].cleanUniqString if req.key?(e) && req[e].is_a?(String)
         end

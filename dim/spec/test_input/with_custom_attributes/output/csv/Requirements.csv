@@ -1,5 +1,5 @@
 Sep=,
-id,module_name,originator,type,text,verification_criteria,feature,change_request,tags,asil,cal,developer,tester,test_setups,status,review_status,comment,miscellaneous,sources,refs,cluster,necessary
+id,module_name,originator,type,text,verification_criteria,feature,change_request,tags,asil,cal,developer,tester,verification_methods,status,review_status,comment,miscellaneous,sources,refs,cluster,necessary
 "test_id_1","test_module","CompanyName","requirement","First Test Requirement","","","","","not_set","not_set","CompanyName","CompanyName","off_target","invalid","accepted","","","","","1.6.5"
 "test_id_2","test_module","CompanyName","requirement","Second Test Requirement","","","","covered","not_set","not_set","CompanyName","CompanyName","off_target","draft","accepted","","","","","",""
 "test_id_3","test_module","CompanyName","requirement","Third Test Requirement","","","","","not_set","not_set","CompanyName","CompanyName","off_target","draft","unclear","","","","","",""

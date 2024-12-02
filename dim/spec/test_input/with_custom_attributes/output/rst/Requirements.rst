@@ -11,7 +11,7 @@
     :necessary: false
     :developer: CompanyName
     :tester: CompanyName
-    :test_setups: off_target
+    :verification_methods: off_target
 
     :raw-html:`First Test Requirement`
 
@@ -24,7 +24,7 @@
     :tags: covered
     :developer: CompanyName
     :tester: CompanyName
-    :test_setups: off_target
+    :verification_methods: off_target
 
     :raw-html:`Second Test Requirement`
 
@@ -36,6 +36,6 @@
     :cal: not_set
     :developer: CompanyName
     :tester: CompanyName
-    :test_setups: off_target
+    :verification_methods: off_target
 
     :raw-html:`Third Test Requirement`

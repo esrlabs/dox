@@ -19,7 +19,7 @@
     :verification_methods: none
     :verification_criteria:
 
-    :raw-html:`Dim file should allow only verification_methods attribute, but when test_setups method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file`
+    :raw-html:`Dim file should allow only verification_methods attribute, but when verification_methods method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file`
 
 .. requirement:: ID_2
     :category: unspecified

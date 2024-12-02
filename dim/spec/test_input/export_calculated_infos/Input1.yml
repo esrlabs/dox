@@ -18,12 +18,12 @@ SRS_ABC123_req5: h3 HEADING3
 
 SRS_ABC123_req6:
   text: Text6
-  test_setups: on_target
+  verification_methods: on_target
   verification_criteria: Bla
   review_status: accepted
 SRS_ABC123_req7:
   text: Text7
-  test_setups: on_target
+  verification_methods: on_target
   verification_criteria: Bla
   review_status: accepted
   tags: covered
@@ -31,6 +31,6 @@ SRS_ABC123_req7:
 SRS_ABC123_req8:
   text: Text8
   developer: CompanyName
-  test_setups: on_target
+  verification_methods: on_target
   review_status: unclear
   tags: tested

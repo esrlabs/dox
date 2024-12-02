@@ -1,0 +1,4 @@
+module: Name1
+
+id_duplicate:
+    verification_methods: off_target, on_target, off_target

@@ -1,6 +1,0 @@
-document: test_verification_methods
-
-ID_1:
-  verification_methods: none
-  test_setups: off_target
-

@@ -1,0 +1,7 @@
+module: Name1
+
+id_v1:
+    verification_methods: none
+
+id_v2:
+    verification_methods: off_target, on_target, manual

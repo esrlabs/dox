@@ -6,7 +6,7 @@ export_1:
   feature: Blah
   change_request: Fasel
   verification_criteria: Value xy shall equal value ab.
-  test_setups: on_target, off_target
+  verification_methods: on_target, off_target
   miscellaneous: Additional random information
   comment: Req is nice
   asil: ASIL_A

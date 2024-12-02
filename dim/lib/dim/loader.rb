@@ -382,9 +382,6 @@ module Dim
         else
           Dim::ExitHelper.exit(code: 1, filename: filename, msg: "attributes for id \"#{id}\" must be key-value pairs")
         end
-        unless attr.key?('verification_methods')
-          attr['verification_methods'] = attr['test_setups'] if attr.key?('test_setups')
-        end
         attr.each do |key, value|
           unless value.is_a?(String)
             Dim::ExitHelper.exit(code: 1, filename: filename,

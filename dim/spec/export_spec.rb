@@ -266,35 +266,6 @@ module Dim
       end
     end
 
-    context 'verification_methods' do
-      context 'to json' do
-        it 'shall not add test_setups in exported format', doc_refs: ['Dim_export_verificationMethods'] do
-          Test.main("export -i #{TEST_INPUT_DIR}/verification_methods/verification_methods.dim -o #{TEST_OUTPUT_DIR} -f json")
-          expected = File.read("#{TEST_INPUT_DIR}/verification_methods/output/verification_methods/Requirements.json")
-          actual = File.read("#{TEST_OUTPUT_DIR}/verification_method_test/Requirements.json")
-          expect(actual).to eq expected
-        end
-      end
-
-      context 'to RST' do
-        it 'shall not add test_setups in exported output', doc_refs: ['Dim_export_verificationMethods'] do
-          Test.main("export -i #{TEST_INPUT_DIR}/verification_methods/verification_methods.dim -o #{TEST_OUTPUT_DIR} -f rst")
-          expected = File.read("#{TEST_INPUT_DIR}/verification_methods/output/verification_methods/Requirements.rst").universal_newline
-          actual = File.read("#{TEST_OUTPUT_DIR}/verification_method_test/Requirements.rst").universal_newline
-          expect(actual).to eq expected
-        end
-      end
-
-      context 'to csv' do
-        it 'shall not add test_setups in exported output', doc_refs: ['Dim_export_verificationMethods'] do
-          Test.main("export -i #{TEST_INPUT_DIR}/verification_methods/verification_methods.dim -o #{TEST_OUTPUT_DIR} -f csv")
-          expected = File.read("#{TEST_INPUT_DIR}/verification_methods/output/verification_methods/Requirement.csv")
-          actual = File.read("#{TEST_OUTPUT_DIR}/verification_method_test/Requirements.csv")
-          expect(actual).to eq expected
-        end
-      end
-    end
-
     context 'document' do
       context 'to json' do
         it 'shall export document dim file', doc_refs: %w[Dim_export_general] do

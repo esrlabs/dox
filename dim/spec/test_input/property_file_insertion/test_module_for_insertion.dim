@@ -12,7 +12,7 @@ test_module_for_insertion_not_empty:
   tags: swa
   developer: test_developer
   tester: test_tester
-  test_setups: none
+  verification_methods: none
   status: invalid
   review_status: unclear
   comment: test_comment

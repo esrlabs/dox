@@ -1,6 +1,6 @@
-document: Name1
+module: Name1
 
 id_v:
-    test_setups:
+    verification_methods:
         - Invalid
         - Type

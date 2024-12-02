@@ -579,208 +579,94 @@ module Dim
       end
     end
 
-    context 'test_setups' do
-      it 'shall be any string', doc_refs: ['Dim_ReqFiles_testSetups'] do
+    context 'verification_methods' do
+      it 'shall be any string', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/ts/valid.dim")
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/vm/valid.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(loader.requirements['id_v1'].test_setups).to eq ['none']
-        expect(loader.requirements['id_v2'].test_setups).to match_array(%w[off_target on_target manual])
+        expect(loader.requirements['id_v1'].verification_methods).to eq ['none']
+        expect(loader.requirements['id_v2'].verification_methods).to match_array(%w[off_target on_target manual])
       end
 
-      it 'shall resolve default', doc_refs: ['Dim_ReqFiles_testSetups'] do
+      it 'shall resolve default', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
         # category set (config loaded)
         lc = Dim::Loader.new
-        lc.load(file: "#{TEST_INPUT_DIR}/reqs/ts/resolve_config.dim")
+        lc.load(file: "#{TEST_INPUT_DIR}/reqs/vm/resolve_config.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(lc.requirements['input_r'].test_setups).to eql ['none']
-        expect(lc.requirements['input_i'].test_setups).to eql ['none']
-        expect(lc.requirements['input_p'].test_setups).to eql ['none']
-        expect(lc.requirements['input_t'].test_setups).to eql ['none']
-        expect(lc.requirements['module_r'].test_setups).to eql ['off_target']
-        expect(lc.requirements['module_i'].test_setups).to eql ['none']
-        expect(lc.requirements['module_p'].test_setups).to eql ['none']
-        expect(lc.requirements['module_t'].test_setups).to eql ['off_target']
-        expect(lc.requirements['software_r'].test_setups).to eql ['on_target']
-        expect(lc.requirements['software_i'].test_setups).to eql ['none']
-        expect(lc.requirements['software_p'].test_setups).to eql ['none']
-        expect(lc.requirements['software_t'].test_setups).to eql ['off_target']
+        expect(lc.requirements['input_r'].verification_methods).to eql ['none']
+        expect(lc.requirements['input_i'].verification_methods).to eql ['none']
+        expect(lc.requirements['input_p'].verification_methods).to eql ['none']
+        expect(lc.requirements['input_t'].verification_methods).to eql ['none']
+        expect(lc.requirements['module_r'].verification_methods).to eql ['off_target']
+        expect(lc.requirements['module_i'].verification_methods).to eql ['none']
+        expect(lc.requirements['module_p'].verification_methods).to eql ['none']
+        expect(lc.requirements['module_t'].verification_methods).to eql ['off_target']
+        expect(lc.requirements['software_r'].verification_methods).to eql ['on_target']
+        expect(lc.requirements['software_i'].verification_methods).to eql ['none']
+        expect(lc.requirements['software_p'].verification_methods).to eql ['none']
+        expect(lc.requirements['software_t'].verification_methods).to eql ['off_target']
         # category unspecified
         lm = Dim::Loader.new
-        lm.load(file: "#{TEST_INPUT_DIR}/reqs/ts/resolve_module.dim")
+        lm.load(file: "#{TEST_INPUT_DIR}/reqs/vm/resolve_module.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(lm.requirements['module_r'].test_setups).to eql ['none']
-        expect(lm.requirements['module_i'].test_setups).to eql ['none']
-        expect(lm.requirements['module_p'].test_setups).to eql ['none']
-        expect(lm.requirements['module_t'].test_setups).to eql ['none']
+        expect(lm.requirements['module_r'].verification_methods).to eql ['none']
+        expect(lm.requirements['module_i'].verification_methods).to eql ['none']
+        expect(lm.requirements['module_p'].verification_methods).to eql ['none']
+        expect(lm.requirements['module_t'].verification_methods).to eql ['none']
         ls = Dim::Loader.new
-        ls.load(file: "#{TEST_INPUT_DIR}/reqs/ts/resolve_software.dim")
+        ls.load(file: "#{TEST_INPUT_DIR}/reqs/vm/resolve_software.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(ls.requirements['software_r'].test_setups).to eql ['none']
-        expect(ls.requirements['software_i'].test_setups).to eql ['none']
-        expect(ls.requirements['software_p'].test_setups).to eql ['none']
-        expect(ls.requirements['software_t'].test_setups).to eql ['none']
+        expect(ls.requirements['software_r'].verification_methods).to eql ['none']
+        expect(ls.requirements['software_i'].verification_methods).to eql ['none']
+        expect(ls.requirements['software_p'].verification_methods).to eql ['none']
+        expect(ls.requirements['software_t'].verification_methods).to eql ['none']
       end
 
-      it 'shall be nil by default', doc_refs: ['Dim_ReqFiles_testSetups'] do
+      it 'shall be nil by default', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/ts/default.dim")
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/vm/default.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(loader.requirements['id_d'].test_setups).to eq ['none']
+        expect(loader.requirements['id_d'].verification_methods).to eq ['none']
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/ts/default_config.dim")
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/vm/default_config.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(loader.requirements['id_d'].test_setups).to eq ['off_target']
+        expect(loader.requirements['id_d'].verification_methods).to eq ['off_target']
       end
 
       it 'shall throw an error and print a meaningful error message if value is no string',
-         doc_refs: ['Dim_ReqFiles_testSetups'] do
-        Test.main("check -i #{TEST_INPUT_DIR}/reqs/ts/invalid_type.dim")
+         doc_refs: ['Dim_ReqFiles_verificationMethods'] do
+        Test.main("check -i #{TEST_INPUT_DIR}/reqs/vm/invalid_type.dim")
         expect(Dim::ExitHelper.exit_code).to eq 1
-        expect(@test_stderr).to include 'value of attribute "test_setups" must be String not Array'
-        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/ts/invalid_type.dim:'
+        expect(@test_stderr).to include 'value of attribute "verification_methods" must be String not Array'
+        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/vm/invalid_type.dim:'
       end
 
-      it 'with duplicates shall not throw an error but duplicates are removed', doc_refs: ['Dim_ReqFiles_testSetups'] do
+      it 'with duplicates shall not throw an error but duplicates are removed', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
         loader = Dim::Loader.new
-        loader.load(file: "#{TEST_INPUT_DIR}/reqs/ts/duplicate.dim")
+        loader.load(file: "#{TEST_INPUT_DIR}/reqs/vm/duplicate.dim")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        expect(loader.requirements['id_duplicate'].test_setups).to match_array(%w[off_target on_target])
+        expect(loader.requirements['id_duplicate'].verification_methods).to match_array(%w[off_target on_target])
       end
 
-      it 'unknown shall throw an error and print a meaningful error message', doc_refs: ['Dim_ReqFiles_testSetups'] do
-        Test.main("check -i #{TEST_INPUT_DIR}/reqs/ts/unknown.dim")
+      it 'unknown shall throw an error and print a meaningful error message', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
+        Test.main("check -i #{TEST_INPUT_DIR}/reqs/vm/unknown.dim")
         expect(Dim::ExitHelper.exit_code).to be > 0
-        expect(@test_stderr).to include ' attribute "test_setups" is invalid: "unknown" (id: id_unknown). "test_setups" must be one or more of "none", "off_target", "on_target", "manual".'
-        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/ts/unknown.dim:'
+        expect(@test_stderr).to include ' attribute "verification_methods" is invalid: "unknown" (id: id_unknown). "verification_methods" must be one or more of "none", "off_target", "on_target", "manual".'
+        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/vm/unknown.dim:'
       end
 
-      it 'shall throw error when empty value is set', doc_refs: ['Dim_ReqFiles_testSetups'] do
-        Test.main("check -i #{TEST_INPUT_DIR}/reqs/ts/empty.dim")
+      it 'shall throw error when empty value is set', doc_refs: ['Dim_ReqFiles_verificationMethods'] do
+        Test.main("check -i #{TEST_INPUT_DIR}/reqs/vm/empty.dim")
         expect(Dim::ExitHelper.exit_code).to be 1
-        expect(@test_stderr).to include 'attribute "test_setups" is invalid: "" (id: id_d). "test_setups" must be one or more of "none", "off_target", "on_target", "manual".'
+        expect(@test_stderr).to include 'attribute "verification_methods" is invalid: "" (id: id_d). "verification_methods" must be one or more of "none", "off_target", "on_target", "manual".'
       end
 
       it 'shall throw an error and print a meaningful error message if none is used with another enum value',
-         doc_refs: ['Dim_ReqFiles_testSetups'] do
-        Test.main("check -i #{TEST_INPUT_DIR}/reqs/ts/combined_none.dim")
+         doc_refs: ['Dim_ReqFiles_verificationMethods'] do
+        Test.main("check -i #{TEST_INPUT_DIR}/reqs/vm/combined_none.dim")
         expect(Dim::ExitHelper.exit_code).to be > 0
-        expect(@test_stderr).to include "verification_methods or test_setups for \"test_id_1\" can't include 'none' along with on_target"
-        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/ts/combined_none.dim:'
-      end
-    end
-
-    context 'verification_methods' do
-      context 'when Dim file contains valid data' do
-        let(:loader) { Dim::Loader.new }
-
-        before do
-          loader.load(file: 'spec/test_input/verification_methods/verification_methods.dim')
-        end
-
-        context 'when verification_methods and test_setups are empty in dim file' do
-          let(:requirement) { loader.requirements['ID_1'] }
-
-          it 'shall have test_setups and verification_methods set to none',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement.test_setups).to match_array ['none']
-              expect(requirement.data['test_setups']).to eq 'none'
-
-              expect(requirement.verification_methods).to match_array ['none']
-              expect(requirement.data['verification_methods']).to eq 'none'
-            end
-        end
-
-        context 'when verification_methods present in the Dim file while test_setups is missing' do
-          let(:requirement_2) { loader.requirements['ID_2'] }
-          let(:requirement_3) { loader.requirements['ID_3'] }
-          let(:requirement_4) { loader.requirements['ID_4'] }
-
-          let(:expected_array) { %w[off_target on_target] }
-
-          it 'shall return test_setups same as verification_methods',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement_2.test_setups).to match_array expected_array
-              expect(requirement_2.verification_methods).to match_array expected_array
-
-              expect(requirement_3.test_setups).to match_array ['off_target']
-              expect(requirement_3.verification_methods).to match_array ['off_target']
-
-              expect(requirement_4.test_setups).to match_array expected_array
-              expect(requirement_4.verification_methods).to match_array expected_array
-
-              expect(requirement_2.data['test_setups']).to eq 'off_target, on_target'
-              expect(requirement_2.data['verification_methods']).to eq 'off_target, on_target'
-
-              expect(requirement_3.data['test_setups']).to eq 'off_target'
-              expect(requirement_3.data['verification_methods']).to eq 'off_target'
-
-              expect(requirement_4.data['test_setups']).to eq 'off_target, on_target'
-              expect(requirement_4.data['verification_methods']).to eq 'off_target, on_target'
-            end
-        end
-
-        context 'when verification_methods is missing from Dim file and test_setups are present' do
-          let(:requirement) { loader.requirements['ID_5'] }
-
-          it 'shall have values from test_setups added to verification_methods',
-            doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-              expect(requirement.test_setups).to match_array %w[manual off_target on_target]
-              expect(requirement.verification_methods).to match_array %w[manual off_target on_target]
-
-              expect(requirement.data['test_setups']).to eq 'off_target, on_target, manual'
-              expect(requirement.data['verification_methods']).to eq 'off_target, on_target, manual'
-            end
-        end
-      end
-
-      context 'when verification_methods contains none and test_setups is present in the Dim file'  do
-        it 'shall throw an error with the meaningful error message',
-          doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-            Test.main("check -i spec/test_input/verification_methods/none_verification_methods.dim")
-
-            expect(Dim::ExitHelper.exit_code).to be 1
-            expect(@test_stderr).to include("test_setups for \"ID_1\" can't include 'none' along with off_target")
-          end
-      end
-
-      context 'when verification_methods are present in Dim and test_setups is none' do
-        it 'shall throw an error with a meaningful error message',
-          doc_refs: %w[Dim_ReqFiles_verificationMethods_backward Dim_ReqFiles_verificationMethods] do
-            Test.main("check -i spec/test_input/verification_methods/none_test_setups.dim")
-
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include("verification_methods or test_setups for \"ID_1\" can't include 'none' along with off_target")
-          end
-      end
-
-      context 'when verification_methods and test_setups in Dim contains none' do
-        let(:loader) { Dim::Loader.new }
-        let(:requirement) { loader.requirements['ID_1'] }
-
-        before do
-          loader.load(file: 'spec/test_input/verification_methods/all_none.dim')
-        end
-
-        it 'shall load Dim', doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-          expect(requirement.test_setups).to match_array ['none']
-          expect(requirement.verification_methods).to match_array ['none']
-        end
-      end
-
-      context 'when test_setups is none or verification_methods is none' do
-        it 'shall load dim file', doc_refs: %w[Dim_ReqFiles_verificationMethods Dim_ReqFiles_verificationMethods_backward] do
-          loader = Dim::Loader.new
-          loader.load(file: 'spec/test_input/verification_methods/single_none.dim')
-
-          expect(loader.requirements['ID_1'].test_setups).to eq ['none']
-          expect(loader.requirements['ID_1'].verification_methods).to eq ['none']
-          expect(loader.requirements['ID_1'].data['test_setups']).to eq 'none'
-          expect(loader.requirements['ID_1'].data['verification_methods']).to eq 'none'
-
-          expect(loader.requirements['ID_2'].test_setups).to eq ['none']
-          expect(loader.requirements['ID_2'].verification_methods).to eq ['none']
-        end
+        expect(@test_stderr).to include "verification_methods for \"test_id_1\" can't include 'none' along with on_target"
+        expect(@test_stderr).to include 'Error: in spec/test_input/reqs/vm/combined_none.dim:'
       end
     end
 

@@ -254,26 +254,6 @@ Dim_ReqFiles_tester:
            lib/dim/loader.rb,
            lib/dim/consistency.rb
 
-Dim_ReqFiles_testSetups:
-  text:                     |
-                            A requirements object shall have an optional "test_setups" attribute.
-                            Allowed values: one or more of "none", "off_target", "on_target", "manual"
-                            If test_setups is missing, it is resolved to:
-                            - "none" if
-                                    - type is not "requirement" or
-                                    - "process" is in tags or
-                                    - category is "input" or "unspecified"
-                            - "off_target" if
-                                    - category is "module" or
-                                    - tags include "tool"
-                            - "on_target" otherwise
-  tags: tool, covered, tested
-  status: valid
-  sources: >
-           lib/dim/requirement.rb,
-           lib/dim/loader.rb,
-           lib/dim/consistency.rb
-
 Dim_ReqFiles_verificationMethods:
   text:                     |
                             A requirement object shall have an optional 'verification_methods' attribute.
@@ -290,15 +270,6 @@ Dim_ReqFiles_verificationMethods:
   tags: tool, covered, tested
   status: valid
   sources: lib/dim/requirement.rb lib/dim/loader.rb lib/dim/consistency.rb
-
-Dim_ReqFiles_verificationMethods_backward:
-  text:                     |
-                            "verification_methods" replaces "test_setups".
-                            For backward compatibility, the requirements file can include both "test_setups" and "verification_methods".
-                            During loading, Dim shall merge values from both attributes.
-  tags: tool, covered, tested
-  status: valid
-  sources: lib/dim/requirement.rb lib/dim/consistency.rb lib/dim/loader.rb
 
 Dim_ReqFiles_status:
   text:                     |
