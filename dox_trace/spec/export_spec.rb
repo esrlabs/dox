@@ -87,10 +87,10 @@ module Sphinx
       it 'shall include the correct module names', doc_refs: ['DoxTrace_Export_ModuleName'] do
         data = @test.dim_original_data
 
-        expect(data["spec/test_input/export/export_root/swa/index.dim"]["module"]).to eq "SWA_Spec"
-        expect(data["spec/test_input/export/export_root/swa/subfolder/b.dim"]["module"]).to eq "SWA_ModB"
-        expect(data["spec/test_input/export/export_root/smd/subfolder/a.dim"]["module"]).to eq "SMD_ModA"
-        expect(data["spec/test_input/export/export_root/smd/subfolder/b/c.dim"]["module"]).to eq "SMD_ModC"
+        expect(data["spec/test_input/export/export_root/swa/index.dim"]["document"]).to eq "SWA_Spec"
+        expect(data["spec/test_input/export/export_root/swa/subfolder/b.dim"]["document"]).to eq "SWA_ModB"
+        expect(data["spec/test_input/export/export_root/smd/subfolder/a.dim"]["document"]).to eq "SMD_ModA"
+        expect(data["spec/test_input/export/export_root/smd/subfolder/b/c.dim"]["document"]).to eq "SMD_ModC"
 
         expect(data["spec/test_input/export/export_root/swa/subfolder/b.dim"]).to have_key("SWA_ModB_2")
         expect(data["spec/test_input/export/export_root/smd/subfolder/b.dim"]).to have_key("SMD_ModB_1")

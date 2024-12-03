@@ -67,7 +67,7 @@ def dim_write(app):
             dim_filename = calc_filename(app, category, docname)
             os.makedirs(os.path.dirname(dim_filename), exist_ok=True)
             with open(dim_filename, "w") as yaml_file:
-                yaml_file.write("module: %s\n\n" % module_name)
+                yaml_file.write("document: %s\n\n" % module_name)
                 for k, v in contents[category].items():
                     entry = {k: v}
                     yaml_content = yaml.dump(entry)
