@@ -266,14 +266,14 @@ module Dim
         )
       end
 
-      if !reqs.key?('document')
+      if reqs.key?('document')
+        if !reqs['document'].is_a?(String) || reqs['document'].empty?
+          Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'document name must be a non-empty string')
+        end
+        document = reqs['document']
+      else
         Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'Document name is missing; please add document name')
       end
-
-      if !reqs['document'].is_a?(String) || reqs['document'].empty?
-        Dim::ExitHelper.exit(code: 1, filename: filename, msg: 'document name must be a non-empty string')
-      end
-      document = reqs['document']
 
       validate_srs_name(document, disable_naming_convention_check, category, filename)
 
