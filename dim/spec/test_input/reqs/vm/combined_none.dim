@@ -2,4 +2,4 @@ document: test
 
 test_id_1:
   text: test_value
-  test_setups: none, on_target
+  verification_methods: none, on_target

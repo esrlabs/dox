@@ -46,35 +46,7 @@ module Dim
     def insert_property_file_definitions(ref)
       @loader.property_table.fetch(ref.document, {}).each do |attr, value|
         ref.data[attr] = value if ref.data[attr].nil?
-
-        if attr == 'test_setups' && (ref.data['verification_methods'].nil? || ref.data['verification_methods'] == '')
-          ref.data['verification_methods'] = value
-        end
       end
-    end
-
-    def merge_test_setups_and_verification_methods(ref)
-      return if ref.data.key?('verification_methods') && !ref.data['verification_methods'].nil?
-
-      ref.data['verification_methods'] = ref.data['test_setups'].clone
-    end
-
-    def calculate_test_setups(ref)
-      return unless ref.data['test_setups'].nil?
-
-      tags = ref.data['tags'].cleanArray
-
-      ref.data['test_setups'] = if ref.data['type'] != 'requirement' || tags.include?('process')
-                                  'none'
-                                elsif ref.category == 'input' || ref.category == 'unspecified'
-                                  'none'
-                                elsif ref.category == 'module'
-                                  'off_target'
-                                elsif tags.include?('tool')
-                                  'off_target'
-                                else
-                                  'on_target'
-                                end
     end
 
     def calculate_verification_methods(ref)
@@ -106,7 +78,7 @@ module Dim
     end
 
     def clean_comma_separated(ref)
-      %w[tags developer tester refs test_setups verification_methods].each do |var|
+      %w[tags developer tester refs verification_methods].each do |var|
         ref.data[var] = ref.data[var].cleanString
       end
     end
@@ -141,8 +113,6 @@ module Dim
       @loader.requirements.each do |_id, r|
         insert_property_file_definitions(r)
         insert_default_values(r)
-        merge_test_setups_and_verification_methods(r)
-        calculate_test_setups(r)
         calculate_verification_methods(r)
         calculate_review_status(r)
         calculate_developer_tester(r)

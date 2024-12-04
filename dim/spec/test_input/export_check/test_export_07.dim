@@ -1,5 +1,5 @@
 document: mod07
 
 Test_Export_07:
-    test_setups: none
+    verification_methods: none
     tester: X

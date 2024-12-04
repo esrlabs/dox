@@ -29,9 +29,7 @@ module Dim
                                    allowed: %w[QM CAL_1 CAL_2 CAL_3 CAL_4 not_set] },
       'developer'             => { check: nil,                format_style: :list,   format_shift:  0, default: nil,             allowed: nil },
       'tester'                => { check: nil,                format_style: :list,   format_shift:  0, default: nil,             allowed: nil },
-      'test_setups'           => { check: :check_multi_enum,  format_style: :multi,  format_shift:  0, default: nil,
-                                   allowed: %w[none off_target on_target manual] },
-      'verification_methods'  => { check: :check_multi_enum, format_style: :multi, format_shift:  0,   default: nil,
+      'verification_methods'  => { check: :check_multi_enum,  format_style: :multi,  format_shift:  0, default: nil,
                                    allowed: %w[none off_target on_target manual] },
       'status'                => { check: :check_single_enum, format_style: :single, format_shift:  0, default: nil,
                                    allowed: %w[valid draft invalid] },
@@ -101,8 +99,6 @@ module Dim
 
       check_unknown_keys
       check_invalid_values
-      # TODO: Remove after completely removing test_setups
-      merge_test_setups_and_verification_methods
       check_verification_methods
     end
 
@@ -208,20 +204,6 @@ module Dim
       end
     end
 
-    def merge_test_setups_and_verification_methods
-      # Given verification_methods is empty
-      # Given test_setups contains None
-      # Then return None
-      ts = @data['test_setups']&.cleanArray || []
-      vm = @data['verification_methods']&.cleanArray || []
-
-      return if vm.empty? && ts.empty?
-
-      merged = ts.union(vm).join(', ')
-      @data['test_setups'] = merged
-      @data['verification_methods'] = merged
-    end
-
     def check_verification_methods
       vm = @data['verification_methods']&.cleanArray || []
       return unless vm.include?('none') && vm.length > 1
@@ -229,7 +211,7 @@ module Dim
       vm.delete('none')
       Dim::ExitHelper.exit(code: 1,
                            filename: filename,
-                           msg: "verification_methods or test_setups for \"#{@id}\" can't include 'none' along with #{vm.join(', ')}.")
+                           msg: "verification_methods for \"#{@id}\" can't include 'none' along with #{vm.join(', ')}.")
     end
   end
 end

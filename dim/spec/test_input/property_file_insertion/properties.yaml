@@ -8,7 +8,7 @@ test_module_for_insertion:
   tags: legal, sys
   developer: inserted developer
   tester: inserted tester
-  test_setups: manual
+  verification_methods: manual
   status: valid
   review_status: rejected
   comment: inserted comment

@@ -38,7 +38,7 @@ module Sphinx
 
         expect(data.value("SWA_Spec_VerificationMethodsBackward", "verification_methods")).to eq 'off_target, on_target'
         expect(data.exist?("SWA_Spec_VerificationMethodsBackward", "test_setups")).to be false
-        expect(data.value("SWA_Spec_VerificationMethodsBackwardBoth", "verification_methods")).to eq 'manual'
+        expect(data.value("SWA_Spec_VerificationMethodsBackwardBoth", "verification_methods")).to eq 'off_target, on_target, manual'
         expect(data.exist?("SWA_Spec_VerificationMethodsBackwardBoth", "test_setups")).to be false
       end
 
@@ -54,7 +54,7 @@ module Sphinx
         expect(swa["SWA_Interface_VerificationMethodsDefault"]["verification_methods"]).to eq 'on_target'
 
         expect(swa["SWA_Spec_VerificationMethodsBackward"]["verification_methods"]).to eq 'off_target, on_target'
-        expect(swa["SWA_Spec_VerificationMethodsBackwardBoth"]["verification_methods"]).to eq 'manual'
+        expect(swa["SWA_Spec_VerificationMethodsBackwardBoth"]["verification_methods"]).to eq 'off_target, on_target, manual'
         content = File.read("spec/test_input/verification_methods/export_root/swa/index.dim")
         expect(content).not_to include "test_setups"
 

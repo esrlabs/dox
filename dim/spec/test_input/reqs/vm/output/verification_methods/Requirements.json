@@ -4,7 +4,7 @@
     "document_name": "verification_method_test",
     "originator": "",
     "type": "requirement",
-    "text": "Dim file should allow only verification_methods attribute, but when test_setups method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file",
+    "text": "Dim file should allow only verification_methods attribute, but when verification_methods method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file",
     "verification_criteria": "",
     "feature": "",
     "change_request": "",

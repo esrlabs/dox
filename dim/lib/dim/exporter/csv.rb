@@ -7,7 +7,6 @@ module Dim
 
     def header(content)
       @keys = @loader.all_attributes.keys
-      @keys.delete('test_setups')
       content.puts 'Sep=,'
       content.puts "id,document_name,originator,#{@keys.join(',')}"
     end

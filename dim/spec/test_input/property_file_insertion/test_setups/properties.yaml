@@ -1,2 +1,2 @@
 test_setups_insertion:
-  test_setups: off_target
+  verification_methods: off_target

@@ -1,6 +1,6 @@
 Sep=,
 id,document_name,originator,type,text,verification_criteria,feature,change_request,tags,asil,cal,developer,tester,verification_methods,status,review_status,comment,miscellaneous,sources,refs
-"ID_1","verification_method_test","","requirement","Dim file should allow only verification_methods attribute, but when test_setups method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file","","","","","not_set","not_set","","","none","draft","not_reviewed","","","",""
+"ID_1","verification_method_test","","requirement","Dim file should allow only verification_methods attribute, but when verification_methods method is called on the requirement object it shall return the array that verification_methods attribute mentions in the Dim file","","","","","not_set","not_set","","","none","draft","not_reviewed","","","",""
 "ID_2","verification_method_test","","requirement","","","","","","not_set","not_set","","","off_target, on_target","draft","not_reviewed","","","",""
 "ID_3","verification_method_test","","requirement","","","","","","not_set","not_set","","","off_target","draft","not_reviewed","","","",""
 "ID_4","verification_method_test","","requirement","","","","","","not_set","not_set","","","off_target, on_target","draft","not_reviewed","","","",""

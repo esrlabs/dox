@@ -1,7 +1,0 @@
-document: test_verification_methods
-
-ID_1:
-  test_setups: none
-
-ID_2:
-  verification_methods: none

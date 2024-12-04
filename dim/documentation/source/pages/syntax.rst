@@ -12,4 +12,3 @@ Syntax
    syntax/attributes
    syntax/html
    syntax/issues
-   syntax/backward

@@ -3,65 +3,65 @@ document: ok
 ESR_Test_L3a:
   text: xy
   tags: covered
-  test_setups: none
+  verification_methods: none
 
 ESR_Test_L3b:
   text: xy
   tags: covered, tested
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L3c:
   text: xy
   tags: covered, tested
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L3d:
   tags: process
   text: xy
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L3e:
   tags: covered
   text: xy
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L2ab:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L3a, ESR_Test_L3b
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L2bc:
   text: xy
   refs: ESR_Test_L3b, ESR_Test_L3c
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L2cd:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L3c, ESR_Test_L3d
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L2ce:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L3c, ESR_Test_L3e
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L1abc:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L2ab, ESR_Test_L2bc
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L1bcd:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L2bc, ESR_Test_L2cd
-  test_setups: off_target
+  verification_methods: off_target
 
 ESR_Test_L0abcd:
   text: xy
   tags: covered, tested
   refs: ESR_Test_L1abc, ESR_Test_L1bcd
-  test_setups: off_target
+  verification_methods: off_target
