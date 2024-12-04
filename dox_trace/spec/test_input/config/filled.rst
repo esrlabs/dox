@@ -18,7 +18,7 @@ Filled
     :tags: covered
     :developer: TheDeveloper
     :tester: TheTester
-    :test_setups: none
+    :verification_methods: none
     :verification_criteria: TheVC
     :comment: TheComment
     :miscellaneous: TheMisc
@@ -42,7 +42,7 @@ Filled
     :tags: covered
     :developer: TheDeveloper
     :tester: TheTester
-    :test_setups: none
+    :verification_methods: none
     :verification_criteria: TheVC
     :comment: TheComment
     :sources: filled.rst

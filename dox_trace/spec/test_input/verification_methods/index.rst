@@ -54,8 +54,7 @@ Backward
 --------
 
 .. spec:: SWA_Spec_VerificationMethodsBackward
-    :test_setups: off_target, on_target
+    :verification_methods: off_target, on_target
 
 .. spec:: SWA_Spec_VerificationMethodsBackwardBoth
-    :test_setups: off_target, on_target
-    :verification_methods: manual
+    :verification_methods: off_target, on_target, manual

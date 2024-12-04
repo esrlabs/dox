@@ -5,5 +5,5 @@ Not Available
 -------------
 
 .. information:: SRS_Information_TestSetups
-    :test_setups: not_available
+    :verification_methods: not_available
     :category: software
