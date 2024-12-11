@@ -863,6 +863,31 @@ Dim_export_rstIndex:
   status: valid
   sources: lib/dim/commands/exporter/rst.rb
 
+Dim_export_raw_rstHeading:      h3 Raw RST
+
+Dim_export_raw_rst:
+  text:                     |
+                            Raw RST exports shall export the data in plain, pure RST. No custom directives nor template
+                            specific syntax shall be used..
+  tags: tool, covered, tested
+  status: valid
+  sources: lib/dim/exporter/raw_rst.rb
+
+Dim_export_raw_rstText:
+  text:                     |
+                            In the Raw RST export, the requirements' 'text' field shall be exported without any kind of
+                            transformations, as to allow any RST syntax used in it to be preserved.
+  tags: tool, covered, tested
+  status: valid
+  sources: lib/dim/exporter/raw_rst.rb
+
+Dim_export_raw_rstIndex:
+  text:                     Additionally to the requirements files, the Raw RST exporter shall create index files for
+                            each originator/category pair to be directly used by Sphinx.
+  tags: tool, covered, tested
+  status: valid
+  sources: lib/dim/exporter/raw_rst.rb
+
 Dim_format_customAttributes:
   text:                     Before formatting requirements files with custom attributes, Dim shall load the attributes
                             file first.

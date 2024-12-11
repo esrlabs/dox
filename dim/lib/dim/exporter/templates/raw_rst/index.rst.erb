@@ -1,0 +1,9 @@
+<%= category.capitalize %><%= "\n" %>
+<%= '=' * category.length %><%= "\n" %>
+
+.. toctree::
+   :maxdepth: 1
+
+<% documents.each do |document| %>
+   <%= document %>/Requirements
+<% end %>

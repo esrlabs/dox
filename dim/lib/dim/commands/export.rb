@@ -3,6 +3,7 @@ require 'digest'
 
 require_relative '../globals'
 require_relative '../exporter/exporterInterface'
+require_relative '../exporter/raw_rst'
 require_relative '../exporter/rst'
 require_relative '../exporter/csv'
 require_relative '../exporter/json'

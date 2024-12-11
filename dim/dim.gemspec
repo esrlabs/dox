@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.executables = ['dim']
   s.licenses    = ['Apache-2.0']
   s.required_ruby_version = '>= 2.7'
+  s.add_runtime_dependency 'activesupport', '7.1.5.1'
   s.add_development_dependency 'rspec', '3.10.0'
   s.add_development_dependency 'simplecov', '0.22.0'
 
