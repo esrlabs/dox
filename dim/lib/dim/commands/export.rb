@@ -83,7 +83,7 @@ module Dim
         data.each do |origin, modules|
           ind += 1
           filename = "index_#{format('%03d', ind)}_#{category.downcase}_#{origin.downcase.sanitize}"
-          filepath = "#{OPTIONS[:folder]}/#{filename}.#{OPTIONS[:type]}"
+          filepath = "#{OPTIONS[:folder]}/#{filename}.#{@exporter_class.file_extension}"
           file_list << filepath
           new_content = StringIO.new
           print "Creating #{filepath}..." unless @silent
@@ -99,12 +99,13 @@ module Dim
       module_keys.each { |um| requirements_by_module[um] = [] }
       @loader.requirements.each { |_id, r| requirements_by_module[r.document] << r }
 
-      @exporter = EXPORTER[OPTIONS[:type]].new(@loader)
+      @exporter_class = EXPORTER[OPTIONS[:type]]
+      @exporter = @exporter_class.new(@loader)
       requirements_by_module.each do |doc, reqs|
         next if reqs.empty?
 
         @export_dir = File.join(OPTIONS[:folder])
-        filename = File.join(export_dir, doc.sanitize, "Requirements.#{OPTIONS[:type]}")
+        filename = File.join(export_dir, doc.sanitize, "Requirements.#{@exporter_class.file_extension}")
         file_list << filename
         FileUtils.mkdir_p(File.dirname(filename))
         copy_files(doc)
