@@ -72,14 +72,14 @@ module Dim
       it 'if specified with invalid file format', doc_refs: %w[Dim_export_general Dim_CLI_exit] do
         Test.main("export -i #{TEST_INPUT_DIR}/one_module_in_several_files/Config.yml -o #{TEST_OUTPUT_DIR}/wrong -f wrong")
         expect(File.exist?("#{TEST_OUTPUT_DIR}/wrong.txt")).to eq false
-        expect(@test_stderr).to include('export format must be one of: rst, csv, json')
+        expect(@test_stderr).to include('export format must be one of: raw-rst, rst, csv, json')
         expect(Dim::ExitHelper.exit_code).to be > 0
       end
 
       it 'if specified without file format', doc_refs: %w[Dim_export_general Dim_CLI_exit] do
         Test.main("export -i #{TEST_INPUT_DIR}/one_module_in_several_files/Config.yml -o #{TEST_OUTPUT_DIR}/wrong")
         expect(File.exist?("#{TEST_OUTPUT_DIR}/wrong.txt")).to eq false
-        expect(@test_stderr).to include('export format not specified, must be one of: rst, csv, json')
+        expect(@test_stderr).to include('export format not specified, must be one of: raw-rst, rst, csv, json')
         expect(Dim::ExitHelper.exit_code).to be > 0
       end
     end

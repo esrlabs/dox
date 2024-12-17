@@ -158,6 +158,7 @@ FORMAT can be *rst*, *csv* and *json*.
 
 | *csv* can be used for e.g. exporting to other requirements tools.
 | *rst* output is input for a Sphinx documentation build which can create HTML pages.
+| *raw-rst* similar to *rst* but it outputs plain RST, without custom directives or template-specific syntax.
 
 \-\-filter FILTER
 ~~~~~~~~~~~~~~~~~

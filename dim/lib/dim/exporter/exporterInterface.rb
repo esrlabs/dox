@@ -17,6 +17,14 @@ module Dim
   class ExporterInterface
     attr_reader :hasIndex
 
+    # Returns the extension (suffix) the exporter should use for the exported
+    # files. By default this matches the EXPORTER type associated with the class.
+    # Subclasses can override the method to change the default behaviour.
+    # @return [String] The extension for the exported files.
+    def self.file_extension
+      EXPORTER.key(self)
+    end
+
     def initialize(loader)
       @hasIndex = false
       @loader = loader

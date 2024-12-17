@@ -1,0 +1,13 @@
+.. _`dim-req-<%= requirement_id %>`:
+
+<%= requirement_id %><%= "\n" %>
+<%= "-" * requirement_id.length %><%= "\n" %>
+
+.. list-table::
+
+   * - **<%= requirement_id %>** | <%= requirement.review_status %> | <%= [asil, requirement.origin].compact.join(" | ") %>
+   * - **Tags:** <%= requirement.tags.join(', ') %>
+   * - **Verification Methods:** <%= requirement.verification_methods.join(', ') %>
+<% if text.present? %>   * - <%= text %><% end %>
+   * - **Downstream References:** <%= downstream_references %>
+   * - **Upstream References:** <%= upstream_references %>
