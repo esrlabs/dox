@@ -1,0 +1,16 @@
+Requirements
+============
+
+<% categories.each do |category_name, category_data| %>
+<% label = category_name.capitalize %>
+
+<%= label %>
+<%= '-' * label.length %>
+
+.. toctree::
+  :maxdepth: 1
+  :glob:
+
+  <%= category_data[:id] %>/*
+
+<% end %>

@@ -1,0 +1,20 @@
+<%= module_name %>
+<%= '=' * module_name.length %>
+
+<% module_data[:requirements].each do |requirement|
+  requirement_id = requirement.id %>
+
+.. _`dim-req-<%= requirement_id %>`:
+
+<%= requirement_id %>
+<%= "-" * requirement_id.length %>
+
+.. list-table::
+
+   * - **<%= requirement_id %>** | <%= requirement.accepted %> | <%= asil_level(requirement) %> <%= requirement.origin %>
+   * - **Tags:** <%= requirement.tags %>
+   * - **Test Setups:** <%= requirement.test_setups %>
+   * - <%= req_text(requirement) %>
+   * - **References:** <%= req_refs(requirement.refs) %>
+   * - **Back References:** <%= req_refs(requirement.backwardRefs) %>
+<% end %>

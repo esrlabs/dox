@@ -1,0 +1,91 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "active_support"
+require "active_support/core_ext/string"
+require "dim/loader"
+require "erb"
+require "fileutils"
+
+# rubocop:disable Style/GlobalVars
+# (required by DIM)
+$subcommands = {}
+# rubocop:enable Style/GlobalVars
+
+def asil_level(requirement)
+  requirement.asil == "not_set" ? nil : "#{requirement.asil} |"
+end
+
+def req_text(requirement)
+  buffer = StringIO.new
+  text_lines = requirement.text.lines.map(&:chomp)
+  buffer << text_lines.shift
+
+  if text_lines.any?
+    text_lines.each do |line|
+      buffer << "\n#{line.indent(7)}"
+    end
+  end
+
+  buffer.string
+end
+
+def req_refs(references)
+  return "none" unless references&.any?
+
+  references.map { |ref| ":ref:`dim-req-#{ref}`" }.join(', ')
+end
+
+input_file = ARGV.shift
+output_dir = ARGV.shift
+
+@loader = Dim::Loader.new.tap do |loader|
+  loader.load input_filenames: [input_file]
+end
+
+categories = {}
+
+@loader.requirements.each_value do |requirement|
+  category_name = requirement.category
+
+  category_data = categories[category_name] ||= {}
+  category_data[:name] = category_name
+  category_data[:id] = category_name.parameterize.downcase
+  category_requirements = category_data[:requirements] ||= []
+  category_requirements << requirement
+
+  module_name = requirement.moduleName
+  category_modules = category_data[:modules] ||= {}
+  module_data = category_modules[module_name] ||= {}
+  module_data[:name] = module_name
+  module_data[:id] = module_name.parameterize.downcase
+  module_requirements = module_data[:requirements] ||= []
+  module_requirements << requirement
+end
+
+templates_path = Pathname.new(__dir__) / ".." / "lib" / "dim_to_rst" / "templates"
+
+index_template = File.read(templates_path / "index.rst.erb")
+index_erb = ERB.new(index_template)
+index_dest = File.join(output_dir, "index.rst")
+
+File.write(index_dest, index_erb.result_with_hash(
+  categories: categories
+))
+
+module_template = File.read(templates_path / "module.rst.erb")
+module_erb = ERB.new(module_template)
+
+categories.each do |category_name, category_data|
+  category_dir = File.join(output_dir, category_data[:id])
+
+  FileUtils.rm_rf(category_dir)
+  FileUtils.mkdir(category_dir)
+
+  category_data[:modules].each do |module_name, module_data|
+    module_dest = File.join(category_dir, "#{module_data[:id]}.rst")
+    File.write(module_dest, module_erb.result_with_hash(
+                              module_name: module_name, module_data: module_data
+                            ))
+  end
+end
