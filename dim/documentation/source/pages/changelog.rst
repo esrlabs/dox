@@ -3,7 +3,8 @@ Changelog
 
 2.2.0
 -----
-### TBD
+
+February 4, 2025
 
 - Removed backward compatibility for module which is replaced by document. (#25)
 - Removed backward compatibility for test_setups attribute. (#24)
