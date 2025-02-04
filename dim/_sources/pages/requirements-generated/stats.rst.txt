@@ -9,15 +9,15 @@ Requirements
     :widths: 50 50
 
     * - Total number of requirements
-      - 111
+      - 107
     * - Valid requirements
-      - 111
+      - 107
     * - Covered requirements
-      - 111
+      - 107
     * - Tested requirements
-      - 111
+      - 107
     * - Requirements mapped to test cases
-      - 111
+      - 107
 
 Test Cases
 ----------
@@ -27,8 +27,8 @@ Test Cases
     :widths: 50 50
 
     * - Total number of test cases
-      - 338
+      - 322
     * - Test cases with valid requirement IDs
-      - 338
+      - 322
     * - Test cases without invalid requirement IDs
-      - 338
+      - 322

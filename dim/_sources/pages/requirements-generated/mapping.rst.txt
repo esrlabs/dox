@@ -59,366 +59,324 @@ Test Case Mapping
       - Loading a requirements file with ISO8859-1 encoding shall convert the data to UTF-8 and not lead to an error
     * - :ref:`Dim_ReqFiles_document <Dim_ReqFiles_document>`
       - spec/requirement_spec.rb:29
-      - Requirements file attribute module shall default to the folder name of the requirements file
+      - Requirements file attribute document shall default to the folder name of the requirements file
     * -
-      - spec/requirement_spec.rb:37
-      - Requirements file attribute module shall be non-unique
+      - spec/requirement_spec.rb:36
+      - Requirements file attribute document shall be non-unique
     * -
       - spec/requirement_spec.rb:10
-      - Requirements file attribute module when value is no string shall throw an error and print a meaningful error message
+      - Requirements file attribute document when value is no string shall throw an error and print a meaningful error message
     * -
       - spec/requirement_spec.rb:21
-      - Requirements file attribute module when value string is empty shall throw an error and print a meaningful error message
+      - Requirements file attribute document when value string is empty shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_MissingDocument <Dim_ReqFiles_MissingDocument>`
-      - spec/requirement_spec.rb:49
-      - Requirements file attribute module when module is missing shall throw an error
+      - spec/requirement_spec.rb:47
+      - Requirements file attribute document when document is missing shall throw an error
     * - :ref:`Dim_ReqFiles_enclosed <Dim_ReqFiles_enclosed>`
-      - spec/requirement_spec.rb:58
+      - spec/requirement_spec.rb:56
       - Requirements file attribute enclosed shall be a string or an array of strings
     * -
-      - spec/requirement_spec.rb:68
+      - spec/requirement_spec.rb:66
       - Requirements file attribute enclosed shall be a optional
     * -
-      - spec/requirement_spec.rb:80
+      - spec/requirement_spec.rb:78
       - Requirements file attribute enclosed when file does not exists shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:92
+      - spec/requirement_spec.rb:90
       - Requirements file attribute enclosed when string is empty shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:103
+      - spec/requirement_spec.rb:101
       - Requirements file attribute enclosed when string includes ".." shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_metadata <Dim_ReqFiles_metadata>`
-      - spec/requirement_spec.rb:137
+      - spec/requirement_spec.rb:135
       - Requirements file attribute metadata shall be an optional string
     * -
-      - spec/requirement_spec.rb:151
+      - spec/requirement_spec.rb:149
       - Requirements file attribute metadata when value is not a string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_id <Dim_ReqFiles_id>`
-      - spec/requirement_spec.rb:185
+      - spec/requirement_spec.rb:183
       - Requirements file attribute id without any data shall be accepted without errors
     * -
-      - spec/requirement_spec.rb:190
+      - spec/requirement_spec.rb:188
       - Requirements file attribute id not specified (no requirements) shall not lead to an error
     * -
-      - spec/requirement_spec.rb:200
+      - spec/requirement_spec.rb:198
       - Requirements file attribute id when "," shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_regularYaml <Dim_ReqFiles_regularYaml>`
-      - spec/requirement_spec.rb:161
+      - spec/requirement_spec.rb:159
       - Requirements file attribute id in regular form is a key of a collection of key/values pairs of strings
     * - :ref:`Dim_ReqFiles_type <Dim_ReqFiles_type>`
-      - spec/requirement_spec.rb:209
+      - spec/requirement_spec.rb:207
       - Requirements file attribute type shall be requirement, information and heading_0 to heading_100
     * -
-      - spec/requirement_spec.rb:220
+      - spec/requirement_spec.rb:218
       - Requirements file attribute type requirement shall be the default
     * -
-      - spec/requirement_spec.rb:227
+      - spec/requirement_spec.rb:225
       - Requirements file attribute type unknown shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:233
+      - spec/requirement_spec.rb:231
       - Requirements file attribute type empty string shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:239
+      - spec/requirement_spec.rb:237
       - Requirements file attribute type heading level too high shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:1022
+      - spec/requirement_spec.rb:906
       - Requirements file attribute when heading method is called on the requirement object shall return the heading_1 when heading is called on the requirements object
     * - :ref:`Dim_ReqFiles_text <Dim_ReqFiles_text>`
-      - spec/requirement_spec.rb:259
+      - spec/requirement_spec.rb:257
       - Requirements file attribute text shall be any string
     * -
-      - spec/requirement_spec.rb:268
+      - spec/requirement_spec.rb:266
       - Requirements file attribute text shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:289
+      - spec/requirement_spec.rb:287
       - Requirements file attribute text when value is no string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_verificationCriteria <Dim_ReqFiles_verificationCriteria>`
-      - spec/requirement_spec.rb:299
+      - spec/requirement_spec.rb:297
       - Requirements file attribute verification_criteria shall be any string
     * -
-      - spec/requirement_spec.rb:306
+      - spec/requirement_spec.rb:304
       - Requirements file attribute verification_criteria shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:316
+      - spec/requirement_spec.rb:314
       - Requirements file attribute verification_criteria when value is no string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_feature <Dim_ReqFiles_feature>`
-      - spec/requirement_spec.rb:326
+      - spec/requirement_spec.rb:324
       - Requirements file attribute feature shall be any string
     * -
-      - spec/requirement_spec.rb:333
+      - spec/requirement_spec.rb:331
       - Requirements file attribute feature shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:343
+      - spec/requirement_spec.rb:341
       - Requirements file attribute feature when value is no string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_changeRequest <Dim_ReqFiles_changeRequest>`
-      - spec/requirement_spec.rb:353
+      - spec/requirement_spec.rb:351
       - Requirements file attribute change_request shall be any string
     * -
-      - spec/requirement_spec.rb:360
+      - spec/requirement_spec.rb:358
       - Requirements file attribute change_request shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:370
+      - spec/requirement_spec.rb:368
       - Requirements file attribute change_request value is no string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_tags <Dim_ReqFiles_tags>`
-      - spec/requirement_spec.rb:380
+      - spec/requirement_spec.rb:378
       - Requirements file attribute tags shall be a comma separated string
     * -
-      - spec/requirement_spec.rb:389
+      - spec/requirement_spec.rb:387
       - Requirements file attribute tags shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:396
+      - spec/requirement_spec.rb:394
       - Requirements file attribute tags shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:404
+      - spec/requirement_spec.rb:402
       - Requirements file attribute tags with duplicates shall not throw an error but duplicates are removed
     * -
-      - spec/requirement_spec.rb:411
+      - spec/requirement_spec.rb:409
       - Requirements file attribute tags shall not throw an error if an unknown tag is used
     * - :ref:`Dim_ReqFiles_asil <Dim_ReqFiles_asil>`
       - spec/property_spec.rb:6
       - Properties file with asil and cal attributes shall resolve default-values
     * -
-      - spec/requirement_spec.rb:420
+      - spec/requirement_spec.rb:418
       - Requirements file attribute asil shall be a predefined string
     * -
-      - spec/requirement_spec.rb:431
+      - spec/requirement_spec.rb:429
       - Requirements file attribute asil shall be default=not_set if not specified
     * -
-      - spec/requirement_spec.rb:438
+      - spec/requirement_spec.rb:436
       - Requirements file attribute asil shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:446
+      - spec/requirement_spec.rb:444
       - Requirements file attribute asil shall throw an error and print a meaningful error message if value is an empty string
     * - :ref:`Dim_ReqFiles_calString <Dim_ReqFiles_calString>`
       - spec/property_spec.rb:6
       - Properties file with asil and cal attributes shall resolve default-values
     * -
-      - spec/requirement_spec.rb:456
+      - spec/requirement_spec.rb:454
       - Requirements file attribute cal shall be a predefined string
     * -
-      - spec/requirement_spec.rb:466
+      - spec/requirement_spec.rb:464
       - Requirements file attribute cal shall be not_set if not specified
     * -
-      - spec/requirement_spec.rb:473
+      - spec/requirement_spec.rb:471
       - Requirements file attribute cal shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:481
+      - spec/requirement_spec.rb:479
       - Requirements file attribute cal shall throw an error and print a meaningful error message if value is an empty string
     * - :ref:`Dim_ReqFiles_developer <Dim_ReqFiles_developer>`
-      - spec/requirement_spec.rb:491
+      - spec/requirement_spec.rb:489
       - Requirements file attribute developer shall be any string
     * -
-      - spec/requirement_spec.rb:500
+      - spec/requirement_spec.rb:498
       - Requirements file attribute developer shall resolve if missing
     * -
-      - spec/requirement_spec.rb:517
+      - spec/requirement_spec.rb:515
       - Requirements file attribute developer shall be not_set by default
     * -
-      - spec/requirement_spec.rb:528
+      - spec/requirement_spec.rb:526
       - Requirements file attribute developer shall throw an error and print a meaningful error message if value is no string
     * - :ref:`Dim_ReqFiles_tester <Dim_ReqFiles_tester>`
-      - spec/requirement_spec.rb:538
+      - spec/requirement_spec.rb:536
       - Requirements file attribute tester shall be any string
     * -
-      - spec/requirement_spec.rb:547
+      - spec/requirement_spec.rb:545
       - Requirements file attribute tester shall resolve if not preset
     * -
-      - spec/requirement_spec.rb:564
+      - spec/requirement_spec.rb:562
       - Requirements file attribute tester shall be not_set by default
     * -
-      - spec/requirement_spec.rb:575
+      - spec/requirement_spec.rb:573
       - Requirements file attribute tester shall throw an error and print a meaningful error message if value is no string
-    * - :ref:`Dim_ReqFiles_testSetups <Dim_ReqFiles_testSetups>`
-      - spec/requirement_spec.rb:585
-      - Requirements file attribute test_setups shall be any string
-    * -
-      - spec/requirement_spec.rb:593
-      - Requirements file attribute test_setups shall resolve default
-    * -
-      - spec/requirement_spec.rb:627
-      - Requirements file attribute test_setups shall be nil by default
-    * -
-      - spec/requirement_spec.rb:638
-      - Requirements file attribute test_setups shall throw an error and print a meaningful error message if value is no string
-    * -
-      - spec/requirement_spec.rb:646
-      - Requirements file attribute test_setups with duplicates shall not throw an error but duplicates are removed
-    * -
-      - spec/requirement_spec.rb:653
-      - Requirements file attribute test_setups unknown shall throw an error and print a meaningful error message
-    * -
-      - spec/requirement_spec.rb:660
-      - Requirements file attribute test_setups shall throw error when empty value is set
-    * -
-      - spec/requirement_spec.rb:666
-      - Requirements file attribute test_setups shall throw an error and print a meaningful error message if none is used with another enum value
     * - :ref:`Dim_ReqFiles_verificationMethods <Dim_ReqFiles_verificationMethods>`
-      - spec/requirement_spec.rb:686
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods and test_setups are empty in dim file shall have test_setups and verification_methods set to none
+      - spec/requirement_spec.rb:583
+      - Requirements file attribute verification_methods shall be any string
     * -
-      - spec/requirement_spec.rb:703
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods present in the Dim file while test_setups is missing shall return test_setups same as verification_methods
+      - spec/requirement_spec.rb:591
+      - Requirements file attribute verification_methods shall resolve default
     * -
-      - spec/requirement_spec.rb:728
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods is missing from Dim file and test_setups are present shall have values from test_setups added to verification_methods
+      - spec/requirement_spec.rb:625
+      - Requirements file attribute verification_methods shall be nil by default
     * -
-      - spec/requirement_spec.rb:740
-      - Requirements file attribute verification_methods when verification_methods contains none and test_setups is present in the Dim file shall throw an error with the meaningful error message
+      - spec/requirement_spec.rb:636
+      - Requirements file attribute verification_methods shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:750
-      - Requirements file attribute verification_methods when verification_methods are present in Dim and test_setups is none shall throw an error with a meaningful error message
+      - spec/requirement_spec.rb:644
+      - Requirements file attribute verification_methods with duplicates shall not throw an error but duplicates are removed
     * -
-      - spec/requirement_spec.rb:767
-      - Requirements file attribute verification_methods when verification_methods and test_setups in Dim contains none shall load Dim
+      - spec/requirement_spec.rb:651
+      - Requirements file attribute verification_methods unknown shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:774
-      - Requirements file attribute verification_methods when test_setups is none or verification_methods is none shall load dim file
-    * - :ref:`Dim_ReqFiles_verificationMethods_backward <Dim_ReqFiles_verificationMethods_backward>`
-      - spec/requirement_spec.rb:686
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods and test_setups are empty in dim file shall have test_setups and verification_methods set to none
+      - spec/requirement_spec.rb:658
+      - Requirements file attribute verification_methods shall throw error when empty value is set
     * -
-      - spec/requirement_spec.rb:703
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods present in the Dim file while test_setups is missing shall return test_setups same as verification_methods
-    * -
-      - spec/requirement_spec.rb:728
-      - Requirements file attribute verification_methods when Dim file contains valid data when verification_methods is missing from Dim file and test_setups are present shall have values from test_setups added to verification_methods
-    * -
-      - spec/requirement_spec.rb:740
-      - Requirements file attribute verification_methods when verification_methods contains none and test_setups is present in the Dim file shall throw an error with the meaningful error message
-    * -
-      - spec/requirement_spec.rb:750
-      - Requirements file attribute verification_methods when verification_methods are present in Dim and test_setups is none shall throw an error with a meaningful error message
-    * -
-      - spec/requirement_spec.rb:767
-      - Requirements file attribute verification_methods when verification_methods and test_setups in Dim contains none shall load Dim
-    * -
-      - spec/requirement_spec.rb:774
-      - Requirements file attribute verification_methods when test_setups is none or verification_methods is none shall load dim file
+      - spec/requirement_spec.rb:664
+      - Requirements file attribute verification_methods shall throw an error and print a meaningful error message if none is used with another enum value
     * - :ref:`Dim_ReqFiles_status <Dim_ReqFiles_status>`
-      - spec/requirement_spec.rb:790
+      - spec/requirement_spec.rb:674
       - Requirements file attribute status shall be a predefined string
     * -
-      - spec/requirement_spec.rb:799
+      - spec/requirement_spec.rb:683
       - Requirements file attribute status shall resolve if missing
     * -
-      - spec/requirement_spec.rb:808
+      - spec/requirement_spec.rb:692
       - Requirements file attribute status shall resolve as default nil
     * -
-      - spec/requirement_spec.rb:817
+      - spec/requirement_spec.rb:701
       - Requirements file attribute status shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:825
+      - spec/requirement_spec.rb:709
       - Requirements file attribute status shall throw an error and print a meaningful error message if value is an empty string
     * -
-      - spec/requirement_spec.rb:832
+      - spec/requirement_spec.rb:716
       - Requirements file attribute status shall throw an error and print a meaningful error message if value is unknown
     * - :ref:`Dim_ReqFiles_reviewStatus <Dim_ReqFiles_reviewStatus>`
-      - spec/requirement_spec.rb:842
+      - spec/requirement_spec.rb:726
       - Requirements file attribute review_status shall be a predefined string
     * -
-      - spec/requirement_spec.rb:853
+      - spec/requirement_spec.rb:737
       - Requirements file attribute review_status shall resolve if not added
     * -
-      - spec/requirement_spec.rb:865
+      - spec/requirement_spec.rb:749
       - Requirements file attribute review_status shall not_set as default not_set
     * -
-      - spec/requirement_spec.rb:877
+      - spec/requirement_spec.rb:761
       - Requirements file attribute review_status shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:885
+      - spec/requirement_spec.rb:769
       - Requirements file attribute review_status shall throw an error and print a meaningful error message if value is an empty string
     * -
-      - spec/requirement_spec.rb:892
+      - spec/requirement_spec.rb:776
       - Requirements file attribute review_status shall throw an error and print a meaningful error message if value is unknown
     * - :ref:`Dim_ReqFiles_comment <Dim_ReqFiles_comment>`
-      - spec/requirement_spec.rb:902
+      - spec/requirement_spec.rb:786
       - Requirements file attribute comment shall be any string
     * -
-      - spec/requirement_spec.rb:909
+      - spec/requirement_spec.rb:793
       - Requirements file attribute comment shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:916
+      - spec/requirement_spec.rb:800
       - Requirements file attribute comment shall throw an error and print a meaningful error message if value is no string
     * - :ref:`Dim_ReqFiles_miscellaneous <Dim_ReqFiles_miscellaneous>`
-      - spec/requirement_spec.rb:926
+      - spec/requirement_spec.rb:810
       - Requirements file attribute miscellaneous shall be any string
     * -
-      - spec/requirement_spec.rb:933
+      - spec/requirement_spec.rb:817
       - Requirements file attribute miscellaneous shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:940
+      - spec/requirement_spec.rb:824
       - Requirements file attribute miscellaneous shall throw an error and print a meaningful error message if value is no string
     * - :ref:`Dim_ReqFiles_sources <Dim_ReqFiles_sources>`
-      - spec/requirement_spec.rb:950
+      - spec/requirement_spec.rb:834
       - Requirements file attribute sources shall be any string
     * -
-      - spec/requirement_spec.rb:958
+      - spec/requirement_spec.rb:842
       - Requirements file attribute sources shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:965
+      - spec/requirement_spec.rb:849
       - Requirements file attribute sources shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:973
+      - spec/requirement_spec.rb:857
       - Requirements file attribute sources with duplicates shall not throw an error but duplicates are removed
     * - :ref:`Dim_ReqFiles_refs <Dim_ReqFiles_refs>`
       - spec/loader_config_spec.rb:260
       - Loading a config file when custom attributes are provided with dependencies within the same categories loads requirements with correctly referenced
     * -
-      - spec/requirement_spec.rb:982
+      - spec/requirement_spec.rb:866
       - Requirements file attribute refs shall be any string
     * -
-      - spec/requirement_spec.rb:990
+      - spec/requirement_spec.rb:874
       - Requirements file attribute refs shall be an empty string if not specified
     * -
-      - spec/requirement_spec.rb:997
+      - spec/requirement_spec.rb:881
       - Requirements file attribute refs shall throw an error and print a meaningful error message if value is no string
     * -
-      - spec/requirement_spec.rb:1005
+      - spec/requirement_spec.rb:889
       - Requirements file attribute refs with duplicates shall not throw an error but duplicates are removed
     * -
-      - spec/requirement_spec.rb:1012
+      - spec/requirement_spec.rb:896
       - Requirements file attribute refs with references to non-existing requirements shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_language <Dim_ReqFiles_language>`
-      - spec/requirement_spec.rb:1032
+      - spec/requirement_spec.rb:916
       - Requirements file attribute language variants of text shall be any string
     * -
-      - spec/requirement_spec.rb:1044
+      - spec/requirement_spec.rb:928
       - Requirements file attribute language variants of text shall be an empty string if not specified in this particular requirement but specified in another requirement
     * -
-      - spec/requirement_spec.rb:1064
+      - spec/requirement_spec.rb:948
       - Requirements file attribute language variants of text when value is no string shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:1074
+      - spec/requirement_spec.rb:958
       - Requirements file attribute when language variants of verification_criteria shall be any string
     * -
-      - spec/requirement_spec.rb:1086
+      - spec/requirement_spec.rb:970
       - Requirements file attribute when language variants of verification_criteria shall be an empty string if not specified in this particular requirement but specified in another requirement
     * -
-      - spec/requirement_spec.rb:1106
+      - spec/requirement_spec.rb:990
       - Requirements file attribute when language variants of verification_criteria when value is no string shall throw an error and print a meaningful error message
     * -
-      - spec/requirement_spec.rb:1116
+      - spec/requirement_spec.rb:1000
       - Requirements file attribute language variants of comment shall be any string
     * -
-      - spec/requirement_spec.rb:1128
+      - spec/requirement_spec.rb:1012
       - Requirements file attribute language variants of comment shall be an empty string if not specified in this particular requirement but specified in another requirement
     * -
-      - spec/requirement_spec.rb:1148
+      - spec/requirement_spec.rb:1032
       - Requirements file attribute language variants of comment when value is no string shall throw an error and print a meaningful error message
     * - :ref:`Dim_ReqFiles_shortYaml <Dim_ReqFiles_shortYaml>`
-      - spec/requirement_spec.rb:177
+      - spec/requirement_spec.rb:175
       - Requirements file attribute id when in short form is a key of a key/value pair of strings throws error and prints meaningful error message
     * - :ref:`Dim_ReqFiles_shortHeadingForm <Dim_ReqFiles_shortHeadingForm>`
-      - spec/requirement_spec.rb:246
+      - spec/requirement_spec.rb:244
       - Requirements file attribute type shall be h0 to h100 and info in short form
     * -
-      - spec/requirement_spec.rb:275
+      - spec/requirement_spec.rb:273
       - Requirements file attribute text shall be the rest after h0 to h100 and info in short form
     * - :ref:`Dim_ReqFiles_shortInfoForm <Dim_ReqFiles_shortInfoForm>`
-      - spec/requirement_spec.rb:246
+      - spec/requirement_spec.rb:244
       - Requirements file attribute type shall be h0 to h100 and info in short form
     * -
-      - spec/requirement_spec.rb:275
+      - spec/requirement_spec.rb:273
       - Requirements file attribute text shall be the rest after h0 to h100 and info in short form
     * - :ref:`Dim_ConfigFiles_Config <Dim_ConfigFiles_Config>`
       - spec/loader_config_spec.rb:27
@@ -485,7 +443,7 @@ Test Case Mapping
       - Properties file with dim attributes defined shall resolve default-values and empty attributes of dim modules
     * - :ref:`Dim_ConfigFiles_Attribute <Dim_ConfigFiles_Attribute>`
       - spec/export_spec.rb:229
-      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, module name and originator
+      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, document name and originator
     * -
       - spec/export_spec.rb:243
       - dim export when custom attributes are provided by config file to RST should add custom attributes to exported data if attribute is not empty
@@ -493,7 +451,7 @@ Test Case Mapping
       - spec/export_spec.rb:256
       - dim export when custom attributes are provided by config file to CSV should add custom attributes to exported data if attribute is not empty
     * -
-      - spec/format_spec.rb:214
+      - spec/format_spec.rb:188
       - dim format when custom attributes are given loads the custom attributes and format the requirements
     * -
       - spec/loader_attribute_spec.rb:12
@@ -599,13 +557,13 @@ Test Case Mapping
       - Loading a config file with software requirements when ID only contains "SRS" throws error with meaningful message and exits
     * -
       - spec/loader_config_spec.rb:411
-      - Loading a config file with software requirements when module contains multiple underscores throws error with meaningful message and exits
+      - Loading a config file with software requirements when document name contains multiple underscores throws error with meaningful message and exits
     * -
       - spec/loader_config_spec.rb:423
-      - Loading a config file with software requirements when module is missing feature throws error with meaningful message and exits
+      - Loading a config file with software requirements when document name is missing feature throws error with meaningful message and exits
     * -
       - spec/loader_config_spec.rb:435
-      - Loading a config file with software requirements when module does not start with SRS throws error with meaningful message and exits
+      - Loading a config file with software requirements when document name does not start with SRS throws error with meaningful message and exits
     * -
       - spec/loader_config_spec.rb:448
       - Loading a config file with software requirements when non-alphanumeric characters are present in feature throws error and exits
@@ -614,7 +572,7 @@ Test Case Mapping
       - Loading a config file with software requirements when non-alphanumeric characters are present in aspect throws meaningful error and exits
     * -
       - spec/loader_config_spec.rb:474
-      - Loading a config file with software requirements when non-alphanumeric characters are present in module throws meaningful error and exits
+      - Loading a config file with software requirements when non-alphanumeric characters are present in document name throws meaningful error and exits
     * - :ref:`Dim_PropFiles_Property <Dim_PropFiles_Property>`
       - spec/loader_property_spec.rb:8
       - Loading a properties file with an invalid attribute type shall throw an error and print a meaningful error message
@@ -725,7 +683,7 @@ Test Case Mapping
       - Dim::Helpers::AttributeHelper #exit_with_error exits the process with error message
     * - :ref:`Dim_AttrFiles_Attribute <Dim_AttrFiles_Attribute>`
       - spec/export_spec.rb:229
-      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, module name and originator
+      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, document name and originator
     * -
       - spec/export_spec.rb:243
       - dim export when custom attributes are provided by config file to RST should add custom attributes to exported data if attribute is not empty
@@ -733,7 +691,7 @@ Test Case Mapping
       - spec/export_spec.rb:256
       - dim export when custom attributes are provided by config file to CSV should add custom attributes to exported data if attribute is not empty
     * -
-      - spec/format_spec.rb:214
+      - spec/format_spec.rb:188
       - dim format when custom attributes are given loads the custom attributes and format the requirements
     * -
       - spec/loader_attribute_spec.rb:12
@@ -823,7 +781,7 @@ Test Case Mapping
       - spec/format_spec.rb:33
       - dim format shall support output-format "in-place" by default
     * -
-      - spec/loader_general_spec.rb:85
+      - spec/loader_general_spec.rb:77
       - Loading a file when empty requirement is loaded loads the requirement with default attributes
     * -
       - spec/stats_spec.rb:23
@@ -850,7 +808,7 @@ Test Case Mapping
       - spec/loader_general_spec.rb:26
       - Loading a file which has invalid yaml syntax shall throw an error and print a meaningful error message
     * -
-      - spec/loader_general_spec.rb:94
+      - spec/loader_general_spec.rb:86
       - Loading a file when enclosed file contains absolute path shall throw an error with meaningful error message
     * -
       - spec/loader_requirement_spec.rb:77
@@ -884,43 +842,16 @@ Test Case Mapping
       - Consistency check when loading files which include requirements that have unresolved references with check subcommand and --allow-missing shall not lead to an error
     * - :ref:`Dim_loading_checkDocument <Dim_loading_checkDocument>`
       - spec/consistency_spec.rb:67
-      - Consistency check when loading files with same module but different category shall throw an error and print a meaningful error message
+      - Consistency check when loading files with same document but different category shall throw an error and print a meaningful error message
     * -
       - spec/consistency_spec.rb:77
-      - Consistency check when loading files with same module but different owner shall throw an error and print a meaningful error message
-    * - :ref:`Dim_loading_document <Dim_loading_document>`
-      - spec/export_spec.rb:300
-      - dim export document to json shall replace module with document
-    * -
-      - spec/export_spec.rb:309
-      - dim export document to json shall export document dim file
-    * -
-      - spec/export_spec.rb:320
-      - dim export document to csv shall replace module with document
-    * -
-      - spec/export_spec.rb:329
-      - dim export document to csv shall export document dim file
-    * -
-      - spec/export_spec.rb:340
-      - dim export document to rst shall replace module with document
-    * -
-      - spec/export_spec.rb:349
-      - dim export document to rst shall export document dim file
-    * -
-      - spec/format_spec.rb:230
-      - dim format document when present shall format the document
-    * -
-      - spec/format_spec.rb:241
-      - dim format document when module is given shall replace the module with document
-    * -
+      - Consistency check when loading files with same document but different owner shall throw an error and print a meaningful error message
+    * - :ref:`Dim_loading_emptyDocument <Dim_loading_emptyDocument>`
       - spec/loader_general_spec.rb:68
-      - Loading a file loading a dim file with document and module shall exit and throw meaningful error message
-    * -
-      - spec/loader_general_spec.rb:76
       - Loading a file when loading dim file with a empty document shall throw an error with meaningful error message
     * - :ref:`Dim_loading_checkMetadata <Dim_loading_checkMetadata>`
       - spec/consistency_spec.rb:87
-      - Consistency check when loading files with same module but multiple metadata shall throw an error and print a meaningful error message
+      - Consistency check when loading files with same document but multiple metadata shall throw an error and print a meaningful error message
     * - :ref:`Dim_loading_checkID <Dim_loading_checkID>`
       - spec/consistency_spec.rb:13
       - Consistency check when loading a file which includes non-unique ids shall throw an error and print a meaningful error message
@@ -952,20 +883,17 @@ Test Case Mapping
       - spec/format_spec.rb:85
       - dim format use case: empty file
     * -
-      - spec/format_spec.rb:143
+      - spec/format_spec.rb:142
       - dim format use case: properties file shall have no influence
     * -
-      - spec/format_spec.rb:230
+      - spec/format_spec.rb:204
       - dim format document when present shall format the document
     * -
-      - spec/format_spec.rb:241
-      - dim format document when module is given shall replace the module with document
-    * -
-      - spec/format_spec.rb:257
+      - spec/format_spec.rb:220
       - dim format when invalid format style is present shall throw a meaningful error and exit
     * - :ref:`Dim_format_whitespaces <Dim_format_whitespaces>`
       - spec/format_spec.rb:89
-      - dim format use case: only module attribute
+      - dim format use case: only document attribute
     * -
       - spec/format_spec.rb:93
       - dim format use case: only metadata metadata
@@ -979,26 +907,26 @@ Test Case Mapping
       - spec/format_spec.rb:115
       - dim format use case: multi enums
     * -
-      - spec/format_spec.rb:121
+      - spec/format_spec.rb:120
       - dim format use case: lists
     * -
-      - spec/format_spec.rb:126
+      - spec/format_spec.rb:125
       - dim format use case: refs
     * -
-      - spec/format_spec.rb:130
+      - spec/format_spec.rb:129
       - dim format use case: sources
     * -
-      - spec/format_spec.rb:134
+      - spec/format_spec.rb:133
       - dim format use case: textual fields
     * - :ref:`Dim_format_order <Dim_format_order>`
-      - spec/format_spec.rb:150
+      - spec/format_spec.rb:149
       - dim format use case: order
     * - :ref:`Dim_format_form <Dim_format_form>`
       - spec/format_spec.rb:103
       - dim format use case: one liners
     * - :ref:`Dim_format_default <Dim_format_default>`
       - spec/format_spec.rb:89
-      - dim format use case: only module attribute
+      - dim format use case: only document attribute
     * -
       - spec/format_spec.rb:93
       - dim format use case: only metadata metadata
@@ -1012,25 +940,25 @@ Test Case Mapping
       - spec/format_spec.rb:115
       - dim format use case: multi enums
     * -
-      - spec/format_spec.rb:121
+      - spec/format_spec.rb:120
       - dim format use case: lists
     * -
-      - spec/format_spec.rb:126
+      - spec/format_spec.rb:125
       - dim format use case: refs
     * -
-      - spec/format_spec.rb:130
+      - spec/format_spec.rb:129
       - dim format use case: sources
     * -
-      - spec/format_spec.rb:134
+      - spec/format_spec.rb:133
       - dim format use case: textual fields
     * - :ref:`Dim_format_duplicated <Dim_format_duplicated>`
       - spec/format_spec.rb:115
       - dim format use case: multi enums
     * -
-      - spec/format_spec.rb:126
+      - spec/format_spec.rb:125
       - dim format use case: refs
     * -
-      - spec/format_spec.rb:130
+      - spec/format_spec.rb:129
       - dim format use case: sources
     * - :ref:`Dim_format_inPlace <Dim_format_inPlace>`
       - spec/format_spec.rb:33
@@ -1042,23 +970,20 @@ Test Case Mapping
       - spec/format_spec.rb:67
       - dim format shall support output-format "check-only", invalid files shall lead to an error and a meaningful error message shall be printed
     * -
-      - spec/format_spec.rb:181
+      - spec/format_spec.rb:155
       - dim format shall ignore different line-endings: LF compared to OS default
     * -
-      - spec/format_spec.rb:187
+      - spec/format_spec.rb:161
       - dim format shall ignore different line-endings: CRLF compared to OS default
     * -
-      - spec/format_spec.rb:193
+      - spec/format_spec.rb:167
       - dim format shall ignore different line-endings: Mixed compared to OS default
     * - :ref:`Dim_format_extra <Dim_format_extra>`
       - spec/format_spec.rb:47
       - dim format shall support output-format "extra" files
     * - :ref:`Dim_format_vim <Dim_format_vim>`
-      - spec/format_spec.rb:207
+      - spec/format_spec.rb:181
       - dim format when output format is stdout reads the content from STDIN and prints out content in STDOUT
-    * - :ref:`Dim_format_verificationMethods <Dim_format_verificationMethods>`
-      - spec/format_spec.rb:156
-      - dim format shall not include test_setups shall format the document with verification_methods and not test_setups
     * - :ref:`Dim_export_general <Dim_export_general>`
       - spec/export_spec.rb:6
       - dim export in general shall write correct (language) attributes in the file format specified by command line option
@@ -1078,38 +1003,29 @@ Test Case Mapping
       - spec/export_spec.rb:79
       - dim export shall throw an error and print a meaningful error message if specified without file format
     * -
-      - spec/export_spec.rb:300
-      - dim export document to json shall replace module with document
-    * -
-      - spec/export_spec.rb:309
+      - spec/export_spec.rb:271
       - dim export document to json shall export document dim file
     * -
-      - spec/export_spec.rb:320
-      - dim export document to csv shall replace module with document
-    * -
-      - spec/export_spec.rb:329
+      - spec/export_spec.rb:282
       - dim export document to csv shall export document dim file
     * -
-      - spec/export_spec.rb:340
-      - dim export document to rst shall replace module with document
-    * -
-      - spec/export_spec.rb:349
+      - spec/export_spec.rb:293
       - dim export document to rst shall export document dim file
     * -
-      - spec/export_spec.rb:361
+      - spec/export_spec.rb:305
       - dim export exporting an empty requirements shall not raise an error
     * -
-      - spec/export_spec.rb:381
+      - spec/export_spec.rb:325
       - dim export when file is already present in export folder shall not copy the file
     * - :ref:`Dim_export_documents <Dim_export_documents>`
       - spec/export_spec.rb:14
       - dim export in general shall export to <outputFolder>/<document>/Requirements.<type>
     * -
       - spec/export_spec.rb:21
-      - dim export in general shall merge a module which is split in several requirements files
+      - dim export in general shall merge a modules which is split in several requirements files
     * -
       - spec/export_spec.rb:29
-      - dim export in general shall sanitize module names
+      - dim export in general shall sanitize document names
     * - :ref:`Dim_export_enclosed <Dim_export_enclosed>`
       - spec/export_spec.rb:35
       - dim export in general shall copy enclosed files to the output folder
@@ -1122,27 +1038,18 @@ Test Case Mapping
     * -
       - spec/export_spec.rb:219
       - dim export to a specified folder cleans folder for older files when originator changes in Config.dim
-    * - :ref:`Dim_export_verificationMethods <Dim_export_verificationMethods>`
-      - spec/export_spec.rb:271
-      - dim export verification_methods to json shall not add test_setups in exported format
-    * -
-      - spec/export_spec.rb:280
-      - dim export verification_methods to RST shall not add test_setups in exported output
-    * -
-      - spec/export_spec.rb:289
-      - dim export verification_methods to csv shall not add test_setups in exported output
     * - :ref:`Dim_export_json <Dim_export_json>`
       - spec/export_spec.rb:88
-      - dim export to JSON shall include attributes as key/values pairs plus  ID, module name and originator
+      - dim export to JSON shall include attributes as key/values pairs plus  ID, document name and originator
     * -
       - spec/export_spec.rb:229
-      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, module name and originator
+      - dim export when custom attributes are provided by config file to JSON shall include attributes as key/values pairs plus  ID, document name and originator
     * - :ref:`Dim_export_csvSep <Dim_export_csvSep>`
       - spec/export_spec.rb:101
       - dim export to CSV shall print "Sep=", into the first line
     * - :ref:`Dim_export_csvAttributes <Dim_export_csvAttributes>`
       - spec/export_spec.rb:106
-      - dim export to CSV shall print all attributes, id, module name, originator
+      - dim export to CSV shall print all attributes, id, document name, originator
     * -
       - spec/export_spec.rb:256
       - dim export when custom attributes are provided by config file to CSV should add custom attributes to exported data if attribute is not empty
@@ -1174,7 +1081,7 @@ Test Case Mapping
       - spec/export_spec.rb:122
       - dim export to RST shall write correct Sphinx syntax including index files
     * - :ref:`Dim_format_customAttributes <Dim_format_customAttributes>`
-      - spec/format_spec.rb:214
+      - spec/format_spec.rb:188
       - dim format when custom attributes are given loads the custom attributes and format the requirements
     * - :ref:`Dim_api_reading <Dim_api_reading>`
       - spec/api_spec.rb:16

@@ -200,7 +200,7 @@ Example:
     l = Dim::Loader.new
     l.load(...)
 
-    l.original_data["filename.dim"]["module"] == "myModule"
+    l.original_data["filename.dim"]["document"] == "myModule"
     l.original_data["filename.dim"]["myId"]["text"] == "abc"
 
 Use the formatter to write changed data back to the requirements files:

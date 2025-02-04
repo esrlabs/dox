@@ -43,7 +43,7 @@
             Dim
           </a>
               <div class="version">
-                2.1.1
+                2.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -878,33 +878,6 @@
     <colgroup><col style="width: 100%" /></colgroup>
     <tbody>
     <tr class="row-odd"><td><p>
-        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_reqfiles_testsetups"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_reqfiles_testsetups"><span class="pre">Dim_ReqFiles_testSetups</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute"><td><p>
-        <strong>Asil:</strong> QM | <strong>Cal:</strong> QM<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
-        <strong>Developer:</strong> Accenture | <strong>Tester:</strong> Accenture | <strong>Verification Methods:</strong> off_target<br>
-        <strong>Tags:</strong> tool, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
-    </p></td></tr>
-     <tr class="row-even"><td><p>
-        A requirements object shall have an optional &quot;test_setups&quot; attribute.<br>Allowed values: one or more of &quot;none&quot;, &quot;off_target&quot;, &quot;on_target&quot;, &quot;manual&quot;<br>If test_setups is missing, it is resolved to:<br>- &quot;none&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is not &quot;requirement&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is in tags or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;off_target&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;module&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- tags include &quot;tool&quot;<br>- &quot;on_target&quot; otherwise    </p></td></tr>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
-        <strong>Sources:</strong> lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
-    </p></td></tr>
-    </tbody>
-</table>
-<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
-    <colgroup><col style="width: 100%" /></colgroup>
-    <tbody>
-    <tr class="row-odd"><td><p>
         <code class="highlight highlight-requirement docutils literal notranslate" id="dim_reqfiles_verificationmethods"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_reqfiles_verificationmethods"><span class="pre">Dim_ReqFiles_verificationMethods</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
     </p></td></tr>
     <tr class="row-even" hidden/>
@@ -925,33 +898,6 @@
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
         <strong>Sources:</strong> lib/dim/requirement.rb lib/dim/loader.rb lib/dim/consistency.rb
-    </p></td></tr>
-    </tbody>
-</table>
-<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
-    <colgroup><col style="width: 100%" /></colgroup>
-    <tbody>
-    <tr class="row-odd"><td><p>
-        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_reqfiles_verificationmethods_backward"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_reqfiles_verificationmethods_backward"><span class="pre">Dim_ReqFiles_verificationMethods_backward</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute"><td><p>
-        <strong>Asil:</strong> QM | <strong>Cal:</strong> QM<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
-        <strong>Developer:</strong> Accenture | <strong>Tester:</strong> Accenture | <strong>Verification Methods:</strong> off_target<br>
-        <strong>Tags:</strong> tool, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
-    </p></td></tr>
-     <tr class="row-even"><td><p>
-        &quot;verification_methods&quot; replaces &quot;test_setups&quot;.<br>For backward compatibility, the requirements file can include both &quot;test_setups&quot; and &quot;verification_methods&quot;.<br>During loading, Dim shall merge values from both attributes.    </p></td></tr>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
-        <strong>Sources:</strong> lib/dim/requirement.rb lib/dim/consistency.rb lib/dim/loader.rb
     </p></td></tr>
     </tbody>
 </table>
@@ -1788,7 +1734,7 @@
     <colgroup><col style="width: 100%" /></colgroup>
     <tbody>
     <tr class="row-odd"><td><p>
-        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_loading_document"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_loading_document"><span class="pre">Dim_loading_document</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
+        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_loading_emptydocument"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_loading_emptydocument"><span class="pre">Dim_loading_emptyDocument</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
     </p></td></tr>
     <tr class="row-even" hidden/>
     <tr class="row-odd dox-trace-attribute"><td><p>
@@ -1797,7 +1743,7 @@
         <strong>Tags:</strong> tool, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
     </p></td></tr>
      <tr class="row-even"><td><p>
-        Dim shall support &quot;module&quot; as alias for &quot;document&quot;. If &quot;module&quot; is specified, &quot;document&quot; shall be set to the value of &quot;module&quot;. If both are specified, an error shall be raised.    </p></td></tr>
+        Dim shall throw an error with meaningful error message if Dim file with empty document is loaded and shall exit the process with exit code != 0.    </p></td></tr>
     <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
         <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
@@ -1807,7 +1753,7 @@
     <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
-        <strong>Sources:</strong> lib/dim/commands/export.rb
+        <strong>Sources:</strong> lib/dim/loader.rb
     </p></td></tr>
     </tbody>
 </table>
@@ -2228,33 +2174,6 @@
     </p></td></tr>
     </tbody>
 </table>
-<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
-    <colgroup><col style="width: 100%" /></colgroup>
-    <tbody>
-    <tr class="row-odd"><td><p>
-        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_format_verificationmethods"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_format_verificationmethods"><span class="pre">Dim_format_verificationMethods</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute"><td><p>
-        <strong>Asil:</strong> QM | <strong>Cal:</strong> QM<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
-        <strong>Developer:</strong> Accenture | <strong>Tester:</strong> Accenture | <strong>Verification Methods:</strong> off_target<br>
-        <strong>Tags:</strong> tool, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
-    </p></td></tr>
-     <tr class="row-even"><td><p>
-        The Dim formatter shall remove the &quot;test_setups&quot; attribute from formatted file and keep only &apos;verification_methods&apos;.    </p></td></tr>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
-        <strong>Sources:</strong> lib/dim/options.rb lib/dim/commands/format.rb
-    </p></td></tr>
-    </tbody>
-</table>
 </section>
 <section id="export">
 <h3><span class="raw-html">export</span><a class="headerlink" href="#export" title="Link to this heading"></a></h3>
@@ -2380,33 +2299,6 @@
     </p></td></tr>
      <tr class="row-even"><td><p>
         After exporting is complete, files from exported folder which are no longer referenced in the exported folder shall be cleaned up.    </p></td></tr>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Change Request:</strong> -<br></span></span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Upstream References:</strong> -<br></span></span>
-        <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Downstream References:</strong> -<br></span></span>
-        <strong>Sources:</strong> lib/dim/commands/export.rb
-    </p></td></tr>
-    </tbody>
-</table>
-<table class="dox-trace-border dox-trace-initially-hidden docutils align-default" style="width: 100%; position: relative">
-    <colgroup><col style="width: 100%" /></colgroup>
-    <tbody>
-    <tr class="row-odd"><td><p>
-        <code class="highlight highlight-requirement docutils literal notranslate" id="dim_export_verificationmethods"><span class="pre">[requirement]</span> <a class="reference internal" href="#dim_export_verificationmethods"><span class="pre">Dim_export_verificationMethods</span></a></code><span class="dox-trace-attribute"> &nbsp; <strong>Status:</strong> valid</span>
-    </p></td></tr>
-    <tr class="row-even" hidden/>
-    <tr class="row-odd dox-trace-attribute"><td><p>
-        <strong>Asil:</strong> QM | <strong>Cal:</strong> QM<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Asil:</strong> -</span></span><span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Cal:</strong> -</span></span><br>
-        <strong>Developer:</strong> Accenture | <strong>Tester:</strong> Accenture | <strong>Verification Methods:</strong> off_target<br>
-        <strong>Tags:</strong> tool, covered, tested<span><span class="dox-trace-grey dox-trace-attribute-empty"> | <strong>Upstream Tags:</strong> -</span></span>
-    </p></td></tr>
-     <tr class="row-even"><td><p>
-        Exported requirements file shall contain &quot;verification_methods&quot; and not &quot;test_setups&quot;.    </p></td></tr>
     <tr class="row-odd dox-trace-attribute dox-trace-hide-if-empty"><td><p>
         <span class="dox-trace-attribute-empty"><strong>Verification Criteria:</strong> -<br></span>
         <span><span class="dox-trace-grey dox-trace-attribute-empty"><strong>Derived Feature:</strong> -<br></span></span>
@@ -3299,11 +3191,11 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024 Accenture.</p>
+    <p>&#169; Copyright 2025 Accenture.</p>
   </div>
 
   <div role="footer_string">
-    <p>Documentation from 2024-10-23 16:49:52, official build.<br>Based on https://github.com/esrlabs/dox, folder dim, from 2024-10-23 13:12:25, commit c3d97e8.</p>
+    <p>Documentation from 2025-02-04 15:26:48, official build.<br>Based on git@github.com:esrlabs/dox.git, folder dim, from 2025-01-29 15:19:57, commit 8ab9f61.</p>
 
     
       <a href="../../../_sources/pages/requirements/Dim/Requirements.rst.txt" rel="nofollow"> View page source</a>

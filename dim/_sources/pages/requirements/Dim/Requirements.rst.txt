@@ -512,26 +512,6 @@
 
     :raw-html:`A requirements object shall have an optional &quot;tester&quot; attribute.<br>Allowed values: any string<br>Default resolution: if<br>- originator from the config file if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is &quot;requirement&quot; and<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is not in tags and<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is neither &quot;input&quot; nor &quot;unspecified&quot;<br>- &quot;&quot; otherwise`
 
-.. requirement:: Dim_ReqFiles_testSetups
-    :category: software
-    :status: valid
-    :review_status: accepted
-    :asil: QM
-    :cal: QM
-    :tags: tool, covered, tested
-    :comment:
-    :miscellaneous:
-    :refs:
-    :sources: lib/dim/requirement.rb, lib/dim/loader.rb, lib/dim/consistency.rb
-    :feature:
-    :change_request:
-    :developer: Accenture
-    :tester: Accenture
-    :verification_methods: off_target
-    :verification_criteria:
-
-    :raw-html:`A requirements object shall have an optional &quot;test_setups&quot; attribute.<br>Allowed values: one or more of &quot;none&quot;, &quot;off_target&quot;, &quot;on_target&quot;, &quot;manual&quot;<br>If test_setups is missing, it is resolved to:<br>- &quot;none&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is not &quot;requirement&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is in tags or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;off_target&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;module&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- tags include &quot;tool&quot;<br>- &quot;on_target&quot; otherwise`
-
 .. requirement:: Dim_ReqFiles_verificationMethods
     :category: software
     :status: valid
@@ -551,26 +531,6 @@
     :verification_criteria:
 
     :raw-html:`A requirement object shall have an optional &apos;verification_methods&apos; attribute.<br>Allowed values: one or more of &quot;none&quot;, &quot;off_target&quot;, &quot;on_target&quot;, &quot;manual&quot;<br>If verification_methods is missing, it is resolved to:<br>- &quot;none&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- type is not &quot;requirement&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- &quot;process&quot; is in tags or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;input&quot; or &quot;unspecified&quot;<br>- &quot;off_target&quot; if<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- category is &quot;module&quot; or<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- tags include &quot;tool&quot;<br>- &quot;on_target&quot; otherwise`
-
-.. requirement:: Dim_ReqFiles_verificationMethods_backward
-    :category: software
-    :status: valid
-    :review_status: accepted
-    :asil: QM
-    :cal: QM
-    :tags: tool, covered, tested
-    :comment:
-    :miscellaneous:
-    :refs:
-    :sources: lib/dim/requirement.rb lib/dim/consistency.rb lib/dim/loader.rb
-    :feature:
-    :change_request:
-    :developer: Accenture
-    :tester: Accenture
-    :verification_methods: off_target
-    :verification_criteria:
-
-    :raw-html:`&quot;verification_methods&quot; replaces &quot;test_setups&quot;.<br>For backward compatibility, the requirements file can include both &quot;test_setups&quot; and &quot;verification_methods&quot;.<br>During loading, Dim shall merge values from both attributes.`
 
 .. requirement:: Dim_ReqFiles_status
     :category: software
@@ -1190,7 +1150,7 @@
 
     :raw-html:`If several files share the same document name, the originator and the category must be the same for all of these files. If not, Dim shall print a meaningful error message and exit with exit code != 0.`
 
-.. requirement:: Dim_loading_document
+.. requirement:: Dim_loading_emptyDocument
     :category: software
     :status: valid
     :review_status: accepted
@@ -1200,7 +1160,7 @@
     :comment:
     :miscellaneous:
     :refs:
-    :sources: lib/dim/commands/export.rb
+    :sources: lib/dim/loader.rb
     :feature:
     :change_request:
     :developer: Accenture
@@ -1208,7 +1168,7 @@
     :verification_methods: off_target
     :verification_criteria:
 
-    :raw-html:`Dim shall support &quot;module&quot; as alias for &quot;document&quot;. If &quot;module&quot; is specified, &quot;document&quot; shall be set to the value of &quot;module&quot;. If both are specified, an error shall be raised.`
+    :raw-html:`Dim shall throw an error with meaningful error message if Dim file with empty document is loaded and shall exit the process with exit code != 0.`
 
 .. requirement:: Dim_loading_checkMetadata
     :category: software
@@ -1522,26 +1482,6 @@
 
     :raw-html:`It shall be possible to read the input from STDIN and to print the formatted output to the STDOUT. This functionality supports auto-formatting in text editors like Vim.`
 
-.. requirement:: Dim_format_verificationMethods
-    :category: software
-    :status: valid
-    :review_status: accepted
-    :asil: QM
-    :cal: QM
-    :tags: tool, covered, tested
-    :comment:
-    :miscellaneous:
-    :refs:
-    :sources: lib/dim/options.rb lib/dim/commands/format.rb
-    :feature:
-    :change_request:
-    :developer: Accenture
-    :tester: Accenture
-    :verification_methods: off_target
-    :verification_criteria:
-
-    :raw-html:`The Dim formatter shall remove the &quot;test_setups&quot; attribute from formatted file and keep only &apos;verification_methods&apos;.`
-
 :raw-html:`export`
 ++++++++++++++++++
 
@@ -1644,26 +1584,6 @@
     :verification_criteria:
 
     :raw-html:`After exporting is complete, files from exported folder which are no longer referenced in the exported folder shall be cleaned up.`
-
-.. requirement:: Dim_export_verificationMethods
-    :category: software
-    :status: valid
-    :review_status: accepted
-    :asil: QM
-    :cal: QM
-    :tags: tool, covered, tested
-    :comment:
-    :miscellaneous:
-    :refs:
-    :sources: lib/dim/commands/export.rb
-    :feature:
-    :change_request:
-    :developer: Accenture
-    :tester: Accenture
-    :verification_methods: off_target
-    :verification_criteria:
-
-    :raw-html:`Exported requirements file shall contain &quot;verification_methods&quot; and not &quot;test_setups&quot;.`
 
 :raw-html:`JSON`
 ~~~~~~~~~~~~~~~~
