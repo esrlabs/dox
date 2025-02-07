@@ -12,8 +12,8 @@
 .. list-table::
 
    * - **<%= requirement_id %>** | <%= requirement.accepted %> | <%= asil_level(requirement) %> <%= requirement.origin %>
-   * - **Tags:** <%= requirement.tags %>
-   * - **Test Setups:** <%= requirement.test_setups %>
+   * - **Tags:** <%= requirement.tags&.join(', ') %>
+   * - **Test Setups:** <%= requirement.test_setups&.join(', ') %>
    * - <%= req_text(requirement) %>
    * - **References:** <%= req_refs(requirement.refs) %>
    * - **Back References:** <%= req_refs(requirement.backwardRefs) %>
