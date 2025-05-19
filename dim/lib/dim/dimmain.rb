@@ -1,6 +1,7 @@
 $stdout.sync = true
 
 require 'yaml'
+require 'stringio'
 
 require_relative 'globals'
 require_relative 'exit_helper'
