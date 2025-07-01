@@ -206,21 +206,52 @@ module Dim
     end
 
     context 'to a specified folder' do
-      it 'cleans up unused files from folder', doc_refs: ['Dim_export_cleanup'] do
-        Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_1.dim -o #{TEST_OUTPUT_DIR} -f csv")
-        expect(Dir.new(File.join(TEST_OUTPUT_DIR,
-                                 'test_export_12')).children).to match_array %w[images Requirements.csv]
-        expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
+      context 'when --force flag is given' do
+        it 'cleans up unused files from folder', doc_refs: ['Dim_export_cleanup'] do
+          Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_1.dim -o #{TEST_OUTPUT_DIR} -f csv --force")
+          expect(Dir.new(File.join(TEST_OUTPUT_DIR,
+                                   'test_export_12')).children).to match_array %w[images Requirements.csv]
+          expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
 
-        Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_2.dim -o #{TEST_OUTPUT_DIR} -f csv")
-        expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test_new.jpeg']
+          Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_2.dim -o #{TEST_OUTPUT_DIR} -f csv")
+          expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test_new.jpeg']
+        end
+
+        it 'cleans folder for older files when originator changes in Config.dim', doc_refs: ['Dim_export_cleanup'] do
+          Test.main("export -i #{TEST_INPUT_DIR}/export_check/using_config/Config.dim -o #{TEST_OUTPUT_DIR} -f csv --force")
+          expect(Dir.new(File.join(TEST_OUTPUT_DIR)).children).to match_array(%w[test_module_1 test_module_2])
+          Test.main("export -i #{TEST_INPUT_DIR}/export_check/using_config/SingleOriginConfig.dim -o #{TEST_OUTPUT_DIR} -f csv")
+          expect(Dir.new(File.join(TEST_OUTPUT_DIR)).children).to match_array(['test_module_1'])
+        end
       end
 
-      it 'cleans folder for older files when originator changes in Config.dim', doc_refs: ['Dim_export_cleanup'] do
-        Test.main("export -i #{TEST_INPUT_DIR}/export_check/using_config/Config.dim -o #{TEST_OUTPUT_DIR} -f csv")
-        expect(Dir.new(File.join(TEST_OUTPUT_DIR)).children).to match_array(%w[test_module_1 test_module_2])
-        Test.main("export -i #{TEST_INPUT_DIR}/export_check/using_config/SingleOriginConfig.dim -o #{TEST_OUTPUT_DIR} -f csv")
-        expect(Dir.new(File.join(TEST_OUTPUT_DIR)).children).to match_array(['test_module_1'])
+      context 'when --force flag is not given' do
+        context "when there are files to be cleaned" do
+          it 'doees not cleans up unused files from folder', doc_refs: ['Dim_export_cleanup'] do
+            Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_1.dim -o #{TEST_OUTPUT_DIR} -f csv")
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR,
+                                     'test_export_12')).children).to match_array %w[images Requirements.csv]
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
+
+            Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_2.dim -o #{TEST_OUTPUT_DIR} -f csv")
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg', 'test_new.jpeg']
+
+            expect(@test_stdout).to include "Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag."
+            expect(@test_stdout).to include "To clean the destination folder, rerun the command with --force, or choose a different folder."
+          end
+        end
+
+        context 'when there are not files to clean' do
+          it 'doees not cleans up unused files from folder', doc_refs: ['Dim_export_cleanup'] do
+            Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_1.dim -o #{TEST_OUTPUT_DIR} -f csv")
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR,
+                                     'test_export_12')).children).to match_array %w[images Requirements.csv]
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
+
+            expect(@test_stdout).not_to include "Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag."
+            expect(@test_stdout).not_to include "To clean the destination folder, rerun the command with --force, or choose a different folder."
+          end
+        end
       end
     end
 
