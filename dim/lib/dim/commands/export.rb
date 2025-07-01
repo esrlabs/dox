@@ -126,20 +126,25 @@ module Dim
     end
 
     def clean_destination(dir_path = export_dir)
-      Dir.new(dir_path).children.each do |file|
-        dst = File.join(dir_path, file)
-        path = Pathname.new(dst)
-
-        clean_destination(dst) if path.directory?
-
-        next if file_list.include? dst
-
-        if path.directory?
-          path.rmdir if path.empty?
-        else
-          path.delete
-        end
+      glob_list = Dir.glob(File.join(dir_path, '**/*'), File::FNM_DOTMATCH)
+                     .reject { |file| file == File.join(dir_path, '.') }
+                     .map { |file| Pathname.new(file) }
+      file_list.each do |file|
+        path = Pathname.new(file)
+        glob_list.delete(path)
+        glob_list.delete(path.dirname)
       end
+
+      unless OPTIONS[:force]
+        unless glob_list.empty?
+          puts "Warning: Files in the folder #{dir_path} will not be cleaned unless you use the --force flag.\n" \
+               "To clean the destination folder, rerun the command with --force, or choose a different folder.\n"
+        end
+
+        return
+      end
+
+      glob_list.each(&:rmtree)
     end
   end
 end

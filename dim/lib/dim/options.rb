@@ -19,6 +19,7 @@ module Dim
       OPTIONS[:type] = nil
       OPTIONS[:no_check_enclosed] = false
       OPTIONS[:silent] = nil
+      OPTIONS[:force] = false
     end
     reset
 
@@ -66,6 +67,9 @@ module Dim
                 "allowed values: #{EXPORTER.keys.join(', ')}") do |p|
           OPTIONS[:type] =
             p
+        end
+        opts.on('--force', 'Clean export destination forcefully') do |_|
+          OPTIONS[:force] = true
         end
 
         opts.separator "\nFor format:"
