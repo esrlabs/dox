@@ -126,7 +126,7 @@ module Dim
     end
 
     def clean_destination(dir_path = export_dir)
-      glob_list = Dir.glob(File.join(dir_path, '**/*'), File::FNM_DOTMATCH)
+      glob_list = Dir.glob(File.join(dir_path, '**/*'))
                      .reject { |file| file == File.join(dir_path, '.') }
                      .map { |file| Pathname.new(file) }
       file_list.each do |file|
@@ -144,7 +144,12 @@ module Dim
         return
       end
 
-      glob_list.each(&:rmtree)
+      glob_list.reject(&:directory?).map(&:delete)
+      glob_list.select(&:directory?).each do |path|
+        next unless path.exist?
+
+        path.rmtree
+      end
     end
   end
 end
