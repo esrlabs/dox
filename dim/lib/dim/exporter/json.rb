@@ -7,15 +7,15 @@ module Dim
   class Json < ExporterInterface
     EXPORTER['json'] = self
 
-    def header(_f)
+    def header(_file_io)
       @content = []
     end
 
-    def requirement(_f, r)
-      vals = { 'id' => r.id, 'document_name' => r.document, 'originator' => r.origin }
+    def requirement(_file_io, req)
+      vals = { 'id' => req.id, 'document_name' => req.document, 'originator' => req.origin }
 
-      @loader.all_attributes.keys.each do |k|
-        v = r.data[k]
+      @loader.all_attributes.each_key do |k|
+        v = req.data[k]
         v = v.cleanUniqArray.join(',') if k == 'refs'
         vals[k] = v.strip
       end
@@ -23,8 +23,8 @@ module Dim
       @content << vals
     end
 
-    def footer(f)
-      f.puts(JSON.pretty_generate(@content))
+    def footer(file_io)
+      file_io.puts(JSON.pretty_generate(@content))
     end
   end
 end

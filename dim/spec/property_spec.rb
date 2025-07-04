@@ -48,7 +48,7 @@ module Dim
       end
     end
 
-    #TODO: Remove this when test_setups is removed
+    # TODO: Remove this when test_setups is removed
     context 'when test_setups are defined' do
       it 'it also adds the value for verification_methods', doc_refs: [] do
         loader = Dim::Loader.new

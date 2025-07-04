@@ -48,7 +48,7 @@ class String
   end
 
   def get_next_escape_token(pos)
-    ind = index(%r{<\s*(\/?)\s*html\s*>}, pos)
+    ind = index(%r{<\s*(/?)\s*html\s*>}, pos)
     return [:none, length - pos, -1] if ind.nil?
 
     type = Regexp.last_match(1).empty? ? :start : :end

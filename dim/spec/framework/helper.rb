@@ -32,12 +32,10 @@ module Dim
     end
 
     def self.execute(&block)
-      begin
-        $test_exception = nil
-        yield block
-      rescue Exception => e
-        $test_exception = e
-      end
+      $test_exception = nil
+      yield block
+    rescue Exception => e
+      $test_exception = e
     end
 
     def self.clean_testdata

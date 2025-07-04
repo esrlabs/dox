@@ -16,5 +16,5 @@ mods.each do |m|
   reqs_company_module = reqs_company.select { |r| r.document == m }
   reqs_matching = reqs_company_module.select { |r| r.verification_methods != ['none'] }
   puts "#{m}: #{reqs_matching.length} of #{reqs_company_module.length}"
-  puts reqs_matching.map { |r| "- #{r.id}" }
+  puts(reqs_matching.map { |r| "- #{r.id}" })
 end
