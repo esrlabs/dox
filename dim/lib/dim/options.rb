@@ -37,7 +37,7 @@ module Dim
           Dim::ExitHelper.exit(code: 0, msg: File.read(File.dirname(__FILE__) + '/../../license.txt'))
         end
 
-        opts.separator "\nFor check, export, stats, format:"
+        opts.separator "\nFor check, export, stats, format, schema:"
         opts.on('-i FILENAME', '--input FILENAME',  'input file or config') do |i|
           OPTIONS[:input] = i.gsub('\\', '/')
         end
@@ -78,6 +78,11 @@ module Dim
                 'check-only: no changes to files',
                 'stdout: For IDE format support; will work with STDIN/STDOUT; no file input required') do |p|
           OPTIONS[:output_format] = p
+        end
+
+        opts.separator "\nFor schema:"
+        opts.on('-o FOLDER', '--output FOLDER', 'output folder') do |p|
+          OPTIONS[:folder] = p
         end
       end
 

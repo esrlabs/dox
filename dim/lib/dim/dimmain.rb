@@ -13,6 +13,7 @@ require_relative 'commands/stats'
 require_relative 'commands/check'
 require_relative 'commands/export'
 require_relative 'commands/format'
+require_relative 'commands/schema'
 require_relative 'options'
 
 module Dim

@@ -16,7 +16,7 @@ module Dim
   class Loader
     include Helpers::AttributeHelper
 
-    attr_reader :requirements, :config, :property_table, :properties, :original_data, :module_data, :metadata, :dim_file, :all_attributes, :custom_attributes
+    attr_reader :requirements, :config, :property_table, :properties, :original_data, :module_data, :metadata, :dim_file, :all_attributes, :custom_attributes, :custom_schema
 
     # YAML standard:
     # invalid C0 control characters: 0x00 - 0x1F (except TAB 0x09, LF 0x0A and CR 0x0D)
@@ -452,6 +452,31 @@ module Dim
 
       @custom_attributes.merge!(resolve_attributes(folder: folder, filename: filename))
       @all_attributes.merge!(@custom_attributes)
+
+      # Prepare JSON SCHEMA for custom attributes
+      @custom_schema = {}
+      custom_attributes.each do |key, config|
+        schema = {}
+        if FORMAT_STYLES.fetch_values('single', 'multi').include?(config[:format_style].to_s)
+          schema[:enum] = config[:allowed]
+          schema[:type] = config[:allowed].map { |v| convert_type(v) }.uniq
+          schema[:default] = config[:default]
+        else
+          type = convert_type(config[:default])
+          schema = { type: type, default: config[:default] }
+        end
+        @custom_schema[key] = schema
+      end
+    end
+
+    def convert_type(input)
+      %i[Integer Float].map do |name|
+        Kernel.method(name).call(input)
+        return "number"
+      rescue ArgumentError
+      end
+      return "boolean" if input == "true" || input == "false"
+      "string"
     end
 
     def search_attributes_file(file)
