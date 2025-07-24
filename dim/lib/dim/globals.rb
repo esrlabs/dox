@@ -93,5 +93,4 @@ JSON_SCHEMA = {
     }
   },
   additionalProperties:     false
-}
-
+}.freeze

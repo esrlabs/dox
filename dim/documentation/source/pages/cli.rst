@@ -176,3 +176,8 @@ This prints some nice stats about requirements, per owner/originator, per docume
 
 ``stats`` implicitly executes the consistency ``check``. All ``check`` parameters can also be used
 for ``stats``.
+
+schema
+++++++
+
+This generates the custom schema for the Dim file

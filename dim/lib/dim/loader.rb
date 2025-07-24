@@ -54,6 +54,7 @@ module Dim
       @original_data = {}
       @all_attributes = Requirement::SYNTAX.dup
       @custom_attributes = {}
+      @custom_schema = {}
     end
 
     def filter(str)

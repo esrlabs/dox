@@ -59,7 +59,7 @@ module Dim
           OPTIONS[:filter] = p
         end
 
-        opts.separator "\nFor export:"
+        opts.separator "\nFor export, schema:"
         opts.on('-o FOLDER', '--output FOLDER', 'output folder') do |p|
           OPTIONS[:folder] = p
         end
@@ -78,11 +78,6 @@ module Dim
                 'check-only: no changes to files',
                 'stdout: For IDE format support; will work with STDIN/STDOUT; no file input required') do |p|
           OPTIONS[:output_format] = p
-        end
-
-        opts.separator "\nFor schema:"
-        opts.on('-o FOLDER', '--output FOLDER', 'output folder') do |p|
-          OPTIONS[:folder] = p
         end
       end
 

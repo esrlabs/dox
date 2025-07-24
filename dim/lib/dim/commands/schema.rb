@@ -13,13 +13,13 @@ module Dim
     end
 
     def execute(silent: false)
-      final_schema = JSON_SCHEMA
+      final_schema = Marshal.load(Marshal.dump(JSON_SCHEMA))
       final_schema[:properties].merge!(loader.custom_schema)
       FileUtils.mkdir_p(OPTIONS[:folder]) unless Dir.exist?(OPTIONS[:folder])
       dst = File.join(OPTIONS[:folder], "dim_schema.json")
       File.open(dst, 'w') { |file| file.write(JSON.pretty_generate(final_schema)) }
 
-      puts "Generate JSON schema at #{dst}" unless silent
+      puts "JSON schema saved at #{dst}" unless silent
     end
   end
 end
