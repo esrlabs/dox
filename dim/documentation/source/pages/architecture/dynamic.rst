@@ -172,3 +172,16 @@ Subcommand "stats"
 
 This subcommand prints generic statistics of the requirements specified in the input files
 like number of total number of requirements and number of accepted or rejected requirements.
+
+.. _workflow_schema:
+
+Subcommand "schema"
+-------------------
+
+.. figure:: ../../_static/swa/dynamic/schema.drawio.png
+    :scale: 100%
+    :align: center
+
+    Generating dynamic JSON schema
+
+This subcommand generates dynamic JSON schema of the requirements specified in the input files.

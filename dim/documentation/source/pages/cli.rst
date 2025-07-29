@@ -180,4 +180,13 @@ for ``stats``.
 schema
 ++++++
 
-This generates the custom schema for the Dim file
+This generates the JSON schema for Dim file, this schema then can be used with other tools.
+
+``schema`` implicitly checks the Dim consistency and all ``check`` parameters can also be used
+for ``schema``.
+
+-o FOLDER \-\-output FOLDER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Specifies output folder where JSON schema should be saved. If the subfolder does not exist, it will
+be created and existing files will be overwritten.
