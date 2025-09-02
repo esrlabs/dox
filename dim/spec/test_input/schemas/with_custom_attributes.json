@@ -51,7 +51,6 @@
     "type": {
       "type": "string",
       "description": "",
-      "default": "requirement",
       "anyOf": [
         {
           "const": "information"
@@ -65,14 +64,15 @@
         {
           "pattern": "^heading_[0-9]+"
         }
-      ]
+      ],
+      "default": "requirement"
     },
     "asil": {
       "type": "string",
       "description": "asil value",
-      "default": "auto",
+      "default": "not_set",
       "enum": [
-        "auto",
+        "not_set",
         "QM",
         "QM(A)",
         "QM(B)",
@@ -111,12 +111,10 @@
       "type": "string",
       "description": "Any string, comma separated",
       "enum": [
-        "auto",
         "none",
         "off_target",
         "on_target",
-        "manual",
-        ""
+        "manual"
       ]
     },
     "status": {
@@ -131,14 +129,12 @@
     "review_status": {
       "type": "string",
       "description": "",
-      "default": "auto",
       "enum": [
         "accepted",
         "unclear",
         "rejected",
         "not_reviewed",
-        "not_relevant",
-        "auto"
+        "not_relevant"
       ]
     },
     "Config": {

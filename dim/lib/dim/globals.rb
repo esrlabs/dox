@@ -29,7 +29,6 @@ JSON_SCHEMA = {
     sources:                { type: 'string', description: 'A comma separated list of source code files' },
     refs:                   { type: 'string', description: 'A comma separated list of all references to other requirements' },
     type:                   { type: 'string', description: '',
-                                default: 'requirement',
                                 anyOf: [
                                   { const: 'information' },
                                   { const: 'requirement' },
@@ -37,27 +36,11 @@ JSON_SCHEMA = {
                                   { pattern: '^heading_[0-9]+' }
                                 ]
                               },
-    asil:                   { type: 'string', description: 'asil value', default: 'auto',
-                                enum: %w[auto
-                                  QM QM(A) QM(B) QM(C) QM(D)
-                                  ASIL_A ASIL_A(A) ASIL_A(B) ASIL_A(C) ASIL_A(D)
-                                  ASIL_B ASIL_B(B) ASIL_B(C) ASIL_B(D)
-                                  ASIL_C ASIL_C(C) ASIL_C(D)
-                                  ASIL_D ASIL_D(D)
-                                ]
-                              },
-    cal:                    { type: 'string', description: 'Specifies the Cybersecurity Assistance Level', default: 'not_set',
-                                enum: %w[QM CAL_1 CAL_2 CAL_3 CAL_4 not_set]
-                              },
-    verification_methods:   { type: 'string', description: 'Any string, comma separated',
-                                enum: ['auto', 'none', 'off_target', 'on_target', 'manual', '']
-                              },
-    status:                 { type: 'string', description: 'Allowd values',
-                                enum: %w[valid draft invalid]
-                              },
-    review_status:          { type: 'string', description: '', default: 'auto',
-                                enum: %w[accepted unclear rejected not_reviewed not_relevant auto]
-                              },
+    asil:                   { type: 'string', description: 'asil value' },
+    cal:                    { type: 'string', description: 'Specifies the Cybersecurity Assistance Level' },
+    verification_methods:   { type: 'string', description: 'Any string, comma separated' },
+    status:                 { type: 'string', description: 'Allowd values' },
+    review_status:          { type: 'string', description: '' },
     Config:                 { type: 'array',
                                 items: {
                                   type: 'object',
