@@ -18,6 +18,7 @@ module Dim
       self.final_schema = Marshal.load(Marshal.dump(JSON_SCHEMA))
       self.final_schema[:properties].merge!(loader.custom_schema)
       add_defaults_and_enums
+      add_allowed_types
       FileUtils.mkdir_p(OPTIONS[:folder]) unless Dir.exist?(OPTIONS[:folder])
       dst = File.join(OPTIONS[:folder], "dim_schema.json")
       File.open(dst, 'w') { |file| file.write(JSON.pretty_generate(final_schema)) }
@@ -30,6 +31,12 @@ module Dim
         self.final_schema[:properties][key.to_sym][:default] = data[:default] if data[:default] && !data[:default].empty?
         self.final_schema[:properties][key.to_sym][:enum] = data[:allowed] if data[:allowed] && key != "type"
       end
+    end
+
+    def add_allowed_types
+      allowed_types = Dim::Requirement::SYNTAX['type'][:allowed].filter_map { |type| { const: type } if !type.start_with?('heading') }
+      allowed_types.push({ pattern: '^heading_[0-9]+' })
+      self.final_schema[:properties][:type][:anyOf] = allowed_types
     end
   end
 end

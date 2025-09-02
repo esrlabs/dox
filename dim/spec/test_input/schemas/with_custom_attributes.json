@@ -51,21 +51,18 @@
     "type": {
       "type": "string",
       "description": "",
+      "default": "requirement",
       "anyOf": [
-        {
-          "const": "information"
-        },
         {
           "const": "requirement"
         },
         {
-          "const": "process"
+          "const": "information"
         },
         {
           "pattern": "^heading_[0-9]+"
         }
-      ],
-      "default": "requirement"
+      ]
     },
     "asil": {
       "type": "string",

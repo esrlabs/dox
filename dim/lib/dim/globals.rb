@@ -28,14 +28,7 @@ JSON_SCHEMA = {
     miscellaneous:          { type: 'string', description: 'Can be used to store project specific information' },
     sources:                { type: 'string', description: 'A comma separated list of source code files' },
     refs:                   { type: 'string', description: 'A comma separated list of all references to other requirements' },
-    type:                   { type: 'string', description: '',
-                                anyOf: [
-                                  { const: 'information' },
-                                  { const: 'requirement' },
-                                  { const: 'process' },
-                                  { pattern: '^heading_[0-9]+' }
-                                ]
-                              },
+    type:                   { type: 'string', description: '' },
     asil:                   { type: 'string', description: 'asil value' },
     cal:                    { type: 'string', description: 'Specifies the Cybersecurity Assistance Level' },
     verification_methods:   { type: 'string', description: 'Any string, comma separated' },

@@ -4,6 +4,13 @@ Changelog
 2.3.0
 -----
 
+Date
+
+- Added command to generate the schema from Dim files including custom attributes if present.
+
+2.2.0
+-----
+
 February 4, 2025
 
 - Removed backward compatibility for module which is replaced by document. (#25)
