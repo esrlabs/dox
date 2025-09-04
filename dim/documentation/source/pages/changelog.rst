@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.3.0
+-----
+
+Date
+
+- Added command to generate the schema from Dim files including custom attributes if present.
+
 2.2.0
 -----
 

@@ -62,7 +62,7 @@ module Dim
       it 'shall throw an error and print error message', doc_ref: ['Dim_CLI_help'] do
         Test.main("")
         expect(Dim::ExitHelper.exit_code).to eq 1
-        expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format> [options]')
+        expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format|schema> [options]')
       end
     end
 
@@ -70,7 +70,7 @@ module Dim
       it 'shall throw an error and print error message', doc_ref: ['Dim_CLI_exit'] do
         Test.main("wrong")
         expect(Dim::ExitHelper.exit_code).to eq 1
-        expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format> [options]')
+        expect(@test_stderr).to include('Usage: dim.rb <stats|check|export|format|schema> [options]')
       end
     end
   end

@@ -1003,3 +1003,14 @@ Dim_testing_output:
   tags: tool, covered, tested
   status: valid
   sources: lib/dim/ext/output.rb
+
+Dim_schema_general:
+  text:                     Dim shall generate dynamic JSON schema from the input files given. If output folder is not present
+                            Dim shall create the destination path given by user. Dim shall save dynamic JSON schema with name
+                            `dim_schema.json` at destination folder given by user.
+  tags: tool, covered, tested
+  status: valid
+  sources: >
+           lib/dim/options.rb,
+           lib/dim/loader.rb,
+           lib/dim/commands/schema.rb
