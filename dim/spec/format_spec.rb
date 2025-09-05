@@ -76,7 +76,7 @@ module Dim
     context 'with invalid output-format' do
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_format_general'] do
         Test.main("format -i #{TEST_INPUT_DIR}/format/empty/none.dim --output-format wrong")
-        expect(@test_stderr).to include('output-format must be in-place, extra or check-only')
+        expect(@test_stderr).to include('output-format must be in-place, extra, check-only or stdout')
         expect(Dim::ExitHelper.exit_code).to be > 0
       end
     end

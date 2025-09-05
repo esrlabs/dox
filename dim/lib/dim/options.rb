@@ -111,13 +111,13 @@ module Dim
         OPTIONS[:allow_missing] = true
       end
 
-      return unless OPTIONS[:subcommand] == 'format'
+      if OPTIONS[:subcommand] == 'format'
+        OPTIONS[:allow_missing] = true
 
-      OPTIONS[:allow_missing] = true
+        return if %w[in-place extra check-only stdout].include?(OPTIONS[:output_format])
 
-      return if %w[in-place extra check-only stdout].include?(OPTIONS[:output_format])
-
-      Dim::ExitHelper.exit(code: 1, msg: 'output-format must be in-place, extra or check-only')
+        Dim::ExitHelper.exit(code: 1, msg: 'output-format must be in-place, extra, check-only or stdout')
+      end
     end
   end
 end
