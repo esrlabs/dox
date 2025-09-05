@@ -76,7 +76,7 @@ module Dim
     context 'with invalid output-format' do
       it 'shall throw an error and print a meaningful error message', doc_refs: ['Dim_format_general'] do
         Test.main("format -i #{TEST_INPUT_DIR}/format/empty/none.dim --output-format wrong")
-        expect(@test_stderr).to include('output-format must be in-place, extra or check-only')
+        expect(@test_stderr).to include('output-format must be in-place, extra, check-only or stdout')
         expect(Dim::ExitHelper.exit_code).to be > 0
       end
     end
@@ -214,7 +214,8 @@ module Dim
 
     context 'when invalid format style is present' do
       before do
-        Dim::Requirement::SYNTAX['dummy'] = { check: nil, format_style: :dummy, format_shift: 0, default: '', allowed: nil }
+        Dim::Requirement::SYNTAX['dummy'] =
+          { check: nil, format_style: :dummy, format_shift: 0, default: '', allowed: nil }
       end
 
       it 'shall throw a meaningful error and exit', doc_refs: ['Dim_format_general'] do

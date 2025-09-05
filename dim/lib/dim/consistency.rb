@@ -56,7 +56,7 @@ module Dim
 
       ref.data['verification_methods'] = if ref.data['type'] != 'requirement' || tags.include?('process')
                                            'none'
-                                         elsif ref.category == 'input' || ref.category == 'unspecified'
+                                         elsif %w[input unspecified].include?(ref.category)
                                            'none'
                                          elsif ref.category == 'module'
                                            'off_target'
@@ -70,7 +70,7 @@ module Dim
     def calculate_review_status(ref)
       return unless ref.data['review_status'].nil?
 
-      ref.data['review_status'] = if ref.category == 'input' || ref.category == 'unspecified'
+      ref.data['review_status'] = if %w[input unspecified].include?(ref.category)
                                     'not_reviewed'
                                   else
                                     'accepted'
@@ -91,7 +91,7 @@ module Dim
                         ''
                       elsif ref.data['tags'].cleanArray.include?('process') && t == 'tester'
                         ''
-                      elsif ref.category == 'input' || ref.category == 'unspecified'
+                      elsif %w[input unspecified].include?(ref.category)
                         ''
                       else
                         ref.origin

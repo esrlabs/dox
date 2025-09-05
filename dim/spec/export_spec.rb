@@ -51,8 +51,8 @@ module Dim
       it 'shall print info message when silent option is set to false', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/language/module_ok.dim -o #{TEST_OUTPUT_DIR} -f json --silent")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).not_to include "Exporting..."
-        expect(@test_stdout).not_to include "Done."
+        expect(@test_stdout).not_to include 'Exporting...'
+        expect(@test_stdout).not_to include 'Done.'
       end
     end
 
@@ -123,7 +123,7 @@ module Dim
          doc_refs: %w[Dim_export_rst Dim_export_rstIndex] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR} -f rst")
         expect(Dim::ExitHelper.exit_code).to eq 0
-        #noinspection RubyLiteralArrayInspection
+        # noinspection RubyLiteralArrayInspection
         ['index_001_software_companyname',
          'index_002_module_companyname',
          'index_003_module_xy_company',
@@ -168,7 +168,7 @@ module Dim
       end
 
       it 'shall only write to file system if data has been changed without logs when silent option given',
-        doc_refs: ['Dim_export_rstChange'] do
+         doc_refs: ['Dim_export_rstChange'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_check/Config.dim -o #{TEST_OUTPUT_DIR} -f rst -s")
         expect(Dim::ExitHelper.exit_code).to eq 0
         expect(@test_stdout).not_to include 'Creating spec/test_output/mod09/Requirements.rst... done'
@@ -226,7 +226,7 @@ module Dim
       end
 
       context 'when --force flag is not given' do
-        context "when there are files to be cleaned" do
+        context 'when there are files to be cleaned' do
           it 'doees not cleans up unused files from folder', doc_refs: ['Dim_export_cleanup'] do
             Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_1.dim -o #{TEST_OUTPUT_DIR} -f csv")
             expect(Dir.new(File.join(TEST_OUTPUT_DIR,
@@ -234,10 +234,11 @@ module Dim
             expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
 
             Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_2.dim -o #{TEST_OUTPUT_DIR} -f csv")
-            expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg', 'test_new.jpeg']
+            expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12',
+                                     'images')).children).to eq ['test.jpeg', 'test_new.jpeg']
 
-            expect(@test_stdout).to include "Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag."
-            expect(@test_stdout).to include "To clean the destination folder, rerun the command with --force, or choose a different folder."
+            expect(@test_stdout).to include 'Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag.'
+            expect(@test_stdout).to include 'To clean the destination folder, rerun the command with --force, or choose a different folder.'
           end
         end
 
@@ -248,8 +249,8 @@ module Dim
                                      'test_export_12')).children).to match_array %w[images Requirements.csv]
             expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12', 'images')).children).to eq ['test.jpeg']
 
-            expect(@test_stdout).not_to include "Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag."
-            expect(@test_stdout).not_to include "To clean the destination folder, rerun the command with --force, or choose a different folder."
+            expect(@test_stdout).not_to include 'Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag.'
+            expect(@test_stdout).not_to include 'To clean the destination folder, rerun the command with --force, or choose a different folder.'
           end
         end
       end
@@ -336,27 +337,27 @@ module Dim
       it 'shall not raise an error', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_empty_requirements/module.dim -o #{TEST_OUTPUT_DIR} -f rst")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).not_to include "Creating"
+        expect(@test_stdout).not_to include 'Creating'
       end
     end
 
     context 'when file is already present in export folder' do
       before do
-        FileUtils.mkdir_p("./spec/test_output/sample_export/export_test")
+        FileUtils.mkdir_p('./spec/test_output/sample_export/export_test')
         FileUtils.cp(
-          "./spec/test_input/export_when_media_file_present/different_sample.txt",
-          "./spec/test_output/sample_export/export_test/sample.txt"
+          './spec/test_input/export_when_media_file_present/different_sample.txt',
+          './spec/test_output/sample_export/export_test/sample.txt'
         )
       end
 
       after do
-        FileUtils.remove_dir("./spec/test_output/sample_export")
+        FileUtils.remove_dir('./spec/test_output/sample_export')
       end
 
       it 'shall not copy the file', doc_refs: ['Dim_export_general'] do
         Test.main("export -i #{TEST_INPUT_DIR}/export_when_media_file_present/module.dim -o #{TEST_OUTPUT_DIR}/sample_export -f rst")
         expect(Dim::ExitHelper.exit_code).to be 0
-        expect(@test_stdout).to include "Copying"
+        expect(@test_stdout).to include 'Copying'
       end
     end
   end

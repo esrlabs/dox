@@ -8,22 +8,22 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/document/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_document'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
-          end
+           doc_refs: ['Dim_ReqFiles_document'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
+        end
       end
 
       context 'when value string is empty' do
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/document/empty.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_document'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
-          end
+           doc_refs: ['Dim_ReqFiles_document'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include "Error: in #{filename}: document name must be a non-empty string"
+        end
       end
 
       it 'shall default to the folder name of the requirements file', doc_refs: ['Dim_ReqFiles_document'] do
@@ -76,19 +76,19 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/notexist.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
-            Test.main("check -i #{filename}")
-            expect(Dim::ExitHelper.exit_code).to eq 1
-            expect(@test_stderr).to include 'module_non_existing.dim" in "enclosed" does not refer to any existing file'
-            expect(@test_stderr).to include filename
-          end
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
+          Test.main("check -i #{filename}")
+          expect(Dim::ExitHelper.exit_code).to eq 1
+          expect(@test_stderr).to include 'module_non_existing.dim" in "enclosed" does not refer to any existing file'
+          expect(@test_stderr).to include filename
+        end
       end
 
       context 'when string is empty' do
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/empty_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: \"enclosed\" must be a non-empty string or an array of non-empty strings"
@@ -99,7 +99,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/enclosed/dotdot.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_enclosed'] do
+           doc_refs: ['Dim_ReqFiles_enclosed'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: '../enclosed/dotdot.dim' must not include '..'"
@@ -147,7 +147,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/metadata/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_metadata'] do
+           doc_refs: ['Dim_ReqFiles_metadata'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: metadata must be a string"
@@ -285,7 +285,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/text/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_text'] do
+           doc_refs: ['Dim_ReqFiles_text'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"text\" must be String not Array"
@@ -312,7 +312,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/vc/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_verificationCriteria'] do
+           doc_refs: ['Dim_ReqFiles_verificationCriteria'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"verification_criteria\" must be String not Array"
@@ -339,7 +339,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/feature/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_feature'] do
+           doc_refs: ['Dim_ReqFiles_feature'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"feature\" must be String not Array"
@@ -366,7 +366,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/cr/invalid_type.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_changeRequest'] do
+           doc_refs: ['Dim_ReqFiles_changeRequest'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"change_request\" must be String not Array"
@@ -946,7 +946,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/text_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"text_german\" must be String not Array"
@@ -988,7 +988,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/vc_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"verification_criteria_german\" must be String not Array"
@@ -1030,7 +1030,7 @@ module Dim
         let(:filename) { "#{TEST_INPUT_DIR}/reqs/comment_lang/no_string.dim" }
 
         it 'shall throw an error and print a meaningful error message',
-          doc_refs: ['Dim_ReqFiles_language'] do
+           doc_refs: ['Dim_ReqFiles_language'] do
           Test.main("check -i #{filename}")
           expect(Dim::ExitHelper.exit_code).to eq 1
           expect(@test_stderr).to include "Error: in #{filename}: value of attribute \"comment_german\" must be String not Array"

@@ -6,20 +6,20 @@ module Dim
 
     def initialize(loader)
       super(loader)
-      @hasIndex = true
+      @has_index = true
     end
 
-    def document(f, name)
-      raw_html_name = ':raw-html:`' + name + '`'
-      f.puts raw_html_name
-      f.puts '=' * raw_html_name.length
-      @lastHeadingLevel = 0
-      @moduleName = name
+    def document(file_io, name)
+      raw_html_name = ":raw-html:`#{name}`"
+      file_io.puts raw_html_name
+      file_io.puts '=' * raw_html_name.length
+      @last_heading_level = 0
+      @module_name = name
     end
 
-    def metadata(f, meta)
-      f.puts ''
-      f.puts html(meta.strip.escape_html, with_space: false)
+    def metadata(file_io, meta)
+      file_io.puts ''
+      file_io.puts html(meta.strip.escape_html, with_space: false)
     end
 
     def level2char(level)
@@ -40,102 +40,102 @@ module Dim
     def handle_empty_value(value)
       return '' if value.empty?
 
-      ' ' + (value.is_a?(Array) ? value.join(', ') : value)
+      " #{value.is_a?(Array) ? value.join(', ') : value}"
     end
 
-    def createMultiLanguageElement(r, name)
-      lang_elems = r.data.keys.select { |k| k.start_with?("#{name}_") && !r.data[k].empty? }.sort
+    def create_multi_language_element(req, name)
+      lang_elems = req.data.keys.select { |key| key.start_with?("#{name}_") && !req.data[key].empty? }.sort
       if lang_elems.empty?
-        return r.data[name].empty? ? '' : r.data[name]
+        return req.data[name].empty? ? '' : req.data[name]
       end
 
-      str = (r.data[name].empty? ? '-' : r.data[name])
+      str = (req.data[name].empty? ? '-' : req.data[name])
       lang_elems.each do |l|
         str << "<br><br><b>#{l.split('_').map(&:capitalize).join(' ')}: </b>"
-        str << r.data[l]
+        str << req.data[l]
       end
       str
     end
 
-    def requirement(f, r)
-      r.data.each { |k, v| r.data[k] = v.strip.escape_html }
+    def requirement(file_io, req)
+      req.data.each { |k, v| req.data[k] = v.strip.escape_html }
 
-      if r.data['type'].start_with?('heading')
-        (@lastHeadingLevel + 1...r.depth).each do |l|
+      if req.data['type'].start_with?('heading')
+        (@last_heading_level + 1...req.depth).each do |l|
           str = '<Skipped Heading Level>'
-          f.puts ''
-          f.puts str
-          f.puts level2char(l) * str.length
+          file_io.puts ''
+          file_io.puts str
+          file_io.puts level2char(l) * str.length
         end
-        f.puts ''
-        str = ':raw-html:`' + r.data['text'] + '`'
-        f.puts str
-        f.puts level2char(r.depth) * str.length
-        @lastHeadingLevel = r.depth
+        file_io.puts ''
+        str = ":raw-html:`#{req.data['text']}`"
+        file_io.puts str
+        file_io.puts level2char(req.depth) * str.length
+        @last_heading_level = req.depth
         return
       end
 
-      r.data['tester'].gsub!('<br>', ' ')
-      r.data['developer'].gsub!('<br>', ' ')
-      text = createMultiLanguageElement(r, 'text')
-      comment = createMultiLanguageElement(r, 'comment')
-      refs = r.data['refs'].cleanUniqArray.select do |ref|
-        !@loader.requirements.has_key?(ref) || !@loader.requirements[ref].type.start_with?('heading')
+      req.data['tester'].gsub!('<br>', ' ')
+      req.data['developer'].gsub!('<br>', ' ')
+      text = create_multi_language_element(req, 'text')
+      comment = create_multi_language_element(req, 'comment')
+      refs = req.data['refs'].cleanUniqArray.select do |ref|
+        !@loader.requirements.key?(ref) || !@loader.requirements[ref].type.start_with?('heading')
       end
-      tags = r.data['tags'].cleanUniqString
-      sources = r.data['sources'].cleanUniqString
+      tags = req.data['tags'].cleanUniqString
+      sources = req.data['sources'].cleanUniqString
 
-      f.puts ''
-      f.puts ".. #{r.data['type']}:: #{r.id}"
-      f.puts "    :category: #{r.category}"
-      f.puts "    :status: #{r.data['status']}"
-      f.puts "    :review_status: #{r.data['review_status']}"
-      f.puts "    :asil: #{r.data['asil']}"
-      f.puts "    :cal: #{r.data['cal']}"
-      f.puts "    :tags:#{handle_empty_value(tags)}"
-      f.puts "    :comment:#{html(comment)}"
-      f.puts "    :miscellaneous:#{html(r.data['miscellaneous'])}"
-      f.puts "    :refs:#{handle_empty_value(refs)}"
+      file_io.puts ''
+      file_io.puts ".. #{req.type}:: #{req.id}"
+      file_io.puts "    :category: #{req.category}"
+      file_io.puts "    :status: #{req.status}"
+      file_io.puts "    :review_status: #{req.review_status}"
+      file_io.puts "    :asil: #{req.asil}"
+      file_io.puts "    :cal: #{req.cal}"
+      file_io.puts "    :tags:#{handle_empty_value(tags)}"
+      file_io.puts "    :comment:#{html(comment)}"
+      file_io.puts "    :miscellaneous:#{html(req.miscellaneous)}"
+      file_io.puts "    :refs:#{handle_empty_value(refs)}"
       @loader.custom_attributes.each_key do |custom_attribute|
-        f.puts "    :#{custom_attribute}:#{handle_empty_value(r.data[custom_attribute])}"
+        file_io.puts "    :#{custom_attribute}:#{handle_empty_value(req.data[custom_attribute])}"
       end
-      if r.data['type'] == 'requirement'
-        vc = createMultiLanguageElement(r, 'verification_criteria')
+      if req.data['type'] == 'requirement'
+        vc = create_multi_language_element(req, 'verification_criteria')
 
-        f.puts "    :sources:#{handle_empty_value(sources)}"
-        f.puts "    :feature:#{html(r.data['feature'])}"
-        f.puts "    :change_request:#{html(r.data['change_request'])}"
-        f.puts "    :developer:#{handle_empty_value(r.data['developer'])}"
-        f.puts "    :tester:#{handle_empty_value(r.data['tester'])}"
-        f.puts "    :verification_methods:#{handle_empty_value(r.data['verification_methods'])}"
-        f.puts "    :verification_criteria:#{html(vc)}"
+        file_io.puts "    :sources:#{handle_empty_value(sources)}"
+        file_io.puts "    :feature:#{html(req.feature)}"
+        file_io.puts "    :change_request:#{html(req.change_request)}"
+        file_io.puts "    :developer:#{handle_empty_value(req.developer)}"
+        file_io.puts "    :tester:#{handle_empty_value(req.tester)}"
+        file_io.puts "    :verification_methods:#{handle_empty_value(req.verification_methods)}"
+        file_io.puts "    :verification_criteria:#{html(vc)}"
       end
 
-      f.puts "\n   #{html(text)}" unless text.empty?
+      file_io.puts "\n   #{html(text)}" unless text.empty?
     end
 
-    def footer(f)
-      files = @loader.module_data[@moduleName][:files].values.flatten
+    def footer(file_io)
+      files = @loader.module_data[@module_name][:files].values.flatten
       return if files.empty?
 
-      f.puts ''
-      f.puts '.. enclosed::'
-      f.puts ''
+      file_io.puts ''
+      file_io.puts '.. enclosed::'
+      file_io.puts ''
       files.each do |file|
-        f.puts "    #{file}"
+        file_io.puts "    #{file}"
       end
     end
 
-    def index(f, category, origin, modules)
-      caption = category.capitalize + ' (' + origin + ')'
-      f.puts caption
-      f.puts '=' * caption.length
-      f.puts ''
-      f.puts '.. toctree::'
-      f.puts '  :maxdepth: 1'
-      f.puts ''
+    def index(file_io, category, origin, modules)
+      caption = "#{category.capitalize} (#{origin})"
+      file_io.puts caption
+      file_io.puts '=' * caption.length
+      file_io.puts ''
+      file_io.puts '.. toctree::'
+      file_io.puts '  :maxdepth: 1'
+      file_io.puts ''
       modules.sort.each do |m|
-        f.puts "  #{m.sanitize}/Requirements"
+        file_io.puts "  #{m.sanitize}/Requirements"
       end
     end
   end

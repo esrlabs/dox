@@ -66,7 +66,7 @@ module Dim
     end
 
     def create_index(requirements_by_module)
-      return unless @exporter.hasIndex
+      return unless @exporter.has_index
 
       files = {}
       @loader.module_data.each do |mod, data|

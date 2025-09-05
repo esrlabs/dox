@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "active_support"
-require "active_support/core_ext/string"
-require "dim/loader"
-require "erb"
-require "fileutils"
+require 'active_support'
+require 'active_support/core_ext/string'
+require 'dim/loader'
+require 'erb'
+require 'fileutils'
 
 # rubocop:disable Style/GlobalVars
 # (required by DIM)
@@ -13,7 +13,7 @@ $subcommands = {}
 # rubocop:enable Style/GlobalVars
 
 def asil_level(requirement)
-  requirement.asil == "not_set" ? nil : "#{requirement.asil} |"
+  requirement.asil == 'not_set' ? nil : "#{requirement.asil} |"
 end
 
 def req_text(requirement)
@@ -31,7 +31,7 @@ def req_text(requirement)
 end
 
 def req_refs(references)
-  return "none" unless references&.any?
+  return 'none' unless references&.any?
 
   references.map { |ref| ":ref:`dim-req-#{ref}`" }.join(', ')
 end
@@ -63,20 +63,20 @@ categories = {}
   module_requirements << requirement
 end
 
-templates_path = Pathname.new(__dir__) / ".." / "lib" / "dim_to_rst" / "templates"
+templates_path = Pathname.new(__dir__) / '..' / 'lib' / 'dim_to_rst' / 'templates'
 
-index_template = File.read(templates_path / "index.rst.erb")
+index_template = File.read(templates_path / 'index.rst.erb')
 index_erb = ERB.new(index_template)
-index_dest = File.join(output_dir, "index.rst")
+index_dest = File.join(output_dir, 'index.rst')
 
 File.write(index_dest, index_erb.result_with_hash(
-  categories: categories
-))
+                         categories: categories
+                       ))
 
-module_template = File.read(templates_path / "module.rst.erb")
+module_template = File.read(templates_path / 'module.rst.erb')
 module_erb = ERB.new(module_template)
 
-categories.each do |category_name, category_data|
+categories.each do |_category_name, category_data|
   category_dir = File.join(output_dir, category_data[:id])
 
   FileUtils.rm_rf(category_dir)

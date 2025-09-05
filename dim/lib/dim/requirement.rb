@@ -135,7 +135,7 @@ module Dim
         return
       end
 
-      allowed_values = elem[:allowed].reject{ |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
+      allowed_values = elem[:allowed].reject { |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
       Dim::ExitHelper.exit(
         code: 1,
         filename: filename,
@@ -150,7 +150,7 @@ module Dim
       value_array.each do |v|
         next if element[:allowed].include?(v)
 
-        allowed_values = element[:allowed].reject{ |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
+        allowed_values = element[:allowed].reject { |a| a.nil? || a.empty? }.map { |e| "\"#{e}\"" }.join(', ')
         Dim::ExitHelper.exit(
           code: 1,
           filename: filename,
@@ -198,7 +198,7 @@ module Dim
 
     def check_invalid_values
       @data.each do |k, v|
-        if @all_attributes.key?(k) && (@all_attributes[k][:check])
+        if @all_attributes.key?(k) && @all_attributes[k][:check]
           send(@all_attributes[k][:check], @all_attributes[k], k, v)
         end
       end
