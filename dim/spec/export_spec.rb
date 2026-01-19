@@ -236,7 +236,7 @@ module Dim
 
             Test.main("export -i #{TEST_INPUT_DIR}/export_check/export_test_12_2.dim -o #{TEST_OUTPUT_DIR} -f csv")
             expect(Dir.new(File.join(TEST_OUTPUT_DIR, 'test_export_12',
-                                     'images')).children).to eq ['test.jpeg', 'test_new.jpeg']
+                                     'images')).children).to match_array ['test.jpeg', 'test_new.jpeg']
 
             expect(@test_stdout).to include 'Warning: Files in the folder spec/test_output will not be cleaned unless you use the --force flag.'
             expect(@test_stdout).to include 'To clean the destination folder, rerun the command with --force, or choose a different folder.'
