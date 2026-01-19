@@ -3,6 +3,7 @@
     "id": "ID_1",
     "document_name": "ABC",
     "originator": "",
+    "category": "unspecified",
     "type": "requirement",
     "text": "document test",
     "verification_criteria": "",

@@ -93,6 +93,7 @@ module Dim
         expect(j.find { |e| e['id'] == 'test_id_1' } ['text']).to eq 'Another test req'
         expect(j.find { |e| e['id'] == 'test_id_1' } ['document_name']).to eq 'test_module_1'
         expect(j.find { |e| e['id'] == 'test_id_1' } ['originator']).to eq 'CompanyName'
+        expect(j.find { |e| e['id'] == 'test_id_1' } ['category']).to eq 'module'
         expect(Dim::ExitHelper.exit_code).to eq 0
       end
     end

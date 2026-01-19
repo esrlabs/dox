@@ -8,11 +8,11 @@ module Dim
     def header(content)
       @keys = @loader.all_attributes.keys
       content.puts 'Sep=,'
-      content.puts "id,document_name,originator,#{@keys.join(',')}"
+      content.puts "id,document_name,originator,category,#{@keys.join(',')}"
     end
 
     def requirement(content, req)
-      vals = [req.id, req.document, req.origin]
+      vals = [req.id, req.document, req.origin, req.category]
       @keys.each { |k| vals << req.data[k] }
       # These values will never be nil.
       # ID cannot be nil in Dim file, so as origin (default is "") and
