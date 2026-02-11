@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.3.1
+-----
+
+- Added missing category attribute in JSON and CSV export, same as RST export.
+
 2.3.0
 -----
 
