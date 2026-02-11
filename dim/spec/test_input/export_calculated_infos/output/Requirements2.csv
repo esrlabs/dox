@@ -1,4 +1,4 @@
 Sep=,
-id,document_name,originator,type,text,verification_criteria,feature,change_request,tags,asil,cal,developer,tester,verification_methods,status,review_status,comment,miscellaneous,sources,refs
-"SRS_A_1","ABC123","","requirement","bla","","","","","not_set","not_set","","","none","draft","unclear","","","",""
-"SRS_A_2","ABC123","","requirement","b""l'a","nothing","","","performance","not_set","not_set","","","none","draft","not_reviewed","","","",""
+id,document_name,originator,category,type,text,verification_criteria,feature,change_request,tags,asil,cal,developer,tester,verification_methods,status,review_status,comment,miscellaneous,sources,refs
+"SRS_A_1","ABC123","","unspecified","requirement","bla","","","","","not_set","not_set","","","none","draft","unclear","","","",""
+"SRS_A_2","ABC123","","unspecified","requirement","b""l'a","nothing","","","performance","not_set","not_set","","","none","draft","not_reviewed","","","",""

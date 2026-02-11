@@ -12,7 +12,7 @@ module Dim
     end
 
     def requirement(_file_io, req)
-      vals = { 'id' => req.id, 'document_name' => req.document, 'originator' => req.origin }
+      vals = { 'id' => req.id, 'document_name' => req.document, 'originator' => req.origin, 'category' => req.category }
 
       @loader.all_attributes.each_key do |k|
         v = req.data[k]
