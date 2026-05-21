@@ -13,12 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu]
-        ruby: [2.7, 3.0, 3.3]
+        ruby: [2.7, 3.0, 3.4]
         include:
           - os: macos
-            ruby: 3.3
+            ruby: 3.4
           - os: windows
-            ruby: 3.3
+            ruby: 3.4
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
@@ -28,7 +28,7 @@ jobs:
         run: |
              gem install rspec -v 3.10.0 --no-document
       - name: Install coverage
-        if: ${{matrix.os == 'ubuntu' && matrix.ruby == '3.3'}}
+        if: ${{matrix.os == 'ubuntu' && matrix.ruby == '3.4'}}
         run: |
              gem install simplecov -v 0.22.0 --no-document
       - name: Run unit tests
